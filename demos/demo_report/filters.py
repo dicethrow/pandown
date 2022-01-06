@@ -10,7 +10,7 @@ def parts_yaml_filter(options, data, element, doc):
 		# todo - implement logging?
 		# result = element
 
-		result = pf.convert_text(f"Got {options}, {data}, {element}")
+		result = pf.convert_text(f"Got in yaml filter: {options}, {data}, {element}")
 
 	#print("Doc format was ", doc.format)
 
@@ -18,6 +18,5 @@ def parts_yaml_filter(options, data, element, doc):
 
 if __name__ == '__main__':
 	pf.toJSONFilter(pf.yaml_filter,tags = {'parts': parts_yaml_filter})
-
 
 	

@@ -5,9 +5,11 @@ paragraph in /main.md
 note the things in parts can be .md files, or directories which contain
 a mian.md
 
-Got {'my_key_1': 'my_value_1', 'my_key_2': 'my_value_2'}, my_data_1,
-CodeBlock(my_key_1: my_value_1 my_key_2: my_value_2 --- my_data_1;
-classes=\['parts'\])
+ababa!!
+
+Got in yaml filter: {'my_key_1': 'my_value_1', 'my_key_2':
+'my_value_2'}, my_data_1, CodeBlock(my_key_1: my_value_1 my_key_2:
+my_value_2 --- my_data_1; classes=\['parts'\])
 
 ```{=html}
 <!-- 

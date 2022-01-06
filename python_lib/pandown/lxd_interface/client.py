@@ -1,5 +1,5 @@
 """Client to handle connections and actions executed against a remote host."""
-import subprocess, sys, os, glob, traceback, time
+import subprocess, sys, os, glob, traceback, time, tempfile, textwrap
 from typing import List
 
 from paramiko import RSAKey, SSHClient, SSHConfig, ProxyCommand, RejectPolicy
@@ -15,11 +15,15 @@ from .log import LOGGER
 
 def ensure_container_is_on(container_name):
 	# turn on the doc-dev container if it is not already on
+	any_started = False
 	for response_line in subprocess.check_output("lxc list".split()).decode("utf-8").split("\n"):
 		if all(x in response_line for x in [container_name, "STOPPED"]):
 			LOGGER.info(f"{container_name} was off, starting up")
 			subprocess.run(f"lxc start {container_name}".split())
-	time.sleep(0.2)
+			any_started = True
+	if any_started:		
+		LOGGER.info(f"waiting...")
+		time.sleep(3)
 
 class myRemoteException(Exception):
 	pass
@@ -94,6 +98,20 @@ class RemoteClient:
 		# rsync docs https://linux.die.net/man/1/rsync
 		# -avPz means --archive --verbose --partial --progress --compress"
 		# the extra --delete is so deleted files are removed
+
+		# 6jan2022
+		# tempfile technique from here https://stackoverflow.com/questions/28410137/python-create-temp-file-namedtemporaryfile-and-call-subprocess-on-it
+		fake_ssh_fp = tempfile.NamedTemporaryFile(delete=True)
+		with open(fake_ssh_fp.name, "w") as f:
+			f.write(textwrap.dedent("""
+				#!/bin/sh
+				ctn="${1}"
+				shift
+				exec lxc exec "${ctn}" -- "$@"
+			""".lstrip("\n")))
+		os.chmod(fake_ssh_fp.name, 0x0777)
+		fake_ssh_fp.file.close()
+
 		success = True
 		try:
 			if direction == "local_to_remote":
@@ -101,11 +119,11 @@ class RemoteClient:
 				self.execute_commands(f"mkdir -p /home/ubuntu/Documents/Outputs") # make remote directory tree if it doesn't exist
 
 				log_str = f"Used rsync from local {rel_local_dir} to {self.host}:/home/ubuntu/Documents/{rel_remote_dir}"
-				cmd = f"rsync -avPz {rel_local_dir}/ -e ./build/fake-ssh {self.lxd_container_name}:/home/ubuntu/Documents/{rel_remote_dir}/{' --delete' if delete else ''}"
+				cmd = f"rsync -avPz {rel_local_dir}/ -e {fake_ssh_fp.name} {self.lxd_container_name}:/home/ubuntu/Documents/{rel_remote_dir}/{' --delete' if delete else ''}"
 
 			elif direction == "remote_to_local":
 				log_str = f"Used rsync from {self.host}:/home/ubuntu/Documents/{rel_remote_dir} to local {rel_local_dir}"
-				cmd = f"rsync -avPz -e ./build/fake-ssh {self.lxd_container_name}:/home/ubuntu/Documents/{rel_remote_dir}/ {rel_local_dir}/{' --delete' if delete else ''}"
+				cmd = f"rsync -avPz -e {fake_ssh_fp.name} {self.lxd_container_name}:/home/ubuntu/Documents/{rel_remote_dir}/ {rel_local_dir}/{' --delete' if delete else ''}"
 
 			LOGGER.opt(ansi=True).info(f"<green>{log_str}</green>")
 			

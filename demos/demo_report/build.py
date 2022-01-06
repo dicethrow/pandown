@@ -1,29 +1,55 @@
-import argparse, subprocess
+import argparse, os, subprocess
+import pandown
 
-parser = argparse.ArgumentParser()
-parser.add_argument("src_file", type=str, help="first source file")
-parser.add_argument("filters_file", type=str, help="first filter file")
-parser.add_argument("output_folder", type=str, help="folder for output")
-
-
-args = parser.parse_args()
-
-print("In demo report")
-
-# this starts it, and further calls to pandoc will be made as needed
-# should this first one have a --standalone?
-# subprocess.call(f"echo hi_a".split())
-# subprocess.call(f"echo {args.src_file}".split())
-# subprocess.call(f"cat {args.src_file} | tail".split(" "))
+def clear_terminal():
+	# clean the terminal before we start.
+	subprocess.call("clear")
 
 
-# implelementing pipes from https://stackoverflow.com/questions/13332268/how-to-use-subprocess-command-with-pipes
-# trying to implement something like `cat file | pandoc --filter myfilter.py`
-# ps = subprocess.Popen(f"cat {args.src_file}".split(), stdout=subprocess.PIPE)
-# output = subprocess.check_output(f"pandoc --filter {args.filters_file}".split(), stdin=ps.stdout)
-subprocess.call(f"pandoc --filter {args.filters_file} {args.src_file} -o {args.output_folder}/result.md".split())#, stdin=ps.stdout)
-# ps.wait()
+if __name__ == "__main__":
+	parser = argparse.ArgumentParser()
+	parser.add_argument("task", type=str, help="action to do")
+	# parser.add_argument("proj_location", type=str, help="project dir to build")
+	args = parser.parse_args()
 
-# print("Output is:")
-# print(output)
+	assert args.task in ["generate"], "invalid task given"
 
+	if args.task == "generate":
+		# in the container, copy over the proj_location/content, and template
+		# then, run the container:proj_location/build.py
+		# which goes through the document and does its thing
+
+		clear_terminal()
+
+		with  pandown.RemoteClient(host = "lxd_doc-dev", lxd_container_name = "doc-dev", user = "ubuntu", 
+			ssh_config_filepath="~/.ssh/config") as ssh_remote_client:
+
+			ssh_remote_client.clean()
+
+			def copy_over_content():
+				ssh_remote_client.rsync(
+					delete = True,
+					direction="local_to_remote",
+					rel_local_dir="demos/demo_report",#f"{args.proj_location}",#"content",
+					rel_remote_dir="Uploads"
+					# abs_remote_dir="home/ubuntu/Uploads/content"
+				)
+			copy_over_content()
+
+			ssh_remote_client.execute_commands("echo 'on rpi' && pwd && tree")
+			# ssh_remote_client.execute_commands(f"python3 ~/Documents/Uploads/build.py ~/Documents/Uploads/content/main.md ~/Documents/Uploads/filters.py ~/Documents/Outputs")
+			ssh_remote_client.execute_commands("pandoc --filter ~/Documents/Uploads/filters.py ~/Documents/Uploads/content/main.md -o ~/Documents/Outputs/result.md")
+			# subprocess.call(f"pandoc --filter {args.filters_file} {args.src_file} -o {args.output_folder}/result.md".split())#, stdin=ps.stdout)
+
+			ssh_remote_client.execute_commands("tree")
+			ssh_remote_client.execute_commands("cat ~/Documents/Outputs/result.*")
+
+			def copy_back_results():
+				ssh_remote_client.rsync(
+					delete = True,
+					direction="remote_to_local",
+					rel_local_dir="demos/demo_report/outputs",#f"{args.proj_location}/outputs",
+					rel_remote_dir="Outputs"
+					# abs_remote_dir="home/ubuntu/Outputs"
+				)
+			copy_back_results()

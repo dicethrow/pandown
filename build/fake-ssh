@@ -1,5 +1,0 @@
-#!/bin/sh
-ctn="${1}"
-shift
-exec lxc exec "${ctn}" -- "$@"
-

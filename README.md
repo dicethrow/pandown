@@ -12,3 +12,6 @@
 - links, pictures etc should be made to work using conventional markdown preview, then a pandoc filter/s should be implemented to ensure it works
 - custom features can be implemented using markdown comment blocks 
 
+idea - document this project as an example project?
+
+https://lee-phillips.org/panflute-gnuplot/

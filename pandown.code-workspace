@@ -6,12 +6,20 @@
 	],
 	"launch": {
 		"configurations": [
+			// {
+			// 	"name" : "Build demo report",
+			// 	"type": "python",
+			// 	"request": "launch",
+			// 	"program": "build/build.py",
+			// 	"args": ["generate", "demos/demo_report"],
+			// 	"console": "integratedTerminal"
+			// },
 			{
 				"name" : "Build demo report",
 				"type": "python",
 				"request": "launch",
-				"program": "build/build.py",
-				"args": ["generate", "demos/demo_report"],
+				"program": "demos/demo_report/build.py",
+				"args": ["generate"],//, "demos/demo_report"],
 				"console": "integratedTerminal"
 			},
 
