@@ -37,7 +37,11 @@ if __name__ == "__main__":
 			copy_over_content()
 
 			ssh_remote_client.execute_commands("echo 'on rpi' && pwd && tree")
+			
 			ssh_remote_client.execute_commands("pandoc -F ~/.local/bin/panflute ~/Documents/Uploads/content/main.md -o ~/Documents/Outputs/result.md", ignore_failures=True) # 	 	
+			
+			# ssh_remote_client.execute_commands(["cd ~/Documents/Uploads/content", "pandoc -F ~/.local/bin/panflute main.md -o /../Outputs/result.md", "cd ~"], ignore_failures=True)
+			
 			ssh_remote_client.execute_commands("tree")
 			ssh_remote_client.execute_commands("cat ~/Documents/Outputs/result.*")
 

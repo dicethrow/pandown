@@ -1,9 +1,10 @@
 
 ---
 title: Some title
-panflute-filters: [filterB, filterC]
+panflute-filters: [test_assembly2]
 panflute-path: '~/Documents/Uploads/filters'
-panflute-verbose: true
+starting_dir: "~/Documents/Uploads/content"
+<!-- panflute-verbose: true -->
 ...
 
 # heading level 1 in /main.md
@@ -26,12 +27,14 @@ bbb
 my_key_1: my_value_1
 my_key_2: my_value_2
 ---
-my_data_1
+a_outerfolder
+b_outerfolder
+c_outerfolder
+d_outerfolder
 ~~~
 
 
-<!-- 
-~~~ parts
+~~~ comment
 quote: Simplicity is the ultimate sophistication.
 who: Leonardo da Vinci
 ---
@@ -40,4 +43,3 @@ b_aaa
 c_dee
 d_doo
 ~~~
- -->

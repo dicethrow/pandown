@@ -10,10 +10,8 @@ def prepare(doc):
 
 
 def fenced_action(options, data, element, doc):
-	# if doc.format == 'latex':
-	# 	pass
-	# 	# return None -> element unchanged
-	# 	# return [] -> delete element
+	# return None -> element unchanged
+	# return [] -> delete element
 
 	result = None
 	if doc.format == 'html':

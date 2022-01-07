@@ -2,10 +2,10 @@
 
 **paragraph** in /main.md
 
-note the things in **parts** can be .md files, or ~~directories~~ which
+note the things in **parts** can be .md files, or *directories* which
 contain a mian.md
 
-![alt text](./panasonic_amorton_indoor_list2.png)
+![alt text](./panasonic_amorton_indoor_list.png)
 
 ababa!!
 
@@ -17,20 +17,12 @@ aaa
 
 bbb
 
-Gooootooo in yaml filter: {'my_key_1': 'my_value_1', 'my_key_2':
-'my_value_2'}, my_data_1, CodeBlock(my_key_1: my_value_1 my_key_2:
-my_value_2 --- my_data_1; classes=\['parts'\])
-
-```{=html}
-<!-- 
-~~~ parts
-quote: Simplicity is the ultimate sophistication.
-who: Leonardo da Vinci
+``` parts
+my_key_1: my_value_1
+my_key_2: my_value_2
 ---
-a_intro
-b_aaa
-c_dee
-d_doo
-~~~
- -->
+a_outerfolder
+b_outerfolder
+c_outerfolder
+d_outerfolder
 ```
