@@ -6,39 +6,14 @@
 	],
 	"launch": {
 		"configurations": [
-			// {
-			// 	"name" : "Build demo report",
-			// 	"type": "python",
-			// 	"request": "launch",
-			// 	"program": "build/build.py",
-			// 	"args": ["generate", "demos/demo_report"],
-			// 	"console": "integratedTerminal"
-			// },
 			{
 				"name" : "Build demo report",
 				"type": "python",
 				"request": "launch",
 				"program": "demos/demo_report/build.py",
-				"args": ["generate"],//, "demos/demo_report"],
+				"args": ["generate"],
 				"console": "integratedTerminal"
 			},
-
-
-			// {
-			// 	"name" : "Build demo report",
-			// 	"type": "python",
-			// 	"request": "launch",
-			// 	"program": "demos/demo_report/build.py",
-			// 	"console": "integratedTerminal"
-			// },
-
-			// {
-			// 	"name" : "Build demo blog",
-			// 	"type": "python",
-			// 	"request": "launch",
-			// 	"program": "demos/demo_blog/build.py",
-			// 	"console": "integratedTerminal"
-			// }
 
 		],
 		"compounds": []

@@ -15,3 +15,5 @@
 idea - document this project as an example project?
 
 https://lee-phillips.org/panflute-gnuplot/
+
+https://github.com/ickc/pantable

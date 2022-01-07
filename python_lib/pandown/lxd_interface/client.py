@@ -143,7 +143,7 @@ class RemoteClient:
 			LOGGER.error(f"Unexpected error occurred: {e}")
 			raise e
 
-	def execute_commands(self, commands):
+	def execute_commands(self, commands, ignore_failures = False):
 		"""
 		Execute multiple commands in succession.
 
@@ -188,7 +188,7 @@ class RemoteClient:
 			LOGGER.info(f"{line}")
 			result_lines.append(line)
 
-		if not success:
+		if (not ignore_failures) and (not success):
 			raise myRemoteException(error_lines)
 
 		return result_lines

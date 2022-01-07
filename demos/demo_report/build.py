@@ -1,4 +1,4 @@
-import argparse, os, subprocess
+import argparse, os, subprocess, textwrap
 import pandown
 
 def clear_terminal():
@@ -37,10 +37,7 @@ if __name__ == "__main__":
 			copy_over_content()
 
 			ssh_remote_client.execute_commands("echo 'on rpi' && pwd && tree")
-			# ssh_remote_client.execute_commands(f"python3 ~/Documents/Uploads/build.py ~/Documents/Uploads/content/main.md ~/Documents/Uploads/filters.py ~/Documents/Outputs")
-			ssh_remote_client.execute_commands("pandoc --filter ~/Documents/Uploads/filters.py ~/Documents/Uploads/content/main.md -o ~/Documents/Outputs/result.md")
-			# subprocess.call(f"pandoc --filter {args.filters_file} {args.src_file} -o {args.output_folder}/result.md".split())#, stdin=ps.stdout)
-
+			ssh_remote_client.execute_commands("pandoc -F ~/.local/bin/panflute ~/Documents/Uploads/content/main.md -o ~/Documents/Outputs/result.md", ignore_failures=True) # 	 	
 			ssh_remote_client.execute_commands("tree")
 			ssh_remote_client.execute_commands("cat ~/Documents/Outputs/result.*")
 

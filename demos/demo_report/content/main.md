@@ -1,11 +1,26 @@
 
+---
+title: Some title
+panflute-filters: [filterB, filterC]
+panflute-path: '~/Documents/Uploads/filters'
+panflute-verbose: true
+...
+
 # heading level 1 in /main.md
 
-paragraph in /main.md
+**paragraph** in /main.md
 
-note the things in parts can be .md files, or directories which contain a mian.md
+note the things in **parts** can be .md files, or *directories* which contain a mian.md
+
+![alt text](./panasonic_amorton_indoor_list.png)
 
 ababa!!
+
+## heading level 2
+aaa
+
+### heading level 3
+bbb
 
 ~~~ parts
 my_key_1: my_value_1
