@@ -177,19 +177,28 @@ class RemoteClient:
 				LOGGER.info(f"{error_line}")
 			else:
 				success = False
-				LOGGER.error(f"{error_line}")
+				# LOGGER.error(f"{error_line}")
+				try:
+					LOGGER.opt(ansi=True).error(f"{error_line}") # for colours printed on stderr
+				except:
+					LOGGER.error(f"{error_line}")
 			error_lines.append(error_line)
 
 		result_lines = []
 		stdout.channel.recv_exit_status()
-		for line in stdout.readlines():
-			line = line.strip("\n")
-			LOGGER.trace(f"INPUT: {combined_cmd}")
-			LOGGER.info(f"{line}")
-			result_lines.append(line)
+		try:
+			for line in stdout.readlines():
+				line = line.strip("\n")
+				LOGGER.trace(f"INPUT: {combined_cmd}")
+				LOGGER.info(f"{line}")
+				result_lines.append(line)
+		except:
+			LOGGER.error(f"INPUT: {combined_cmd}")
+			LOGGER.error("Failed to read from stdout.readlines() , probably due to non-utf8 encoding")
 
 		if (not ignore_failures) and (not success):
-			raise myRemoteException(error_lines)
+			# raise myRemoteException(error_lines)
+			pass
 
 		return result_lines
 	
@@ -198,3 +207,4 @@ class RemoteClient:
 		for folder in folders_to_delete:
 			if len(self.execute_commands(f"ls ~/Documents/{folder}/")) > 0:
 				self.execute_commands(f"rm -r ~/Documents/{folder}/*")
+

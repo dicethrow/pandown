@@ -38,7 +38,20 @@ if __name__ == "__main__":
 
 			ssh_remote_client.execute_commands("echo 'on rpi' && pwd && tree")
 			
-			ssh_remote_client.execute_commands("pandoc -F ~/.local/bin/panflute ~/Documents/Uploads/content/main.md -o ~/Documents/Outputs/result.md", ignore_failures=True) # 	 	
+			# output_type = "md"
+			output_type = "pdf"
+
+			# template = "eisvogel.latex"
+			template = "test.latex"
+
+			script_runner = "-F ~/.local/bin/panflute"
+			top_source_file = "~/Documents/Uploads/content/main.md"
+			template_file = f"--template ~/Documents/.pandoc/templates/{template}"
+			output_file = f"-o ~/Documents/Outputs/result.{output_type}"
+
+			pandoc_cmd = f"pandoc {script_runner} {top_source_file} {template_file} {output_file}"
+
+			ssh_remote_client.execute_commands(pandoc_cmd, ignore_failures=True) # 	 	
 			
 			# ssh_remote_client.execute_commands(["cd ~/Documents/Uploads/content", "pandoc -F ~/.local/bin/panflute main.md -o /../Outputs/result.md", "cd ~"], ignore_failures=True)
 			
