@@ -8,6 +8,7 @@ Goal: Make documents easily, from small to huge, where:
 - the template is a rarely touched but highly capable pandoc latex template
 - the output can be any format that pandoc supports
 - the markdown should be structured in a way that a vscode markdown previewer will still preview the content (and relatively reference images etc) correctly
+- the messy libraries, dependencies, latex stuff etc is confined to a containerised virtual machine
 
 
 ## making documents with pandown
@@ -20,6 +21,9 @@ In this way, a large document can be generated from many smaller components.
 - the level of the heading is the heading level within the file, plus its depth in the folder tree
 - links, pictures etc should be made to work using conventional markdown preview, then a pandoc filter/s should be implemented to ensure it works
 - custom features can be implemented using markdown comment blocks 
+
+## how pandown is used
+- Edit the content, e.g. `demo_report/content`, then run, for example, `demo_report/build.py` on your local machine. This will send files to the container (mine is set to be accessable when I run `ssh lxd_doc-dev`), run pandoc in the container on the content, then copy back the result to, for example, `demo_report/output`.
 
 ## how pandown works
 - the pandown python lib is installed locally
