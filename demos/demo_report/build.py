@@ -36,7 +36,12 @@ if __name__ == "__main__":
 				)
 			copy_over_content()
 
-			ssh_remote_client.execute_commands("echo 'on rpi' && pwd && tree")
+			# move templates to right folder
+			ssh_remote_client.execute_commands("rsync -av ~/Documents/Uploads/templates/ ~/.pandoc/templates/")
+
+			ssh_remote_client.execute_commands("echo 'on rpi'")
+			ssh_remote_client.execute_commands("pwd")
+			ssh_remote_client.execute_commands("tree -a -I host_venv")
 			
 			# output_type = "md"
 			output_type = "pdf"
@@ -46,16 +51,25 @@ if __name__ == "__main__":
 
 			script_runner = "-F ~/.local/bin/panflute"
 			top_source_file = "~/Documents/Uploads/content/main.md"
-			template_file = f"--template ~/Documents/.pandoc/templates/{template}"
+			template_file = f"--template ~/.pandoc/templates/{template}"
 			output_file = f"-o ~/Documents/Outputs/result.{output_type}"
 
-			pandoc_cmd = f"pandoc {script_runner} {top_source_file} {template_file} {output_file}"
 
-			ssh_remote_client.execute_commands(pandoc_cmd, ignore_failures=True) # 	 	
+			use_tex_intermediate = False
+			if use_tex_intermediate:
+				tex_intermediate_file = f"~/Documents/Outputs/result.tex"
+				pandoc_cmd = f"pandoc {script_runner} {top_source_file} {template_file} -s -o {tex_intermediate_file}"
+				pandoc_cmd2 = f"pandoc {tex_intermediate_file} {output_file}"
+				ssh_remote_client.execute_commands([pandoc_cmd,pandoc_cmd2], ignore_failures=True) # 	 
+
+			else:
+				pandoc_cmd = f"pandoc {script_runner} {top_source_file} {template_file} {output_file}"
+				ssh_remote_client.execute_commands(pandoc_cmd, ignore_failures=True) # 	 
+
 			
 			# ssh_remote_client.execute_commands(["cd ~/Documents/Uploads/content", "pandoc -F ~/.local/bin/panflute main.md -o /../Outputs/result.md", "cd ~"], ignore_failures=True)
 			
-			ssh_remote_client.execute_commands("tree")
+			ssh_remote_client.execute_commands("tree -a -I host_venv")
 			ssh_remote_client.execute_commands("cat ~/Documents/Outputs/result.*")
 
 			def copy_back_results():

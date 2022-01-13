@@ -16,19 +16,7 @@ def debug_elem(elem):
 		pf.debug(debug_line, end="")
 
 def get_depth(path):
-	# from https://stackoverflow.com/questions/46921346/find-highest-depth-when-given-a-file-path
-	# for root, dirs, files in os.walk(path):
-	# 	if dirs or files:
-	# 		depth += 1
-	# 	if dirs:
-	# 		return max(get_depth(os.path.join(root, d), depth) for d in dirs)
-	# # Will return 0 for an empty directory
-	# return depth
 	return path.count("/")
-
-
-
-
 
 def decode_yaml_content(elem):
 	# Split YAML and data parts (separated by ... or ---)
@@ -133,9 +121,6 @@ def main(doc=None):
 	doc.next_file_links_starting_dir = os.path.expanduser(doc.get_metadata("starting_dir"))
 	doc.initial_folder_depth = get_depth(doc.next_file_links_starting_dir)
 	while doc.file_links_present:
-		# pf.debug("Looping...")
-		# pf.debug(f"more links: {doc.file_links_present}, {doc.next_file_links_starting_dir}")
-
 		doc = doc.walk(add_referred_content)
 		# doc.walk(inspect_doc)
 		doc.file_links_present = False

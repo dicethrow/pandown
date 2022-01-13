@@ -19,7 +19,7 @@
 		"compounds": []
 	},
 	"settings": {
-		"python.pythonPath": "/home/x/Documents/venv_ge/bin/python3.8"
+		// "python.pythonPath": "/home/x/Documents/venv_ge/bin/python3.8"
 	}
 }
 

@@ -21,9 +21,12 @@ def ensure_container_is_on(container_name):
 			LOGGER.info(f"{container_name} was off, starting up")
 			subprocess.run(f"lxc start {container_name}".split())
 			any_started = True
-	if any_started:		
+	if any_started:	
 		LOGGER.info(f"waiting...")
-		time.sleep(3)
+		count = 5
+		for i in range(count):	
+			time.sleep(1)
+			LOGGER.info(f"{count-i}")
 
 class myRemoteException(Exception):
 	pass
