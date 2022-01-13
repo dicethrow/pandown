@@ -1,8 +1,6 @@
-# heading level should be 2, from in /b_outerfolder/main.md
+# Heading level 1 (should become 2) in content/b_outerfolder/main.md
 
-ffb
-
-Well it seems this is progressing! However this should have a level 2 heading.
+Content below that heading in the markdown file. A nested list test follows.
 
 1. This is one element
 2. Another
@@ -12,4 +10,5 @@ Well it seems this is progressing! However this should have a level 2 heading.
 	2. More element
 3. Outer end of list
 
-wowee!
+Note that there are two more subfolders here, however they are not referenced in this markdown file, and hence are not integrated into the final document.
+

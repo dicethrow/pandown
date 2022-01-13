@@ -1,32 +1,42 @@
 # pandown
 
-## how pandown works
+Work in progress.
 
-- the pandown python lib is installed locally
-- it is used to manage interactions with a container, which contains the pandoc program.
-- 
+Goal: Make large documents, where:
+- the content is an easily organised file/folder tree of small markdown documents
+- the template is a rarely touched but highly capable pandoc latex template
+- the output can be any format that pandoc supports
+- the markdown should be structured in a way that a vscode markdown previewer will still preview the content (and relatively reference images etc) correctly
+
 
 ## making documents with pandown
 
+## what's the big idea?
+Write each part as a separate markdown file.
+Each section can refer to other sub-parts, located in folders within the same directory as the parent markdown file. There is a primitive that shows how to include these sub-parts, and commenting that out will prevent using them.
 
-- starting at root main.md,
-	1. go through until a 'parts' filter found, adding all lines to local_tmp
-	2. if, before ending the file, a {first_path}/main.md is found, call recursively
-	3. when ending the outermost file, return a string containing that file content
-		and counted header levels
-
-
-- how to call pandoc from within panflute?
-
-
-
+In this way, a large documents 
 
 - the level of the heading is the heading level within the file, plus its depth in the folder tree
 - links, pictures etc should be made to work using conventional markdown preview, then a pandoc filter/s should be implemented to ensure it works
 - custom features can be implemented using markdown comment blocks 
 
-idea - document this project as an example project?
+## how pandown works
+- the pandown python lib is installed locally
+- it is used to manage interactions with a container, which contains the pandoc program.
+	- I use a LXD container, but the interface is all ssh/scp so any container is compatible with that would work
+- the panflute library is used to make markdown filters for pandoc.
+	- The main filter as of early January 2022 is the recursive markdown 'preprocessor' that
+		- sticks all the specified markdown files together
+		- updates heading levels, so the result heading level is (the markdown file heading level) + (the nesting level in the source file tree)
+		- update image links etc, so images can be stored in the same directory as the markdown file that refers to them, and still work with pandoc which requires absolute paths.
 
-https://lee-phillips.org/panflute-gnuplot/
+## what's next to do
+- For PDF/latex generation, shift the heading levels so the highest level markdown heading corresponds to latex 'part'.
+- Polish up the PDF/latex template so it matches documents I like
+- Make some other PDF/latex templates 
+- Add templates, filters etc to generate html for simple web-based content/blogs
 
-https://github.com/ickc/pantable
+## unsorted useful links
+- https://lee-phillips.org/panflute-gnuplot/
+- https://github.com/ickc/pantable

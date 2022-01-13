@@ -1,4 +1,4 @@
-# hellobc
+# Heading level 1 (should become 2) in content/c_outerfolder/main.md
 
 ffbc
 
