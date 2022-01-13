@@ -2,8 +2,9 @@
 
 Work in progress.
 
-Goal: Make large documents, where:
+Goal: Make documents easily, from small to huge, where:
 - the content is an easily organised file/folder tree of small markdown documents
+- collaboration can use git workflows
 - the template is a rarely touched but highly capable pandoc latex template
 - the output can be any format that pandoc supports
 - the markdown should be structured in a way that a vscode markdown previewer will still preview the content (and relatively reference images etc) correctly
@@ -15,8 +16,7 @@ Goal: Make large documents, where:
 Write each part as a separate markdown file.
 Each section can refer to other sub-parts, located in folders within the same directory as the parent markdown file. There is a primitive that shows how to include these sub-parts, and commenting that out will prevent using them.
 
-In this way, a large documents 
-
+In this way, a large document can be generated from many smaller components.
 - the level of the heading is the heading level within the file, plus its depth in the folder tree
 - links, pictures etc should be made to work using conventional markdown preview, then a pandoc filter/s should be implemented to ensure it works
 - custom features can be implemented using markdown comment blocks 
