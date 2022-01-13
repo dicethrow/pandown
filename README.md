@@ -11,7 +11,7 @@ Goal: Make documents easily, from small to huge, where:
 - the messy libraries, dependencies, latex stuff etc is confined to a containerised virtual machine
 
 
-## making documents with pandown
+# making documents with pandown
 
 ## what's the big idea?
 Write each part as a separate markdown file.
