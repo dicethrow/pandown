@@ -23,7 +23,12 @@ In this way, a large document can be generated from many smaller components.
 - custom features can be implemented using markdown comment blocks 
 
 ## how pandown is used
-- Edit the content, e.g. `demo_report/content`, then run, for example, `demo_report/build.py` on your local machine. This will send files to the container (mine is set to be accessable when I run `ssh lxd_doc-dev`), run pandoc in the container on the content, then copy back the result to, for example, `demo_report/output`.
+
+1. Edit the content, e.g. `demo_report/content`
+2. run, for example, `demo_report/build.py` on your local machine. This will:
+	1. send files to the container (mine is set to be accessable when I run `ssh lxd_doc-dev`)
+	2. run pandoc in the container on the content,
+	3. then copy back the result to, for example, `demo_report/output`.
 
 ## how pandown works
 - the pandown python lib is installed locally
