@@ -26,11 +26,28 @@ if __name__ == "__main__":
 
 			ssh_remote_client.clean()
 
-			def copy_over_content():
+			def copy_over_common_content():
+				# the directory that this .py file is in
+				# dir_path = os.path.dirname(os.path.realpath(__file__))
+				dir_path = pandown.get_absolute_content_dir("for_report")
+				print("dir path is ", dir_path)
 				ssh_remote_client.rsync(
 					delete = True,
 					direction="local_to_remote",
-					rel_local_dir="demos/demo_report",#f"{args.proj_location}",#"content",
+					rel_local_dir=dir_path,#"demos/demo_report",#f"{args.proj_location}",#"content",
+					rel_remote_dir="Uploads"
+					# abs_remote_dir="home/ubuntu/Uploads/content"
+				)
+			copy_over_common_content()
+
+			def copy_over_content():
+				# the directory that this .py file is in
+				dir_path = os.path.dirname(os.path.realpath(__file__))
+
+				ssh_remote_client.rsync(
+					delete = False,
+					direction="local_to_remote",
+					rel_local_dir=dir_path,#"demos/demo_report",#f"{args.proj_location}",#"content",
 					rel_remote_dir="Uploads"
 					# abs_remote_dir="home/ubuntu/Uploads/content"
 				)

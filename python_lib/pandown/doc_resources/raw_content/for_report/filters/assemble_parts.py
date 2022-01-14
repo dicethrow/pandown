@@ -116,6 +116,7 @@ def main(doc=None):
 	# doc = pf.Doc(pf.Para(pf.Str("hello")))
 	# doc.new_doc = copy.deepcopy(doc)
 
+	doc.file_links_present = False
 	doc = doc.walk(check_for_more_file_links)
 	doc.initial_run = True
 	doc.next_file_links_starting_dir = os.path.expanduser(doc.get_metadata("starting_dir"))
