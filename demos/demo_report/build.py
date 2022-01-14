@@ -64,30 +64,43 @@ if __name__ == "__main__":
 			output_type = "pdf"
 
 			# template = "eisvogel.latex"
-			template = "test.latex"
+			# template = "test.latex"
+			template = "test2.latex"
 
 			script_runner = "-F ~/.local/bin/panflute"
 			top_source_file = "~/Documents/Uploads/content/main.md"
 			template_file = f"--template ~/.pandoc/templates/{template}"
 			output_file = f"-o ~/Documents/Outputs/result.{output_type}"
+			extras = "--listings"
 
 
-			use_tex_intermediate = False
+			use_tex_intermediate = True#False
 			if use_tex_intermediate:
 				tex_intermediate_file = f"~/Documents/Outputs/result.tex"
-				pandoc_cmd = f"pandoc {script_runner} {top_source_file} {template_file} -s -o {tex_intermediate_file}"
-				pandoc_cmd2 = f"pandoc {tex_intermediate_file} {output_file}"
-				ssh_remote_client.execute_commands([pandoc_cmd,pandoc_cmd2], ignore_failures=True) # 	 
+				pandoc_cmd = f"pandoc {script_runner} {top_source_file} {template_file} -s -o {tex_intermediate_file} {extras}"
+				# pandoc_cmd2 = f"pandoc {tex_intermediate_file} {output_file}"
+				# pandoc_cmd2 = f"pandoc {script_runner} {top_source_file} {template_file} {output_file}"
+				# ssh_remote_client.execute_commands([pandoc_cmd,pandoc_cmd2], ignore_failures=True) # 	 
+				
+				latex_cmd = f"lualatex --halt-on-error --output-directory ~/Documents/Outputs {tex_intermediate_file}" # options go before filename https://tex.stackexchange.com/questions/268997/pdflatex-seems-to-ignore-output-directory
 
+				ssh_remote_client.execute_commands(pandoc_cmd, ignore_failures=True) # 	 
+				
+				# lualatex needs to be caled twice, otherwise the toc doesn't generate properly
+				# if references, call biber between
+				ssh_remote_client.execute_commands(latex_cmd, ignore_failures=True)
+				ssh_remote_client.execute_commands(latex_cmd, ignore_failures=True)
 			else:
-				pandoc_cmd = f"pandoc {script_runner} {top_source_file} {template_file} {output_file}"
+				pandoc_cmd = f"pandoc {script_runner} {top_source_file} {template_file} {output_file} {extras}"
 				ssh_remote_client.execute_commands(pandoc_cmd, ignore_failures=True) # 	 
 
+			# remove undesired output
+			ssh_remote_client.execute_commands("cd ~/Documents/Outputs && rm *.aux *.bcf *.log *.out *.xml *.toc")
 			
 			# ssh_remote_client.execute_commands(["cd ~/Documents/Uploads/content", "pandoc -F ~/.local/bin/panflute main.md -o /../Outputs/result.md", "cd ~"], ignore_failures=True)
 			
 			ssh_remote_client.execute_commands("tree -a -I host_venv")
-			ssh_remote_client.execute_commands("cat ~/Documents/Outputs/result.*")
+			# ssh_remote_client.execute_commands("cat ~/Documents/Outputs/result.*")
 
 			def copy_back_results():
 				ssh_remote_client.rsync(
@@ -98,3 +111,4 @@ if __name__ == "__main__":
 					# abs_remote_dir="home/ubuntu/Outputs"
 				)
 			copy_back_results()
+

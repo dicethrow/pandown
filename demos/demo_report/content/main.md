@@ -1,13 +1,16 @@
 
 ---
 title: Some title
+subtitle: And a small subtitle
 documentclass: paper
 panflute-filters: [ignore_comments, assemble_parts]
 panflute-path: '~/Documents/Uploads/filters'
 starting_dir: "~/Documents/Uploads/content"
 ...
 
-# heading level 1 in /main.md
+# This is part one
+
+## heading one in /main.md
 
 Edit made on new os.
 
@@ -18,7 +21,9 @@ note the things in **parts** must be *directories* which contain a main.md. That
 ![alt text](./panasonic_amorton_indoor_list.png)
 
 
-# To do
+# This is part two
+
+## To do
 - Closely match the appearance of my latex documents from a year ago
 	- same border spacing
 	- same structure, e.g. have an abstract/terminology/progress sections, bibliography/appendix etc
@@ -41,10 +46,10 @@ int mainko(int bozo){
 }
 ```
 
-## heading level 2
+## heading level 2 in the .md
 aaa
 
-### heading level 3
+### heading level 3 in the .md
 bbb
 
 ``` parts

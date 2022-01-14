@@ -67,6 +67,20 @@ def add_referred_content(elem, doc):
 						if isinstance(new_elem, pf.Header):
 							new_elem.level += get_depth(os.path.join(doc.next_file_links_starting_dir, next_foldername)) - doc.initial_folder_depth
 
+							# # if header level is 1, make it a latex part
+							# # for all other header levels, reduce them by one
+							# debug_elem(new_elem)
+							# pf.debug("level: ", new_elem.level)
+							# if new_elem.level == 1:
+							# 	# print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+							# 	# debug_elem(new_elem)
+							# 	# similar to here https://stackoverflow.com/questions/62491816/how-do-i-get-pandoc-to-generate-book-parts
+							# 	new_elem = pf.RawInline(f"\part{{new_elem.text}}", format="latex") # or tex?
+							# 	# debug_elem(new_elem)
+							# else:
+							# 	new_elem.level -= 1
+							# # print(new)
+
 						if isinstance(new_elem, pf.Para):
 							fix_image_path_dir_from_paragraph(para_elem=new_elem, base_path=os.path.join(doc.next_file_links_starting_dir, next_foldername))
 							
@@ -108,6 +122,25 @@ def check_for_more_file_links(elem, doc):
 			
 				pf.debug(f"Next folder: {doc.next_file_links_starting_dir}")
 
+def make_top_level_headings_into_parts(elem, doc):
+	if isinstance(elem, pf.Header):
+		# if header level is 1, make it a latex part
+		# for all other header levels, reduce them by one
+		debug_elem(elem)
+		pf.debug("level: ", elem.level)
+		if elem.level == 1:
+			# print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+			# debug_elem(new_elem)
+			# similar to here https://stackoverflow.com/questions/62491816/how-do-i-get-pandoc-to-generate-book-parts
+			elem = pf.RawBlock(f"\part{{{pf.stringify(elem)}}}", format="latex") # or tex?
+			pf.debug("changed:")
+			debug_elem(elem)
+		else:
+			elem.level -= 1
+		# print(new)
+		# return [elem]
+		return elem
+
 def inspect_doc(elem, doc):
 	debug_elem(elem)
 
@@ -127,6 +160,7 @@ def main(doc=None):
 		doc.file_links_present = False
 		doc = doc.walk(check_for_more_file_links)
 		doc.initial_run = False
+	doc = doc.walk(make_top_level_headings_into_parts)
 
 	return doc
 
