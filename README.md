@@ -39,12 +39,16 @@ In this way, a large document can be generated from many smaller components.
 		- sticks all the specified markdown files together
 		- updates heading levels, so the result heading level is (the markdown file heading level) + (the nesting level in the source file tree)
 		- update image links etc, so images can be stored in the same directory as the markdown file that refers to them, and still work with pandoc which requires absolute paths.
+- note that code colouring in `test2.latex` template requires `sudo apt-get install python3-pygments` before using, as mentioned [here](https://tex.stackexchange.com/questions/146264/i-cant-get-minted-package-to-work-under-ubuntu-pygments-error/563919#563919)
 
 ## what's next to do
 - For PDF/latex generation, shift the heading levels so the highest level markdown heading corresponds to latex 'part'.
 - Polish up the PDF/latex template so it matches documents I like
 - Make some other PDF/latex templates 
 - Add templates, filters etc to generate html for simple web-based content/blogs
+- Investigate replacing the listings code library with `minted` and `pygments` for better performance, [mentioned here](https://tex.stackexchange.com/questions/89276/insert-bash-code-with-coloration-into-my-latex-report)
+- make the demo document be this readme
+- Currently switching from `listings` to `minted` for code colouring, but not working yet
 
 ## bugs
 - 17jan2022

@@ -72,6 +72,7 @@ if __name__ == "__main__":
 			template_file = f"--template ~/.pandoc/templates/{template}"
 			output_file = f"-o ~/Documents/Outputs/result.{output_type}"
 			extras = "--listings"
+			# extras = ""
 
 
 			use_tex_intermediate = True#False
@@ -82,13 +83,14 @@ if __name__ == "__main__":
 				# pandoc_cmd2 = f"pandoc {script_runner} {top_source_file} {template_file} {output_file}"
 				# ssh_remote_client.execute_commands([pandoc_cmd,pandoc_cmd2], ignore_failures=True) # 	 
 				
-				latex_cmd = f"lualatex --halt-on-error --output-directory ~/Documents/Outputs {tex_intermediate_file}" # options go before filename https://tex.stackexchange.com/questions/268997/pdflatex-seems-to-ignore-output-directory
+				latex_cmd = f"lualatex -shell-escape -halt-on-error --output-directory ~/Documents/Outputs {tex_intermediate_file}" # options go before filename https://tex.stackexchange.com/questions/268997/pdflatex-seems-to-ignore-output-directory
 
 				ssh_remote_client.execute_commands(pandoc_cmd, ignore_failures=True) # 	 
 				
 				# lualatex needs to be caled twice, otherwise the toc doesn't generate properly
 				# if references, call biber between
 				ssh_remote_client.execute_commands(latex_cmd, ignore_failures=True)
+				
 				ssh_remote_client.execute_commands(latex_cmd, ignore_failures=True)
 			else:
 				pandoc_cmd = f"pandoc {script_runner} {top_source_file} {template_file} {output_file} {extras}"
