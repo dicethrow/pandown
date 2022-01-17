@@ -7,7 +7,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%% to make pandoc work
 
 \def\tightlist{} % make \tightlist do nothing https://tex.stackexchange.com/questions/257418/error-tightlist-converting-md-file-into-pdf-using-pandoc/408474
-
+\newcommand{\passthrough}[1]{\lstset{mathescape=false}#1\lstset{mathescape=true}} % from  https://github.com/laboon/ebook/issues/139
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -166,6 +166,9 @@ aaa
 .md}\label{heading-level-3-in-the-.md}}
 
 bbb
+
+todo - make the key:value thing in parts be section parts to filenames,
+e.g.~for abstract, progress, etc?
 
 \hypertarget{heading-level-1-should-become-2-in-contenta_outerfoldermain.md}{%
 \section{Heading level 1 (should become 2) in

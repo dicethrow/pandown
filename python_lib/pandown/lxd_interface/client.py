@@ -40,7 +40,7 @@ class RemoteClient:
 		host: str,
 		lxd_container_name: str,
 		user: str,
-		ssh_config_filepath: str,
+		ssh_config_filepath="~/.ssh/config",
 	):
 		self.host = host
 		self.lxd_container_name = lxd_container_name

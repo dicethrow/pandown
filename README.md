@@ -46,6 +46,12 @@ In this way, a large document can be generated from many smaller components.
 - Make some other PDF/latex templates 
 - Add templates, filters etc to generate html for simple web-based content/blogs
 
+## bugs
+- 17jan2022
+	- images in the root markdown file only work if a `parts` yaml block is used and refers to other content
+	- non-alphanumeric characters in the yaml title block can break latex as they don't yet have escaping applied
+	- the key-value pairs in the yaml `parts` blocks are not optional but should be
+
 ## unsorted useful links
 - https://lee-phillips.org/panflute-gnuplot/
 - https://github.com/ickc/pantable
