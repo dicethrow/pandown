@@ -1,5 +1,5 @@
 import argparse, os, subprocess, textwrap
-import pandown
+import pandown, lxdev
 
 def clear_terminal():
 	# clean the terminal before we start.
@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
 		clear_terminal()
 
-		with  pandown.RemoteClient(host = "lxd_doc-dev", lxd_container_name = "doc-dev", user = "ubuntu", 
+		with  lxdev.RemoteClient(host = "lxd_doc-dev", lxd_container_name = "doc-dev", user = "ubuntu", 
 			ssh_config_filepath="~/.ssh/config") as ssh_remote_client:
 
 			ssh_remote_client.clean()
