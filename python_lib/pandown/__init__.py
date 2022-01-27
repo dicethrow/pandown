@@ -1,2 +1,2 @@
 # from lxdev import RemoteClient, myRemoteException, LOGGER
-from .doc_resources import get_absolute_content_dir
+from .doc_resources import get_absolute_content_dir, copy_starter_resources
