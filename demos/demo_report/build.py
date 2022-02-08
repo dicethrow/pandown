@@ -1,10 +1,5 @@
-import argparse, os, subprocess, textwrap
+import argparse, os, textwrap
 import pandown, lxdev
-
-def clear_terminal():
-	# clean the terminal before we start.
-	subprocess.call("clear")
-
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
@@ -19,7 +14,7 @@ if __name__ == "__main__":
 		# then, run the container:proj_location/build.py
 		# which goes through the document and does its thing
 
-		clear_terminal()
+		lxdev.run_local_cmd("clear") # clear terminal before we start
 
 		with  lxdev.RemoteClient(
 			host = "lxd_doc-dev", 

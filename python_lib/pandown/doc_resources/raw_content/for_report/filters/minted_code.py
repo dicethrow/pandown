@@ -20,17 +20,56 @@ def debug_elem(elem):
 		pf.debug(debug_line, end="")
 
 def generate_latex_minted_formatting(elem, doc):
+	""" 
+	
+	8feb2022
+	- I can get minted to work, but
+		- it needs characters escaped, e.g. replace # with \#, so some errors don't occur
+		- but it renders the escaped characters... which isn't great
+	- so instead I have 'verbatim' used, the main problem is it doesn't have colour formatting
+		
+	- perhaps I could use 'verbatim' for bash, and 'minted' for other languages?
+		- I'll stick to verbatim for now though. ugh!
+	- verbatim is also much faster
+
+
+	https://blog.wotw.pro/syntax-highlighting-in-latex-with-minted/
+	"""
 	assert doc.format == "latex", "the minted filter only works when generating latex"
 	
 	if isinstance(elem, pf.CodeBlock) | isinstance(elem, pf.Code):
 		debug_elem(elem)
-		language = elem.classes[0]
+		# language = elem.classes[0]
+		try:
+			language = elem.classes[0]
+		except:
+			language = "bash" # if not given
+
+		as_text = pf.stringify(elem)
+		# as_text = as_text.replace("#", "\#")
+		# as_text = as_text.replace("$", "\$")
+		# as_text = as_text.replace("_", "\_")
 
 		if isinstance(elem, pf.CodeBlock):
-			elem = pf.RawBlock(f"\\begin{{minted}}{{{language}}}\n{pf.stringify(elem)}\n\\end{{minted}}", format="latex")
-		elif isinstance(elem, pf.Code):
-			elem = pf.RawBlock(f"\\mintinline{{{language}}}\n{{{pf.stringify(elem)}}}", format="latex")
+			# src = f"\\begin{{minted}}{{{language}}}\n{as_text}\n\\end{{minted}}"
+			src = f"\\begin{{verbatim}}\n{as_text}\n\\end{{verbatim}}"
+
+
 			
+			# src = "\\begin{listing}" + src + "\\end{listing}"
+			elem = pf.RawBlock(src, format="tex")
+		elif isinstance(elem, pf.Code):
+			# elem = pf.RawInline(f"\\mintinline{{{language}}}\\{{{as_text}}}", format="tex")
+			# elem = pf.RawInline(f"\\begin{{verbatim}}{as_text}\\end{{verbatim}}", format="tex")
+			elem = pf.RawInline(f"\\verb|{as_text}|", format="tex")
+
+
+		# as_text2 = pf.stringify(elem)	
+
+		
+			# elem = [] # remove for now
+		# debug_elem(elem)
+
 		return elem
 
 	

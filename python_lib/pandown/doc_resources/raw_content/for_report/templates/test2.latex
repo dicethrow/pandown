@@ -13,8 +13,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 % code handling
- \usepackage{listings}
-%\usepackage{minted} % 18jan2022, not working yet
+%\usepackage{listings}
+\usepackage[outputdir=outputs]{minted} % 18jan2022, not working yet
+%\usepackage{cprotect}
+%\setminted{escapeinside=||}
+%\setmintedinline{escapeinside=||}
+
 \usepackage{xcolor}
 \usepackage[lighttt]{lmodern}
 % \usepackage{pretty_verilog}
