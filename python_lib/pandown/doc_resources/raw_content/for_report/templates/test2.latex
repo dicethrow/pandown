@@ -19,6 +19,9 @@
 %\setminted{escapeinside=||}
 %\setmintedinline{escapeinside=||}
 
+% 15march2022 trying to see if tables in markdown go to latex
+\usepackage{longtable, booktabs, tabularx} 
+
 \usepackage{xcolor}
 \usepackage[lighttt]{lmodern}
 % \usepackage{pretty_verilog}
