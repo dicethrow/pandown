@@ -32,6 +32,7 @@ def escape_code_hashes(elem, doc):
 	assert doc.format == "latex", "the minted filter only works when generating latex"
 	
 	if isinstance(elem, pf.CodeBlock) | isinstance(elem, pf.Code):
+	
 		debug_elem(elem)
 		pf.debug("xxx, ", elem.classes)
 		

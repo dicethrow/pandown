@@ -16,30 +16,6 @@ def get_absolute_content_dir(relative_path_to_containing_folder):
 
 	return dir_path
 
-# phasing out as of 8feb2022
-def copy_starter_resources(src, dst, skip_if_dest_not_empty = True):
-	input("Warning! copy_starter_resources is being phased out, remove this. press enter to ignore")
-	for desired_dir_or_file in src:
-		srcpath = os.path.dirname(os.path.realpath(__file__))
-		for foldername in str("raw_content/" + desired_dir_or_file).split("/"):
-			srcpath = os.path.join(srcpath, foldername)
-	
-		destpath = os.path.join(dst, desired_dir_or_file)
-		if os.path.isfile(srcpath):
-			shutil.copy(srcpath, destpath)
-		elif os.path.isdir(srcpath):
-			# dst
-			if os.path.exists(destpath):
-				if skip_if_dest_not_empty:
-					pass
-				else:
-					assert 0, "dir already exists, no behavior defined"
-			else:
-				shutil.copytree(srcpath, destpath)				
-					
-		else:
-			assert 0, f"Given srcpath is not a directory or file: {srcpath}"
-
 def get_path_to_common_content(file_or_folder_below_raw_content):
 	raw_content_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "raw_content")
 	desired_content_path = os.path.join(raw_content_path, *file_or_folder_below_raw_content.split("/"))
