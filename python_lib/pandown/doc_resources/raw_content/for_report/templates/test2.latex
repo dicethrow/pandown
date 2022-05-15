@@ -14,7 +14,7 @@
 
 % code handling
 %\usepackage{listings}
-\usepackage[outputdir=output]{minted} % 18jan2022, not working yet
+\usepackage[outputdir=doc/output]{minted} % 18jan2022, not working yet
 %\usepackage{cprotect}
 %\setminted{escapeinside=||}
 %\setmintedinline{escapeinside=||}
