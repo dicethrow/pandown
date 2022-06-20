@@ -33,8 +33,8 @@ def escape_code_hashes(elem, doc):
 	
 	if isinstance(elem, pf.CodeBlock) | isinstance(elem, pf.Code):
 	
-		debug_elem(elem)
-		pf.debug("xxx, ", elem.classes)
+		# debug_elem(elem)
+		# pf.debug("xxx, ", elem.classes)
 		
 		# if len(elem.classes) == 0:
 		# 	pf.debug("Error: No language specified for this code block, will apply hash fix")

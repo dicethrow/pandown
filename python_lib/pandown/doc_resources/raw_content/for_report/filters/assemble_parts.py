@@ -44,7 +44,7 @@ def add_referred_content(elem, doc):
 			if isinstance(elem, pf.Image):
 				# make the image URL respect the full path
 				img_path = os.path.join(base_path, elem.url)
-				pf.debug(f"new path: {img_path}")
+				# pf.debug(f"new path: {img_path}")
 				elem.url = img_path
 
 
@@ -53,7 +53,9 @@ def add_referred_content(elem, doc):
 
 	if isinstance(elem, pf.CodeBlock):
 		if "parts" in elem.classes:
-			options, data = decode_yaml_content(elem)			
+			options, data = decode_yaml_content(elem)		
+
+			level_offset = options["level_offset"] if "level_offset" in options	else 0
 			
 			outer_divs = []
 			for next_foldername in get_list_of_next_content_files(doc.next_file_links_starting_dir, data):
@@ -65,7 +67,7 @@ def add_referred_content(elem, doc):
 		
 					for new_elem in new_elems:
 						if isinstance(new_elem, pf.Header):
-							new_elem.level += get_depth(os.path.join(doc.next_file_links_starting_dir, next_foldername)) - doc.initial_folder_depth
+							new_elem.level += get_depth(os.path.join(doc.next_file_links_starting_dir, next_foldername)) - doc.initial_folder_depth + level_offset
 
 							# # if header level is 1, make it a latex part
 							# # for all other header levels, reduce them by one
@@ -120,21 +122,21 @@ def check_for_more_file_links(elem, doc):
 				folder_containing_the_data = os.path.abspath(os.path.join(markdown_file_that_contains_the_file_links, ".."))
 				doc.next_file_links_starting_dir = folder_containing_the_data
 			
-				pf.debug(f"Next folder: {doc.next_file_links_starting_dir}")
+				# pf.debug(f"Next folder: {doc.next_file_links_starting_dir}")
 
 def make_top_level_headings_into_parts(elem, doc):
 	if isinstance(elem, pf.Header):
 		# if header level is 1, make it a latex part
 		# for all other header levels, reduce them by one
-		debug_elem(elem)
-		pf.debug("level: ", elem.level)
+		# debug_elem(elem)
+		# pf.debug("level: ", elem.level)
 		if elem.level == 1:
 			# print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 			# debug_elem(new_elem)
 			# similar to here https://stackoverflow.com/questions/62491816/how-do-i-get-pandoc-to-generate-book-parts
 			elem = pf.RawBlock(f"\part{{{pf.stringify(elem)}}}", format="latex") # or tex?
-			pf.debug("changed:")
-			debug_elem(elem)
+			# pf.debug("changed:")
+			# debug_elem(elem)
 		else:
 			elem.level -= 1
 		# print(new)

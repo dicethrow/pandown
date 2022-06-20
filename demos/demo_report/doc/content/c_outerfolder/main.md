@@ -11,5 +11,5 @@ b_boho
 ```
 
 another end line... helps?
-![alt text](./b_boho/panasonic_amorton_indoor_list2.png)
+![alt text](./b_boho/spaceship2.png)
 

@@ -3,9 +3,7 @@
 title: Some title
 subtitle: And a small subtitle
 documentclass: paper
-panflute-filters: [ignore_comments, assemble_parts]
-panflute-path: '~/Documents/Uploads/filters'
-starting_dir: "~/Documents/Uploads/content"
+panflute-filters: [ignore_comments, assemble_parts, mermaid_charts, minted_code]
 ...
 
 # This is part one
@@ -18,7 +16,7 @@ Edit made on new os.
 
 note the things in **parts** must be *directories* which contain a main.md. That main.md file may also have a **parts** section for including further files, etc.
 
-![alt text](./panasonic_amorton_indoor_list.png)
+![alt text](./spaceship.png)
 
 
 # This is part two

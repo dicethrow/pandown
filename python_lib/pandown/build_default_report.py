@@ -9,7 +9,7 @@ import subprocess
 def run_local_cmd(cmd, **kwargs):
 	def as_array(result_or_error):
 		return result_or_error.decode("utf-8").split("\n")[:-1] if result_or_error != None else []
-		
+
 	# print(cmd, flush=True)
 	print_result = kwargs.pop("print_result", False)
 	print_error = kwargs.pop("print_error", False)
@@ -77,7 +77,7 @@ def build_default_report(template="test2.latex", debug_mode = False):
 	clear_terminal()
 
 	# remove intermediate files from previous runs
-	remove_generated_files()
+	# remove_generated_files() # note - commented out, so the result.pdf is never removed; which makes vscode auto-reload the latest version of the file
 
 	# display the current directory and its contents
 	run_local_cmd("pwd", print_result = True)

@@ -2,15 +2,18 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../../"
 		}
 	],
 	"launch": {
 		"configurations": [
 			{
-				"name" : "Build demo report",
+				"name" : "Build report",
 				"type": "python",
 				"request": "launch",
-				"program": "demos/demo_report/doc/build.py",
+				"program": "doc/build.py",
 				"args": ["generate"],
 				"console": "integratedTerminal"
 			},
@@ -18,8 +21,4 @@
 		],
 		"compounds": []
 	},
-	"settings": {
-		// "python.pythonPath": "/home/x/Documents/venv_ge/bin/python3.8"
-	}
 }
-

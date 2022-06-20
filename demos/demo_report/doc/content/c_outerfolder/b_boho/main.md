@@ -2,7 +2,7 @@
 
 as a paragraph
 
-![alt text](./panasonic_amorton_indoor_list2.png)
+![alt text](./spaceship2.png)
 
 ## as a second level heading
 
