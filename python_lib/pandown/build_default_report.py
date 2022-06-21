@@ -100,7 +100,8 @@ def build_default_report(template="test2.latex", debug_mode = False):
 		dst_filename = top_source_file_ammended,
 		new_header_lines = [
 			f"panflute-path: '{panflute_filters_path}'",
-			f"starting_dir: '{os.path.dirname(top_source_file)}'"
+			f"starting_dir: '{os.path.dirname(top_source_file)}'",
+			f"generated_intermediate_files_dir: '{doc_dir}/generated_intermediate_files'"
 		]
 	)
 
@@ -117,5 +118,6 @@ def build_default_report(template="test2.latex", debug_mode = False):
 		run_local_cmd(latex_cmd, print_cmd = True, print_result = if_debug_mode, print_error = if_debug_mode)
 
 	# remove everything except for desired filetypes
-	remove_generated_files(keep_filetypes=[".pdf", ".latex", ".csv"])
+	# so things from latex, then file attachments such as images and csv
+	remove_generated_files(keep_filetypes=[".pdf", ".latex", ".csv", ".svg", ".bmp"])
 

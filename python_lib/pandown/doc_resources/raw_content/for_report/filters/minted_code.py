@@ -38,7 +38,7 @@ def generate_latex_minted_formatting(elem, doc):
 	assert doc.format == "latex", "the minted filter only works when generating latex"
 	
 	if isinstance(elem, pf.CodeBlock) | isinstance(elem, pf.Code):
-		debug_elem(elem)
+		# debug_elem(elem)
 		# language = elem.classes[0]
 		try:
 			language = elem.classes[0]

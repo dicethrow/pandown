@@ -190,6 +190,13 @@ xxx change
 let's see if this \emph{mermaid} filter works. Should look like the
 example from https://github.com/raghur/mermaid-filter
 
+\begin{verbatim}
+---
+sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+\end{verbatim}
+
 \hypertarget{heading-level-1-should-become-2-in-contentb_outerfoldermain.md}{%
 \section{Heading level 1 (should become 2) in
 content/b\_outerfolder/main.md}\label{heading-level-1-should-become-2-in-contentb_outerfoldermain.md}}
