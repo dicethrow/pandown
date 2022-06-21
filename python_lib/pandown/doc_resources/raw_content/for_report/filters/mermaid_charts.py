@@ -78,32 +78,53 @@ def handle_mermaid_charts(options, data, element, doc):
 	# save this .svg file to a location
 	# then return an image element that displays the new image
 
+	dest_format = options.get("format", "pdf")
+	width = options.get("width", 800)
+	scale = options.get("scale", 1)
+	theme = options.get("theme", "default")
+	background = options.get("background", "transparent")
+
 	tempSrcFile = tempfile.NamedTemporaryFile()
 
 	with open(tempSrcFile.name, 'w') as f:
-		f.write(pf.stringify(element))
+		f.write(data)
+
+	pf.debug("file ----------------")
+	with open(tempSrcFile.name, 'r') as f:
+		pf.debug(f.readlines())
+	pf.debug("End file ---------------")
+
 
 	# for the dest name, store an attribute in the doc object, so we can use incrementing identifiers
 	if hasattr(doc, "mermaid_chart_index"):
 		doc.mermaid_chart_index += 1
 	else:
 		doc.mermaid_chart_index = 0
-	destFilename = f'mermaid_chart_{doc.mermaid_chart_index}.{options.get("format", "svg")}'
+	destFilename = f'mermaid_chart_{doc.mermaid_chart_index}.{dest_format}'
 	destFilePath = os.path.join(doc.get_metadata("generated_intermediate_files_dir"), destFilename)
 
 	# mmdc_cmd = "mmdc"
 	mmdc_cmd = os.path.expanduser("~/node_modules/.bin/mmdc") # assuming that mermaid-cli has been installed to the ~ directory
-	# mmdc_cmd += f' -w {options.get("width", 800)}'
-	# mmdc_cmd += f' -s {options.get("scale", 1)}'
-	# mmdc_cmd += " -f" # necessary?
+	mmdc_cmd += f' -w {width}'
+	mmdc_cmd += f' -s {scale}'
+	mmdc_cmd += " -f" # necessary?
 	mmdc_cmd += f' -i {tempSrcFile.name}'
-	# mmdc_cmd += f' -t {options.get("theme", "default")}'
-	# mmdc_cmd += f' -b {options.get("background", "transparent")}'
+	mmdc_cmd += f' -t {theme}'
+	mmdc_cmd += f' -b {background}'
 	mmdc_cmd += f' -o {destFilePath}'
 
-	if_debug_mode = True
-	result, error = run_local_cmd(mmdc_cmd, print_cmd=True, print_result=if_debug_mode, print_error=if_debug_mode)
+	result, error = run_local_cmd(mmdc_cmd)
 	
+	if dest_format == "svg":
+		assert 0, "this doesn't work yet, some latex issue"
+		# this assumes that a latex document will be produced
+		# or, hardcode the use of includesvg as in here https://tex.stackexchange.com/questions/122871/include-svg-images-with-the-svg-package
+		new_elem = pf.RawBlock(f'\\includesvg{{{destFilePath}}}', format="tex") 
+	else:
+		new_elem = pf.Para(pf.Image(url=destFilePath, title=options.get("title", "")))
+
+	
+	return new_elem
 
 def finalize(doc):
 	pass

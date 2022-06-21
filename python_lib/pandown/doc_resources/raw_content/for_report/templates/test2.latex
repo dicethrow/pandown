@@ -32,6 +32,10 @@
 % for flowcharts
 \usepackage{tikz}
 
+% 21jun2022
+% for the ability to show svg diagrams
+\usepackage{svg} % note this calls system inkscape, so that must be installed
+
 % For figures
 \usepackage{graphicx}% more modern
 % \usepackage{subfigure}

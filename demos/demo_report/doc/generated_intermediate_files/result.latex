@@ -32,6 +32,10 @@
 % for flowcharts
 \usepackage{tikz}
 
+% 21jun2022
+% for the ability to show svg diagrams
+\usepackage{svg} % note this calls system inkscape, so that must be installed
+
 % For figures
 \usepackage{graphicx}% more modern
 % \usepackage{subfigure}
@@ -190,12 +194,12 @@ xxx change
 let's see if this \emph{mermaid} filter works. Should look like the
 example from https://github.com/raghur/mermaid-filter
 
-\begin{verbatim}
----
-sequenceDiagram
-    Alice->>John: Hello John, how are you?
-    John-->>Alice: Great!
-\end{verbatim}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/demos/demo_report/doc/generated_intermediate_files/mermaid_chart_0.pdf}
+
+Now let's try another, this one from here:
+https://stackoverflow.com/questions/68561397/mermaid-syntax-error-on-trying-render-a-diagram-on-github-md-file
+
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/demos/demo_report/doc/generated_intermediate_files/mermaid_chart_1.pdf}
 
 \hypertarget{heading-level-1-should-become-2-in-contentb_outerfoldermain.md}{%
 \section{Heading level 1 (should become 2) in

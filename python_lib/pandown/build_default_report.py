@@ -113,7 +113,7 @@ def build_default_report(template="test2.latex", debug_mode = False):
 
 	### from .tex make .pdf
 	# lualatex needs to be caled twice, otherwise the toc doesn't generate properly. if references, call biber between
-	latex_cmd = f'pdflatex -shell-escape -halt-on-error --output-directory doc/output doc/generated_intermediate_files/result.latex'  # options go before filename https://tex.stackexchange.com/questions/268997/pdflatex-seems-to-ignore-output-directory
+	latex_cmd = f'pdflatex --shell-escape -halt-on-error --output-directory doc/output doc/generated_intermediate_files/result.latex'  # options go before filename https://tex.stackexchange.com/questions/268997/pdflatex-seems-to-ignore-output-directory
 	for repeats in range(2):
 		run_local_cmd(latex_cmd, print_cmd = True, print_result = if_debug_mode, print_error = if_debug_mode)
 
