@@ -44,8 +44,20 @@ def add_referred_content(elem, doc):
 			if isinstance(elem, pf.Image):
 				# make the image URL respect the full path
 				img_path = os.path.join(base_path, elem.url)
-				# pf.debug(f"new path: {img_path}")
+				# pf.debug(f"new img path: {img_path}")
 				elem.url = img_path
+
+	def join_then_make_relative_image_paths(_next_foldername, _new_elem):
+		for newnew_elem in _new_elem.content:
+			if isinstance(newnew_elem, pf.Image):
+				# make the image URL respect the full path
+				img_path = os.path.join(doc.next_file_links_starting_dir, _next_foldername, newnew_elem.url)
+				# pf.debug(f"new path: {img_path}")
+				newnew_elem.url = img_path
+
+				if doc.format == "html":
+					# now make it relative to the output directory, if HTML
+					newnew_elem.url = os.path.relpath(newnew_elem.url, doc.get_metadata("output_dir"))
 
 
 	# if elem.parent == doc:
@@ -85,14 +97,8 @@ def add_referred_content(elem, doc):
 
 						if isinstance(new_elem, pf.Para):
 							fix_image_path_dir_from_paragraph(para_elem=new_elem, base_path=os.path.join(doc.next_file_links_starting_dir, next_foldername))
-							
 
-							for newnew_elem in new_elem.content:
-								if isinstance(newnew_elem, pf.Image):
-									# make the image URL respect the full path
-									img_path = os.path.join(doc.next_file_links_starting_dir, next_foldername, newnew_elem.url)
-									# pf.debug(f"new path: {img_path}")
-									newnew_elem.url = img_path
+							join_then_make_relative_image_paths(next_foldername, new_elem)
 
 					outer_divs.append(pf.Div(*new_elems, attributes={'source': next_filename_full}))
 					# outer_divs.append(new_elems)
@@ -105,6 +111,8 @@ def add_referred_content(elem, doc):
 		# if isinstance(o, t)
 		if isinstance(elem, pf.Para):
 			fix_image_path_dir_from_paragraph(para_elem=elem, base_path=os.path.join(doc.next_file_links_starting_dir))
+
+			join_then_make_relative_image_paths(os.path.join(doc.next_file_links_starting_dir), elem)
 
 	
 					
@@ -125,23 +133,24 @@ def check_for_more_file_links(elem, doc):
 				# pf.debug(f"Next folder: {doc.next_file_links_starting_dir}")
 
 def make_top_level_headings_into_parts(elem, doc):
-	if isinstance(elem, pf.Header):
-		# if header level is 1, make it a latex part
-		# for all other header levels, reduce them by one
-		# debug_elem(elem)
-		# pf.debug("level: ", elem.level)
-		if elem.level == 1:
-			# print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-			# debug_elem(new_elem)
-			# similar to here https://stackoverflow.com/questions/62491816/how-do-i-get-pandoc-to-generate-book-parts
-			elem = pf.RawBlock(f"\part{{{pf.stringify(elem)}}}", format="latex") # or tex?
-			# pf.debug("changed:")
+	if doc.format == "latex":
+		if isinstance(elem, pf.Header):
+			# if header level is 1, make it a latex part
+			# for all other header levels, reduce them by one
 			# debug_elem(elem)
-		else:
-			elem.level -= 1
-		# print(new)
-		# return [elem]
-		return elem
+			# pf.debug("level: ", elem.level)
+			if elem.level == 1:
+				# print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+				# debug_elem(new_elem)
+				# similar to here https://stackoverflow.com/questions/62491816/how-do-i-get-pandoc-to-generate-book-parts
+				elem = pf.RawBlock(f"\part{{{pf.stringify(elem)}}}", format="latex") # or tex?
+				# pf.debug("changed:")
+				# debug_elem(elem)
+			else:
+				elem.level -= 1
+			# print(new)
+			# return [elem]
+			return elem
 
 def inspect_doc(elem, doc):
 	debug_elem(elem)

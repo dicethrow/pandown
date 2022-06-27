@@ -79,7 +79,7 @@ def handle_mermaid_charts(options, data, element, doc):
 	# save this .svg file to a location
 	# then return an image element that displays the new image
 
-	dest_format = options.get("format", "pdf")
+	dest_format = options.get("format", "pdf" if doc.format=="latex" else "svg")
 	width = options.get("width", 800)
 	scale = options.get("scale", 1)
 	theme = options.get("theme", "default")
@@ -90,10 +90,10 @@ def handle_mermaid_charts(options, data, element, doc):
 	with open(tempSrcFile.name, 'w') as f:
 		f.write(data)
 
-	pf.debug("file ----------------")
-	with open(tempSrcFile.name, 'r') as f:
-		pf.debug(f.readlines())
-	pf.debug("End file ---------------")
+	# pf.debug("file ----------------")
+	# with open(tempSrcFile.name, 'r') as f:
+	# 	pf.debug(f.readlines())
+	# pf.debug("End file ---------------")
 
 
 	# for the dest name, store an attribute in the doc object, so we can use incrementing identifiers
@@ -117,10 +117,17 @@ def handle_mermaid_charts(options, data, element, doc):
 	result, error = run_local_cmd(mmdc_cmd)
 	
 	if dest_format == "svg":
-		assert 0, "this doesn't work yet, some latex issue"
-		# this assumes that a latex document will be produced
-		# or, hardcode the use of includesvg as in here https://tex.stackexchange.com/questions/122871/include-svg-images-with-the-svg-package
-		new_elem = pf.RawBlock(f'\\includesvg{{{destFilePath}}}', format="tex") 
+		if doc.format == "latex":
+			assert 0, "this doesn't work yet, some latex issue"
+			# this assumes that a latex document will be produced
+			# or, hardcode the use of includesvg as in here https://tex.stackexchange.com/questions/122871/include-svg-images-with-the-svg-package
+			new_elem = pf.RawBlock(f'\\includesvg{{{destFilePath}}}', format="tex")
+		
+		else:
+			# relative path is important for html mainly, but useful for other output formats too
+			relative_path = os.path.relpath(destFilePath, doc.get_metadata("output_dir"))
+			new_elem = pf.Para(pf.Image(url=relative_path, title=options.get("title", "")))
+
 	else:
 		new_elem = pf.Para(pf.Image(url=destFilePath, title=options.get("title", "")))
 
@@ -134,7 +141,9 @@ def finalize(doc):
 
 def main(doc=None):
 	return pf.run_filter(pf.yaml_filter, prepare=prepare, finalize=finalize,
-		tag='mermaid', function=handle_mermaid_charts, doc=doc)
+		tag='mermaid', function=handle_mermaid_charts, doc=doc, strict_yaml=True)  
+		# note - the use of 'strict yaml' here allows live markdown previews to work,
+		# in the source files, but may have other impacts
 
 if __name__ == '__main__':
 	main()

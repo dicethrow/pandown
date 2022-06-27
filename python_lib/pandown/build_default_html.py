@@ -28,6 +28,7 @@ def build_default_html(template="default/standalone.html", debug_mode = False):
 	script_runner = "-F " + os.path.expanduser("~/.local/bin/panflute")
 	top_source_file = f"{doc_dir}/content/main.md"
 	top_source_file_ammended = top_source_file.replace("content", "generated_intermediate_files")
+	output_folder = f"{doc_dir}/output"
 	
 	panflute_filters_path = f"{get_path_to_common_content('common_filters')}"
 	extras = "--listings" # extras = ""
@@ -41,19 +42,18 @@ def build_default_html(template="default/standalone.html", debug_mode = False):
 		new_header_lines = [
 			f"panflute-path: '{panflute_filters_path}'",
 			f"starting_dir: '{os.path.dirname(top_source_file)}'",
+			f"output_dir: '{output_folder}'",
 			f"generated_intermediate_files_dir: '{doc_dir}/generated_intermediate_files'"
 		]
 	)
 
-
-	output_file = f"{doc_dir}/output/result.html"
 
 	### from the .md use pandoc to make .tex
 	pandoc_cmd = "pandoc "
 	pandoc_cmd += f"{script_runner} "
 	pandoc_cmd += f"{top_source_file_ammended} "
 	pandoc_cmd += f"--template {get_path_to_common_content('html_templates')}/{template} " # todo: use os.path.join
-	pandoc_cmd += f"--standalone --output {output_file} "
+	pandoc_cmd += f"--standalone --output {output_folder}/result.html "
 	pandoc_cmd += f"{extras} "
 
 	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = if_debug_mode, print_error=if_debug_mode)
@@ -70,5 +70,5 @@ def build_default_html(template="default/standalone.html", debug_mode = False):
 
 	# remove everything except for desired filetypes
 	# so things from latex, then file attachments such as images and csv
-	remove_generated_files(keep_filetypes=[".html", ".latex", ".csv", ".svg", ".bmp"])
+	remove_generated_files(keep_filetypes=[".html", ".pdf", ".latex", ".csv", ".svg", ".bmp"])
 

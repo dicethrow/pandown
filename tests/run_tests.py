@@ -19,6 +19,12 @@ class test_html(unittest.TestCase):
 			result, error = run_local_cmd("python3 doc/build.py generate")
 			self.assertEqual(error, []) # is this adequate?
 
+			for line in result:
+				self.assertFalse("Filter returned error status" in line)
+
+			# for l in result: print(l)
+			# for l in error: print(l)
+
 class test_pdf(unittest.TestCase):
 	def test_generate(self):
 		with cwd("tests/test_pdf"):

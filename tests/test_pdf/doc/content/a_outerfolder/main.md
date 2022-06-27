@@ -10,7 +10,6 @@ let's see if this *mermaid* filter works. Should look like the example from http
 
 
 ``` mermaid
----
 sequenceDiagram
     Alice->>John: Hello John, how are you?
     John-->>Alice: Great!
@@ -19,7 +18,6 @@ sequenceDiagram
 Now let's try another, this one from here: https://stackoverflow.com/questions/68561397/mermaid-syntax-error-on-trying-render-a-diagram-on-github-md-file
 
 ``` mermaid
----
 sequenceDiagram
     autonumber
     Alice->>John: Hello John, how are you?
