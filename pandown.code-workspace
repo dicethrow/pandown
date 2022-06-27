@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+	],
+	"launch": {
+		"configurations": [
+			{
+				"name" : "Run tests",
+				"type": "python",
+				"request": "launch",
+				"program": "tests/run_tests.py",
+				"console": "integratedTerminal"
+				
+			},			
+
+		],
+		"compounds": []
+	},
+}

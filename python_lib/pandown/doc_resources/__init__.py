@@ -5,23 +5,25 @@
 # desired and not use these functions
 import os, shutil
 
-def get_absolute_content_dir(relative_path_to_containing_folder):
-	#  relative_path_to_containing_folder is a string like "for_report/filters" or "for_report"
-	# and do error checking to make sure it exists?
-	dir_path = os.path.dirname(os.path.realpath(__file__))
-	for foldername in str("raw_content/" + relative_path_to_containing_folder).split("/"):
-		dir_path = os.path.join(dir_path, foldername)
+# def get_absolute_content_dir(relative_path_to_containing_folder=""):
+# 	#  relative_path_to_containing_folder is a string like "for_report/filters" or "for_report"
+# 	# and do error checking to make sure it exists?
+# 	dir_path = os.path.dirname(os.path.realpath(__file__))
+# 	for foldername in str("raw_content/" + relative_path_to_containing_folder).split("/"):
+# 		dir_path = os.path.join(dir_path, foldername)
 
-	assert os.path.isdir(dir_path), "The provided path does not refer to a valid directory"
+# 	assert os.path.isdir(dir_path), "The provided path does not refer to a valid directory"
 
-	return dir_path
+# 	return dir_path
 
-def get_path_to_common_content(file_or_folder_below_raw_content):
+def get_path_to_common_content(file_or_folder_below_raw_content=""):
 	raw_content_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "raw_content")
 	desired_content_path = os.path.join(raw_content_path, *file_or_folder_below_raw_content.split("/"))
 	return desired_content_path
 
 if __name__ == "__main__":
-	# p = get_absolute_content_dir("for_report/filters")
-	p = get_absolute_content_dir("for_report")
+	p = get_path_to_common_content()
+	print(p)
+
+	p = get_path_to_common_content("pdf_templates")
 	print(p)

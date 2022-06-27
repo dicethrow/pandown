@@ -34,10 +34,11 @@ def generate_latex_minted_formatting(elem, doc):
 
 
 	https://blog.wotw.pro/syntax-highlighting-in-latex-with-minted/
-	"""
-	assert doc.format == "latex", "the minted filter only works when generating latex"
-	
-	if isinstance(elem, pf.CodeBlock) | isinstance(elem, pf.Code):
+	"""	
+
+	if (isinstance(elem, pf.CodeBlock) | isinstance(elem, pf.Code)) and (doc.format == "latex"):
+		# the minted filter only works when generating latex
+		
 		# debug_elem(elem)
 		# language = elem.classes[0]
 		try:

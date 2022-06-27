@@ -32,10 +32,6 @@
 % for flowcharts
 \usepackage{tikz}
 
-% 21jun2022
-% for the ability to show svg diagrams
-\usepackage{svg} % note this calls system inkscape, so that must be installed
-
 % For figures
 \usepackage{graphicx}% more modern
 % \usepackage{subfigure}
@@ -128,7 +124,7 @@ section for including further files, etc.
 
 \begin{figure}
 \centering
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/demos/demo_report/doc/content/./spaceship.png}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test_pdf/doc/content/./spaceship.png}
 \caption{alt text}
 \end{figure}
 
@@ -194,12 +190,12 @@ xxx change
 let's see if this \emph{mermaid} filter works. Should look like the
 example from https://github.com/raghur/mermaid-filter
 
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/demos/demo_report/doc/generated_intermediate_files/mermaid_chart_0.pdf}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test_pdf/doc/generated_intermediate_files/mermaid_chart_0.pdf}
 
 Now let's try another, this one from here:
 https://stackoverflow.com/questions/68561397/mermaid-syntax-error-on-trying-render-a-diagram-on-github-md-file
 
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/demos/demo_report/doc/generated_intermediate_files/mermaid_chart_1.pdf}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test_pdf/doc/generated_intermediate_files/mermaid_chart_1.pdf}
 
 \hypertarget{heading-level-1-should-become-2-in-contentb_outerfoldermain.md}{%
 \section{Heading level 1 (should become 2) in
@@ -263,7 +259,7 @@ as a paragraph
 
 \begin{figure}
 \centering
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/demos/demo_report/doc/content/c_outerfolder/b_boho/./spaceship2.png}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test_pdf/doc/content/c_outerfolder/b_boho/./spaceship2.png}
 \caption{alt text}
 \end{figure}
 
@@ -274,7 +270,7 @@ heading}\label{as-a-second-level-heading}}
 huahua
 
 another end line\ldots{} helps?
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/demos/demo_report/doc/content/c_outerfolder/./b_boho/spaceship2.png}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test_pdf/doc/content/c_outerfolder/./b_boho/spaceship2.png}
 
 \hypertarget{hellobd}{%
 \section{hellobd}\label{hellobd}}

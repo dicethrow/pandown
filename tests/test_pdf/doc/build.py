@@ -3,5 +3,5 @@
 import pandown
 
 if __name__ == "__main__":
-	pandown.build_default_report(debug_mode = True)
+	pandown.build_default_pdf(debug_mode = True)
 
