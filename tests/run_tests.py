@@ -13,30 +13,36 @@ def cwd(path):
     finally:
         os.chdir(oldpwd)
 
-class test_html(unittest.TestCase):
-	def test_generate(self):
-		with cwd("tests/test_html"):
-			result, error = run_local_cmd("python3 doc/build.py generate")
-			self.assertEqual(error, []) # is this adequate?
+test_docs = [
+	"test__basic",
+	"test__level_neg_1"
+]
 
-			for line in result:
-				self.assertFalse("Filter returned error status" in line)
+class test_runner(unittest.TestCase):
+	def test_pdf(self):
+		for test in test_docs:
+			with cwd(f"tests/{test}"):
+				result, error = run_local_cmd("python3 doc/build.py pdf")
 
-			# for l in result: print(l)
-			# for l in error: print(l)
+				self.assertEqual(error, [])
+				resultFound = False
+				for line in result:
+					if "Output written on doc/output/result.pdf" in line:
+						resultFound = True
+				newline = "\n"
+				self.assertTrue(resultFound, f"result: {newline.join(result)},\n error: {newline.join(error)}")
 
-class test_pdf(unittest.TestCase):
-	def test_generate(self):
-		with cwd("tests/test_pdf"):
-			result, error = run_local_cmd(f"python3 doc/build.py generate")
-			
-			self.assertEqual(error, []) # is this adequate?
-			
-			resultFound = False
-			for line in result:
-				if "Output written on doc/output/result.pdf" in line:
-					resultFound = True
-			self.assertTrue(resultFound)
+
+
+	def test_html(self):
+		for test in test_docs:
+			with cwd(f"tests/{test}"):
+				result, error = run_local_cmd("python3 doc/build.py html")
+
+				self.assertEqual(error, [])
+
+				for line in result:
+					self.assertFalse("Filter returned error status" in line)
 
 if __name__ == "__main__":
 	unittest.main(verbosity=2)

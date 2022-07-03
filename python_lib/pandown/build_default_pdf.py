@@ -61,5 +61,5 @@ def build_default_pdf(template="test2.latex", debug_mode = False):
 
 	# remove everything except for desired filetypes
 	# so things from latex, then file attachments such as images and csv
-	remove_generated_files(keep_filetypes=[".pdf", ".latex", ".csv", ".svg", ".bmp"])
+	remove_generated_files(keep_filetypes=[".html", ".pdf", ".latex", ".csv", ".svg", ".bmp"])
 

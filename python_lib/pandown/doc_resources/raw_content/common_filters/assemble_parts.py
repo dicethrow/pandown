@@ -143,7 +143,9 @@ def make_top_level_headings_into_parts(elem, doc):
 				# print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 				# debug_elem(new_elem)
 				# similar to here https://stackoverflow.com/questions/62491816/how-do-i-get-pandoc-to-generate-book-parts
-				elem = pf.RawBlock(f"\part{{{pf.stringify(elem)}}}", format="latex") # or tex?
+				part_title_str = pf.stringify(elem)
+				part_title_str = part_title_str.replace("_", "\_") 
+				elem = pf.RawBlock(f"\part{{{part_title_str}}}", format="latex") # or tex?
 				# pf.debug("changed:")
 				# debug_elem(elem)
 			else:

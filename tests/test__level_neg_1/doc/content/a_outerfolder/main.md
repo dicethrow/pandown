@@ -1,4 +1,5 @@
-# Heading level 1 (should become 2) in content/a_outerfolder/main.md
+<!-- # Heading level 1 (should become 2) in content/a_outerfolder/main.md -->
+# heading level 1 xxxx
 
 Content below that heading in the markdown file
 

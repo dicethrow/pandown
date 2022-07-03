@@ -1,4 +1,8 @@
 # Heading level 1 (should become 2) in content/b_outerfolder/main.md
+<!-- # Heading level 1 should become 2 -->
+
+Heading level 1 (should become 2) in content/b_outerfolder/main.md
+
 
 Content below that heading in the markdown file. A nested list test follows.
 
