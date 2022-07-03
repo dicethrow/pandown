@@ -52,9 +52,6 @@ bbb
 
 todo - make the key:value thing in parts be section parts to filenames, e.g. for abstract, progress, etc?
 ``` parts
-my_key_1: my_value_1
-my_key_2: my_value_2
----
 a_outerfolder
 b_outerfolder
 c_outerfolder

@@ -8,6 +8,7 @@ panflute-filters: [ignore_comments, assemble_parts, mermaid_charts, minted_code]
 
 
 ``` parts
+---
 level_offset: -1
 ---
 1_subfolderA
