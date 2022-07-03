@@ -3,6 +3,8 @@
 import panflute as pf
 import subprocess, os, yaml, re, pprint, copy
 
+already_added_parts = {}
+
 def debug_elem(elem):
 	def preview_func(obj):
 		return str(obj).encode()
@@ -70,8 +72,21 @@ def add_referred_content(elem, doc):
 			level_offset = options["level_offset"] if "level_offset" in options	else 0
 			
 			outer_divs = []
-			for next_foldername in get_list_of_next_content_files(doc.next_file_links_starting_dir, data):
-				next_filename_full = os.path.join(doc.next_file_links_starting_dir, next_foldername, "main.md")
+
+			debug_elem(elem)
+			pf.debug(f"doc.next_file_links_starting_dir: {doc.next_file_links_starting_dir}")
+
+			# get the directory where the current parts are relative to.
+			# either the document itself, or the parent file
+			parts_base_path = ""
+			if elem.parent == doc:
+				parts_base_path = doc.next_file_links_starting_dir
+			else: # if doc
+				parts_base_path = os.path.abspath(os.path.join(elem.parent.attributes['source'], ".."))
+
+			for next_foldername in get_list_of_next_content_files(parts_base_path, data):
+				next_filename_full = os.path.join(parts_base_path, next_foldername, "main.md")
+
 				with open(next_filename_full) as f:
 					new_elems = pf.convert_text(f.read())
 
@@ -79,7 +94,7 @@ def add_referred_content(elem, doc):
 		
 					for new_elem in new_elems:
 						if isinstance(new_elem, pf.Header):
-							new_elem.level += get_depth(os.path.join(doc.next_file_links_starting_dir, next_foldername)) - doc.initial_folder_depth + level_offset
+							new_elem.level += get_depth(os.path.join(parts_base_path, next_foldername)) - doc.initial_folder_depth + level_offset
 
 							# # if header level is 1, make it a latex part
 							# # for all other header levels, reduce them by one
@@ -96,7 +111,7 @@ def add_referred_content(elem, doc):
 							# # print(new)
 
 						if isinstance(new_elem, pf.Para):
-							fix_image_path_dir_from_paragraph(para_elem=new_elem, base_path=os.path.join(doc.next_file_links_starting_dir, next_foldername))
+							fix_image_path_dir_from_paragraph(para_elem=new_elem, base_path=os.path.join(parts_base_path, next_foldername))
 
 							join_then_make_relative_image_paths(next_foldername, new_elem)
 
@@ -114,23 +129,11 @@ def add_referred_content(elem, doc):
 
 			join_then_make_relative_image_paths(os.path.join(doc.next_file_links_starting_dir), elem)
 
-	
-					
-
 def check_for_more_file_links(elem, doc):
 	if isinstance(elem, pf.CodeBlock):
 		if "parts" in elem.classes:
 			doc.file_links_present = True
-			# debug_elem(elem)
-
-			if isinstance(elem.parent, pf.Div):
-				# note that this can only handle one instance of file references,
-				# but that's OK as elsewhere this will be called until all done
-				markdown_file_that_contains_the_file_links = elem.parent.attributes["source"]
-				folder_containing_the_data = os.path.abspath(os.path.join(markdown_file_that_contains_the_file_links, ".."))
-				doc.next_file_links_starting_dir = folder_containing_the_data
-			
-				# pf.debug(f"Next folder: {doc.next_file_links_starting_dir}")
+		
 
 def make_top_level_headings_into_parts(elem, doc):
 	if doc.format == "latex":
@@ -168,13 +171,13 @@ def main(doc=None):
 	doc.next_file_links_starting_dir = os.path.expanduser(doc.get_metadata("starting_dir"))
 	doc.initial_folder_depth = get_depth(doc.next_file_links_starting_dir)
 	while doc.file_links_present:
+		pf.debug("Loop!")
 		doc = doc.walk(add_referred_content)
 		# doc.walk(inspect_doc)
 		doc.file_links_present = False
 		doc = doc.walk(check_for_more_file_links)
 		doc.initial_run = False
 	doc = doc.walk(make_top_level_headings_into_parts)
-
 	return doc
 
 if __name__ == '__main__':

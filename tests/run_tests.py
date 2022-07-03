@@ -1,6 +1,6 @@
 import unittest
 import os
-from pandown import run_local_cmd
+from pandown import run_local_cmd, remove_generated_files
 from contextlib import contextmanager
 
 # from https://stackoverflow.com/questions/299446/how-do-i-change-directory-back-to-my-original-working-directory-with-python
@@ -22,6 +22,16 @@ test_docs = [
 ]
 
 class test_runner(unittest.TestCase):
+	""" 
+	Note that the pdf/html stuff will delete each other, annoyingly. Useful behaviour but not during testing.
+	"""
+	def setUp(self):
+		# remove outputs from the test folders
+		for test in test_docs:
+			with cwd(f"tests/{test}"):
+				remove_generated_files(keep_filetypes=[])
+
+
 	def test_pdf(self):
 		for test in test_docs:
 			with cwd(f"tests/{test}"):
