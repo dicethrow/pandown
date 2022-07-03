@@ -15,7 +15,10 @@ def cwd(path):
 
 test_docs = [
 	"test__basic",
+	"test__basic_nested_parts",
+	"test__basic_nested_parts__level_neg_1",
 	"test__level_neg_1"
+	
 ]
 
 class test_runner(unittest.TestCase):
