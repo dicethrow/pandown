@@ -80,8 +80,18 @@ def handle_parts_block(options, data, element, doc):
 	else: # if doc
 		parts_base_path = os.path.abspath(os.path.join(elem.parent.attributes['source'], ".."))
 
-	for next_foldername in get_list_of_next_content_files(parts_base_path, data):
-		next_filename_full = os.path.join(parts_base_path, next_foldername, "main.md")
+	for next_file_or_foldername in get_list_of_next_content_files(parts_base_path, data):
+		# next_file_or_foldername
+
+		full_dir_path = os.path.join(parts_base_path, next_file_or_foldername)
+		next_foldername = ""
+		next_filename_full = ""
+		if os.path.isdir(full_dir_path):
+			next_filename_full = os.path.join(full_dir_path, "main.md")
+			next_foldername = full_dir_path
+		else:
+			next_filename_full = full_dir_path if full_dir_path.endswith(".md") else full_dir_path + ".md"
+			next_foldername = os.path.dirname(full_dir_path)
 
 		with open(next_filename_full) as f:
 			new_elems = pf.convert_text(f.read())
@@ -90,7 +100,7 @@ def handle_parts_block(options, data, element, doc):
 
 			for new_elem in new_elems:
 				if isinstance(new_elem, pf.Header):
-					new_elem.level += get_depth(os.path.join(parts_base_path, next_foldername)) - doc.initial_folder_depth + level_offset
+					new_elem.level += get_depth(next_foldername) - doc.initial_folder_depth + level_offset
 
 					# # if header level is 1, make it a latex part
 					# # for all other header levels, reduce them by one
@@ -107,7 +117,7 @@ def handle_parts_block(options, data, element, doc):
 					# # print(new)
 
 				if isinstance(new_elem, pf.Para):
-					fix_image_path_dir_from_paragraph(para_elem=new_elem, base_path=os.path.join(parts_base_path, next_foldername))
+					fix_image_path_dir_from_paragraph(para_elem=new_elem, base_path=next_foldername)
 
 					join_then_make_relative_image_paths(doc, next_foldername, new_elem)
 
