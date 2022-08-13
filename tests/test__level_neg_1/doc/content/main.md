@@ -79,3 +79,15 @@ b_outerfolder
 c_outerfolder
 d_outerfolder
 ``` -->
+
+
+Can we do an image from here?
+![long image](./a_outerfolder/images/image_subfolder/image_subfolder2/sample_image.png)
+
+Can we do images in lists?
+
+- First, some dot points
+	1. Process A
+		1. Aside B
+
+		![Does this image work?](./a_outerfolder/images/image_subfolder/image_subfolder2/sample_image.png)

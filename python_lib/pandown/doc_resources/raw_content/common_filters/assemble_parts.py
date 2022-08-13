@@ -18,6 +18,9 @@ def debug_elem(elem):
 		pf.debug(debug_line, end="")
 
 def get_depth(path):
+	if path.startswith("./"):
+		path = path.split("./")[1:] # remove it?
+
 	return path.count("/")
 
 # def decode_yaml_content(elem):
@@ -40,12 +43,13 @@ def get_list_of_next_content_files(starting_dir, decoded_yaml_data):
 	subfolders = decoded_yaml_data.split("\n")
 	return subfolders
 
-def fix_image_path_dir_from_paragraph(para_elem, base_path):
-	for elem in para_elem.content:
+def fix_image_path_dir_from_container_element(container_elem, base_path):
+	for elem in container_elem.content:
 		if isinstance(elem, pf.Image):
 			# make the image URL respect the full path
 			img_path = os.path.join(base_path, elem.url)
-			# pf.debug(f"new img path: {img_path}")
+			# pf.debug(f"new img path: {img_path} from {base_path} and {elem.url}")
+			assert os.path.isfile(img_path)
 			elem.url = img_path
 
 def join_then_make_relative_image_paths(doc, _next_foldername, _new_elem):
@@ -53,12 +57,15 @@ def join_then_make_relative_image_paths(doc, _next_foldername, _new_elem):
 		if isinstance(newnew_elem, pf.Image):
 			# make the image URL respect the full path
 			img_path = os.path.join(doc.next_file_links_starting_dir, _next_foldername, newnew_elem.url)
-			# pf.debug(f"new path: {img_path}")
+			# pf.debug(f"new path: {img_path} \nfrom2 {doc.next_file_links_starting_dir} \nand2 {_next_foldername} \nand3 {newnew_elem.url}")
 			newnew_elem.url = img_path
 
+			
 			if doc.format == "html":
 				# now make it relative to the output directory, if HTML
 				newnew_elem.url = os.path.relpath(newnew_elem.url, doc.get_metadata("output_dir"))
+				# pf.debug(f"changed path: {newnew_elem.url}")
+
 
 def handle_parts_block(options, data, element, doc):
 
@@ -69,8 +76,8 @@ def handle_parts_block(options, data, element, doc):
 	
 	outer_divs = []
 
-	debug_elem(elem)
-	pf.debug(f"doc.next_file_links_starting_dir: {doc.next_file_links_starting_dir}")
+	# debug_elem(elem)
+	# pf.debug(f"doc.next_file_links_starting_dir: {doc.next_file_links_starting_dir}")
 
 	# get the directory where the current parts are relative to.
 	# either the document itself, or the parent file
@@ -92,34 +99,52 @@ def handle_parts_block(options, data, element, doc):
 		else:
 			next_filename_full = full_dir_path if full_dir_path.endswith(".md") else full_dir_path + ".md"
 			next_foldername = os.path.dirname(full_dir_path)
+	
+		# pf.debug(f"next_filename_full: {next_filename_full}")
+		# pf.debug(f"next_foldername: {next_foldername}")
+
+		assert os.path.isfile(next_filename_full)
+		assert os.path.isdir(next_foldername)
 
 		with open(next_filename_full) as f:
 			new_elems = pf.convert_text(f.read())
 
-			# pf.debug(f"************ {next_filename_full} ************")
+			# pf.debug(f"************ {next_foldername} ************")
 
-			for new_elem in new_elems:
-				if isinstance(new_elem, pf.Header):
-					new_elem.level += get_depth(next_foldername) - doc.initial_folder_depth + level_offset
+			def handle_sub_elem(subelem):
+				if hasattr(subelem, "content"):
+					for subsubelem in subelem.content:
+						handle_sub_elem(subsubelem)
+
+				if isinstance(subelem, pf.Header):
+					subelem.level += get_depth(next_foldername) - doc.initial_folder_depth + level_offset
 
 					# # if header level is 1, make it a latex part
 					# # for all other header levels, reduce them by one
-					# debug_elem(new_elem)
-					# pf.debug("level: ", new_elem.level)
-					# if new_elem.level == 1:
+					# debug_elem(subelem)
+					# pf.debug("level: ", subelem.level)
+					# if subelem.level == 1:
 					# 	# print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-					# 	# debug_elem(new_elem)
+					# 	# debug_elem(subelem)
 					# 	# similar to here https://stackoverflow.com/questions/62491816/how-do-i-get-pandoc-to-generate-book-parts
-					# 	new_elem = pf.RawInline(f"\part{{new_elem.text}}", format="latex") # or tex?
-					# 	# debug_elem(new_elem)
+					# 	subelem = pf.RawInline(f"\part{{subelem.text}}", format="latex") # or tex?
+					# 	# debug_elem(subelem)
 					# else:
-					# 	new_elem.level -= 1
+					# 	subelem.level -= 1
 					# # print(new)
 
-				if isinstance(new_elem, pf.Para):
-					fix_image_path_dir_from_paragraph(para_elem=new_elem, base_path=next_foldername)
+				if hasattr(subelem, "content"):
+					fix_image_path_dir_from_container_element(container_elem=subelem, base_path=next_foldername)
 
-					join_then_make_relative_image_paths(doc, next_foldername, new_elem)
+					join_then_make_relative_image_paths(doc, next_foldername, subelem)
+
+			for new_elem in new_elems:
+				# debug_elem(new_elem)
+
+				handle_sub_elem(new_elem)
+
+
+				
 
 			outer_divs.append(pf.Div(*new_elems, attributes={'source': next_filename_full}))
 			# outer_divs.append(new_elems)
@@ -131,15 +156,14 @@ def handle_parts_block(options, data, element, doc):
 	# if doc.initial_run:
 	# 	# if isinstance(o, t)
 	# 	if isinstance(elem, pf.Para):
-	# 		fix_image_path_dir_from_paragraph(para_elem=elem, base_path=os.path.join(doc.next_file_links_starting_dir))
+	# 		fix_image_path_dir_from_paragraph(container_elem=elem, base_path=os.path.join(doc.next_file_links_starting_dir))
 
 	# 		join_then_make_relative_image_paths(os.path.join(doc.next_file_links_starting_dir), elem)
 
 def handle_root_file_images(elem, doc):
 	if doc.initial_run:
-		# if isinstance(o, t)
-		if isinstance(elem, pf.Para):
-			fix_image_path_dir_from_paragraph(para_elem=elem, base_path=os.path.join(doc.next_file_links_starting_dir))
+		if hasattr(elem, "content"):
+			fix_image_path_dir_from_container_element(container_elem=elem, base_path=os.path.join(doc.next_file_links_starting_dir))
 
 			join_then_make_relative_image_paths(doc, os.path.join(doc.next_file_links_starting_dir), elem)
 
@@ -185,7 +209,7 @@ def main(doc=None):
 	doc.next_file_links_starting_dir = os.path.expanduser(doc.get_metadata("starting_dir"))
 	doc.initial_folder_depth = get_depth(doc.next_file_links_starting_dir)
 	while doc.file_links_present:
-		pf.debug("Loop!")
+		# pf.debug("Loop!")
 		# doc = doc.walk(add_referred_content)
 		doc = pf.run_filter(pf.yaml_filter, tag="parts", function=handle_parts_block, doc=doc, strict_yaml=True)
 		doc = pf.run_filter(handle_root_file_images, doc=doc)

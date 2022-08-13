@@ -33,4 +33,11 @@ sequenceDiagram
 
 now let's add an image
 
-![Here's me doing some PCB stuff](./images/sample_image.png)
+![Here's me doing some PCB stuff](./images/image_subfolder/image_subfolder2/sample_image.png)
+
+
+- First, some dot points a_outerfolder
+	1. Process A
+		1. Aside B
+
+		![Does this image work?](./images/image_subfolder/image_subfolder2/sample_image.png)		

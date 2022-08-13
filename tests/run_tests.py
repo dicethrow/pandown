@@ -51,10 +51,13 @@ class test_runner(unittest.TestCase):
 			with cwd(f"tests/{test}"):
 				result, error = run_local_cmd("python3 doc/build.py html")
 
-				self.assertEqual(error, [])
+				if len(error) > 0:
+					print(error)
+					assert 0
 
 				for line in result:
 					self.assertFalse("Filter returned error status" in line)
+					print(line) # to see pf.debug() calls
 
 if __name__ == "__main__":
 	unittest.main(verbosity=2)
