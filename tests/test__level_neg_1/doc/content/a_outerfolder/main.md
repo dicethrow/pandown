@@ -30,3 +30,7 @@ sequenceDiagram
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
 ```
+
+now let's add an image
+
+![Here's me doing some PCB stuff](./images/sample_image.png)
