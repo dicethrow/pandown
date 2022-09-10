@@ -1,5 +1,5 @@
 
-\documentclass{$documentclass$}
+\documentclass{paper}
 
 \usepackage[a4paper,margin=2cm]{geometry}
 \usepackage{multicol}
@@ -97,8 +97,8 @@
 % so paragraphs don't have the starting indent
 \setlength{\parindent}{0in}
 
-\title{$title$}
-\subtitle{$subtitle$}
+\title{Some title}
+\subtitle{And a small subtitle}
 % \author{General Documentation}
 
 \begin{document}
@@ -124,6 +124,81 @@
 % verilog language
 
 
-$body$
+\part{This is part one}
+
+\hypertarget{heading-one-in-main.md}{%
+\section{heading one in /main.md}\label{heading-one-in-main.md}}
+
+Here is an attempt to make a deeply nested list.
+
+\begin{itemize}
+\tightlist
+\item
+  one
+\item
+  second one
+
+  \begin{itemize}
+  \tightlist
+  \item
+    two
+  \item
+    second two
+
+    \begin{itemize}
+    \tightlist
+    \item
+      three
+    \item
+      second three
+
+      \begin{itemize}
+      \tightlist
+      \item
+        four
+      \item
+        second four
+
+        \begin{itemize}
+        \tightlist
+        \item
+          five
+        \item
+          second five
+
+          \begin{itemize}
+          \tightlist
+          \item
+            six
+          \item
+            second six
+
+            \begin{itemize}
+            \tightlist
+            \item
+              seven
+            \item
+              second seven
+            \end{itemize}
+          \item
+            at six again
+          \end{itemize}
+        \item
+          at five again
+        \end{itemize}
+      \item
+        at four again
+      \end{itemize}
+    \item
+      at three again
+    \end{itemize}
+  \item
+    at two again
+  \end{itemize}
+\item
+  at one again
+\end{itemize}
+
+end of content
 
 \end{document}
