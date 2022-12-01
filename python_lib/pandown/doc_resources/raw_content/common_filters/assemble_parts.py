@@ -103,8 +103,8 @@ def handle_parts_block(options, data, element, doc):
 		# pf.debug(f"next_filename_full: {next_filename_full}")
 		# pf.debug(f"next_foldername: {next_foldername}")
 
-		assert os.path.isfile(next_filename_full)
-		assert os.path.isdir(next_foldername)
+		assert os.path.isfile(next_filename_full), f"Could not find file {next_filename_full}"
+		assert os.path.isdir(next_foldername), f"Could not find folder {next_foldername}"
 
 		with open(next_filename_full) as f:
 			new_elems = pf.convert_text(f.read())
