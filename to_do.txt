@@ -1,0 +1,4 @@
+Noticed issue that occurs when you use the same text for headings/labels in markdown. e.g. if you use ## esp32s3 in one part of the whole document, and # esp32s3 elsewhere, this issue occurs:
+[7]pdfTeX warning (ext4): destination with the same identifier (name{esp32s3}) 
+has been already used, duplicate ignored
+
