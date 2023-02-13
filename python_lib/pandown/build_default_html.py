@@ -53,7 +53,7 @@ def build_default_html(template="default/standalone.html", debug_mode = False):
 	pandoc_cmd += f"{script_runner} "
 	pandoc_cmd += f"{top_source_file_ammended} "
 	pandoc_cmd += f"--template {get_path_to_common_content('html_templates')}/{template} " # todo: use os.path.join
-	pandoc_cmd += f"--standalone --output {output_folder}/result.html "
+	pandoc_cmd += f"--standalone --table-of-contents --output {output_folder}/result.html "
 	pandoc_cmd += f"{extras} "
 
 	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = if_debug_mode, print_error=if_debug_mode)
