@@ -34,6 +34,13 @@ $for(header-includes)$
 $endfor$
 </head>
 <body>
+
+
+<!-- 13feb23, to increase content width, from https://stackoverflow.com/questions/73078541/markdown-to-html-via-pandoc-full-page-width -->
+<style>
+body { min-width: 80% !important; }
+</style>
+
 $for(include-before)$
 $include-before$
 $endfor$
