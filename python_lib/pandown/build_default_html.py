@@ -58,8 +58,32 @@ def build_default_html(template="default/standalone.html", debug_mode = False):
 
 	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = if_debug_mode, print_error=if_debug_mode)
 	# assert error == [], "pandoc error"
-	for e in error: 
-		assert "Exception" not in e
+	
+	# # unfortunately the whole filter's code is in the 'error' list. let's remove it
+	# # technique using [:] allows edit in place, avoiding unnecessary copies? from https://stackoverflow.com/questions/1207406/how-to-remove-items-from-a-list-while-iterating
+	
+	# def keepLine(line):
+	# 	exceptionDetected = False
+	# 	status = False
+	# 	if "Traceback (most recent call last):" in line:
+	# 		# include this line and all following lines
+	# 		exceptionDetected = True
+	# 		status = True
+	# 	elif exceptionDetected:
+	# 		status = True
+	# 	elif "Failed to run filter: " in line:
+	# 		# just include this line
+	# 		status = True
+	# 	return status
+	# error[:] = [line for line in error if keepLine(line)]
+
+	from .errorRecogniser import errorRecogniser
+	
+
+	for line in error: 
+		if "Exception" in line:
+			errorRecogniser(error) # ah this doesnt work! need to work out how to handle stderr/stdout here.
+			assert 0, "Pandown crashed, either a typo or a pandown bug needs fixing"
 
 	# # print(result, error)
 	# ### from .tex make .pdf

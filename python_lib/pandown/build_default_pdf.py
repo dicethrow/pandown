@@ -49,6 +49,25 @@ def build_default_pdf(template="test2.latex", debug_mode = False):
 	pandoc_cmd = f"pandoc {script_runner} {top_source_file_ammended} {template_file} -s -o {latex_intermediate_file} {extras}"
 	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = if_debug_mode, print_error=if_debug_mode)
 	# assert error == [], "pandoc error"
+
+	# # unfortunately the whole filter's code is in the 'error' list. let's remove it
+	# # technique using [:] allows edit in place, avoiding unnecessary copies? from https://stackoverflow.com/questions/1207406/how-to-remove-items-from-a-list-while-iterating
+	# def keepLine(line):
+	# 	exceptionDetected = False
+	# 	status = False
+	# 	if "Traceback (most recent call last):" in line:
+	# 		# include this line and all following lines
+	# 		exceptionDetected = True
+	# 		status = True
+	# 	elif exceptionDetected:
+	# 		status = True
+	# 	elif "Failed to run filter: " in line:
+	# 		# just include this line
+	# 		status = True
+	# 	return status
+	# error[:] = [line for line in error if keepLine(line)]
+
+
 	for e in error: 
 		assert "Exception" not in e
 

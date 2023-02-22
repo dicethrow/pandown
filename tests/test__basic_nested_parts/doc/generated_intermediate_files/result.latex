@@ -124,66 +124,115 @@
 % verilog language
 
 
-\hypertarget{in-subfolder-a}{%
-\section{In subfolder A}\label{in-subfolder-a}}
+The headings and depth etc of \verb|1_subfolderA|, \verb|2_subfolderB|
+and \verb|3_subfolderC| should be identical. (how to refer to headings,
+with internal links?)
 
-\hypertarget{a}{%
-\subsection{1\_a}\label{a}}
+\hypertarget{should-be-heading-1-from-1_subfoldera-main.md}{%
+\section{should be heading 1 from 1\_subfolderA
+(/main.md)}\label{should-be-heading-1-from-1_subfoldera-main.md}}
 
-hello
-
-\hypertarget{b}{%
-\subsection{2\_b}\label{b}}
-
-hello
-
-\hypertarget{c}{%
-\subsection{3\_c}\label{c}}
+\hypertarget{should-be-1st-heading-2-from-1_subfoldera-main.md}{%
+\subsection{should be 1st heading 2 from 1\_subfolderA
+(/main.md)}\label{should-be-1st-heading-2-from-1_subfoldera-main.md}}
 
 hello
 
-\hypertarget{in-subfolder-b}{%
-\section{In subfolder B}\label{in-subfolder-b}}
+\hypertarget{should-be-2nd-heading-2-from-1_subfoldera-main.md}{%
+\subsection{should be 2nd heading 2 from 1\_subfolderA
+(/main.md)}\label{should-be-2nd-heading-2-from-1_subfoldera-main.md}}
 
-\hypertarget{a}{%
-\subsection{1\_a}\label{a}}
+hello
+
+\hypertarget{should-should-be-3rd-heading-2-from-1_subfoldera-main.md}{%
+\subsection{should should be 3rd heading 2 from 1\_subfolderA
+(/main.md)}\label{should-should-be-3rd-heading-2-from-1_subfoldera-main.md}}
+
+hello
+
+\hypertarget{should-be-heading-1-from-2_subfolderb-main.md}{%
+\section{should be heading 1 from 2\_subfolderB
+(/main.md)}\label{should-be-heading-1-from-2_subfolderb-main.md}}
+
+\hypertarget{should-be-1st-heading-2-from-1_subfoldera1_a_in_b-main.md}{%
+\subsection{should be 1st heading 2 from 1\_subfolderA/1\_a\_in\_B
+(/main.md)}\label{should-be-1st-heading-2-from-1_subfoldera1_a_in_b-main.md}}
 
 hello BB
 
-\hypertarget{b}{%
-\subsection{2\_b}\label{b}}
+\hypertarget{should-be-1st-heading-2-from-1_subfoldera2_b_in_b-main.md}{%
+\subsection{should be 1st heading 2 from 1\_subfolderA/2\_b\_in\_B
+(/main.md)}\label{should-be-1st-heading-2-from-1_subfoldera2_b_in_b-main.md}}
 
 hello BB
 
-\hypertarget{c}{%
-\subsection{3\_c}\label{c}}
+\hypertarget{should-be-1st-heading-2-from-1_subfoldera3_c_in_b-main.md}{%
+\subsection{should be 1st heading 2 from 1\_subfolderA/3\_c\_in\_B
+(/main.md)}\label{should-be-1st-heading-2-from-1_subfoldera3_c_in_b-main.md}}
 
 hello BB
 
-\hypertarget{in-4_d_in_b.md}{%
-\section{in 4\_d\_in\_B.md}\label{in-4_d_in_b.md}}
+\hypertarget{heading-1-in-3_subfolderc-main.md}{%
+\section{heading 1 in 3\_subfolderC
+(/main.md)}\label{heading-1-in-3_subfolderc-main.md}}
+
+note - here I'm including the three parts twice; first without .md,
+second with.
+
+\hypertarget{should-be-1st-heading-2-from-1_subfoldera1_a_in_c-main.md}{%
+\subsection{should be 1st heading 2 from 1\_subfolderA/1\_a\_in\_C
+(/main.md)}\label{should-be-1st-heading-2-from-1_subfoldera1_a_in_c-main.md}}
+
+hello CC
+
+\hypertarget{should-be-1st-heading-2-from-1_subfoldera2_b_in_c-main.md}{%
+\subsection{should be 1st heading 2 from 1\_subfolderA/2\_b\_in\_C
+(/main.md)}\label{should-be-1st-heading-2-from-1_subfoldera2_b_in_c-main.md}}
+
+hello CC
+
+\hypertarget{should-be-1st-heading-2-from-1_subfoldera3_c_in_c-main.md}{%
+\subsection{should be 1st heading 2 from 1\_subfolderA/3\_c\_in\_C
+(/main.md)}\label{should-be-1st-heading-2-from-1_subfoldera3_c_in_c-main.md}}
+
+hello CC
+
+\hypertarget{should-be-1st-heading-2-from-1_subfoldera1_a_in_c-main.md}{%
+\subsection{should be 1st heading 2 from 1\_subfolderA/1\_a\_in\_C
+(/main.md)}\label{should-be-1st-heading-2-from-1_subfoldera1_a_in_c-main.md}}
+
+hello CC
+
+\hypertarget{should-be-1st-heading-2-from-1_subfoldera2_b_in_c-main.md}{%
+\subsection{should be 1st heading 2 from 1\_subfolderA/2\_b\_in\_C
+(/main.md)}\label{should-be-1st-heading-2-from-1_subfoldera2_b_in_c-main.md}}
+
+hello CC
+
+\hypertarget{should-be-1st-heading-2-from-1_subfoldera3_c_in_c-main.md}{%
+\subsection{should be 1st heading 2 from 1\_subfolderA/3\_c\_in\_C
+(/main.md)}\label{should-be-1st-heading-2-from-1_subfoldera3_c_in_c-main.md}}
+
+hello CC
+
+\hypertarget{heading-1-in-e_file1.md}{%
+\section{heading 1 in e\_file1.md}\label{heading-1-in-e_file1.md}}
 
 xxx
 
-\hypertarget{in-5_e_in_b.md}{%
-\section{in 5\_e\_in\_B.md}\label{in-5_e_in_b.md}}
+\hypertarget{heading-2-in-e_file1.md}{%
+\subsection{heading 2 in e\_file1.md}\label{heading-2-in-e_file1.md}}
+
+yy
+
+\hypertarget{heading-1-in-f_file2.md}{%
+\section{heading 1 in f\_file2.md}\label{heading-1-in-f_file2.md}}
 
 xxx
 
-now let's add an image
+\hypertarget{heading-2-in-f_file2.md}{%
+\subsection{heading 2 in f\_file2.md}\label{heading-2-in-f_file2.md}}
 
-\begin{figure}
-\centering
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/content/2_subfolderB/./images/sample_image.png}
-\caption{Here's me doing some PCB stuff}
-\end{figure}
-
-\part{in e\_file1.md}
-
-xxx
-
-\part{in f\_file2.md}
-
-xxx
+yyyy
 
 \end{document}

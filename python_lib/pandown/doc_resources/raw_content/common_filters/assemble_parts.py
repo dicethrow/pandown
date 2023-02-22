@@ -70,7 +70,7 @@ def join_then_make_relative_image_paths(doc, _next_foldername, _new_elem):
 def handle_parts_block(options, data, element, doc):
 
 	assert isinstance(element, pf.CodeBlock) & ("parts" in element.classes), "Assuming parts blocks"
-	level_offset = options["level_offset"] if "level_offset" in options	else 0
+	initial_level_offset = options["level_offset"] if "level_offset" in options	else 0
 
 	elem = element
 	
@@ -96,9 +96,11 @@ def handle_parts_block(options, data, element, doc):
 		if os.path.isdir(full_dir_path):
 			next_filename_full = os.path.join(full_dir_path, "main.md")
 			next_foldername = full_dir_path
+			level_offset = initial_level_offset
 		else:
 			next_filename_full = full_dir_path if full_dir_path.endswith(".md") else full_dir_path + ".md"
 			next_foldername = os.path.dirname(full_dir_path)
+			level_offset = initial_level_offset + 1 # this was observed to be necessary to make the heading levels be consistent
 	
 		# pf.debug(f"next_filename_full: {next_filename_full}")
 		# pf.debug(f"next_foldername: {next_foldername}")
