@@ -27,7 +27,13 @@ def build_default_pdf(template="test2.latex", debug_mode = False):
 	script_runner = "-F " + os.path.expanduser("~/.local/bin/panflute")
 	top_source_file = f"{doc_dir}/content/main.md"
 	top_source_file_ammended = top_source_file.replace("content", "generated_intermediate_files")
-	template_file = f"--template {get_path_to_common_content('pdf_templates')}/{template}"
+
+	# check that the given template exists within the local project. If not, assume it's a default template
+	if os.path.exists(f"{doc_dir}/templates/{template}"):
+		template_file = f"--template {doc_dir}/templates/{template}"
+	else:
+		template_file = f"--template {get_path_to_common_content('pdf_templates')}/{template}"
+
 	panflute_filters_path = f"{get_path_to_common_content('common_filters')}"
 	extras = "--listings" # extras = ""
 
