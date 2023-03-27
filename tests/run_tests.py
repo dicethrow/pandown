@@ -41,17 +41,17 @@ class test_runner(unittest.TestCase):
 
 
 
-	# def test_html(self):
-	# 	for test_dir in glob.glob("tests/test__*"):
-	# 		with cwd(test_dir):
-	# 			print(f"Running test {test_dir}:")
-	# 			result, error = run_local_cmd("python3 doc/build.py html")
+	def test_html(self):
+		for test_dir in glob.glob("tests/test__*"):
+			with cwd(test_dir):
+				print(f"Running test {test_dir}:")
+				result, error = run_local_cmd("python3 doc/build.py html")
 
-	# 			self.assertEqual(error, [], msg = f"{result},{error}")
+				self.assertEqual(error, [], msg = f"{result},{error}")
 
-	# 			for line in result:
-	# 				self.assertFalse("Filter returned error status" in line)
-	# 				print(line) # to see pf.debug() calls
+				for line in result:
+					self.assertFalse("Filter returned error status" in line)
+					print(line) # to see pf.debug() calls
 
 if __name__ == "__main__":
 	unittest.main(verbosity=2)

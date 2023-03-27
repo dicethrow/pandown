@@ -28,6 +28,9 @@ def build_default_pdf(template="test2.latex", debug_mode = False):
 	top_source_file = f"{doc_dir}/content/main.md"
 	top_source_file_ammended = top_source_file.replace("content", "generated_intermediate_files")
 
+	# remove this, as it would be from the previous document, hence out of date
+	run_local_cmd(f"rm -rf {doc_dir}/generated_output_files")
+
 	# check that the given template exists within the local project. If not, assume it's a default template
 	if os.path.exists(f"{doc_dir}/templates/{template}"):
 		template_file = f"--template {doc_dir}/templates/{template}"

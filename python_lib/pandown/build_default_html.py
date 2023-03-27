@@ -15,7 +15,6 @@ def build_default_html(template="default/standalone.html", debug_mode = False):
 
 	clear_terminal()
 
-
 	# remove intermediate files from previous runs
 	# remove_generated_files() # note - commented out, so the result.pdf is never removed; which makes vscode auto-reload the latest version of the file
 
@@ -28,6 +27,9 @@ def build_default_html(template="default/standalone.html", debug_mode = False):
 	script_runner = "-F " + os.path.expanduser("~/.local/bin/panflute")
 	top_source_file = f"{doc_dir}/content/main.md"
 	top_source_file_ammended = top_source_file.replace("content", "generated_intermediate_files")
+
+	# remove this, as it would be from the previous document, hence out of date
+	run_local_cmd(f"rm -rf {doc_dir}/generated_output_files")
 
 	# check that the given template exists within the local project. If not, assume it's a default template
 	if os.path.exists(f"{doc_dir}/templates/{template}"):
@@ -102,4 +104,3 @@ def build_default_html(template="default/standalone.html", debug_mode = False):
 	# remove everything except for desired filetypes
 	# so things from latex, then file attachments such as images and csv
 	remove_generated_files(keep_filetypes=[".html", ".pdf", ".latex", ".csv", ".svg", ".bmp"])
-

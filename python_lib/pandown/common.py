@@ -1,7 +1,20 @@
 import argparse, os, subprocess, textwrap
 from glob import glob
 import subprocess
+import shutil
+import panflute as pf
 
+def debug_elem(elem):
+	def preview_func(obj):
+		return str(obj).encode()
+
+	for debug_line in [
+		"db: ",
+		f"elem:<light-blue> {preview_func(elem)} </light-blue>, ",
+		f"parent:<light-green>{preview_func(elem.parent)}</light-green>, ",
+		f"children:<light-yellow>{[preview_func(getattr(elem, child)) for child in elem._children]}</light-yellow> \n"
+		]:
+		pf.debug(debug_line, end="")
 
 # copied from lxdev.run_local_cmd
 def run_local_cmd(cmd, **kwargs):
@@ -36,14 +49,21 @@ def clear_terminal():
 	subprocess.call("clear")
 
 def remove_generated_files(keep_filetypes = []):
-	for filename in glob("./doc/output/*") + glob("./doc/generated_intermediate_files/*"):
+	deletableItems = []
+	for each_dir in ["output", "generated_intermediate_files"]:
+		deletableItems += glob(f"./doc/{each_dir}/*") 
+
+	for filename in deletableItems:
 		if any((t in filename) for t in keep_filetypes):
 			continue
 		else:
+			# print(f"Removing {filename}", end=" ")
 			try:
 				os.remove(filename)
+				# print(f"with os.remove")
 			except:
-				os.rmdir(filename)
+				shutil.rmtree(filename)
+				# print(f"with shutil.rmtree")
 
 def add_yaml_entries_to_file(src_filename, dst_filename, new_header_lines):
 	# do some manual changes to the top-level main.md document, before using panflute filters
