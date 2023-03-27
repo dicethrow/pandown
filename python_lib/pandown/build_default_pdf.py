@@ -37,6 +37,8 @@ def build_default_pdf(template="test2.latex", debug_mode = False):
 	else:
 		template_file = f"--template {get_path_to_common_content('pdf_templates')}/{template}"
 
+	output_folder = f"{doc_dir}/output"
+
 	panflute_filters_path = f"{get_path_to_common_content('common_filters')}"
 	extras = "--listings" # extras = ""
 
@@ -49,6 +51,7 @@ def build_default_pdf(template="test2.latex", debug_mode = False):
 		new_header_lines = [
 			f"panflute-path: '{panflute_filters_path}'",
 			f"starting_dir: '{os.path.dirname(top_source_file)}'",
+			f"output_dir: '{output_folder}'",
 			f"generated_intermediate_files_dir: '{doc_dir}/generated_intermediate_files'"
 		]
 	)

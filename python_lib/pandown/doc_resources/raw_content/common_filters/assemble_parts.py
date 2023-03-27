@@ -7,7 +7,7 @@ from pandown import run_local_cmd, debug_elem
 
 already_added_parts = {}
 
-file_formats_that_copy_content = ["pdf"]
+file_formats_that_copy_content = ["latex"]
 file_formats_that_link_content = ["html"]
 
 
@@ -43,7 +43,7 @@ def fix_referred_file_path_dir_from_container_element(container_elem, base_path)
 			# make the image URL respect the full path
 			img_path = os.path.join(base_path, elem.url)
 			# pf.debug(f"new img path: {img_path} from {base_path} and {elem.url}")
-			assert os.path.isfile(img_path)
+			assert os.path.isfile(img_path), img_path
 			elem.url = img_path
 
 		elif isinstance(elem, pf.Link):
@@ -57,6 +57,9 @@ def fix_referred_file_path_dir_from_container_element(container_elem, base_path)
 				# pf.debug(f"This is not a file: {elem.url} as {item_path}")
 
 def join_then_make_relative_file_paths_and_copy(doc, _next_foldername, _new_elem):
+	embedded_content_types = (pf.Image,)
+	linked_content_types = (pf.Link,)
+
 	for newnew_elem in _new_elem.content:
 		# handleLinkedFile = False
 		# if isinstance(newnew_elem, pf.Image):
@@ -66,15 +69,26 @@ def join_then_make_relative_file_paths_and_copy(doc, _next_foldername, _new_elem
 		# 		handleLinkedFile = True
 
 		if hasattr(newnew_elem, "url"):
-			if os.path.isfile(newnew_elem.url):
 
-				# make the image URL respect the full path
-				img_path = os.path.join(doc.next_file_links_starting_dir, _next_foldername, newnew_elem.url)
-				# pf.debug(f"new path: {img_path} \nfrom2 {doc.next_file_links_starting_dir} \nand2 {_next_foldername} \nand3 {newnew_elem.url}")
-				newnew_elem.url = img_path
+			# make_path_relative = True # feels best to default to this
+			if doc.format in file_formats_that_link_content:
+				make_path_relative = True
+			elif doc.format in file_formats_that_copy_content:
+				if isinstance(newnew_elem, embedded_content_types): 
+					make_path_relative = False # due to this bug https://github.com/jupyter/nbconvert/issues/136
+				elif isinstance(newnew_elem, linked_content_types):
+					make_path_relative = True
+				else:
+					pf.debug(f"Uncaught elem 1: {newnew_elem}")
+			else:
+				pf.debug(f"Uncaught elem 2: {newnew_elem}")
+				
+			if os.path.isfile(newnew_elem.url) and isinstance(newnew_elem, linked_content_types + embedded_content_types):
 
-				# if doc.format == "html":
-				if doc.format in file_formats_that_link_content:
+				# make the file URL respect the full path
+				newnew_elem.url = os.path.join(doc.next_file_links_starting_dir, _next_foldername, newnew_elem.url)
+
+				if make_path_relative:
 
 					relative_src_path = os.path.relpath(newnew_elem.url, doc.next_file_links_starting_dir)
 					# pf.debug(f"relative_src_path: {relative_src_path}")
@@ -98,10 +112,15 @@ def join_then_make_relative_file_paths_and_copy(doc, _next_foldername, _new_elem
 					newnew_elem.url = dst
 					# pf.debug(f"new dst: {dst}")
 
-					# now make it relative to the output directory, if HTML
 					newnew_elem.url = os.path.relpath(newnew_elem.url, doc.get_metadata("output_dir"))
 					# pf.debug(f"changed path: {newnew_elem.url}")
 
+				else:
+					# handling this feature/bug of latex hyperref file links https://tex.stackexchange.com/questions/41539/does-hyperref-work-between-two-files
+					if os.path.isfile(newnew_elem.url):
+						newnew_elem.url = f"run:{newnew_elem.url}"
+					else:
+						pf.debug(f"Note this failed here re isfile: {newnew_elem.url}")
 
 
 def handle_parts_block(options, data, element, doc):
@@ -242,10 +261,9 @@ def main(doc=None):
 	# doc = pf.Doc(pf.Para(pf.Str("hello")))
 	# doc.new_doc = copy.deepcopy(doc)
 
-	if doc.format in file_formats_that_link_content:
-		doc.folderToStoreLinkedFilesIn = os.path.join(os.path.dirname(doc.get_metadata("output_dir")),"generated_output_files")
-		if os.path.isdir(doc.folderToStoreLinkedFilesIn):
-			shutil.rmtree(doc.folderToStoreLinkedFilesIn) # to remove any previous items
+	doc.folderToStoreLinkedFilesIn = os.path.join(os.path.dirname(doc.get_metadata("output_dir")),"generated_output_files")
+	if os.path.isdir(doc.folderToStoreLinkedFilesIn):
+		shutil.rmtree(doc.folderToStoreLinkedFilesIn) # to remove any previous items
 
 	doc.file_links_present = False
 	doc = doc.walk(check_for_more_file_links)
