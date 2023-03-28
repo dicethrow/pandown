@@ -46,6 +46,17 @@ class test_runner(unittest.TestCase):
 				newline = "\n"
 				self.assertTrue(result[-1] == "success", 
 					f"result: {newline.join(result)},\n error: {newline.join(error)}")
+	
+	# def test_odt(self):
+	# 	for test_dir in glob.glob("tests/test__*"):
+	# 		with cwd(test_dir):
+	# 			print(f"Running test {test_dir}:")
+	# 			result, error = run_local_cmd("python3 doc/build.py odt", 
+	# 				print_cmd = True, print_result = True, print_error = True)
+
+	# 			newline = "\n"
+	# 			self.assertTrue(result[-1] == "success", 
+	# 				f"result: {newline.join(result)},\n error: {newline.join(error)}")
 
 if __name__ == "__main__":
 	unittest.main(verbosity=2)

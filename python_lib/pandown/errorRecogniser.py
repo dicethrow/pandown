@@ -36,7 +36,12 @@ def pandocErrorRecogniser(resultLines, errorLines):
 
 	if not success:
 		recognisedError = False
-		...
+		
+		for eline in errorLines:
+			if "[WARNING] Could not fetch resource" in eline:
+				print("There is an issue with the URL, or the working directory, as pandoc cant follow the path")
+				recognisedError = True
+
 		if not recognisedError:
 			print("Warning! Undiagnosed pandoc issue. Displaying pandoc output:")
 			newline = "\n"

@@ -1,0 +1,35 @@
+
+$ pandoc -F /home/ubuntu/.local/bin/panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_odt/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_odt/result.html --listings 
+Found image, with url:  ../content/spaceship.png
+db: elem:<light-blue> b"Image(Str(alt) Space Str(text); url='../content/spaceship.png', title='fig:')" </light-blue>, parent:<light-green>b"Para(Image(Str(alt) Space Str(text); url='../content/spaceship.png', title='fig:'))"</light-green>, children:<light-yellow>[b'ListContainer(Str(alt) Space Str(text))']</light-yellow> 
+Found image, with url:  generated_intermediate_files/mermaid_chart_0.svg
+db: elem:<light-blue> b"Image(; url='generated_intermediate_files/mermaid_chart_0.svg')" </light-blue>, parent:<light-green>b"Para(Image(; url='generated_intermediate_files/mermaid_chart_0.svg'))"</light-green>, children:<light-yellow>[b'ListContainer()']</light-yellow> 
+Found image, with url:  generated_intermediate_files/mermaid_chart_1.svg
+db: elem:<light-blue> b"Image(; url='generated_intermediate_files/mermaid_chart_1.svg')" </light-blue>, parent:<light-green>b"Para(Image(; url='generated_intermediate_files/mermaid_chart_1.svg'))"</light-green>, children:<light-yellow>[b'ListContainer()']</light-yellow> 
+Found a link, with url:  ../content/a_outerfolder/demo doc 2.pdf
+db: elem:<light-blue> b"Link(Str(link) Space Str(to) Space Str(demo) Space Str(doc) Space Str(2); url='../content/a_outerfolder/demo doc 2.pdf')" </light-blue>, parent:<light-green>b"Para(Str(This) Space Str(is) Space Str(a) Space Link(Str(link) Space Str(to) Space Str(demo) Space Str(doc) Space Str(2); url='../content/a_outerfolder/demo doc 2.pdf') Str(,) Space Str(clicking) Space Str(this) Space Str(link) Space Str(should) Space Str(open) Space Str(the) Space Str(file,) Space Str(which) Space Str(should) Space Str(be) Space Str(copied) Space Str(to) Space Str(the) Space Str(output) Space Str(folder.))"</light-green>, children:<light-yellow>[b'ListContainer(Str(link) Space Str(to) Space Str(demo) Space Str(doc) Space Str(2))']</light-yellow> 
+Found a link, with url:  ../content/b_outerfolder/a_xxx/demo_doc 3.pdf
+db: elem:<light-blue> b"Link(Str(link) Space Str(to) Space Str(demo) Space Str(doc) Space Str(3); url='../content/b_outerfolder/a_xxx/demo_doc 3.pdf')" </light-blue>, parent:<light-green>b"Para(Str(This) Space Str(is) Space Str(a) Space Link(Str(link) Space Str(to) Space Str(demo) Space Str(doc) Space Str(3); url='../content/b_outerfolder/a_xxx/demo_doc 3.pdf') Str(,) Space Str(clicking) Space Str(this) Space Str(link) Space Str(should) Space Str(open) Space Str(the) Space Str(file,) Space Str(which) Space Str(should) Space Str(be) Space Str(copied) Space Str(to) Space Str(the) Space Str(output) Space Str(folder.))"</light-green>, children:<light-yellow>[b'ListContainer(Str(link) Space Str(to) Space Str(demo) Space Str(doc) Space Str(3))']</light-yellow> 
+Found image, with url:  ../content/c_outerfolder/a_behe/images/sample_image.png
+db: elem:<light-blue> b"Image(Str(Here\xe2\x80\x99s) Space Str(me) Space Str(doing) Space Str(some) Space Str(PCB) Space Str(stuff); url='../content/c_outerfolder/a_behe/images/sample_image.png', title='fig:')" </light-blue>, parent:<light-green>b"Para(Image(Str(Here\xe2\x80\x99s) Space Str(me) Space Str(doing) Space Str(some) Space Str(PCB) Space Str(stuff); url='../content/c_outerfolder/a_behe/images/sample_image.png', title='fig:'))"</light-green>, children:<light-yellow>[b'ListContainer(Str(Here\xe2\x80\x99s) Space Str(me) Space Str(doing) Space Str(some) Space Str(PCB) Space Str(stuff))']</light-yellow> 
+Found image, with url:  ../content/c_outerfolder/b_boho/spaceship2.png
+db: elem:<light-blue> b"Image(Str(alt) Space Str(text); url='../content/c_outerfolder/b_boho/spaceship2.png', title='fig:')" </light-blue>, parent:<light-green>b"Para(Image(Str(alt) Space Str(text); url='../content/c_outerfolder/b_boho/spaceship2.png', title='fig:'))"</light-green>, children:<light-yellow>[b'ListContainer(Str(alt) Space Str(text))']</light-yellow> 
+Found image, with url:  ../content/c_outerfolder/b_boho/spaceship2.png
+db: elem:<light-blue> b"Image(Str(alt) Space Str(text); url='../content/c_outerfolder/b_boho/spaceship2.png')" </light-blue>, parent:<light-green>b"Para(Str(another) Space Str(end) Space Str(line\xe2\x80\xa6) Space Str(helps?) SoftBreak Image(Str(alt) Space Str(text); url='../content/c_outerfolder/b_boho/spaceship2.png'))"</light-green>, children:<light-yellow>[b'ListContainer(Str(alt) Space Str(text))']</light-yellow> 
+Found a link, with url:  ../content/demo_doc1.pdf
+db: elem:<light-blue> b"Link(Str(link) Space Str(to) Space Str(demo) Space Str(doc) Space Str(1); url='../content/demo_doc1.pdf')" </light-blue>, parent:<light-green>b"Para(Str(This) Space Str(is) Space Str(a) Space Link(Str(link) Space Str(to) Space Str(demo) Space Str(doc) Space Str(1); url='../content/demo_doc1.pdf') Str(,) Space Str(clicking) Space Str(this) Space Str(link) Space Str(should) Space Str(open) Space Str(the) Space Str(file,) Space Str(which) Space Str(should) Space Str(be) Space Str(copied) Space Str(to) Space Str(the) Space Str(output) Space Str(folder.))"</light-green>, children:<light-yellow>[b'ListContainer(Str(link) Space Str(to) Space Str(demo) Space Str(doc) Space Str(1))']</light-yellow> 
+Found a link, with url:  ../../../sample_image.png
+db: elem:<light-blue> b"Link(Str(which) Space Str(is) Space Str(this); url='../../../sample_image.png')" </light-blue>, parent:<light-green>b"Para(Str(Lets) Space Str(make) Space Str(an) Space Str(external) Space Str(link) Space Link(Str(which) Space Str(is) Space Str(this); url='../../../sample_image.png') Space Str(to) Space Str(a) Space Str(file) Space Str(outside/above) Space Str(this) Space Str(project.))"</light-green>, children:<light-yellow>[b'ListContainer(Str(which) Space Str(is) Space Str(this))']</light-yellow> 
+('Panflute Warning: filter "copy_linked_items" wrote to stdout, ', 'but Pandoc does not allow that')
+As a string: alt text
+As a string: 
+As a string: 
+As a string: link to demo doc 2
+As a string: link to demo doc 3
+As a string: Here’s me doing some PCB stuff
+As a string: alt text
+As a string: alt text
+As a string: link to demo doc 1
+As a string: which is this
+
+No pandoc errors detected

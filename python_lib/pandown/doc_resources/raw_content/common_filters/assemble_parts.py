@@ -7,7 +7,7 @@ from pandown import run_local_cmd, debug_elem
 
 already_added_parts = {}
 
-from copy_linked_items import file_formats_that_link_content, file_formats_that_copy_content
+from copy_linked_items import file_formats_that_link_content, file_formats_that_embed_content
 
 
 def get_depth(path):
@@ -41,7 +41,7 @@ def fix_referred_file_path_dir_from_container_element(container_elem, base_path)
 		if isinstance(elem, pf.Image):
 			# make the image URL respect the full path
 			img_path = os.path.join(base_path, elem.url)
-			pf.debug(f"new img path: {img_path} from {base_path} and {elem.url}")
+			# pf.debug(f"new img path: {img_path} from {base_path} and {elem.url}")
 			assert os.path.isfile(img_path)
 			elem.url = img_path
 
@@ -49,13 +49,13 @@ def fix_referred_file_path_dir_from_container_element(container_elem, base_path)
 			# only update links that refer to local files.
 			# don't mess with links that might refer to online stuff
 			url_as_local_path = elem.url.replace('%20', ' ')
-			pf.debug(f"This is url_as_local_path: {elem.url} and {url_as_local_path}")
+			# pf.debug(f"This is url_as_local_path: {elem.url} and {url_as_local_path}")
 			item_path = os.path.join(base_path, pathlib.Path(url_as_local_path))
 			if os.path.isfile(item_path):
 				elem.url = item_path
-				pf.debug(f"This is a file: {elem.url} as {item_path}")
-			else:
-				pf.debug(f"This is not a file: {elem.url} as {item_path}")
+				# pf.debug(f"This is a file: {elem.url} as {item_path}")
+			# else:
+				# pf.debug(f"This is not a file: {elem.url} as {item_path}")
 
 def join_then_make_relative_file_paths_and_copy(doc, _next_foldername, _new_elem):
 	for newnew_elem in _new_elem.content:
@@ -66,7 +66,11 @@ def join_then_make_relative_file_paths_and_copy(doc, _next_foldername, _new_elem
 
 				# pf.debug(f"newnew_elem.url is initially {newnew_elem.url}")
 				# make the image URL respect the full path
-				newnew_elem.url = os.path.join(doc.next_file_links_starting_dir, _next_foldername, newnew_elem.url)
+
+				a = newnew_elem.url
+				b = os.path.join(doc.next_file_links_starting_dir, _next_foldername, a)
+				if b != a:
+					pf.debug(f"Inequal! a={a}, b={b}")
 					
 				# HTML will only work portably if a relative path is always used.
 				# latex/PDF will only work with images with absolute paths (yuck!)

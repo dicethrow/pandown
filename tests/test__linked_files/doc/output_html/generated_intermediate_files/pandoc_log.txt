@@ -1,18 +1,43 @@
 
 $ pandoc -F /home/ubuntu/.local/bin/panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/result.html --listings 
-This is url_as_local_path: demo%20doc%202.pdf and demo doc 2.pdf
-This is a file: /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/a_outerfolder/demo doc 2.pdf as /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/a_outerfolder/demo doc 2.pdf
-This is url_as_local_path: ./a_xxx/demo_doc%203.pdf and ./a_xxx/demo_doc 3.pdf
-This is a file: /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/b_outerfolder/a_xxx/demo_doc 3.pdf as /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/b_outerfolder/a_xxx/demo_doc 3.pdf
-new img path: /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/./b_boho/spaceship2.png from /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder and ./b_boho/spaceship2.png
-new img path: /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/./spaceship.png from /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content and ./spaceship.png
-This is url_as_local_path: ../content/a_outerfolder/demo doc 2.pdf and ../content/a_outerfolder/demo doc 2.pdf
-This is a file: /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/../content/a_outerfolder/demo doc 2.pdf as /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/../content/a_outerfolder/demo doc 2.pdf
-This is url_as_local_path: ../content/b_outerfolder/a_xxx/demo_doc 3.pdf and ../content/b_outerfolder/a_xxx/demo_doc 3.pdf
-This is a file: /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/../content/b_outerfolder/a_xxx/demo_doc 3.pdf as /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/../content/b_outerfolder/a_xxx/demo_doc 3.pdf
-new img path: /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/../content/c_outerfolder/b_boho/spaceship2.png from /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content and ../content/c_outerfolder/b_boho/spaceship2.png
-This is url_as_local_path: demo_doc1.pdf and demo_doc1.pdf
-This is a file: /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/demo_doc1.pdf as /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/demo_doc1.pdf
-new img path: /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/a_behe/./images/sample_image.png from /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/a_behe and ./images/sample_image.png
-new img path: /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/b_boho/./spaceship2.png from /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/b_boho and ./spaceship2.png
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/spaceship.png
+location_from_doc_dir: content/spaceship.png to content/spaceship.png
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_intermediate_files/mermaid_chart_0.svg
+location_from_doc_dir: output_html/generated_intermediate_files/mermaid_chart_0.svg to output_html/generated_intermediate_files/mermaid_chart_0.svg
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_intermediate_files/mermaid_chart_1.svg
+location_from_doc_dir: output_html/generated_intermediate_files/mermaid_chart_1.svg to output_html/generated_intermediate_files/mermaid_chart_1.svg
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/a_outerfolder/demo doc 2.pdf
+location_from_doc_dir: content/a_outerfolder/demo doc 2.pdf to content/a_outerfolder/demo doc 2.pdf
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/b_outerfolder/a_xxx/demo_doc 3.pdf
+location_from_doc_dir: content/b_outerfolder/a_xxx/demo_doc 3.pdf to content/b_outerfolder/a_xxx/demo_doc 3.pdf
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/a_behe/images/sample_image.png
+location_from_doc_dir: content/c_outerfolder/a_behe/images/sample_image.png to content/c_outerfolder/a_behe/images/sample_image.png
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/b_boho/spaceship2.png
+location_from_doc_dir: content/c_outerfolder/b_boho/spaceship2.png to content/c_outerfolder/b_boho/spaceship2.png
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/b_boho/spaceship2.png
+location_from_doc_dir: content/c_outerfolder/b_boho/spaceship2.png to content/c_outerfolder/b_boho/spaceship2.png
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/demo_doc1.pdf
+location_from_doc_dir: content/demo_doc1.pdf to content/demo_doc1.pdf
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/sample_image.png
+location_from_doc_dir: ../../sample_image.png to external/sample_image.png
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_output_files/content/spaceship.png
+location_from_doc_dir: output_html/generated_output_files/content/spaceship.png to output_html/generated_output_files/content/spaceship.png
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_output_files/output_html/generated_intermediate_files/mermaid_chart_0.svg
+location_from_doc_dir: output_html/generated_output_files/output_html/generated_intermediate_files/mermaid_chart_0.svg to output_html/generated_output_files/output_html/generated_intermediate_files/mermaid_chart_0.svg
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_output_files/output_html/generated_intermediate_files/mermaid_chart_1.svg
+location_from_doc_dir: output_html/generated_output_files/output_html/generated_intermediate_files/mermaid_chart_1.svg to output_html/generated_output_files/output_html/generated_intermediate_files/mermaid_chart_1.svg
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_output_files/content/a_outerfolder/demo doc 2.pdf
+location_from_doc_dir: output_html/generated_output_files/content/a_outerfolder/demo doc 2.pdf to output_html/generated_output_files/content/a_outerfolder/demo doc 2.pdf
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_output_files/content/b_outerfolder/a_xxx/demo_doc 3.pdf
+location_from_doc_dir: output_html/generated_output_files/content/b_outerfolder/a_xxx/demo_doc 3.pdf to output_html/generated_output_files/content/b_outerfolder/a_xxx/demo_doc 3.pdf
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_output_files/content/c_outerfolder/a_behe/images/sample_image.png
+location_from_doc_dir: output_html/generated_output_files/content/c_outerfolder/a_behe/images/sample_image.png to output_html/generated_output_files/content/c_outerfolder/a_behe/images/sample_image.png
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_output_files/content/c_outerfolder/b_boho/spaceship2.png
+location_from_doc_dir: output_html/generated_output_files/content/c_outerfolder/b_boho/spaceship2.png to output_html/generated_output_files/content/c_outerfolder/b_boho/spaceship2.png
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_output_files/content/c_outerfolder/b_boho/spaceship2.png
+location_from_doc_dir: output_html/generated_output_files/content/c_outerfolder/b_boho/spaceship2.png to output_html/generated_output_files/content/c_outerfolder/b_boho/spaceship2.png
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_output_files/content/demo_doc1.pdf
+location_from_doc_dir: output_html/generated_output_files/content/demo_doc1.pdf to output_html/generated_output_files/content/demo_doc1.pdf
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_output_files/external/sample_image.png
+location_from_doc_dir: output_html/generated_output_files/external/sample_image.png to output_html/generated_output_files/external/sample_image.png
 No pandoc errors detected

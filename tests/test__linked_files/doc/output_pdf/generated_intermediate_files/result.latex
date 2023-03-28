@@ -212,9 +212,10 @@ https://stackoverflow.com/questions/68561397/mermaid-syntax-error-on-trying-rend
 
 \includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_pdf/generated_intermediate_files/mermaid_chart_1.pdf}
 
-This is a \href{../content/a_outerfolder/demo\%20doc\%202.pdf}{link to
-demo doc 2}, clicking this link should open the file, which should be
-copied to the output folder.
+This is a
+\href{./generated_output_files/output_pdf/generated_output_files/content/a_outerfolder/demo\%20doc\%202.pdf}{link to demo doc 2 {[}./generated\_output\_files/content/a\_outerfolder/demo doc 2.pdf{]} {[}./generated\_output\_files/output\_pdf/generated\_output\_files/content/a\_outerfolder/demo doc 2.pdf{]}},
+clicking this link should open the file, which should be copied to the
+output folder.
 
 \hypertarget{heading-level-1-should-become-2-in-contentb_outerfoldermain.md}{%
 \section{Heading level 1 (should become 2) in
@@ -255,9 +256,10 @@ Note that there are two more subfolders here, however they are not
 referenced in this markdown file, and hence are not integrated into the
 final document.
 
-This is a \href{../content/b_outerfolder/a_xxx/demo_doc\%203.pdf}{link
-to demo doc 3}, clicking this link should open the file, which should be
-copied to the output folder.
+This is a
+\href{./generated_output_files/output_pdf/generated_output_files/content/b_outerfolder/a_xxx/demo_doc\%203.pdf}{link to demo doc 3 {[}./generated\_output\_files/content/b\_outerfolder/a\_xxx/demo\_doc 3.pdf{]} {[}./generated\_output\_files/output\_pdf/generated\_output\_files/content/b\_outerfolder/a\_xxx/demo\_doc 3.pdf{]}},
+clicking this link should open the file, which should be copied to the
+output folder.
 
 \hypertarget{heading-level-1-should-become-2-in-contentc_outerfoldermain.md}{%
 \section{Heading level 1 (should become 2) in
@@ -312,8 +314,13 @@ ffbd
 
 here's a copy-pasted thing of the parts - does it work?
 
-This is a \href{../content/demo_doc1.pdf}{link to demo doc 1}, clicking
-this link should open the file, which should be copied to the output
-folder.
+This is a
+\href{./generated_output_files/output_pdf/generated_output_files/content/demo_doc1.pdf}{link to demo doc 1 {[}./generated\_output\_files/content/demo\_doc1.pdf{]} {[}./generated\_output\_files/output\_pdf/generated\_output\_files/content/demo\_doc1.pdf{]}},
+clicking this link should open the file, which should be copied to the
+output folder.
+
+Lets make an external link
+\href{./generated_output_files/output_pdf/generated_output_files/external/sample_image.png}{which is this {[}./generated\_output\_files/external/sample\_image.png{]} {[}./generated\_output\_files/output\_pdf/generated\_output\_files/external/sample\_image.png{]}}
+to a file outside/above this project.
 
 \end{document}

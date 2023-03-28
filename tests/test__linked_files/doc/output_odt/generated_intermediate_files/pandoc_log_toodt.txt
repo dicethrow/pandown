@@ -1,0 +1,3 @@
+
+$ pandoc result.html -o result.odt
+No pandoc errors detected

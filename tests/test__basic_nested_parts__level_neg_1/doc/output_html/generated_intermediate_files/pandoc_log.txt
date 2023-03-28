@@ -1,4 +1,5 @@
 
 $ pandoc -F /home/ubuntu/.local/bin/panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output_html/result.html --listings 
-new img path: /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/content/1_subfolderA/1_a_in_A/./images/sample_image.png from /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/content/1_subfolderA/1_a_in_A and ./images/sample_image.png
+Tests: False, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/content/1_subfolderA/1_a_in_A/images/sample_image.png
+location_from_doc_dir: content/1_subfolderA/1_a_in_A/images/sample_image.png to content/1_subfolderA/1_a_in_A/images/sample_image.png
 No pandoc errors detected

@@ -3,7 +3,7 @@
 title: Some title
 subtitle: And a small subtitle
 documentclass: paper
-panflute-filters: [ignore_comments, assemble_parts, mermaid_charts, minted_code]
+panflute-filters: [ignore_comments, assemble_parts, mermaid_charts, copy_linked_items, copy_linked_items, minted_code]
 ...
 
 # This is part one
@@ -78,3 +78,6 @@ d_outerfolder
 ``` -->
 
 This is a [link to demo doc 1](demo_doc1.pdf), clicking this link should open the file, which should be copied to the output folder.
+
+Lets make an external link [which is this](../../../sample_image.png) to a file outside/above this project.
+
