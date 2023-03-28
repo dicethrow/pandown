@@ -1,8 +1,10 @@
-import argparse, os, subprocess, textwrap
+import argparse, os, textwrap
 from glob import glob
 import subprocess
 import shutil
 import panflute as pf
+import shlex
+from threading import Timer
 
 def debug_elem(elem):
 	def preview_func(obj):
@@ -25,14 +27,30 @@ def run_local_cmd(cmd, **kwargs):
 	print_result = kwargs.pop("print_result", False)
 	print_error = kwargs.pop("print_error", False)
 	print_cmd = kwargs.pop("print_cmd", False)
+	timeout_sec = float(kwargs.pop("timeout", 0))
 
 	if print_cmd:
 		print("\n$ " + cmd)
 
-	p = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, **kwargs)
-	output, error = p.communicate()
-	output = as_array(output)
-	error = as_array(error)
+
+	# p = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, **kwargs)
+	# 28mar23
+	# timeout structure from https://stackoverflow.com/questions/1191374/using-module-subprocess-with-timeout
+	proc = subprocess.Popen(shlex.split(cmd), stdout=subprocess.PIPE, stderr=subprocess.PIPE, **kwargs)
+	if timeout_sec > 0:
+		timer = Timer(timeout_sec, proc.kill)
+		try:
+			timer.start()
+			stdout, stderr = proc.communicate()
+		finally:
+			if not timer.is_alive():
+				raise TimeoutError(f"Timeout of {timeout_sec} sec elapsed, aborting") 
+			timer.cancel()
+	else:
+		stdout, stderr = proc.communicate()
+		
+	output = as_array(stdout)
+	error = as_array(stderr)
 
 	if print_result:
 		for line in output:
@@ -56,14 +74,15 @@ def remove_generated_files(delete, except_for = []):
 		if filename in except_for:
 			if debug: print(f"Not removing {filename}", end=" ")
 			continue
-		if debug: print(f"Removing {filename}", end=" ")
-		try:
-			os.remove(filename)
-			if debug: print(f"with os.remove")
-		except:
+		if debug: print(f"Removing {filename}")
+		
+		if os.path.isdir(filename): 
 			shutil.rmtree(filename)
-			if debug: print(f"with shutil.rmtree")
-
+		elif os.path.isfile(filename):
+			os.remove(filename)
+		else:
+			if debug: print(f"file not found, hence not deleted: {filename}")
+		
 
 def xxx(keep_filetypes = []):
 	deletableItems = []

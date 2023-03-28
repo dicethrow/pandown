@@ -1,16 +1,16 @@
 # default pdf build
 from .doc_resources import get_path_to_common_content
 
-import argparse, os, subprocess, textwrap
+import argparse, os, subprocess, textwrap, pathlib, shutil
 from glob import glob
 import subprocess
 
 from contextlib import redirect_stdout, redirect_stderr
 
 from .common import run_local_cmd, clear_terminal, remove_generated_files, add_yaml_entries_to_file
-
+from .errorRecogniser import pandocErrorRecogniser
 		
-def build_default_html(template="default/standalone.html", debug_mode = False):
+def build_default_html(template="default/standalone.html"):
 	# in the container, copy over the proj_location/content, and template
 	# then, run the container:proj_location/build.py
 	# which goes through the document and does its thing
@@ -28,24 +28,29 @@ def build_default_html(template="default/standalone.html", debug_mode = False):
 
 	script_runner = "-F " + os.path.expanduser("~/.local/bin/panflute")
 	top_source_file = f"{doc_dir}/content/main.md"
-	top_source_file_ammended = top_source_file.replace("content", "generated_intermediate_files")
+	output_folder = f"{doc_dir}/output_html"
 
-	# remove this, as it would be from the previous document, hence out of date
-	run_local_cmd(f"rm -rf {doc_dir}/generated_output_files")
+	# clean residue from last build process
+	remove_generated_files(delete = [output_folder, f"{doc_dir}/output"])
+ 	# note that latex's minted code generates `output`, although we dont use it at the moment - messy
+	
+	# prepare files and directories for use with pandoc
+	generated_intermediate_files_dir = os.path.join(output_folder, "generated_intermediate_files")
+	top_source_file_ammended = os.path.join(generated_intermediate_files_dir, "main.md")
+	
+	desired_dirs = ["generated_intermediate_files", "generated_output_files"]
+	for desired_dir in desired_dirs:
+		target_path = pathlib.Path(os.path.join(output_folder, desired_dir))
+		target_path.mkdir(parents=True, exist_ok=True)
 
 	# check that the given template exists within the local project. If not, assume it's a default template
 	if os.path.exists(f"{doc_dir}/templates/{template}"):
 		template_file = f"--template {doc_dir}/templates/{template}"
 	else:
 		template_file = f"--template {get_path_to_common_content('html_templates')}/{template}" # todo: use os.path.join
-
-	output_folder = f"{doc_dir}/output"
 	
 	panflute_filters_path = f"{get_path_to_common_content('common_filters')}"
 	extras = "--listings" # extras = ""
-
-	# if_debug_mode = True
-	if_debug_mode = debug_mode
 
 	add_yaml_entries_to_file(
 		src_filename = top_source_file, 
@@ -53,9 +58,8 @@ def build_default_html(template="default/standalone.html", debug_mode = False):
 		new_header_lines = [
 			f"panflute-path: '{panflute_filters_path}'",
 			f"starting_dir: '{os.path.dirname(top_source_file)}'",
-			f"output_dir: '{output_folder}'",
-			f"generated_intermediate_files_dir: '{doc_dir}/generated_intermediate_files'"
-		]
+			f"output_dir: '{output_folder}'",			
+		] + [f"{d}_dir: '{pathlib.Path(os.path.join(output_folder, d))}'" for d in desired_dirs]
 	)
 
 
@@ -67,44 +71,20 @@ def build_default_html(template="default/standalone.html", debug_mode = False):
 	pandoc_cmd += f"--standalone --table-of-contents --output {output_folder}/result.html "
 	pandoc_cmd += f"{extras} "
 
-	with open("log_pandoc_to_html.txt", "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
+	pandoc_logfile = os.path.join(generated_intermediate_files_dir,  "pandoc_log.txt")
+	with open(pandoc_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
 		result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = True, print_error=True)
 	
-	# assert error == [], "pandoc error"
-	
-	# # unfortunately the whole filter's code is in the 'error' list. let's remove it
-	# # technique using [:] allows edit in place, avoiding unnecessary copies? from https://stackoverflow.com/questions/1207406/how-to-remove-items-from-a-list-while-iterating
-	
-	# def keepLine(line):
-	# 	exceptionDetected = False
-	# 	status = False
-	# 	if "Traceback (most recent call last):" in line:
-	# 		# include this line and all following lines
-	# 		exceptionDetected = True
-	# 		status = True
-	# 	elif exceptionDetected:
-	# 		status = True
-	# 	elif "Failed to run filter: " in line:
-	# 		# just include this line
-	# 		status = True
-	# 	return status
-	# error[:] = [line for line in error if keepLine(line)]
-
-	from .errorRecogniser import errorRecogniser
-	
-
-	for line in error: 
-		if "Exception" in line:
-			errorRecogniser(error) # ah this doesnt work! need to work out how to handle stderr/stdout here.
-			assert 0, "Pandown crashed, either a typo or a pandown bug needs fixing"
-
-	# # print(result, error)
-	# ### from .tex make .pdf
-	# # lualatex needs to be caled twice, otherwise the toc doesn't generate properly. if references, call biber between
-	# latex_cmd = f'pdflatex --shell-escape -halt-on-error --output-directory doc/output doc/generated_intermediate_files/result.latex'  # options go before filename https://tex.stackexchange.com/questions/268997/pdflatex-seems-to-ignore-output-directory
-	# for repeats in range(2):
-	# 	run_local_cmd(latex_cmd, print_cmd = True, print_result = if_debug_mode, print_error = if_debug_mode)
+		success = pandocErrorRecogniser(result, error)
+	assert success, "Pandoc failure, see log"
 
 	# remove everything except for desired filetypes
-	# so things from latex, then file attachments such as images and csv
-	remove_generated_files(keep_filetypes=[".html", ".pdf", ".latex", ".csv", ".svg", ".bmp"])
+	# remove_generated_files(keep_filetypes=[".html", ".pdf", ".latex", ".csv", ".svg", ".bmp"])
+	remove_generated_files(
+		delete = glob(f"{output_folder}/*") + [f"{doc_dir}/output"],
+		except_for = glob(f"{output_folder}/generated_intermediate_files") + \
+			glob(f"{output_folder}/generated_output_files") + \
+			[f"{output_folder}/result{suffix}" for suffix in ('.html',)]
+	)
+
+	print("success")

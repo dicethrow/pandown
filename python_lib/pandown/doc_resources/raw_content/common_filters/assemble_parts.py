@@ -7,8 +7,7 @@ from pandown import run_local_cmd, debug_elem
 
 already_added_parts = {}
 
-file_formats_that_copy_content = ["pdf"]
-file_formats_that_link_content = ["html"]
+from copy_linked_items import file_formats_that_link_content, file_formats_that_copy_content
 
 
 def get_depth(path):
@@ -50,59 +49,31 @@ def fix_referred_file_path_dir_from_container_element(container_elem, base_path)
 			# only update links that refer to local files.
 			# don't mess with links that might refer to online stuff
 			url_as_local_path = elem.url.replace('%20', ' ')
+			pf.debug(f"This is url_as_local_path: {elem.url} and {url_as_local_path}")
 			item_path = os.path.join(base_path, pathlib.Path(url_as_local_path))
 			if os.path.isfile(item_path):
 				elem.url = item_path
-			# else:
-				# pf.debug(f"This is not a file: {elem.url} as {item_path}")
+				pf.debug(f"This is a file: {elem.url} as {item_path}")
+			else:
+				pf.debug(f"This is not a file: {elem.url} as {item_path}")
 
 def join_then_make_relative_file_paths_and_copy(doc, _next_foldername, _new_elem):
 	for newnew_elem in _new_elem.content:
-		# handleLinkedFile = False
-		# if isinstance(newnew_elem, pf.Image):
-		# 	handleLinkedFile = True
-		# elif isinstance(newnew_elem, pf.Link):
-		# 	if os.path.isfile(newnew_elem.url):
-		# 		handleLinkedFile = True
 
+		# images and links
 		if hasattr(newnew_elem, "url"):
 			if os.path.isfile(newnew_elem.url):
 
+				# pf.debug(f"newnew_elem.url is initially {newnew_elem.url}")
 				# make the image URL respect the full path
-				img_path = os.path.join(doc.next_file_links_starting_dir, _next_foldername, newnew_elem.url)
-				# pf.debug(f"new path: {img_path} \nfrom2 {doc.next_file_links_starting_dir} \nand2 {_next_foldername} \nand3 {newnew_elem.url}")
-				newnew_elem.url = img_path
-
-				# if doc.format == "html":
-				if doc.format in file_formats_that_link_content:
-
-					relative_src_path = os.path.relpath(newnew_elem.url, doc.next_file_links_starting_dir)
-					# pf.debug(f"relative_src_path: {relative_src_path}")
-
-					# set the URL to refer to where the files will be,
-					# then copy the files to that 
-					src = newnew_elem.url
-					dst = os.path.join(doc.folderToStoreLinkedFilesIn, relative_src_path)
-					if not os.path.isfile(dst): # the file might be linked to several times
-						# pf.debug("File doesnt exist yet")
-						dst_folder = os.path.dirname(dst)
-
-						target_path = pathlib.Path(dst_folder)
-						target_path.mkdir(parents=True, exist_ok=True)
-
-						# copy2 to try to preserve metadata
-						shutil.copy2(pathlib.Path(src), pathlib.Path(dst_folder))
-					# else:
-						# pf.debug(f"File exists: {dst}")
-
-					newnew_elem.url = dst
-					# pf.debug(f"new dst: {dst}")
-
-					# now make it relative to the output directory, if HTML
+				newnew_elem.url = os.path.join(doc.next_file_links_starting_dir, _next_foldername, newnew_elem.url)
+					
+				# HTML will only work portably if a relative path is always used.
+				# latex/PDF will only work with images with absolute paths (yuck!)
+				# but links to files can always be relative
+				if doc.format in file_formats_that_link_content or isinstance(newnew_elem, pf.Link):
 					newnew_elem.url = os.path.relpath(newnew_elem.url, doc.get_metadata("output_dir"))
-					# pf.debug(f"changed path: {newnew_elem.url}")
-
-
+				# pf.debug(f"path is now: {newnew_elem.url}")
 
 def handle_parts_block(options, data, element, doc):
 
@@ -239,14 +210,6 @@ def inspect_doc(elem, doc):
 
 
 def main(doc=None):
-	# doc = pf.Doc(pf.Para(pf.Str("hello")))
-	# doc.new_doc = copy.deepcopy(doc)
-
-	if doc.format in file_formats_that_link_content:
-		doc.folderToStoreLinkedFilesIn = os.path.join(os.path.dirname(doc.get_metadata("output_dir")),"generated_output_files")
-		if os.path.isdir(doc.folderToStoreLinkedFilesIn):
-			shutil.rmtree(doc.folderToStoreLinkedFilesIn) # to remove any previous items
-
 	doc.file_links_present = False
 	doc = doc.walk(check_for_more_file_links)
 	doc.initial_run = True

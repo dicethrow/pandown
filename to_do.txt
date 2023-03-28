@@ -2,7 +2,7 @@
 - bugs found
 	- each heading/label needs to be unique.
 		- e.g. if you use ## AAAAA in one part of the whole document, and # AAAAA elsewhere, this issue occurs: [7]pdfTeX warning (ext4): destination with the same identifier (name{AAAAA})  has been already used, duplicate ignored
-	- there needs to be a newline before a dot-point list for pandown-to-html, but vscode-markdown-preview will still work - todo: handle this in pandownj)
+	- there needs to be a newline before a dot-point list for pandown-to-html, but vscode-markdown-preview will still work - todo: handle this in pandown
 	- it looks like level_offset in this parts thing effects the parent file, when it shoul only impact files named in the parts list
 	- the generated_output_files functionality only runs if `parts` blocks are used in the document. Make this not so, also makt this functionality work for latex docs, not just html.
 
@@ -12,3 +12,16 @@
 		- and might even make it easier/possible to automatically allow editing in .docx/googledocs format with nested files
 	- have some automatied way to parse generated content to check that the files produced by tests are correct? currently it requires manual checking
 
+	- when images are included,
+		- if the dest is a PDF/latex, then the image will be included in the final document
+		- if the dest is a html, then we need to include the image with the final .html file, and have a relative link
+			- all used images should be copied to `doc/generated_output_files`
+		
+		- clicked link:
+			http://127.0.0.1:3000/tests/test__linked_files/doc/generated_output_files/b_outerfolder/a_xxx/demo_doc 3.pdf
+	
+			The file "/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/demo_doc1.pdf" cannot be found. It may have been moved, edited, or deleted
+				- fails stat too
+				- /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown
+					/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/demo_doc1.pdf
+					- but the second bit is; there is a path-to-pandown redundant at the start

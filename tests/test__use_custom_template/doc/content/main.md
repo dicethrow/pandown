@@ -2,7 +2,7 @@
 title: Test document
 subtitle: Subtile
 documentclass: paper
-panflute-filters: [ignore_comments, assemble_parts, mermaid_charts, minted_code]
+panflute-filters: [ignore_comments, assemble_parts,mermaid_charts, minted_code]
 ...
 
 # Hello

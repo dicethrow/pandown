@@ -1,0 +1,2 @@
+
+$ pandoc -F /home/ubuntu/.local/bin/panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/templates/pdf.latex -s -o /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_pdf/generated_intermediate_files/result.latex --listings
