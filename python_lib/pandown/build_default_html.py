@@ -5,6 +5,8 @@ import argparse, os, subprocess, textwrap
 from glob import glob
 import subprocess
 
+from contextlib import redirect_stdout, redirect_stderr
+
 from .common import run_local_cmd, clear_terminal, remove_generated_files, add_yaml_entries_to_file
 
 		
@@ -65,7 +67,9 @@ def build_default_html(template="default/standalone.html", debug_mode = False):
 	pandoc_cmd += f"--standalone --table-of-contents --output {output_folder}/result.html "
 	pandoc_cmd += f"{extras} "
 
-	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = if_debug_mode, print_error=if_debug_mode)
+	with open("log_pandoc_to_html.txt", "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
+		result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = True, print_error=True)
+	
 	# assert error == [], "pandoc error"
 	
 	# # unfortunately the whole filter's code is in the 'error' list. let's remove it
