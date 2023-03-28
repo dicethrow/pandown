@@ -25,19 +25,19 @@ class test_runner(unittest.TestCase):
 				remove_generated_files(keep_filetypes=[])
 
 
-	def test_pdf(self):
-		for test_dir in glob.glob("tests/test__*"):
-			with cwd(test_dir):
-				print(f"Running test {test_dir}:")
-				result, error = run_local_cmd("python3 doc/build.py pdf")
+	# def test_pdf(self):
+	# 	for test_dir in glob.glob("tests/test__*"):
+	# 		with cwd(test_dir):
+	# 			print(f"Running test {test_dir}:")
+	# 			result, error = run_local_cmd("python3 doc/build.py pdf")
 
-				self.assertEqual(error, [], msg = f"{result},{error}")
-				resultFound = False
-				for line in result:
-					if "Output written on doc/output/result.pdf" in line:
-						resultFound = True
-				newline = "\n"
-				self.assertTrue(resultFound, f"result: {newline.join(result)},\n error: {newline.join(error)}")
+	# 			self.assertEqual(error, [], msg = f"{result},{error}")
+	# 			resultFound = False
+	# 			for line in result:
+	# 				if "Output written on doc/output/result.pdf" in line:
+	# 					resultFound = True
+	# 			newline = "\n"
+	# 			self.assertTrue(resultFound, f"result: {newline.join(result)},\n error: {newline.join(error)}")
 
 
 

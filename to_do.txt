@@ -4,6 +4,7 @@
 		- e.g. if you use ## AAAAA in one part of the whole document, and # AAAAA elsewhere, this issue occurs: [7]pdfTeX warning (ext4): destination with the same identifier (name{AAAAA})  has been already used, duplicate ignored
 	- there needs to be a newline before a dot-point list for pandown-to-html, but vscode-markdown-preview will still work - todo: handle this in pandownj)
 	- it looks like level_offset in this parts thing effects the parent file, when it shoul only impact files named in the parts list
+	- the generated_output_files functionality only runs if `parts` blocks are used in the document. Make this not so, also makt this functionality work for latex docs, not just html.
 
 - improvement ideas
 	- add a debug/drafting flag such that it is possible to print in the final document the relative path of the source file that contains the content
