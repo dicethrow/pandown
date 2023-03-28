@@ -48,7 +48,24 @@ def clear_terminal():
 	# clean the terminal before we start.
 	subprocess.call("clear")
 
-def remove_generated_files(keep_filetypes = []):
+def remove_generated_files(delete, except_for = []):
+	# recommend to use glob for this function
+	debug = False
+	if debug: print(delete, except_for)
+	for filename in delete:
+		if filename in except_for:
+			if debug: print(f"Not removing {filename}", end=" ")
+			continue
+		if debug: print(f"Removing {filename}", end=" ")
+		try:
+			os.remove(filename)
+			if debug: print(f"with os.remove")
+		except:
+			shutil.rmtree(filename)
+			if debug: print(f"with shutil.rmtree")
+
+
+def xxx(keep_filetypes = []):
 	deletableItems = []
 	for each_dir in ["output", "generated_intermediate_files"]:
 		deletableItems += glob(f"./doc/{each_dir}/*") 

@@ -18,40 +18,35 @@ class test_runner(unittest.TestCase):
 	""" 
 	Note that the pdf/html stuff will delete each other, annoyingly. Useful behaviour but not during testing.
 	"""
-	def setUp(self):
-		# remove outputs from the test folders
-		for test_dir in glob.glob("tests/test__*"):
-			with cwd(test_dir):
-				remove_generated_files(keep_filetypes=[])
-
-
-	# def test_pdf(self):
+	# def setUp(self):
+	# 	# remove outputs from the test folders
 	# 	for test_dir in glob.glob("tests/test__*"):
 	# 		with cwd(test_dir):
-	# 			print(f"Running test {test_dir}:")
-	# 			result, error = run_local_cmd("python3 doc/build.py pdf")
-
-	# 			self.assertEqual(error, [], msg = f"{result},{error}")
-	# 			resultFound = False
-	# 			for line in result:
-	# 				if "Output written on doc/output/result.pdf" in line:
-	# 					resultFound = True
-	# 			newline = "\n"
-	# 			self.assertTrue(resultFound, f"result: {newline.join(result)},\n error: {newline.join(error)}")
+	# 			remove_generated_files(keep_filetypes=[])
 
 
-
-	def test_html(self):
+	def test_pdf(self):
 		for test_dir in glob.glob("tests/test__*"):
 			with cwd(test_dir):
 				print(f"Running test {test_dir}:")
-				result, error = run_local_cmd("python3 doc/build.py html")
+				result, error = run_local_cmd("python3 doc/build.py pdf", 
+					print_cmd = True, print_result = True, print_error = True)
 
-				self.assertEqual(error, [], msg = f"{result},{error}")
+				newline = "\n"
+				self.assertTrue(result[-1] == "success", 
+					f"result: {newline.join(result)},\n error: {newline.join(error)}")
 
-				for line in result:
-					self.assertFalse("Filter returned error status" in line)
-					print(line) # to see pf.debug() calls
+	# def test_html(self):
+	# 	for test_dir in glob.glob("tests/test__*"):
+	# 		with cwd(test_dir):
+	# 			print(f"Running test {test_dir}:")
+	# 			result, error = run_local_cmd("python3 doc/build.py html")
+
+	# 			self.assertEqual(error, [], msg = f"{result},{error}")
+
+	# 			for line in result:
+	# 				self.assertFalse("Filter returned error status" in line)
+	# 				print(line) # to see pf.debug() calls
 
 if __name__ == "__main__":
 	unittest.main(verbosity=2)

@@ -1,14 +1,14 @@
 # default pdf build
 from .doc_resources import get_path_to_common_content
 
-import argparse, os, subprocess, textwrap
+import argparse, os, subprocess, textwrap, pathlib, shutil
 from glob import glob
 import subprocess
 
 from contextlib import redirect_stdout, redirect_stderr
 
-
 from .common import run_local_cmd, clear_terminal, remove_generated_files, add_yaml_entries_to_file
+from .errorRecogniser import latexErrorRecogniser
 
 		
 def build_default_pdf(template="test2.latex", debug_mode = False):
@@ -29,10 +29,19 @@ def build_default_pdf(template="test2.latex", debug_mode = False):
 
 	script_runner = "-F " + os.path.expanduser("~/.local/bin/panflute")
 	top_source_file = f"{doc_dir}/content/main.md"
-	top_source_file_ammended = top_source_file.replace("content", "generated_intermediate_files")
+	output_folder = f"{doc_dir}/output_pdf"
 
-	# remove this, as it would be from the previous document, hence out of date
-	run_local_cmd(f"rm -rf {doc_dir}/generated_output_files")
+	# clean residue from last build process
+	if os.path.isdir(output_folder): 
+		shutil.rmtree(output_folder)
+
+	# prepare files and directories for use with pandoc
+	generated_intermediate_files_dir = os.path.join(output_folder, "generated_intermediate_files")
+	top_source_file_ammended = os.path.join(generated_intermediate_files_dir, "main.md")
+	
+	for desired_dir in ["generated_intermediate_files", "generated_output_files"]:
+		target_path = pathlib.Path(os.path.join(output_folder, desired_dir))
+		target_path.mkdir(parents=True, exist_ok=True)
 
 	# check that the given template exists within the local project. If not, assume it's a default template
 	if os.path.exists(f"{doc_dir}/templates/{template}"):
@@ -52,14 +61,15 @@ def build_default_pdf(template="test2.latex", debug_mode = False):
 		new_header_lines = [
 			f"panflute-path: '{panflute_filters_path}'",
 			f"starting_dir: '{os.path.dirname(top_source_file)}'",
-			f"generated_intermediate_files_dir: '{doc_dir}/generated_intermediate_files'"
+			f"generated_intermediate_files_dir: '{generated_intermediate_files_dir}'"
 		]
 	)
 
 	### from the .md use pandoc to make .tex
-	latex_intermediate_file = f"{doc_dir}/generated_intermediate_files/result.latex"
+	latex_intermediate_file = os.path.join(generated_intermediate_files_dir, "result.latex")
 	pandoc_cmd = f"pandoc {script_runner} {top_source_file_ammended} {template_file} -s -o {latex_intermediate_file} {extras}"
-	with open("log_pandoc_to_latex.txt", "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
+	pandoc_logfile = os.path.join(generated_intermediate_files_dir,  "pandoc_log.txt")
+	with open(pandoc_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
 		result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = if_debug_mode, print_error=if_debug_mode)
 	# assert error == [], "pandoc error"
 
@@ -87,11 +97,18 @@ def build_default_pdf(template="test2.latex", debug_mode = False):
 	# print(result, error)
 	### from .tex make .pdf
 	# lualatex needs to be caled twice, otherwise the toc doesn't generate properly. if references, call biber between
-	latex_cmd = f'pdflatex --shell-escape -halt-on-error --output-directory doc/output doc/generated_intermediate_files/result.latex'  # options go before filename https://tex.stackexchange.com/questions/268997/pdflatex-seems-to-ignore-output-directory
+	latex_cmd = f'pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex'  # options go before filename https://tex.stackexchange.com/questions/268997/pdflatex-seems-to-ignore-output-directory
 	for repeats in range(2):
-		run_local_cmd(latex_cmd, print_cmd = True, print_result = if_debug_mode, print_error = if_debug_mode)
+		result, error = run_local_cmd(latex_cmd, print_cmd = True)
+	
+	latexErrorRecogniser(result, error)
 
-	# remove everything except for desired filetypes
-	# so things from latex, then file attachments such as images and csv
-	remove_generated_files(keep_filetypes=[".html", ".pdf", ".latex", ".csv", ".svg", ".bmp"])
+	remove_generated_files(
+		delete = glob(f"{output_folder}/*"),
+		except_for = glob(f"{output_folder}/generated_intermediate_files") + \
+			glob(f"{output_folder}/generated_output_files") + \
+			[f"{output_folder}/result{suffix}" for suffix in ('.pdf',)]
+	)
+
+	print("success")
 
