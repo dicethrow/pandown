@@ -70,7 +70,7 @@ def build_default_pdf(template="test2.latex"):
 	
 	pandoc_logfile = os.path.join(generated_intermediate_files_dir,  "pandoc_log.txt")
 	with open(pandoc_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
-		result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = True, print_error=True, timeout = 5)
+		result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = True, print_error=True, timeout = 15)
 
 	success = pandocErrorRecogniser(result, error)
 	assert success, "Pandoc failure, see log"
@@ -81,7 +81,7 @@ def build_default_pdf(template="test2.latex"):
 	latex_logfile = os.path.join(generated_intermediate_files_dir,  "latex_log.txt")
 	with open(latex_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
 		for repeats in range(2):
-			result, error = run_local_cmd(latex_cmd, print_cmd = True, print_result = True, print_error=True, timeout = 5)
+			result, error = run_local_cmd(latex_cmd, print_cmd = True, print_result = True, print_error=True, timeout = 15)
 
 	success = latexErrorRecogniser(result, error)
 	assert success, "Latex failure, see log"

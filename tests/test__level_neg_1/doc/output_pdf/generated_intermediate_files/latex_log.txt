@@ -288,7 +288,7 @@ fb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtl10.pfb>
-Output written on doc/output_pdf/result.pdf (9 pages, 1108744 bytes).
+Output written on doc/output_pdf/result.pdf (9 pages, 1108742 bytes).
 Transcript written on doc/output_pdf/result.log.
 
 $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
