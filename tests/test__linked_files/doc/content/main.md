@@ -1,4 +1,3 @@
-
 ---
 title: Some title
 subtitle: And a small subtitle

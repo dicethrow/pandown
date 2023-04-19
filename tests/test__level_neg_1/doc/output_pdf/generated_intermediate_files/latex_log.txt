@@ -566,5 +566,5 @@ fb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtl10.pfb>
-Output written on doc/output_pdf/result.pdf (9 pages, 736737 bytes).
+Output written on doc/output_pdf/result.pdf (9 pages, 736735 bytes).
 Transcript written on doc/output_pdf/result.log.

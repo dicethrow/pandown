@@ -7,6 +7,8 @@ generated_output_files_dir: '/home/ubuntu/from_host/x/Documents/git_repos/docume
 title: Test document
 subtitle: Subtile
 documentclass: paper
+pandown-template-html: web.html
+pandown-template-pdf: pdf.latex
 panflute-filters: [ignore_comments, assemble_parts,mermaid_charts, copy_linked_items, minted_code]
 ...
 

@@ -7,11 +7,11 @@ import subprocess
 
 from contextlib import redirect_stdout, redirect_stderr
 
-from .common import run_local_cmd, clear_terminal, remove_generated_files, add_yaml_entries_to_file
+from .common import run_local_cmd, clear_terminal, remove_generated_files, add_yaml_entries_to_file, get_yaml_entries_from_file
 from .errorRecogniser import pandocErrorRecogniser, latexErrorRecogniser
 
 		
-def build_default_pdf(template="test2.latex"):
+def build_default_pdf():
 	# in the container, copy over the proj_location/content, and template
 	# then, run the container:proj_location/build.py
 	# which goes through the document and does its thing
@@ -45,7 +45,13 @@ def build_default_pdf(template="test2.latex"):
 		target_path = pathlib.Path(os.path.join(output_folder, desired_dir))
 		target_path.mkdir(parents=True, exist_ok=True)
 
-	# check that the given template exists within the local project. If not, assume it's a default template
+	# load the specified pandown template file
+	yaml_entries = get_yaml_entries_from_file(top_source_file)
+	if 'pandown-template-pdf' not in yaml_entries:
+		yaml_entries['pandown-template-pdf'] = "test2.latex"
+	
+	# check that the given template exists within the local project. 
+	template = yaml_entries['pandown-template-pdf']
 	if os.path.exists(f"{doc_dir}/templates/{template}"):
 		template_file = f"--template {doc_dir}/templates/{template}"
 	else:

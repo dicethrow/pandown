@@ -5,6 +5,7 @@ import shutil
 import panflute as pf
 import shlex
 from threading import Timer
+import copy
 
 def debug_elem(elem):
 	def preview_func(obj):
@@ -100,6 +101,36 @@ def xxx(keep_filetypes = []):
 			except:
 				shutil.rmtree(filename)
 				# print(f"with shutil.rmtree")
+
+def get_yaml_entries_from_file(src_filename):
+	with open(src_filename, "r") as f:
+		lines = f.readlines()
+	yaml_entries = {}
+	
+	state = "Not yet started"
+	for line in lines:
+
+		if state == "Not yet started":
+			if line.strip() == "---":
+				state = "In yaml block"
+				continue
+
+		if state == "In yaml block":
+			if line.strip() == "...": # can this also be --- ?
+				state = "Finished yaml block"
+				continue
+			key, value = line.split(": ")	
+			value = value.strip() # as it often has a trailing \n
+			assert key != []
+			assert value != []
+			yaml_entries[key] = value
+
+		if state == "Finished yaml block":
+			break
+		
+	return copy.deepcopy(yaml_entries) # is deepcopy necessary?
+
+
 
 def add_yaml_entries_to_file(src_filename, dst_filename, new_header_lines):
 	# do some manual changes to the top-level main.md document, before using panflute filters
