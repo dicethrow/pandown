@@ -245,27 +245,9 @@ Overfull \hbox (68.44461pt too wide) in paragraph at lines 213--214
 [][] 
 [3 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
 sts/test__linked_files/doc/output_pdf/generated_intermediate_files/mermaid_char
-t_0.pdf>]
-Overfull \hbox (300.00854pt too wide) in paragraph at lines 215--219
-[]\OT1/lmr/m/n/10 This is a [][]link to demo doc 2 [./gen-er-ated[]output[]file
-s/content/a[]outerfolder/demo doc 2.pdf] [./gen-er-ated[]output[]files/output[]
-pdf/generated[]output[]files/content/a[]outerfolder/demo
-
-Overfull \hbox (0.85405pt too wide) in paragraph at lines 259--263
-\OT1/lmr/m/n/10 ated[]output[]files/output[]pdf/generated[]output[]files/conten
-t/b[]outerfolder/a[]xxx/demo[]doc 3.pdf][][], click-ing this
-
-Overfull \hbox (48.31393pt too wide) in paragraph at lines 264--268
-[]\OT1/lmr/m/n/10 This is a [][]link to a demo doc with spaces in the dir and f
-ile name [./gen-er-ated[]output[]files/content/b[]outerfolder/a[]xxx/demo
-
-Overfull \hbox (115.03107pt too wide) in paragraph at lines 264--268
-\OT1/lmr/m/n/10 dir with spaces/demo doc with spaces.pdf] [./gen-er-ated[]outpu
-t[]files/output[]pdf/generated[]output[]files/content/b[]outerfolder/a[]xxx/dem
-o
-[4 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
-sts/test__linked_files/doc/output_pdf/generated_intermediate_files/mermaid_char
-t_1.pdf>]
+t_0.pdf>] [4 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/
+pandown/tests/test__linked_files/doc/output_pdf/generated_intermediate_files/me
+rmaid_chart_1.pdf>]
 Overfull \hbox (117.5479pt too wide) in paragraph at lines 289--290
  [][] 
 
@@ -277,17 +259,7 @@ sts/test__linked_files/doc/content/c_outerfolder/a_behe/images/sample_image.png
 /tests/test__linked_files/doc/content/c_outerfolder/a_behe/images/sample image 
 with spaces.png> </home/ubuntu/from_host/x/Documents/git_repos/documentation/to
 ols/pandown/tests/test__linked_files/doc/content/c_outerfolder/b_boho/spaceship
-2.png>]
-Overfull \hbox (223.50824pt too wide) in paragraph at lines 328--332
-[]\OT1/lmr/m/n/10 This is a [][]link to demo doc 1 [./gen-er-ated[]output[]file
-s/content/demo[]doc1.pdf] [./gen-er-ated[]output[]files/output[]pdf/generated[]
-output[]files/content/demo[]doc1.pdf][][],
-
-Overfull \hbox (305.8421pt too wide) in paragraph at lines 333--336
-[]\OT1/lmr/m/n/10 Lets make an ex-ter-nal link [][]which is this [./gen-er-ated
-[]output[]files/external/sample[]image.png] [./gen-er-ated[]output[]files/outpu
-t[]pdf/generated[]output[]files/external/sample[]image.png][][]
-[7] (doc/output_pdf/result.aux)
+2.png>] [7] (doc/output_pdf/result.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -309,7 +281,7 @@ fb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtl10.pfb>
-Output written on doc/output_pdf/result.pdf (7 pages, 1050491 bytes).
+Output written on doc/output_pdf/result.pdf (7 pages, 1048949 bytes).
 Transcript written on doc/output_pdf/result.log.
 
 $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
@@ -558,27 +530,9 @@ Overfull \hbox (68.44461pt too wide) in paragraph at lines 213--214
 [][] 
 [3 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
 sts/test__linked_files/doc/output_pdf/generated_intermediate_files/mermaid_char
-t_0.pdf>]
-Overfull \hbox (300.00854pt too wide) in paragraph at lines 215--219
-[]\OT1/lmr/m/n/10 This is a [][]link to demo doc 2 [./gen-er-ated[]output[]file
-s/content/a[]outerfolder/demo doc 2.pdf] [./gen-er-ated[]output[]files/output[]
-pdf/generated[]output[]files/content/a[]outerfolder/demo
-
-Overfull \hbox (0.85405pt too wide) in paragraph at lines 259--263
-\OT1/lmr/m/n/10 ated[]output[]files/output[]pdf/generated[]output[]files/conten
-t/b[]outerfolder/a[]xxx/demo[]doc 3.pdf][][], click-ing this
-
-Overfull \hbox (48.31393pt too wide) in paragraph at lines 264--268
-[]\OT1/lmr/m/n/10 This is a [][]link to a demo doc with spaces in the dir and f
-ile name [./gen-er-ated[]output[]files/content/b[]outerfolder/a[]xxx/demo
-
-Overfull \hbox (115.03107pt too wide) in paragraph at lines 264--268
-\OT1/lmr/m/n/10 dir with spaces/demo doc with spaces.pdf] [./gen-er-ated[]outpu
-t[]files/output[]pdf/generated[]output[]files/content/b[]outerfolder/a[]xxx/dem
-o
-[4 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
-sts/test__linked_files/doc/output_pdf/generated_intermediate_files/mermaid_char
-t_1.pdf>]
+t_0.pdf>] [4 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/
+pandown/tests/test__linked_files/doc/output_pdf/generated_intermediate_files/me
+rmaid_chart_1.pdf>]
 Overfull \hbox (117.5479pt too wide) in paragraph at lines 289--290
  [][] 
 
@@ -590,17 +544,7 @@ sts/test__linked_files/doc/content/c_outerfolder/a_behe/images/sample_image.png
 /tests/test__linked_files/doc/content/c_outerfolder/a_behe/images/sample image 
 with spaces.png> </home/ubuntu/from_host/x/Documents/git_repos/documentation/to
 ols/pandown/tests/test__linked_files/doc/content/c_outerfolder/b_boho/spaceship
-2.png>]
-Overfull \hbox (223.50824pt too wide) in paragraph at lines 328--332
-[]\OT1/lmr/m/n/10 This is a [][]link to demo doc 1 [./gen-er-ated[]output[]file
-s/content/demo[]doc1.pdf] [./gen-er-ated[]output[]files/output[]pdf/generated[]
-output[]files/content/demo[]doc1.pdf][][],
-
-Overfull \hbox (305.8421pt too wide) in paragraph at lines 333--336
-[]\OT1/lmr/m/n/10 Lets make an ex-ter-nal link [][]which is this [./gen-er-ated
-[]output[]files/external/sample[]image.png] [./gen-er-ated[]output[]files/outpu
-t[]pdf/generated[]output[]files/external/sample[]image.png][][]
-[7] (doc/output_pdf/result.aux) )
+2.png>] [7] (doc/output_pdf/result.aux) )
 (see the transcript file for additional information){/usr/share/texmf/fonts/enc
 /dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/shar
 e/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/l
@@ -610,5 +554,5 @@ fb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtl10.pfb>
-Output written on doc/output_pdf/result.pdf (7 pages, 1059357 bytes).
+Output written on doc/output_pdf/result.pdf (7 pages, 1057748 bytes).
 Transcript written on doc/output_pdf/result.log.

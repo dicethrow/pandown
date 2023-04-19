@@ -41,7 +41,7 @@ def copy_linked_items(elem, doc):
 			return pathlib.Path(os.path.join(doc.get_metadata("output_dir"), pathlib.Path(relativeURL))).resolve()
 
 		url = resolveURLAsLocal(elem.url)
-		pf.debug(f"Tests: {doc.format in file_formats_that_embed_content}, {os.path.isfile(url)}, {url}")
+		# pf.debug(f"Tests: {doc.format in file_formats_that_embed_content}, {os.path.isfile(url)}, {url}")
 		# pf.debug(doc.get_metadata("output_dir"))
 		# If it is a link - lets change the text so it shows the URL
 
@@ -63,7 +63,7 @@ def copy_linked_items(elem, doc):
 			if "../" in location_from_doc_dir:
 				desired_path = os.path.join("external", os.path.basename(location_from_doc_dir))
 
-			pf.debug(f"location_from_doc_dir: {location_from_doc_dir} to {desired_path}")
+			# pf.debug(f"location_from_doc_dir: {location_from_doc_dir} to {desired_path}")
 			
 
 			desired_full_path = os.path.join(doc.get_metadata("generated_output_files_dir"), desired_path)
@@ -124,6 +124,13 @@ def show_url_in_link_name(elem, doc):
 	if isinstance(elem, pf.Link):
 
 		# to make links display the path/url
+		existing_str = pf.stringify(elem)
+		if "[" and "]" in existing_str:
+			pf.debug("Double! " + str(type(elem)) + existing_str)
+			# this is bad, shouldn't happen
+		else:
+			pf.debug("OK" + str(type(elem)) + existing_str)
+
 		new_label = f"{pf.stringify(elem)} [{elem.url}]"
 		elem = pf.Link(pf.Str(new_label),url = elem.url,title = elem.title,
 			identifier  = elem.identifier,classes = elem.classes,attributes = elem.attributes)
@@ -137,7 +144,7 @@ def main(doc=None):
 	# 		shutil.rmtree(doc.get_metadata("generated_output_files_dir")) # to remove any previous items
 
 	doc = doc.walk(copy_linked_items)
-	doc = doc.walk(show_url_in_link_name)
+	# doc = doc.walk(show_url_in_link_name)
 	return doc
 
 if __name__ == '__main__':
