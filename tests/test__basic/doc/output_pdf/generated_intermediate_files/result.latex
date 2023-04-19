@@ -139,7 +139,7 @@ section for including further files, etc.
 
 \begin{figure}
 \centering
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/content/./spaceship.png}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/content/spaceship.png}
 \caption{alt text}
 \end{figure}
 
@@ -271,7 +271,7 @@ now let's add an image
 
 \begin{figure}
 \centering
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/content/c_outerfolder/a_behe/./images/sample_image.png}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/content/c_outerfolder/a_behe/images/sample_image.png}
 \caption{Here's me doing some PCB stuff}
 \end{figure}
 
@@ -282,7 +282,7 @@ as a paragraph
 
 \begin{figure}
 \centering
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/content/c_outerfolder/b_boho/./spaceship2.png}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/content/c_outerfolder/b_boho/spaceship2.png}
 \caption{alt text}
 \end{figure}
 
@@ -293,7 +293,7 @@ heading}\label{as-a-second-level-heading}}
 huahua
 
 another end line\ldots{} helps?
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/content/c_outerfolder/./b_boho/spaceship2.png}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/content/c_outerfolder/b_boho/spaceship2.png}
 
 \hypertarget{hellobd}{%
 \section{hellobd}\label{hellobd}}

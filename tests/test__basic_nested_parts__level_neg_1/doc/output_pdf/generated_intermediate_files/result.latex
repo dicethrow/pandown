@@ -135,7 +135,7 @@ now let's add an image
 
 \begin{figure}
 \centering
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/content/1_subfolderA/1_a_in_A/./images/sample_image.png}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/content/1_subfolderA/1_a_in_A/images/sample_image.png}
 \caption{Here's me doing some PCB stuff}
 \end{figure}
 

@@ -139,7 +139,7 @@ section for including further files, etc.
 
 \begin{figure}
 \centering
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/./spaceship.png}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/spaceship.png}
 \caption{alt text}
 \end{figure}
 
@@ -261,6 +261,11 @@ This is a
 clicking this link should open the file, which should be copied to the
 output folder.
 
+This is a
+\href{./generated_output_files/output_pdf/generated_output_files/content/b_outerfolder/a_xxx/demo\%20dir\%20with\%20spaces/demo\%20doc\%20with\%20spaces.pdf}{link to a demo doc with spaces in the dir and file name {[}./generated\_output\_files/content/b\_outerfolder/a\_xxx/demo dir with spaces/demo doc with spaces.pdf{]} {[}./generated\_output\_files/output\_pdf/generated\_output\_files/content/b\_outerfolder/a\_xxx/demo dir with spaces/demo doc with spaces.pdf{]}},
+clicking this link should open the file, which should be copied to the
+output folder.
+
 \hypertarget{heading-level-1-should-become-2-in-contentc_outerfoldermain.md}{%
 \section{Heading level 1 (should become 2) in
 content/c\_outerfolder/main.md}\label{heading-level-1-should-become-2-in-contentc_outerfoldermain.md}}
@@ -281,8 +286,14 @@ now let's add an image
 
 \begin{figure}
 \centering
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/a_behe/./images/sample_image.png}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/a_behe/images/sample_image.png}
 \caption{Here's me doing some PCB stuff}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/a_behe/images/sample image with spaces.png}
+\caption{Here's the same image but the image has spaces in its filename}
 \end{figure}
 
 \hypertarget{hullow-from-b_boho}{%
@@ -292,7 +303,7 @@ as a paragraph
 
 \begin{figure}
 \centering
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/b_boho/./spaceship2.png}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/b_boho/spaceship2.png}
 \caption{alt text}
 \end{figure}
 
@@ -303,7 +314,7 @@ heading}\label{as-a-second-level-heading}}
 huahua
 
 another end line\ldots{} helps?
-\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/./b_boho/spaceship2.png}
+\includegraphics{/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/c_outerfolder/b_boho/spaceship2.png}
 
 \hypertarget{hellobd}{%
 \section{hellobd}\label{hellobd}}

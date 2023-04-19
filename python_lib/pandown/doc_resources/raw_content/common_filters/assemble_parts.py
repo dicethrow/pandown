@@ -40,7 +40,8 @@ def fix_referred_file_path_dir_from_container_element(container_elem, base_path)
 	for elem in container_elem.content:
 		if isinstance(elem, pf.Image):
 			# make the image URL respect the full path
-			img_path = os.path.join(base_path, elem.url)
+			url_as_local_path = elem.url.replace('%20', ' ')
+			img_path = os.path.join(base_path, pathlib.Path(url_as_local_path))
 			# pf.debug(f"new img path: {img_path} from {base_path} and {elem.url}")
 			assert os.path.isfile(img_path)
 			elem.url = img_path

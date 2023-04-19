@@ -239,8 +239,8 @@ LaTeX Warning: No \author given.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
 (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd) [2 </home/ubuntu/from_host/x/Documen
-ts/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/content/./
-spaceship.png>]
+ts/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/content/sp
+aceship.png>]
 Overfull \hbox (68.44461pt too wide) in paragraph at lines 211--212
 [][] 
 [3 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
@@ -254,19 +254,15 @@ Overfull \hbox (164.54793pt too wide) in paragraph at lines 239--240
 [4 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
 sts/test__level_neg_1/doc/output_pdf/generated_intermediate_files/mermaid_chart
 _1.pdf>] [5 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/p
-andown/tests/test__level_neg_1/doc/content/a_outerfolder/./images/image_subfold
-er/image_subfolder2/sample_image.png>] [6]
+andown/tests/test__level_neg_1/doc/content/a_outerfolder/images/image_subfolder
+/image_subfolder2/sample_image.png>] [6]
 Overfull \hbox (254.17606pt too wide) in paragraph at lines 323--325
 []\OT1/lmr/m/n/10 Can we do an im-age from here? [] 
 [7 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
-sts/test__level_neg_1/doc/content/c_outerfolder/b_boho/./spaceship2.png> </home
-/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test_
-_level_neg_1/doc/content/c_outerfolder/./b_boho/spaceship2.png>]
+sts/test__level_neg_1/doc/content/c_outerfolder/b_boho/spaceship2.png>]
 Overfull \hbox (164.54793pt too wide) in paragraph at lines 346--347
 [][] 
-[8 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
-sts/test__level_neg_1/doc/content/./a_outerfolder/images/image_subfolder/image_
-subfolder2/sample_image.png>] [9] (doc/output_pdf/result.aux)
+[8] [9] (doc/output_pdf/result.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -288,7 +284,7 @@ fb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtl10.pfb>
-Output written on doc/output_pdf/result.pdf (9 pages, 1108742 bytes).
+Output written on doc/output_pdf/result.pdf (9 pages, 725829 bytes).
 Transcript written on doc/output_pdf/result.log.
 
 $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
@@ -537,8 +533,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--17
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
 (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd) [2 </home/ubuntu/from_host/x/Documen
-ts/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/content/./
-spaceship.png>]
+ts/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/content/sp
+aceship.png>]
 Overfull \hbox (68.44461pt too wide) in paragraph at lines 211--212
 [][] 
 [3 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
@@ -552,19 +548,15 @@ Overfull \hbox (164.54793pt too wide) in paragraph at lines 239--240
 [4 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
 sts/test__level_neg_1/doc/output_pdf/generated_intermediate_files/mermaid_chart
 _1.pdf>] [5 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/p
-andown/tests/test__level_neg_1/doc/content/a_outerfolder/./images/image_subfold
-er/image_subfolder2/sample_image.png>] [6]
+andown/tests/test__level_neg_1/doc/content/a_outerfolder/images/image_subfolder
+/image_subfolder2/sample_image.png>] [6]
 Overfull \hbox (254.17606pt too wide) in paragraph at lines 323--325
 []\OT1/lmr/m/n/10 Can we do an im-age from here? [] 
 [7 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
-sts/test__level_neg_1/doc/content/c_outerfolder/b_boho/./spaceship2.png> </home
-/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test_
-_level_neg_1/doc/content/c_outerfolder/./b_boho/spaceship2.png>]
+sts/test__level_neg_1/doc/content/c_outerfolder/b_boho/spaceship2.png>]
 Overfull \hbox (164.54793pt too wide) in paragraph at lines 346--347
 [][] 
-[8 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
-sts/test__level_neg_1/doc/content/./a_outerfolder/images/image_subfolder/image_
-subfolder2/sample_image.png>] [9] (doc/output_pdf/result.aux) )
+[8] [9] (doc/output_pdf/result.aux) )
 (see the transcript file for additional information){/usr/share/texmf/fonts/enc
 /dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/shar
 e/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/l
@@ -574,5 +566,5 @@ fb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtl10.pfb>
-Output written on doc/output_pdf/result.pdf (9 pages, 1119650 bytes).
+Output written on doc/output_pdf/result.pdf (9 pages, 736737 bytes).
 Transcript written on doc/output_pdf/result.log.

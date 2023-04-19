@@ -253,9 +253,9 @@ identifier (name{b}) has been already used, duplicate ignored
 l.165 \section{3\_c}\label{c}}
                                </home/ubuntu/from_host/x/Documents/git_repos/do
 cumentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/conte
-nt/1_subfolderA/1_a_in_A/./images/sample_image.png>] [3pdfTeX warning (ext4): d
-estination with the same identifier (name{c}) has been already used, duplicate 
-ignored
+nt/1_subfolderA/1_a_in_A/images/sample_image.png>] [3pdfTeX warning (ext4): des
+tination with the same identifier (name{c}) has been already used, duplicate ig
+nored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
@@ -547,9 +547,9 @@ identifier (name{b}) has been already used, duplicate ignored
 l.165 \section{3\_c}\label{c}}
                                </home/ubuntu/from_host/x/Documents/git_repos/do
 cumentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/conte
-nt/1_subfolderA/1_a_in_A/./images/sample_image.png>] [3pdfTeX warning (ext4): d
-estination with the same identifier (name{c}) has been already used, duplicate 
-ignored
+nt/1_subfolderA/1_a_in_A/images/sample_image.png>] [3pdfTeX warning (ext4): des
+tination with the same identifier (name{c}) has been already used, duplicate ig
+nored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   

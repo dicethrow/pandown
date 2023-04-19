@@ -4,6 +4,8 @@ Tests: True, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/to
 location_from_doc_dir: content/a_outerfolder/demo doc 2.pdf to content/a_outerfolder/demo doc 2.pdf
 Tests: True, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/b_outerfolder/a_xxx/demo_doc 3.pdf
 location_from_doc_dir: content/b_outerfolder/a_xxx/demo_doc 3.pdf to content/b_outerfolder/a_xxx/demo_doc 3.pdf
+Tests: True, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/b_outerfolder/a_xxx/demo dir with spaces/demo doc with spaces.pdf
+location_from_doc_dir: content/b_outerfolder/a_xxx/demo dir with spaces/demo doc with spaces.pdf to content/b_outerfolder/a_xxx/demo dir with spaces/demo doc with spaces.pdf
 Tests: True, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/demo_doc1.pdf
 location_from_doc_dir: content/demo_doc1.pdf to content/demo_doc1.pdf
 Tests: True, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/sample_image.png
@@ -12,6 +14,8 @@ Tests: True, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/to
 location_from_doc_dir: output_pdf/generated_output_files/content/a_outerfolder/demo doc 2.pdf to output_pdf/generated_output_files/content/a_outerfolder/demo doc 2.pdf
 Tests: True, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_pdf/generated_output_files/content/b_outerfolder/a_xxx/demo_doc 3.pdf
 location_from_doc_dir: output_pdf/generated_output_files/content/b_outerfolder/a_xxx/demo_doc 3.pdf to output_pdf/generated_output_files/content/b_outerfolder/a_xxx/demo_doc 3.pdf
+Tests: True, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_pdf/generated_output_files/content/b_outerfolder/a_xxx/demo dir with spaces/demo doc with spaces.pdf
+location_from_doc_dir: output_pdf/generated_output_files/content/b_outerfolder/a_xxx/demo dir with spaces/demo doc with spaces.pdf to output_pdf/generated_output_files/content/b_outerfolder/a_xxx/demo dir with spaces/demo doc with spaces.pdf
 Tests: True, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_pdf/generated_output_files/content/demo_doc1.pdf
 location_from_doc_dir: output_pdf/generated_output_files/content/demo_doc1.pdf to output_pdf/generated_output_files/content/demo_doc1.pdf
 Tests: True, True, /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_pdf/generated_output_files/external/sample_image.png

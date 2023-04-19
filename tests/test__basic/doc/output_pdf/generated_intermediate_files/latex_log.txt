@@ -239,8 +239,8 @@ LaTeX Warning: No \author given.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
 (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd) [2 </home/ubuntu/from_host/x/Documen
-ts/git_repos/documentation/tools/pandown/tests/test__basic/doc/content/./spaces
-hip.png>]
+ts/git_repos/documentation/tools/pandown/tests/test__basic/doc/content/spaceshi
+p.png>]
 Overfull \hbox (68.44461pt too wide) in paragraph at lines 213--214
 [][] 
 [3 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
@@ -251,12 +251,10 @@ pdf>]
 Overfull \hbox (117.5479pt too wide) in paragraph at lines 274--275
  [][] 
 [5 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
-sts/test__basic/doc/content/c_outerfolder/a_behe/./images/sample_image.png>]
+sts/test__basic/doc/content/c_outerfolder/a_behe/images/sample_image.png>]
 [6 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
-sts/test__basic/doc/content/c_outerfolder/b_boho/./spaceship2.png> </home/ubunt
-u/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic
-/doc/content/c_outerfolder/./b_boho/spaceship2.png>] (doc/output_pdf/result.aux
-)
+sts/test__basic/doc/content/c_outerfolder/b_boho/spaceship2.png>]
+(doc/output_pdf/result.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -278,7 +276,7 @@ fb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtl10.pfb>
-Output written on doc/output_pdf/result.pdf (6 pages, 788870 bytes).
+Output written on doc/output_pdf/result.pdf (6 pages, 726030 bytes).
 Transcript written on doc/output_pdf/result.log.
 
 $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
@@ -521,8 +519,8 @@ LaTeX Warning: No \author given.
 (doc/output_pdf/result.toc) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.ma
 p}] (/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
 (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd) [2 </home/ubuntu/from_host/x/Documen
-ts/git_repos/documentation/tools/pandown/tests/test__basic/doc/content/./spaces
-hip.png>]
+ts/git_repos/documentation/tools/pandown/tests/test__basic/doc/content/spaceshi
+p.png>]
 Overfull \hbox (68.44461pt too wide) in paragraph at lines 213--214
 [][] 
 [3 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
@@ -533,12 +531,10 @@ pdf>]
 Overfull \hbox (117.5479pt too wide) in paragraph at lines 274--275
  [][] 
 [5 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
-sts/test__basic/doc/content/c_outerfolder/a_behe/./images/sample_image.png>]
+sts/test__basic/doc/content/c_outerfolder/a_behe/images/sample_image.png>]
 [6 </home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/te
-sts/test__basic/doc/content/c_outerfolder/b_boho/./spaceship2.png> </home/ubunt
-u/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic
-/doc/content/c_outerfolder/./b_boho/spaceship2.png>] (doc/output_pdf/result.aux
-) )
+sts/test__basic/doc/content/c_outerfolder/b_boho/spaceship2.png>]
+(doc/output_pdf/result.aux) )
 (see the transcript file for additional information){/usr/share/texmf/fonts/enc
 /dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/shar
 e/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/l
@@ -548,5 +544,5 @@ fb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtl10.pfb>
-Output written on doc/output_pdf/result.pdf (6 pages, 797355 bytes).
+Output written on doc/output_pdf/result.pdf (6 pages, 734551 bytes).
 Transcript written on doc/output_pdf/result.log.
