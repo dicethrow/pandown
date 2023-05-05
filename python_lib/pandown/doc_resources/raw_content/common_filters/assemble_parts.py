@@ -210,6 +210,11 @@ def make_top_level_headings_into_parts(elem, doc):
 			# return [elem]
 			return elem
 
+def handle_forbidden_characters(elem, doc):
+	if doc.format == "latex":
+		...
+
+
 def inspect_doc(elem, doc):
 	debug_elem(elem)
 
@@ -230,6 +235,8 @@ def main(doc=None):
 		doc = doc.walk(check_for_more_file_links)
 		doc.initial_run = False
 	doc = doc.walk(make_top_level_headings_into_parts)
+	doc = doc.walk(handle_forbidden_characters)
+	debug_elem(doc)
 	return doc
 
 if __name__ == '__main__':

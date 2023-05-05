@@ -1,8 +1,14 @@
+
 ---
+panflute-path: '/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/common_filters'
+starting_dir: '/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__forbidden_character_handling/doc/content'
+output_dir: '/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__forbidden_character_handling/doc/output_html'
+generated_intermediate_files_dir: '/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__forbidden_character_handling/doc/output_html/generated_intermediate_files'
+generated_output_files_dir: '/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__forbidden_character_handling/doc/output_html/generated_output_files'
 title: Some title
 subtitle: And a small subtitle
 documentclass: paper
-panflute-filters: [ignore_comments, assemble_parts, mermaid_charts, copy_linked_items, copy_linked_items, minted_code]
+panflute-filters: [ignore_comments, assemble_parts,mermaid_charts, copy_linked_items, minted_code]
 ...
 
 # This is part one
@@ -15,8 +21,9 @@ Edit made on new os.
 
 note the things in **parts** must be *directories* which contain a main.md. That main.md file may also have a **parts** section for including further files, etc.
 
-![alt text](../../../test__linked_files/doc/content/spaceship.png)
+![alt text](./spaceship.png)
 
+This is \ some text \with a number\ of backslashes\ in it \\\\\\\\ .
 
 # This is part two
 
@@ -75,8 +82,3 @@ b_outerfolder
 c_outerfolder
 d_outerfolder
 ``` -->
-
-This is a [link to demo doc 1](../../../test__linked_files/doc/content/demo_doc1.pdf), clicking this link should open the file, which should be copied to the output folder.
-
-Lets make an external link [which is this](../../../sample_image.png) to a file outside/above this project.
-
