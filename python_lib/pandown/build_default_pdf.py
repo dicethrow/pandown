@@ -4,6 +4,7 @@ from .doc_resources import get_path_to_common_content
 import argparse, os, subprocess, textwrap, pathlib, shutil
 from glob import glob
 import subprocess
+import platform
 
 from contextlib import redirect_stdout, redirect_stderr
 
@@ -22,14 +23,19 @@ def build_default_pdf():
 	# remove_generated_files() # note - commented out, so the result.pdf is never removed; which makes vscode auto-reload the latest version of the file
 
 	# display the current directory and its contents
-	run_local_cmd("pwd", print_result = True)
-	run_local_cmd("tree -a .", print_result=True)
+	if platform.system() == "Windows":
+		run_local_cmd("cd", print_result = True)
+		run_local_cmd("tree .", print_result=True)
+		doc_dir = f"{run_local_cmd('cd')[0][0]}\\doc"
+		script_runner = "-F " + os.path.expanduser("~/.local/bin/panflute")
+	else:
+		run_local_cmd("pwd", print_result = True)
+		run_local_cmd("tree -a .", print_result=True)
+		doc_dir = f"{run_local_cmd('pwd')[0][0]}/doc"
+		script_runner = "-F " + os.path.expanduser("~\AppData\Local\Programs\Python\Python311\Scripts\panflute.py")
 
-	doc_dir = f"{run_local_cmd('pwd')[0][0]}/doc"
-
-	script_runner = "-F " + os.path.expanduser("~/.local/bin/panflute")
-	top_source_file = f"{doc_dir}/content/main.md"
-	output_folder = f"{doc_dir}/output_pdf"
+	top_source_file = f"{doc_dir}/content/main.md".replace("/", os.sep)
+	output_folder = f"{doc_dir}/output_pdf".replace("/", os.sep)
 
 	# clean residue from last build process
 	remove_generated_files(delete = [output_folder, f"{doc_dir}/output"])
@@ -52,10 +58,10 @@ def build_default_pdf():
 	
 	# check that the given template exists within the local project. 
 	template = yaml_entries['pandown-template-pdf']
-	if os.path.exists(f"{doc_dir}/templates/{template}"):
-		template_file = f"--template {doc_dir}/templates/{template}"
+	if os.path.exists(f"{doc_dir}/templates/{template}").replace("/", os.sep):
+		template_file = f"--template {doc_dir}/templates/{template}".replace("/", os.sep)
 	else:
-		template_file = f"--template {get_path_to_common_content('pdf_templates')}/{template}"
+		template_file = f"--template {get_path_to_common_content('pdf_templates')}/{template}".replace("/", os.sep)
 
 	panflute_filters_path = f"{get_path_to_common_content('common_filters')}"
 	extras = "--listings" # extras = ""
