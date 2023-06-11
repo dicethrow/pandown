@@ -6,6 +6,8 @@ import panflute as pf
 import shlex
 from threading import Timer
 import copy
+import platform
+import sys
 
 def debug_elem(elem):
 	def preview_func(obj):
@@ -22,7 +24,17 @@ def debug_elem(elem):
 # copied from lxdev.run_local_cmd
 def run_local_cmd(cmd, **kwargs):
 	def as_array(result_or_error):
-		return result_or_error.decode("utf-8").split("\n")[:-1] if result_or_error != None else []
+		# if platform.system() == "Windows":
+			# return result_or_error.decode("utf-8").split("\r\n")[:-1] if result_or_error != None else []
+		# else:
+		print(result_or_error)
+		# try:
+			# result = result_or_error.decode("utf-8").split("\n")[:-1] if result_or_error != None else []
+		# except UnicodeDecodeError:
+		# result = result_or_error.decode("latin-1").split("\n")[:-1] if result_or_error != None else []
+		result = result_or_error.split("\n")[:-1] if result_or_error != None else []
+
+		return result
 
 	# print(cmd, flush=True)
 	print_result = kwargs.pop("print_result", False)
@@ -37,7 +49,19 @@ def run_local_cmd(cmd, **kwargs):
 	# p = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, **kwargs)
 	# 28mar23
 	# timeout structure from https://stackoverflow.com/questions/1191374/using-module-subprocess-with-timeout
-	proc = subprocess.Popen(shlex.split(cmd), stdout=subprocess.PIPE, stderr=subprocess.PIPE, **kwargs)
+	
+	if (platform.system() == "Windows"):# and cmd not in ["pwd"]:
+		cmds = ["cmd", "/c"] + [c for c in shlex.split(cmd)]
+	else:
+		cmds = shlex.split(cmd)
+		
+	if platform.system() == "Windows":
+		kwargs["universal_newlines"] = True
+		kwargs["encoding"] = "cp850"
+	else:
+		kwargs["encoding"] = "utf-8"
+
+	proc = subprocess.Popen(cmds, stdout=subprocess.PIPE, stderr=subprocess.PIPE, **kwargs)
 	if timeout_sec > 0:
 		timer = Timer(timeout_sec, proc.kill)
 		try:
@@ -65,7 +89,13 @@ def run_local_cmd(cmd, **kwargs):
 
 def clear_terminal():
 	# clean the terminal before we start.
-	subprocess.call("clear")
+	if platform.system() == "Windows":
+		subprocess.call(["cmd", "/c", "cls"])
+	else:
+		subprocess.call("clear")
+
+	# subprocess.call(["cmd", "/c", "echo hello"])   # from https://stackoverflow.com/questions/3022013/windows-cant-find-the-file-on-subprocess-call
+	
 
 def remove_generated_files(delete, except_for = []):
 	# recommend to use glob for this function
