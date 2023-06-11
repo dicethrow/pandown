@@ -11,10 +11,14 @@ from copy_linked_items import file_formats_that_link_content, file_formats_that_
 
 
 def get_depth(path):
-	if path.startswith("./"):
-		path = path.split("./")[1:] # remove it?
+	path = pathlib.Path(path)
+	depth = len(path.parents)
+	return depth
+	# if path.startswith("./"):
+		# path = path.split("./")[1:] # remove it?
 
-	return path.count("/")
+	# return path.count("/")
+
 
 # def decode_yaml_content(elem):
 # 	# Split YAML and data parts (separated by ... or ---)
