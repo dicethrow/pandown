@@ -101,7 +101,7 @@ def build_default_pdf():
 	latex_cmd = f'pdflatex --shell-escape -halt-on-error --output-directory {rel_output_dir} {rel_src_file}'  # options go before filename https://tex.stackexchange.com/questions/268997/pdflatex-seems-to-ignore-output-directory
 	latex_logfile = generated_intermediate_files_dir / "latex_log.txt"
 	with open(latex_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
-		for repeats in range(2):
+		for repeats in range(2): # needs to run twice; once to generate the toc, second to use the toc
 			result, error = run_local_cmd(latex_cmd, print_cmd = True, print_result = True, print_error=True, timeout = 15)
 
 	success = latexErrorRecogniser(result, error)
