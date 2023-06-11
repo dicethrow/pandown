@@ -49,23 +49,26 @@ def run_local_cmd(cmd, **kwargs):
 	else:
 		kwargs["encoding"] = "utf-8"
 
+	
+	def monitor_pipe(p, stdfile, print_func):
+		result = []
+		while p.poll() is None:
+			line = stdfile.readline()
+			if line == "":
+				continue
+			line = line.strip()
+			print_func(line)
+			result.append(line)
+		return result
+
 	with subprocess.Popen(cmds, stdout=subprocess.PIPE, stderr=subprocess.PIPE, **kwargs) as p:
 
 		with ThreadPoolExecutor(2) as pool:
 			# technique from https://stackoverflow.com/questions/18421757/live-output-from-subprocess-command
-			def monitor_pipe(p, stdfile, print_func):
-				result = []
-				while p.poll() is None:
-					line = stdfile.readline()
-					if line == "":
-						continue
-					line = line.strip()
-					print_func(line)
-					result.append(line)
-				return result
 
 			r1 = pool.submit(monitor_pipe, p, p.stdout, print_func = lambda s : print(f"{Fore.GREEN}{s}{Fore.RESET}"))
 			r2 = pool.submit(monitor_pipe, p, p.stderr, print_func = lambda s : print(f"{Fore.RED}{s}{Fore.RESET}"))
+
 			stdout = r1.result()
 			stderr = r2.result()
 

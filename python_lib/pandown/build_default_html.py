@@ -11,36 +11,25 @@ from .common import run_local_cmd, clear_terminal, remove_generated_files, add_y
 from .errorRecogniser import pandocErrorRecogniser
 		
 def build_default_html():
-	# in the container, copy over the proj_location/content, and template
-	# then, run the container:proj_location/build.py
-	# which goes through the document and does its thing
-
-	clear_terminal()
-
-	# remove intermediate files from previous runs
-	# remove_generated_files() # note - commented out, so the result.pdf is never removed; which makes vscode auto-reload the latest version of the file
+	# clear_terminal()
 
 	# display the current directory and its contents
-	run_local_cmd("pwd", print_result = True)
-	run_local_cmd("tree -a .", print_result=True)
-
-	doc_dir = f"{run_local_cmd('pwd')[0][0]}/doc"
-
-	script_runner = "-F " + os.path.expanduser("~/.local/bin/panflute")
-	top_source_file = f"{doc_dir}/content/main.md"
-	output_folder = f"{doc_dir}/output_html"
+	cwd = pathlib.Path().absolute()
+	doc_dir = cwd / "doc"
+	top_source_file = doc_dir / "content" / "main.md"
+	output_folder = doc_dir / "output_html"
 
 	# clean residue from last build process
-	remove_generated_files(delete = [output_folder, f"{doc_dir}/output"])
+	remove_generated_files(delete = [output_folder, doc_dir / "output"])
  	# note that latex's minted code generates `output`, although we dont use it at the moment - messy
 	
 	# prepare files and directories for use with pandoc
-	generated_intermediate_files_dir = os.path.join(output_folder, "generated_intermediate_files")
-	top_source_file_ammended = os.path.join(generated_intermediate_files_dir, "main.md")
+	generated_intermediate_files_dir = output_folder / "generated_intermediate_files"
+	top_source_file_ammended = generated_intermediate_files_dir / "main.md"
 	
 	desired_dirs = ["generated_intermediate_files", "generated_output_files"]
 	for desired_dir in desired_dirs:
-		target_path = pathlib.Path(os.path.join(output_folder, desired_dir))
+		target_path = output_folder / desired_dir
 		target_path.mkdir(parents=True, exist_ok=True)
 
 	# load the specified pandown template file
@@ -50,12 +39,14 @@ def build_default_html():
 	
 	# check that the given template exists within the local project. 
 	template = yaml_entries['pandown-template-html']
-	if os.path.exists(f"{doc_dir}/templates/{template}"):
-		template_file = f"--template {doc_dir}/templates/{template}"
+	custom_template_folder = doc_dir / "templates"
+	if (custom_template_folder / template).exists():
+		template_folder = custom_template_folder
 	else:
-		template_file = f"--template {get_path_to_common_content() / 'html_templates' / template}" # todo: use os.path.join
+		template_folder = get_path_to_common_content() / 'html_templates'
+	template_file = f"--template {template_folder / template}"
 	
-	panflute_filters_path = f"{get_path_to_common_content() / 'common_filters'}"
+	panflute_filters_path = get_path_to_common_content() / 'common_filters'
 	extras = "--listings" # extras = ""
 
 	add_yaml_entries_to_file(
@@ -70,14 +61,16 @@ def build_default_html():
 
 
 	### from the .md use pandoc to make .tex
+	script_runner = "-F panflute"
+
 	pandoc_cmd = "pandoc "
 	pandoc_cmd += f"{script_runner} "
 	pandoc_cmd += f"{top_source_file_ammended} "
 	pandoc_cmd += template_file + " "
-	pandoc_cmd += f"--standalone --table-of-contents --output {output_folder}/result.html "
+	pandoc_cmd += f"--standalone --table-of-contents --output {output_folder / 'result.html'} "
 	pandoc_cmd += f"{extras} "
 
-	pandoc_logfile = os.path.join(generated_intermediate_files_dir,  "pandoc_log.txt")
+	pandoc_logfile = generated_intermediate_files_dir / "pandoc_log.txt"
 	with open(pandoc_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
 		result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = True, print_error=True)
 	

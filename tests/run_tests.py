@@ -57,22 +57,22 @@ class test_runner(unittest.TestCase):
 					self.assertTrue(result[-1] == "success", 
 						f"result: {newline.join(result)},\n error: {newline.join(error)}")
 
-	# def test_html(self):
-	# 	for test_dir in glob.glob("tests/test__*"):
-	# 		if run_this_test(test_dir):
-	# 			with cwd(test_dir):
-	# 				print(f"Running test {test_dir}:")
-	# 				if platform.system() == "Windows":
-	# 					cmd = "python doc/build.py html"
-	# 				else:
-	# 					cmd = "python3 doc/build.py html"
+	def test_html(self):
+		for test_dir in glob.glob("tests/test__*"):
+			if run_this_test(test_dir):
+				with cwd(test_dir):
+					print(f"Running test {test_dir}:")
+					if platform.system() == "Windows":
+						cmd = "python doc/build.py html"
+					else:
+						cmd = "python3 doc/build.py html"
 
-	# 				result, error = run_local_cmd(cmd, 
-	# 					print_cmd = True, print_result = True, print_error = True)
+					result, error = run_local_cmd(cmd, 
+						print_cmd = True, print_result = True, print_error = True)
 
-	# 				newline = "\n"
-	# 				self.assertTrue(result[-1] == "success", 
-	# 					f"result: {newline.join(result)},\n error: {newline.join(error)}")
+					newline = "\n"
+					self.assertTrue(result[-1] == "success", 
+						f"result: {newline.join(result)},\n error: {newline.join(error)}")
 	
 	# def test_odt(self):
 	# 	for test_dir in glob.glob("tests/test__*"):

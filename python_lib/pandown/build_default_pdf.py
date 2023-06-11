@@ -13,31 +13,11 @@ from .errorRecogniser import pandocErrorRecogniser, latexErrorRecogniser
 
 		
 def build_default_pdf():
-	# in the container, copy over the proj_location/content, and template
-	# then, run the container:proj_location/build.py
-	# which goes through the document and does its thing
-
-	clear_terminal()
-
-	# remove intermediate files from previous runs
-	# remove_generated_files() # note - commented out, so the result.pdf is never removed; which makes vscode auto-reload the latest version of the file
+	# clear_terminal()
 
 	# display the current directory and its contents
 	cwd = pathlib.Path().absolute()
 	doc_dir = cwd / "doc"
-
-	# if platform.system() == "Windows":
-	# 	run_local_cmd("cd", print_result = True)
-	# 	run_local_cmd("tree .", print_result=True)
-	# 	doc_dir = f"{run_local_cmd('cd')[0][0]}\\doc"
-	# 	script_runner = "-F " + os.path.expanduser("~/.local/bin/panflute")
-	# else:
-	# 	run_local_cmd("pwd", print_result = True)
-	# 	run_local_cmd("tree -a .", print_result=True)
-	# 	doc_dir = f"{run_local_cmd('pwd')[0][0]}/doc"
-	# 	script_runner = "-F " + os.path.expanduser("~\AppData\Local\Programs\Python\Python311\Scripts\panflute.py")
-	script_runner = "-F panflute"
-
 	top_source_file = doc_dir / "content" / "main.md"
 	output_folder = doc_dir / "output_pdf"
 
@@ -82,12 +62,19 @@ def build_default_pdf():
 	)
 
 	### from the .md use pandoc to make .tex
+	script_runner = "-F panflute"
 	latex_intermediate_file = generated_intermediate_files_dir / "result.latex"
-	pandoc_cmd = f"pandoc {script_runner} {top_source_file_ammended} {template_file} -s -o {latex_intermediate_file} {extras}"
+
+	pandoc_cmd = f"pandoc "
+	pandoc_cmd += f"{script_runner} "
+	pandoc_cmd += f"{top_source_file_ammended} "
+	pandoc_cmd += f"{template_file} "
+	pandoc_cmd += f"--standalone --output {latex_intermediate_file} "
+	pandoc_cmd += f"{extras}"
 	
 	pandoc_logfile = generated_intermediate_files_dir / "pandoc_log.txt"
 	with open(pandoc_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
-		result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = True, print_error=True, timeout = 15)
+		result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = True, print_error=True)
 
 	success = pandocErrorRecogniser(result, error)
 	assert success, "Pandoc failure, see log"
@@ -102,7 +89,7 @@ def build_default_pdf():
 	latex_logfile = generated_intermediate_files_dir / "latex_log.txt"
 	with open(latex_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
 		for repeats in range(2): # needs to run twice; once to generate the toc, second to use the toc
-			result, error = run_local_cmd(latex_cmd, print_cmd = True, print_result = True, print_error=True, timeout = 15)
+			result, error = run_local_cmd(latex_cmd, print_cmd = True, print_result = True, print_error=True)
 
 	success = latexErrorRecogniser(result, error)
 	assert success, "Latex failure, see log"
