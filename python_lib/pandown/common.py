@@ -51,7 +51,8 @@ def run_local_cmd(cmd, **kwargs):
 	# timeout structure from https://stackoverflow.com/questions/1191374/using-module-subprocess-with-timeout
 	
 	if (platform.system() == "Windows"):# and cmd not in ["pwd"]:
-		cmds = ["cmd", "/c"] + [c for c in shlex.split(cmd)]
+		# the repr() here turns slashes into doubleslashes, needed on windows
+		cmds = ["cmd", "/c"] + [c for c in shlex.split(repr(cmd))] 
 	else:
 		cmds = shlex.split(cmd)
 		

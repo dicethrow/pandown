@@ -68,7 +68,7 @@ def build_default_pdf():
 		template_folder = get_path_to_common_content() / 'pdf_templates'
 	template_file = f"--template {template_folder / template}"
 
-	panflute_filters_path = f"{get_path_to_common_content() / 'common_filters'}"
+	panflute_filters_path = get_path_to_common_content() / 'common_filters'
 	extras = "--listings" # extras = ""
 
 	add_yaml_entries_to_file(
