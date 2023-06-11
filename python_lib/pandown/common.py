@@ -1,6 +1,5 @@
 import argparse, os, textwrap
 from glob import glob
-import subprocess
 import shutil
 import panflute as pf
 import shlex
@@ -8,6 +7,12 @@ from threading import Timer
 import copy
 import platform
 import sys
+
+
+import subprocess
+from concurrent.futures import ThreadPoolExecutor
+
+from colorama import Fore, Style
 
 def debug_elem(elem):
 	def preview_func(obj):
@@ -23,33 +28,15 @@ def debug_elem(elem):
 
 # copied from lxdev.run_local_cmd
 def run_local_cmd(cmd, **kwargs):
-	def as_array(result_or_error):
-		# if platform.system() == "Windows":
-			# return result_or_error.decode("utf-8").split("\r\n")[:-1] if result_or_error != None else []
-		# else:
-		print(result_or_error)
-		# try:
-			# result = result_or_error.decode("utf-8").split("\n")[:-1] if result_or_error != None else []
-		# except UnicodeDecodeError:
-		# result = result_or_error.decode("latin-1").split("\n")[:-1] if result_or_error != None else []
-		result = result_or_error.split("\n")[:-1] if result_or_error != None else []
-
-		return result
-
 	# print(cmd, flush=True)
 	print_result = kwargs.pop("print_result", False)
 	print_error = kwargs.pop("print_error", False)
 	print_cmd = kwargs.pop("print_cmd", False)
-	timeout_sec = float(kwargs.pop("timeout", 0))
+	timeout_sec = float(kwargs.pop("timeout", 0)) # ignoring timeout for now
 
 	if print_cmd:
-		print("\n$ " + cmd)
+		print(f"\n{Fore.BLUE}$ {cmd}{Fore.RESET}")
 
-
-	# p = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, **kwargs)
-	# 28mar23
-	# timeout structure from https://stackoverflow.com/questions/1191374/using-module-subprocess-with-timeout
-	
 	if (platform.system() == "Windows"):# and cmd not in ["pwd"]:
 		# the repr() here turns slashes into doubleslashes, needed on windows
 		cmds = ["cmd", "/c"] + [c for c in shlex.split(repr(cmd))] 
@@ -62,31 +49,27 @@ def run_local_cmd(cmd, **kwargs):
 	else:
 		kwargs["encoding"] = "utf-8"
 
-	proc = subprocess.Popen(cmds, stdout=subprocess.PIPE, stderr=subprocess.PIPE, **kwargs)
-	if timeout_sec > 0:
-		timer = Timer(timeout_sec, proc.kill)
-		try:
-			timer.start()
-			stdout, stderr = proc.communicate()
-		finally:
-			if not timer.is_alive():
-				raise TimeoutError(f"Timeout of {timeout_sec} sec elapsed, aborting") 
-			timer.cancel()
-	else:
-		stdout, stderr = proc.communicate()
-		
-	output = as_array(stdout)
-	error = as_array(stderr)
+	with subprocess.Popen(cmds, stdout=subprocess.PIPE, stderr=subprocess.PIPE, **kwargs) as p:
 
-	if print_result:
-		for line in output:
-			print(line)
-	
-	if print_error:
-		for line in error:
-			print(line)
+		with ThreadPoolExecutor(2) as pool:
+			# technique from https://stackoverflow.com/questions/18421757/live-output-from-subprocess-command
+			def monitor_pipe(p, stdfile, print_func):
+				result = []
+				while p.poll() is None:
+					line = stdfile.readline()
+					if line == "":
+						continue
+					line = line.strip()
+					print_func(line)
+					result.append(line)
+				return result
 
-	return output, error
+			r1 = pool.submit(monitor_pipe, p, p.stdout, print_func = lambda s : print(f"{Fore.GREEN}{s}{Fore.RESET}"))
+			r2 = pool.submit(monitor_pipe, p, p.stderr, print_func = lambda s : print(f"{Fore.RED}{s}{Fore.RESET}"))
+			stdout = r1.result()
+			stderr = r2.result()
+
+	return stdout, stderr
 
 def clear_terminal():
 	# clean the terminal before we start.

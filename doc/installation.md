@@ -46,7 +46,7 @@
 
 5. Install vscode [Download link](https://code.visualstudio.com/download)
 
-	1. Once installed, open vscode, then navigate to the extensions window. Type in `python`, and for the first result, click `install`. This will enable the vscode text editor to interact with python files better. This may take up to a minute or so.
+	1. Once installed, open vscode, then navigate to the extensions window. Type in `python`, and for the first result, click `install`. This will enable the vscode text editor to interact with python files better. This may take up to a minute or so. Do the same for 'vscode-pdf'
 
 	![install python in vscode](./img/install_python_in_vscode.gif)
 
@@ -66,8 +66,14 @@
 		- install as miktex from this [download link](https://miktex.org/download)
 		- When it asks 'install missing packages on the fly' click 'yes'.
 
+...
 
+had to run this on windows for the first time, as it's slow and the 'run_cmd' does not print realtime output, and stops due to the the 15sec limit, although it took about 2min on my vm
 
+`pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex`
+
+Then it printed `you must have pygmentize installed to use this package'.
+so ran 'pip install pygments'
 
 ## Procedure to link to git remotes, for common workflows
 
