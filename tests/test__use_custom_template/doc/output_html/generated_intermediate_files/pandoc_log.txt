@@ -1,3 +1,0 @@
-
-$ pandoc -F /home/ubuntu/.local/bin/panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/templates/web.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_html/result.html --listings 
-No pandoc errors detected
