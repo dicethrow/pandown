@@ -55,7 +55,7 @@ def latexErrorRecogniser(resultLines, errorLines):
 	lines = resultLines + errorLines
 	success = False
 	for rline in lines:
-		if "Output written on doc/output_pdf/result.pdf" in rline:
+		if "Output written on " in rline:
 			success = True
 	
 	# how to check for case that no .latex file is produced?

@@ -47,9 +47,9 @@ def build_default_odt(template="default/standalone.html"):
 	if os.path.exists(f"{doc_dir}/templates/{template}"):
 		template_file = f"--template {doc_dir}/templates/{template}"
 	else:
-		template_file = f"--template {get_path_to_common_content('html_templates')}/{template}" # todo: use os.path.join
+		template_file = f"--template {get_path_to_common_content() / 'html_templates' /template}" # todo: use os.path.join
 	
-	panflute_filters_path = f"{get_path_to_common_content('common_filters')}"
+	panflute_filters_path = f"{get_path_to_common_content() / 'common_filters'}"
 	extras = "--listings" # extras = ""
 
 	add_yaml_entries_to_file(
