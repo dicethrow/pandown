@@ -1,5 +1,10 @@
 setup.py
 pandown/__init__.py
+pandown/build_default_html.py
+pandown/build_default_odt.py
+pandown/build_default_pdf.py
+pandown/common.py
+pandown/errorRecogniser.py
 pandown.egg-info/PKG-INFO
 pandown.egg-info/SOURCES.txt
 pandown.egg-info/dependency_links.txt

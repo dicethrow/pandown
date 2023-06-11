@@ -13,6 +13,15 @@
 				"program": "tests/run_tests.py",
 				"console": "integratedTerminal"
 				
+			},	
+			{
+				"name" : "Currnet file",
+				"type": "python",
+				"request": "launch",
+				"program": "${file}",
+				"console": "integratedTerminal",
+				"args": ["pdf"]
+				
 			},			
 
 		],
