@@ -24,10 +24,8 @@ def build_default_pdf():
 
 	# display the current directory and its contents
 	cwd = pathlib.Path().absolute()
-	print(cwd)
-	print(cwd / "doc")
+	doc_dir = cwd / "doc"
 
-	return
 	# if platform.system() == "Windows":
 	# 	run_local_cmd("cd", print_result = True)
 	# 	run_local_cmd("tree .", print_result=True)
@@ -38,25 +36,28 @@ def build_default_pdf():
 	# 	run_local_cmd("tree -a .", print_result=True)
 	# 	doc_dir = f"{run_local_cmd('pwd')[0][0]}/doc"
 	# 	script_runner = "-F " + os.path.expanduser("~\AppData\Local\Programs\Python\Python311\Scripts\panflute.py")
+	script_runner = "-F panflute"
 
-
-	top_source_file = f"{doc_dir}/content/main.md".replace("/", os.sep)
-	output_folder = f"{doc_dir}/output_pdf".replace("/", os.sep)
+	top_source_file = doc_dir / "content" / "main.md"
+	output_folder = doc_dir / "output_pdf"
 
 	# clean residue from last build process
-	remove_generated_files(delete = [output_folder, f"{doc_dir}/output"])
+	remove_generated_files(delete = [output_folder, doc_dir / "output"])
  	# note that latex's minted code generates `output`, although we dont use it at the moment - messy
 
 
 	# prepare files and directories for use with pandoc
-	generated_intermediate_files_dir = os.path.join(output_folder, "generated_intermediate_files")
-	top_source_file_ammended = os.path.join(generated_intermediate_files_dir, "main.md")
+	generated_intermediate_files_dir = output_folder / "generated_intermediate_files"
+	top_source_file_ammended = generated_intermediate_files_dir / "main.md"
 	
 	desired_dirs = ["generated_intermediate_files", "generated_output_files"]
 	for desired_dir in desired_dirs:
-		target_path = pathlib.Path(os.path.join(output_folder, desired_dir))
+		# target_path = pathlib.Path(os.path.join(output_folder, desired_dir))
+		target_path = output_folder / desired_dir
 		target_path.mkdir(parents=True, exist_ok=True)
 
+	return 
+	
 	# load the specified pandown template file
 	yaml_entries = get_yaml_entries_from_file(top_source_file)
 	if 'pandown-template-pdf' not in yaml_entries:
