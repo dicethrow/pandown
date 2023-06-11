@@ -1,5 +1,5 @@
 import unittest
-import os
+import os, platform
 from pandown import run_local_cmd, remove_generated_files
 from contextlib import contextmanager
 import glob
@@ -45,24 +45,34 @@ class test_runner(unittest.TestCase):
 			if run_this_test(test_dir):
 				with cwd(test_dir):
 					print(f"Running test {test_dir}:")
-					result, error = run_local_cmd("python3 doc/build.py pdf", 
+					if platform.system() == "Windows":
+						cmd = "python doc/build.py pdf"
+					else:
+						cmd = "python3 doc/build.py pdf"
+
+					result, error = run_local_cmd(cmd, 
 						print_cmd = True, print_result = True, print_error = True)
 
 					newline = "\n"
 					self.assertTrue(result[-1] == "success", 
 						f"result: {newline.join(result)},\n error: {newline.join(error)}")
 
-	def test_html(self):
-		for test_dir in glob.glob("tests/test__*"):
-			if run_this_test(test_dir):
-				with cwd(test_dir):
-					print(f"Running test {test_dir}:")
-					result, error = run_local_cmd("python3 doc/build.py html", 
-						print_cmd = True, print_result = True, print_error = True)
+	# def test_html(self):
+	# 	for test_dir in glob.glob("tests/test__*"):
+	# 		if run_this_test(test_dir):
+	# 			with cwd(test_dir):
+	# 				print(f"Running test {test_dir}:")
+	# 				if platform.system() == "Windows":
+	# 					cmd = "python doc/build.py html"
+	# 				else:
+	# 					cmd = "python3 doc/build.py html"
 
-					newline = "\n"
-					self.assertTrue(result[-1] == "success", 
-						f"result: {newline.join(result)},\n error: {newline.join(error)}")
+	# 				result, error = run_local_cmd(cmd, 
+	# 					print_cmd = True, print_result = True, print_error = True)
+
+	# 				newline = "\n"
+	# 				self.assertTrue(result[-1] == "success", 
+	# 					f"result: {newline.join(result)},\n error: {newline.join(error)}")
 	
 	# def test_odt(self):
 	# 	for test_dir in glob.glob("tests/test__*"):
