@@ -66,8 +66,8 @@ def run_local_cmd(cmd, **kwargs):
 		with ThreadPoolExecutor(2) as pool:
 			# technique from https://stackoverflow.com/questions/18421757/live-output-from-subprocess-command
 
-			r1 = pool.submit(monitor_pipe, p, p.stdout, print_func = lambda s : print(f"{Fore.GREEN}{s}{Fore.RESET}"))
-			r2 = pool.submit(monitor_pipe, p, p.stderr, print_func = lambda s : print(f"{Fore.RED}{s}{Fore.RESET}"))
+			r1 = pool.submit(monitor_pipe, p, p.stdout, print_func = lambda s : print(s))#print(f"{Fore.GREEN}{s}{Fore.RESET}"))
+			r2 = pool.submit(monitor_pipe, p, p.stderr, print_func = lambda s : print(s))#print(f"{Fore.RED}{s}{Fore.RESET}"))
 
 			stdout = r1.result()
 			stderr = r2.result()
