@@ -11,7 +11,8 @@ def run_this_test(test_path):
 
 	# return True
 
-	if "forbidden" in test_path:
+	if test_path.endswith("test__basic"):
+	# if "forbidden" in test_path:
 	# if "basic_nested_parts__" in test_path:
 		return True
 	else:

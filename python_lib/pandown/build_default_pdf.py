@@ -23,16 +23,22 @@ def build_default_pdf():
 	# remove_generated_files() # note - commented out, so the result.pdf is never removed; which makes vscode auto-reload the latest version of the file
 
 	# display the current directory and its contents
-	if platform.system() == "Windows":
-		run_local_cmd("cd", print_result = True)
-		run_local_cmd("tree .", print_result=True)
-		doc_dir = f"{run_local_cmd('cd')[0][0]}\\doc"
-		script_runner = "-F " + os.path.expanduser("~/.local/bin/panflute")
-	else:
-		run_local_cmd("pwd", print_result = True)
-		run_local_cmd("tree -a .", print_result=True)
-		doc_dir = f"{run_local_cmd('pwd')[0][0]}/doc"
-		script_runner = "-F " + os.path.expanduser("~\AppData\Local\Programs\Python\Python311\Scripts\panflute.py")
+	cwd = pathlib.Path().absolute()
+	print(cwd)
+	print(cwd / "doc")
+
+	return
+	# if platform.system() == "Windows":
+	# 	run_local_cmd("cd", print_result = True)
+	# 	run_local_cmd("tree .", print_result=True)
+	# 	doc_dir = f"{run_local_cmd('cd')[0][0]}\\doc"
+	# 	script_runner = "-F " + os.path.expanduser("~/.local/bin/panflute")
+	# else:
+	# 	run_local_cmd("pwd", print_result = True)
+	# 	run_local_cmd("tree -a .", print_result=True)
+	# 	doc_dir = f"{run_local_cmd('pwd')[0][0]}/doc"
+	# 	script_runner = "-F " + os.path.expanduser("~\AppData\Local\Programs\Python\Python311\Scripts\panflute.py")
+
 
 	top_source_file = f"{doc_dir}/content/main.md".replace("/", os.sep)
 	output_folder = f"{doc_dir}/output_pdf".replace("/", os.sep)
@@ -58,7 +64,7 @@ def build_default_pdf():
 	
 	# check that the given template exists within the local project. 
 	template = yaml_entries['pandown-template-pdf']
-	if os.path.exists(f"{doc_dir}/templates/{template}").replace("/", os.sep):
+	if os.path.exists(f"{doc_dir}/templates/{template}".replace("/", os.sep)):
 		template_file = f"--template {doc_dir}/templates/{template}".replace("/", os.sep)
 	else:
 		template_file = f"--template {get_path_to_common_content('pdf_templates')}/{template}".replace("/", os.sep)
