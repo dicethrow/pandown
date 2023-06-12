@@ -2,14 +2,14 @@
 title: Some title
 subtitle: And a small subtitle
 documentclass: paper
-panflute-filters: [ignore_comments, assemble_parts, mermaid_charts, copy_linked_items, copy_linked_items, minted_code]
+panflute-filters: [ignore_comments, assemble_parts, mermaid_charts, copy_linked_items, minted_code]
 ...
 
 # This is part one
-
+ 
 ## heading one in /main.md
 
-Edit made on new os.
+Edit made on new os. 
 
 **paragraph** in /main.md
 
@@ -50,6 +50,7 @@ aaa
 bbb
 
 todo - make the key:value thing in parts be section parts to filenames, e.g. for abstract, progress, etc?
+
 ``` parts
 a_outerfolder
 b_outerfolder
