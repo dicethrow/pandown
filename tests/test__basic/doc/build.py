@@ -1,6 +1,19 @@
 #!/usr/bin/env python3
 import pandown, argparse
 
+import logging
+import sys
+
+# logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+# # logging.setLoggerClass(pandown.ColorLogger)
+
+# logging.setLoggerClass(pandown.ColorLogger)
+# log = logging.getLogger(__name__)
+
+# pandown.ColorLogger.logfile = "testfile_logb.log"
+logging.setLoggerClass(pandown.loggerClass)
+log = logging.getLogger(__name__)
+
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
 	parser.add_argument("task", type=str, help="action to do")
@@ -8,6 +21,8 @@ if __name__ == "__main__":
 	args = parser.parse_args()
 
 	assert args.task in ["pdf", "html"], "invalid task given"
+
+	log.info("Starting build.py")
 
 	if args.task == "html":
 		pandown.build_default_html()

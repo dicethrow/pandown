@@ -11,8 +11,13 @@ from contextlib import redirect_stdout, redirect_stderr
 from .common import run_local_cmd, clear_terminal, remove_generated_files, add_yaml_entries_to_file, get_yaml_entries_from_file
 from .errorRecogniser import pandocErrorRecogniser, latexErrorRecogniser
 
+import logging
+from .my_logging import loggerClass
+logging.setLoggerClass(loggerClass)
+log = logging.getLogger(__name__)
 		
 def build_default_pdf():
+	log.info("Starting build_default_pdf()")
 	# clear_terminal()
 
 	# display the current directory and its contents
@@ -73,12 +78,12 @@ def build_default_pdf():
 	pandoc_cmd += f"{extras}"
 	
 	pandoc_logfile = generated_intermediate_files_dir / "pandoc_log.txt"
-	with open(pandoc_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
-		result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = True, print_error=True)
 
+	# logging disabled for this line as otherwise pandoc pollutes stdout
+	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, disable_logging = True)
+			
 	success = pandocErrorRecogniser(result, error)
 	assert success, "Pandoc failure, see log"
-
 	### from .tex make .pdf
 	# lualatex needs to be caled twice, otherwise the toc doesn't generate properly. if references, call biber between
 	pdf_output_dir = doc_dir / "output_pdf"
@@ -87,9 +92,9 @@ def build_default_pdf():
 
 	latex_cmd = f'pdflatex --shell-escape -halt-on-error --output-directory {rel_output_dir} {rel_src_file}'  # options go before filename https://tex.stackexchange.com/questions/268997/pdflatex-seems-to-ignore-output-directory
 	latex_logfile = generated_intermediate_files_dir / "latex_log.txt"
-	with open(latex_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
-		for repeats in range(2): # needs to run twice; once to generate the toc, second to use the toc
-			result, error = run_local_cmd(latex_cmd, print_cmd = True, print_result = True, print_error=True)
+	# with open(latex_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
+	for repeats in range(2): # needs to run twice; once to generate the toc, second to use the toc
+		result, error = run_local_cmd(latex_cmd, print_cmd = True)
 
 	success = latexErrorRecogniser(result, error)
 	assert success, "Latex failure, see log"
@@ -100,5 +105,8 @@ def build_default_pdf():
 			[output_folder / f'result{suffix}' for suffix in ('.pdf',)]
 	)
 
-	print("success")
+	print("success") # for stdout
+	# print("")
+	# log.inf
+
 

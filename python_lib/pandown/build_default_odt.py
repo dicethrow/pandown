@@ -21,8 +21,8 @@ def build_default_odt(template="default/standalone.html"):
 	# remove_generated_files() # note - commented out, so the result.pdf is never removed; which makes vscode auto-reload the latest version of the file
 
 	# display the current directory and its contents
-	run_local_cmd("pwd", print_result = True)
-	run_local_cmd("tree -a .", print_result=True)
+	run_local_cmd("pwd")
+	run_local_cmd("tree -a .")
 
 	doc_dir = f"{run_local_cmd('pwd')[0][0]}/doc"
 
@@ -74,7 +74,7 @@ def build_default_odt(template="default/standalone.html"):
 	# 1. build HTML
 	pandoc_logfile = os.path.join(generated_intermediate_files_dir,  "pandoc_log_tohtml.txt")
 	with open(pandoc_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
-		result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = True, print_error=True)
+		result, error = run_local_cmd(pandoc_cmd, print_cmd = True)
 	
 		success = pandocErrorRecogniser(result, error)
 	assert success, "Pandoc failure, see log"
@@ -83,8 +83,7 @@ def build_default_odt(template="default/standalone.html"):
 	pandoc_logfile = os.path.join(generated_intermediate_files_dir,  "pandoc_log_toodt.txt")
 	with open(pandoc_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
 		result, error = run_local_cmd("pandoc result.html -o result.odt",
-			cwd = output_folder,
-			print_cmd = True, print_result = True, print_error=True)
+			cwd = output_folder, print_cmd = True)
 	
 		success = pandocErrorRecogniser(result, error)
 	assert success, "Pandoc failure, see log"

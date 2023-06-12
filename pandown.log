@@ -1,0 +1,638 @@
+[2023-06-12 07:52:14,751] INFO [__main__.test_html:79] Running test tests/test__level_neg_1:
+[2023-06-12 07:52:14,753] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:52:15,646] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:52:15,661] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output
+	 subprocess:[2023-06-12 07:52:15,667] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:52:17,946] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:52:17,951] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output
+[2023-06-12 07:52:17,954] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:52:18,764] INFO [__main__.test_html:79] Running test tests/test__basic_nested_parts:
+[2023-06-12 07:52:18,765] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:52:19,610] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:52:19,615] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output
+	 subprocess:[2023-06-12 07:52:19,623] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:52:20,059] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:52:20,063] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output
+[2023-06-12 07:52:20,065] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:52:20,931] INFO [__main__.test_html:79] Running test tests/test__basic_nested_parts__level_neg_1:
+[2023-06-12 07:52:20,932] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:52:21,774] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:52:21,786] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output
+	 subprocess:[2023-06-12 07:52:21,790] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:52:22,106] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:52:22,109] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output
+[2023-06-12 07:52:22,110] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:52:22,788] INFO [__main__.test_html:79] Running test tests/test__deeply_nested_list:
+[2023-06-12 07:52:22,789] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:52:23,658] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:52:23,663] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output
+	 subprocess:[2023-06-12 07:52:23,667] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:52:23,897] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:52:23,900] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output
+[2023-06-12 07:52:23,901] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:52:24,678] INFO [__main__.test_html:79] Running test tests/test__mermaid_charts:
+[2023-06-12 07:52:24,680] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:52:25,527] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:52:25,535] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output
+	 subprocess:[2023-06-12 07:52:25,539] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:52:27,718] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:52:27,720] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output
+[2023-06-12 07:52:27,722] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:52:28,317] INFO [__main__.test_html:79] Running test tests/test__use_custom_template:
+[2023-06-12 07:52:28,318] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:52:29,202] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:52:29,210] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/templates/web.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:52:29,440] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:52:29,446] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output
+[2023-06-12 07:52:29,449] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:52:30,222] INFO [__main__.test_html:79] Running test tests/test__forbidden_character_handling:
+[2023-06-12 07:52:30,223] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:52:31,073] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:52:31,079] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__forbidden_character_handling/doc/output
+	 subprocess:[2023-06-12 07:52:31,083] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__forbidden_character_handling/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__forbidden_character_handling/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:52:33,504] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:52:33,509] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__forbidden_character_handling/doc/output
+[2023-06-12 07:52:33,511] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:52:34,190] INFO [__main__.test_html:79] Running test tests/test__basic:
+[2023-06-12 07:52:34,191] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:52:34,995] INFO [__main__.<module>:25] Starting build.py
+	 subprocess:[2023-06-12 07:52:34,998] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:52:35,002] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+	 subprocess:[2023-06-12 07:52:35,009] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:52:35,355] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:52:35,361] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+[2023-06-12 07:52:35,363] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:52:36,007] INFO [__main__.test_html:79] Running test tests/test__linked_files:
+[2023-06-12 07:52:36,008] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:52:36,939] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:52:36,961] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output
+	 subprocess:[2023-06-12 07:52:36,964] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:52:39,121] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:52:39,124] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output
+[2023-06-12 07:52:39,125] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:52:39,737] INFO [__main__.test_pdf:64] Running test tests/test__level_neg_1:
+[2023-06-12 07:52:39,737] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:52:40,633] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:52:40,638] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output
+	 subprocess:[2023-06-12 07:52:40,642] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:52:43,414] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:52:43,416] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:52:44,482] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:52:45,444] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:52:45,455] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:52:46,133] INFO [__main__.test_pdf:64] Running test tests/test__basic_nested_parts:
+[2023-06-12 07:52:46,133] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:52:47,004] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:52:47,011] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output
+	 subprocess:[2023-06-12 07:52:47,016] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:52:47,412] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:52:47,414] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:52:48,468] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:52:49,528] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:52:49,539] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:52:50,153] INFO [__main__.test_pdf:64] Running test tests/test__basic_nested_parts__level_neg_1:
+[2023-06-12 07:52:50,154] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:52:50,989] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:52:50,995] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output
+	 subprocess:[2023-06-12 07:52:51,001] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:52:51,323] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:52:51,325] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:52:52,238] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:52:53,236] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:52:53,248] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:52:54,111] INFO [__main__.test_pdf:64] Running test tests/test__deeply_nested_list:
+[2023-06-12 07:52:54,111] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:52:55,241] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:52:55,246] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output
+	 subprocess:[2023-06-12 07:52:55,250] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:52:55,521] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:52:55,525] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:52:56,426] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:52:57,324] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:52:57,332] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:52:58,082] INFO [__main__.test_pdf:64] Running test tests/test__mermaid_charts:
+[2023-06-12 07:52:58,083] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:52:58,903] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:52:58,908] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output
+	 subprocess:[2023-06-12 07:52:58,913] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:53:01,273] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:53:01,276] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:53:02,239] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:53:03,195] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:53:03,204] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:53:03,879] INFO [__main__.test_pdf:64] Running test tests/test__use_custom_template:
+[2023-06-12 07:53:03,880] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:53:04,660] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:53:04,665] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output
+	 subprocess:[2023-06-12 07:53:04,671] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/templates/pdf.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:53:04,866] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:53:04,869] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:53:05,874] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:53:06,698] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:53:06,711] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:53:07,533] INFO [__main__.test_pdf:64] Running test tests/test__forbidden_character_handling:
+[2023-06-12 07:53:07,533] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:53:08,395] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:53:08,399] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__forbidden_character_handling/doc/output
+	 subprocess:[2023-06-12 07:53:08,403] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__forbidden_character_handling/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__forbidden_character_handling/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:53:10,871] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:53:10,873] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:53:11,656] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:53:12,411] WARNING [pandown.errorRecogniser.latexErrorRecogniser:83] Warning! Undiagnosed latex issue. Displaying latex output:
+	 subprocess:[2023-06-12 07:53:12,413] WARNING [pandown.errorRecogniser.latexErrorRecogniser:85] This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
+[2023-06-12 07:53:12,417] DEBUG [pandown.common.show_line:103] \write18 enabled.
+[2023-06-12 07:53:12,417] DEBUG [pandown.common.show_line:103] entering extended mode
+[2023-06-12 07:53:12,417] DEBUG [pandown.common.show_line:103] (./doc/output_pdf/generated_intermediate_files/result.latex
+[2023-06-12 07:53:12,417] DEBUG [pandown.common.show_line:103] LaTeX2e <2020-02-02> patch level 2
+[2023-06-12 07:53:12,418] DEBUG [pandown.common.show_line:103] L3 programming layer <2020-02-14>
+[2023-06-12 07:53:12,418] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/paper/paper.cls
+[2023-06-12 07:53:12,418] DEBUG [pandown.common.show_line:103] Document Class: paper 2008/05/30 1.0l LaTeX document class (wm).
+[2023-06-12 07:53:12,418] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+[2023-06-12 07:53:12,418] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+[2023-06-12 07:53:12,418] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+[2023-06-12 07:53:12,418] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+[2023-06-12 07:53:12,419] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+[2023-06-12 07:53:12,419] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty)
+[2023-06-12 07:53:12,419] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+[2023-06-12 07:53:12,419] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+[2023-06-12 07:53:12,419] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+[2023-06-12 07:53:12,419] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+[2023-06-12 07:53:12,419] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
+[2023-06-12 07:53:12,420] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+[2023-06-12 07:53:12,420] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+[2023-06-12 07:53:12,420] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+[2023-06-12 07:53:12,420] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty)
+[2023-06-12 07:53:12,420] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty))
+[2023-06-12 07:53:12,420] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty)
+[2023-06-12 07:53:12,421] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty)
+[2023-06-12 07:53:12,421] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+[2023-06-12 07:53:12,421] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+[2023-06-12 07:53:12,421] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+[2023-06-12 07:53:12,421] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
+[2023-06-12 07:53:12,421] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty))
+[2023-06-12 07:53:12,422] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty) (./result.w18))
+[2023-06-12 07:53:12,422] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+[2023-06-12 07:53:12,422] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex))
+[2023-06-12 07:53:12,422] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty)
+[2023-06-12 07:53:12,422] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty))
+[2023-06-12 07:53:12,423] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+[2023-06-12 07:53:12,423] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+[2023-06-12 07:53:12,423] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+[2023-06-12 07:53:12,423] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+[2023-06-12 07:53:12,423] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+[2023-06-12 07:53:12,424] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+[2023-06-12 07:53:12,424] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+[2023-06-12 07:53:12,424] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/lmodern.sty)
+[2023-06-12 07:53:12,424] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+[2023-06-12 07:53:12,424] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+[2023-06-12 07:53:12,425] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+[2023-06-12 07:53:12,425] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+[2023-06-12 07:53:12,425] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+[2023-06-12 07:53:12,425] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+[2023-06-12 07:53:12,425] DEBUG [pandown.common.show_line:103] ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+[2023-06-12 07:53:12,425] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty))
+[2023-06-12 07:53:12,425] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+[2023-06-12 07:53:12,426] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+[2023-06-12 07:53:12,426] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+[2023-06-12 07:53:12,426] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+[2023-06-12 07:53:12,426] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+[2023-06-12 07:53:12,426] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+[2023-06-12 07:53:12,426] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+[2023-06-12 07:53:12,426] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+[2023-06-12 07:53:12,426] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+[2023-06-12 07:53:12,426] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+[2023-06-12 07:53:12,427] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+[2023-06-12 07:53:12,427] DEBUG [pandown.common.show_line:103] ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+[2023-06-12 07:53:12,427] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+[2023-06-12 07:53:12,427] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+[2023-06-12 07:53:12,427] DEBUG [pandown.common.show_line:103] f)))
+[2023-06-12 07:53:12,427] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+[2023-06-12 07:53:12,427] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:53:12,428] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+[2023-06-12 07:53:12,428] DEBUG [pandown.common.show_line:103] tex))
+[2023-06-12 07:53:12,428] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+[2023-06-12 07:53:12,428] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+[2023-06-12 07:53:12,428] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+[2023-06-12 07:53:12,428] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+[2023-06-12 07:53:12,429] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+[2023-06-12 07:53:12,429] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+[2023-06-12 07:53:12,429] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+[2023-06-12 07:53:12,429] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:53:12,429] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+[2023-06-12 07:53:12,429] DEBUG [pandown.common.show_line:103] ric.code.tex)
+[2023-06-12 07:53:12,429] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+[2023-06-12 07:53:12,429] DEBUG [pandown.common.show_line:103] e.tex)
+[2023-06-12 07:53:12,430] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+[2023-06-12 07:53:12,430] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:53:12,430] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+[2023-06-12 07:53:12,430] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:53:12,430] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+[2023-06-12 07:53:12,430] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:53:12,430] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+[2023-06-12 07:53:12,431] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:53:12,431] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+[2023-06-12 07:53:12,431] DEBUG [pandown.common.show_line:103] thmetics.code.tex)))
+[2023-06-12 07:53:12,431] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+[2023-06-12 07:53:12,431] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+[2023-06-12 07:53:12,431] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+[2023-06-12 07:53:12,431] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:53:12,432] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+[2023-06-12 07:53:12,432] DEBUG [pandown.common.show_line:103] code.tex)
+[2023-06-12 07:53:12,432] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+[2023-06-12 07:53:12,432] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:53:12,432] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+[2023-06-12 07:53:12,432] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:53:12,432] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+[2023-06-12 07:53:12,433] DEBUG [pandown.common.show_line:103] ode.tex)
+[2023-06-12 07:53:12,433] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+[2023-06-12 07:53:12,433] DEBUG [pandown.common.show_line:103] s.code.tex)
+[2023-06-12 07:53:12,433] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+[2023-06-12 07:53:12,433] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:12,433] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+[2023-06-12 07:53:12,434] DEBUG [pandown.common.show_line:103] ex)
+[2023-06-12 07:53:12,434] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+[2023-06-12 07:53:12,434] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:53:12,434] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+[2023-06-12 07:53:12,434] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:53:12,434] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+[2023-06-12 07:53:12,435] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:12,435] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+[2023-06-12 07:53:12,435] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:12,435] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+[2023-06-12 07:53:12,435] DEBUG [pandown.common.show_line:103] tex))
+[2023-06-12 07:53:12,435] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+[2023-06-12 07:53:12,435] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:53:12,435] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+[2023-06-12 07:53:12,436] DEBUG [pandown.common.show_line:103] ode.tex)
+[2023-06-12 07:53:12,436] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+[2023-06-12 07:53:12,436] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:53:12,436] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))
+[2023-06-12 07:53:12,436] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:12,436] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+[2023-06-12 07:53:12,436] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+[2023-06-12 07:53:12,437] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:12,437] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+[2023-06-12 07:53:12,437] DEBUG [pandown.common.show_line:103] .sty)
+[2023-06-12 07:53:12,437] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+[2023-06-12 07:53:12,437] DEBUG [pandown.common.show_line:103] .sty)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+[2023-06-12 07:53:12,437] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+[2023-06-12 07:53:12,437] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+[2023-06-12 07:53:12,437] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+[2023-06-12 07:53:12,437] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+[2023-06-12 07:53:12,438] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+[2023-06-12 07:53:12,438] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+[2023-06-12 07:53:12,438] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+[2023-06-12 07:53:12,438] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:12,438] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+[2023-06-12 07:53:12,438] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:53:12,439] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+[2023-06-12 07:53:12,439] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:12,439] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:53:12,439] DEBUG [pandown.common.show_line:103] zlibrarytopaths.code.tex)))
+[2023-06-12 07:53:12,439] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+[2023-06-12 07:53:12,439] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)
+[2023-06-12 07:53:12,440] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:12,440] DEBUG [pandown.common.show_line:103] Package caption Warning: Unknown document class (or package),
+[2023-06-12 07:53:12,440] DEBUG [pandown.common.show_line:103] (caption)                standard defaults will be used.
+[2023-06-12 07:53:12,440] DEBUG [pandown.common.show_line:103] See the caption package documentation for explanation.
+[2023-06-12 07:53:12,440] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:12,440] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty))
+[2023-06-12 07:53:12,440] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty)
+[2023-06-12 07:53:12,441] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime.sty
+[2023-06-12 07:53:12,441] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fmtcount.sty
+[2023-06-12 07:53:12,441] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+[2023-06-12 07:53:12,441] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+[2023-06-12 07:53:12,441] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+[2023-06-12 07:53:12,441] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcprefix.sty
+[2023-06-12 07:53:12,441] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcnumparser.sty))
+[2023-06-12 07:53:12,441] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+[2023-06-12 07:53:12,442] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime-defaults.sty))
+[2023-06-12 07:53:12,442] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+[2023-06-12 07:53:12,442] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+[2023-06-12 07:53:12,442] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def))
+[2023-06-12 07:53:12,442] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+[2023-06-12 07:53:12,442] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def)
+[2023-06-12 07:53:12,442] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def)
+[2023-06-12 07:53:12,443] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def)
+[2023-06-12 07:53:12,443] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+[2023-06-12 07:53:12,443] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx))
+[2023-06-12 07:53:12,443] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx)
+[2023-06-12 07:53:12,443] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg))
+[2023-06-12 07:53:12,443] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+[2023-06-12 07:53:12,443] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:12,444] DEBUG [pandown.common.show_line:103] Package tocbibind Note: Using section or other style headings.
+[2023-06-12 07:53:12,444] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:12,444] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty)
+[2023-06-12 07:53:12,444] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+[2023-06-12 07:53:12,444] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+[2023-06-12 07:53:12,444] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty)
+[2023-06-12 07:53:12,445] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty))
+[2023-06-12 07:53:12,445] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+[2023-06-12 07:53:12,445] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+[2023-06-12 07:53:12,445] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+[2023-06-12 07:53:12,445] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+[2023-06-12 07:53:12,445] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+[2023-06-12 07:53:12,445] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+[2023-06-12 07:53:12,445] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+[2023-06-12 07:53:12,446] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+[2023-06-12 07:53:12,446] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+[2023-06-12 07:53:12,446] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+[2023-06-12 07:53:12,446] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty))
+[2023-06-12 07:53:12,446] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+[2023-06-12 07:53:12,446] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty)
+[2023-06-12 07:53:12,446] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+[2023-06-12 07:53:12,447] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+[2023-06-12 07:53:12,447] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
+[2023-06-12 07:53:12,447] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:53:12,447] DEBUG [pandown.common.show_line:103] zlibrarypositioning.code.tex)
+[2023-06-12 07:53:12,447] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:53:12,447] DEBUG [pandown.common.show_line:103] zlibraryshadows.code.tex
+[2023-06-12 07:53:12,447] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:53:12,448] DEBUG [pandown.common.show_line:103] zlibraryfadings.code.tex
+[2023-06-12 07:53:12,448] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code
+[2023-06-12 07:53:12,448] DEBUG [pandown.common.show_line:103] .tex)))) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)/home/ubuntu/.local/bin/pygmentize
+[2023-06-12 07:53:12,448] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:12,448] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
+[2023-06-12 07:53:12,448] DEBUG [pandown.common.show_line:103] (doc/output_pdf/result.aux) (/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+[2023-06-12 07:53:12,448] DEBUG [pandown.common.show_line:103] *geometry* driver: auto-detecting
+[2023-06-12 07:53:12,448] DEBUG [pandown.common.show_line:103] *geometry* detected driver: pdftex
+[2023-06-12 07:53:12,449] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[2023-06-12 07:53:12,449] DEBUG [pandown.common.show_line:103] [Loading MPS to PDF converter (version 2006.09.02).]
+[2023-06-12 07:53:12,449] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+[2023-06-12 07:53:12,449] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+[2023-06-12 07:53:12,449] DEBUG [pandown.common.show_line:103] ABD: EveryShipout initializing macros
+[2023-06-12 07:53:12,449] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fc-english.def)
+[2023-06-12 07:53:12,449] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx)
+[2023-06-12 07:53:12,450] DEBUG [pandown.common.show_line:103] No file result.bbl.
+[2023-06-12 07:53:12,450] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+[2023-06-12 07:53:12,450] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+[2023-06-12 07:53:12,450] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+[2023-06-12 07:53:12,450] DEBUG [pandown.common.show_line:103] (doc/output_pdf/result.out) (doc/output_pdf/result.out)
+[2023-06-12 07:53:12,450] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/ot1lmss.fd)
+[2023-06-12 07:53:12,450] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omllmm.fd)
+[2023-06-12 07:53:12,451] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+[2023-06-12 07:53:12,451] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+[2023-06-12 07:53:12,451] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:12,451] DEBUG [pandown.common.show_line:103] LaTeX Warning: No \author given.
+[2023-06-12 07:53:12,451] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:12,451] DEBUG [pandown.common.show_line:103] (doc/output_pdf/result.toc) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.ma
+[2023-06-12 07:53:12,451] DEBUG [pandown.common.show_line:103] p}]
+[2023-06-12 07:53:12,451] DEBUG [pandown.common.show_line:103] ! Undefined control sequence.
+[2023-06-12 07:53:12,452] DEBUG [pandown.common.show_line:103] l.146 This is ~some text \with
+[2023-06-12 07:53:12,452] DEBUG [pandown.common.show_line:103] a number~of backslashes~in it
+[2023-06-12 07:53:12,452] DEBUG [pandown.common.show_line:103] !  ==> Fatal error occurred, no output PDF file produced!
+[2023-06-12 07:53:12,452] DEBUG [pandown.common.show_line:103] Transcript written on doc/output_pdf/result.log.
+[2023-06-12 07:55:58,495] DEBUG [pandown.common.show_line:103] Traceback (most recent call last):
+[2023-06-12 07:55:58,496] DEBUG [pandown.common.show_line:103] File "/home/ubuntu/.vscode-oss/extensions/ms-python.python-2023.8.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/pydevd.py", line 3489, in <module>
+[2023-06-12 07:55:58,500] DEBUG [pandown.common.show_line:103] main()
+[2023-06-12 07:55:58,502] DEBUG [pandown.common.show_line:103] File "/home/ubuntu/.vscode-oss/extensions/ms-python.python-2023.8.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/pydevd.py", line 3482, in main
+[2023-06-12 07:55:58,506] DEBUG [pandown.common.show_line:103] globals = debugger.run(setup['file'], None, None, is_module)
+[2023-06-12 07:55:58,507] DEBUG [pandown.common.show_line:103] File "/home/ubuntu/.vscode-oss/extensions/ms-python.python-2023.8.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/pydevd.py", line 2510, in run
+[2023-06-12 07:55:58,510] DEBUG [pandown.common.show_line:103] return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+[2023-06-12 07:55:58,512] DEBUG [pandown.common.show_line:103] File "/home/ubuntu/.vscode-oss/extensions/ms-python.python-2023.8.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/pydevd.py", line 2517, in _exec
+[2023-06-12 07:55:58,516] DEBUG [pandown.common.show_line:103] globals = pydevd_runpy.run_path(file, globals, '__main__')
+[2023-06-12 07:55:58,518] DEBUG [pandown.common.show_line:103] File "/home/ubuntu/.vscode-oss/extensions/ms-python.python-2023.8.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 321, in run_path
+[2023-06-12 07:55:58,521] DEBUG [pandown.common.show_line:103] return _run_module_code(code, init_globals, run_name,
+[2023-06-12 07:55:58,523] DEBUG [pandown.common.show_line:103] File "/home/ubuntu/.vscode-oss/extensions/ms-python.python-2023.8.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 135, in _run_module_code
+[2023-06-12 07:55:58,528] DEBUG [pandown.common.show_line:103] _run_code(code, mod_globals, init_globals,
+[2023-06-12 07:55:58,531] DEBUG [pandown.common.show_line:103] File "/home/ubuntu/.vscode-oss/extensions/ms-python.python-2023.8.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
+[2023-06-12 07:55:58,534] DEBUG [pandown.common.show_line:103] exec(code, run_globals)
+[2023-06-12 07:55:58,535] DEBUG [pandown.common.show_line:103] File "doc/build.py", line 16, in <module>
+[2023-06-12 07:55:58,539] DEBUG [pandown.common.show_line:103] pandown.build_default_pdf()
+[2023-06-12 07:55:58,540] DEBUG [pandown.common.show_line:103] File "/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/build_default_pdf.py", line 100, in build_default_pdf
+[2023-06-12 07:55:58,540] DEBUG [pandown.common.show_line:103] assert success, "Latex failure, see log"
+[2023-06-12 07:55:58,541] DEBUG [pandown.common.show_line:103] AssertionError: Latex failure, see log
+[2023-06-12 07:56:10,583] INFO [__main__.test_html:79] Running test tests/test__level_neg_1:
+[2023-06-12 07:56:10,584] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:56:11,430] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:56:11,436] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output
+	 subprocess:[2023-06-12 07:56:11,441] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:56:13,561] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:13,566] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output
+[2023-06-12 07:56:13,568] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:14,256] INFO [__main__.test_html:79] Running test tests/test__basic_nested_parts:
+[2023-06-12 07:56:14,257] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:56:15,081] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:56:15,085] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output
+	 subprocess:[2023-06-12 07:56:15,089] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:56:15,484] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:15,487] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output
+[2023-06-12 07:56:15,488] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:16,108] INFO [__main__.test_html:79] Running test tests/test__basic_nested_parts__level_neg_1:
+[2023-06-12 07:56:16,109] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:56:16,934] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:56:16,939] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output
+	 subprocess:[2023-06-12 07:56:16,943] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:56:17,306] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:17,311] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output
+[2023-06-12 07:56:17,314] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:17,936] INFO [__main__.test_html:79] Running test tests/test__deeply_nested_list:
+[2023-06-12 07:56:17,937] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:56:18,755] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:56:18,760] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output
+	 subprocess:[2023-06-12 07:56:18,764] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:56:18,972] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:18,975] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output
+[2023-06-12 07:56:18,976] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:19,718] INFO [__main__.test_html:79] Running test tests/test__mermaid_charts:
+[2023-06-12 07:56:19,719] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:56:20,550] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:56:20,557] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output
+	 subprocess:[2023-06-12 07:56:20,561] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:56:22,758] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:22,765] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output
+[2023-06-12 07:56:22,767] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:23,348] INFO [__main__.test_html:79] Running test tests/test__use_custom_template:
+[2023-06-12 07:56:23,349] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:56:24,202] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:56:24,210] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output
+	 subprocess:[2023-06-12 07:56:24,215] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/templates/web.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:56:24,425] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:24,427] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output
+[2023-06-12 07:56:24,429] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:25,208] INFO [__main__.test_html:79] Running test tests/test__basic:
+[2023-06-12 07:56:25,209] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:56:26,114] INFO [__main__.<module>:25] Starting build.py
+	 subprocess:[2023-06-12 07:56:26,116] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:56:26,120] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+	 subprocess:[2023-06-12 07:56:26,125] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:56:26,476] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:26,481] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+[2023-06-12 07:56:26,483] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:27,119] INFO [__main__.test_html:79] Running test tests/test__linked_files:
+[2023-06-12 07:56:27,120] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:56:27,938] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:56:27,946] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output
+	 subprocess:[2023-06-12 07:56:27,950] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:56:30,014] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:30,019] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output
+[2023-06-12 07:56:30,021] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:30,768] INFO [__main__.test_pdf:64] Running test tests/test__level_neg_1:
+[2023-06-12 07:56:30,769] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:56:31,600] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:56:31,604] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output
+	 subprocess:[2023-06-12 07:56:31,610] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__level_neg_1/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:56:33,797] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:33,798] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:56:34,774] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:56:35,723] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:56:35,728] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:36,582] INFO [__main__.test_pdf:64] Running test tests/test__basic_nested_parts:
+[2023-06-12 07:56:36,583] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:56:37,454] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:56:37,459] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output
+	 subprocess:[2023-06-12 07:56:37,463] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:56:37,828] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:37,831] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:56:38,652] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:56:39,484] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:56:39,494] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:40,283] INFO [__main__.test_pdf:64] Running test tests/test__basic_nested_parts__level_neg_1:
+[2023-06-12 07:56:40,284] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:56:41,150] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:56:41,154] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output
+	 subprocess:[2023-06-12 07:56:41,157] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic_nested_parts__level_neg_1/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:56:41,451] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:41,453] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:56:42,301] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:56:43,133] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:56:43,142] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:43,944] INFO [__main__.test_pdf:64] Running test tests/test__deeply_nested_list:
+[2023-06-12 07:56:43,945] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:56:44,800] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:56:44,806] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output
+	 subprocess:[2023-06-12 07:56:44,814] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__deeply_nested_list/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:56:44,993] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:44,995] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:56:45,810] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:56:46,666] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:56:46,677] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:47,329] INFO [__main__.test_pdf:64] Running test tests/test__mermaid_charts:
+[2023-06-12 07:56:47,330] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:56:48,252] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:56:48,257] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output
+	 subprocess:[2023-06-12 07:56:48,262] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__mermaid_charts/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:56:50,647] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:50,649] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:56:51,905] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:56:52,940] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:56:52,950] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:53,761] INFO [__main__.test_pdf:64] Running test tests/test__use_custom_template:
+[2023-06-12 07:56:53,761] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:56:54,643] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:56:54,649] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output
+	 subprocess:[2023-06-12 07:56:54,656] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/templates/pdf.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:56:54,872] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:54,874] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:56:55,716] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:56:56,513] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:56:56,523] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:56:57,161] INFO [__main__.test_pdf:64] Running test tests/test__basic:
+[2023-06-12 07:56:57,162] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:56:58,007] INFO [__main__.<module>:25] Starting build.py
+	 subprocess:[2023-06-12 07:56:58,011] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:56:58,014] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+	 subprocess:[2023-06-12 07:56:58,018] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:56:58,316] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:56:58,317] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:56:59,282] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:57:00,247] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:57:00,257] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:57:01,144] INFO [__main__.test_pdf:64] Running test tests/test__linked_files:
+[2023-06-12 07:57:01,145] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:57:02,007] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:57:02,018] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output
+	 subprocess:[2023-06-12 07:57:02,024] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:57:04,840] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:57:04,842] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:57:05,857] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 07:57:06,850] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:57:06,861] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:58:34,609] INFO [__main__.test_html:79] Running test tests/test__basic:
+[2023-06-12 07:58:34,613] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:58:35,465] INFO [__main__.<module>:25] Starting build.py
+	 subprocess:[2023-06-12 07:58:35,468] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:58:35,474] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+	 subprocess:[2023-06-12 07:58:35,481] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:58:35,898] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:58:35,903] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+[2023-06-12 07:58:35,906] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:58:36,517] INFO [__main__.test_pdf:64] Running test tests/test__basic:
+[2023-06-12 07:58:36,518] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:58:37,323] INFO [__main__.<module>:25] Starting build.py
+	 subprocess:[2023-06-12 07:58:37,326] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:58:37,333] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+	 subprocess:[2023-06-12 07:58:37,338] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:58:37,658] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:58:37,660] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+[2023-06-12 07:59:29,758] INFO [__main__.test_html:79] Running test tests/test__basic:
+[2023-06-12 07:59:29,760] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 07:59:30,606] INFO [__main__.<module>:25] Starting build.py
+	 subprocess:[2023-06-12 07:59:30,608] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 07:59:30,612] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+	 subprocess:[2023-06-12 07:59:30,617] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 07:59:31,050] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:59:31,055] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+[2023-06-12 07:59:31,057] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 07:59:31,720] INFO [__main__.test_pdf:64] Running test tests/test__basic:
+[2023-06-12 07:59:31,721] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 07:59:32,600] INFO [__main__.<module>:25] Starting build.py
+	 subprocess:[2023-06-12 07:59:32,603] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 07:59:32,606] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+	 subprocess:[2023-06-12 07:59:32,612] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 07:59:33,008] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 07:59:33,011] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+[2023-06-12 08:00:06,989] INFO [__main__.test_html:79] Running test tests/test__basic:
+[2023-06-12 08:00:06,991] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 08:00:07,850] INFO [__main__.<module>:25] Starting build.py
+	 subprocess:[2023-06-12 08:00:07,852] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 08:00:07,855] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+	 subprocess:[2023-06-12 08:00:07,861] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 08:00:08,250] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 08:00:08,255] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+[2023-06-12 08:00:08,258] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 08:00:08,884] INFO [__main__.test_pdf:64] Running test tests/test__basic:
+[2023-06-12 08:00:08,885] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 08:00:09,781] INFO [__main__.<module>:25] Starting build.py
+	 subprocess:[2023-06-12 08:00:09,784] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 08:00:09,787] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+	 subprocess:[2023-06-12 08:00:09,793] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 08:00:10,149] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 08:00:10,152] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+[2023-06-12 08:01:18,089] INFO [__main__.test_html:79] Running test tests/test__basic:
+[2023-06-12 08:01:18,090] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 08:01:19,025] INFO [__main__.<module>:25] Starting build.py
+	 subprocess:[2023-06-12 08:01:19,028] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 08:01:19,033] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+	 subprocess:[2023-06-12 08:01:19,042] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 08:01:19,536] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 08:01:19,541] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+[2023-06-12 08:01:19,543] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 08:01:20,361] INFO [__main__.test_pdf:64] Running test tests/test__basic:
+[2023-06-12 08:01:20,361] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 08:01:21,242] INFO [__main__.<module>:25] Starting build.py
+	 subprocess:[2023-06-12 08:01:21,245] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 08:01:21,248] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+	 subprocess:[2023-06-12 08:01:21,253] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 08:01:21,607] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 08:01:21,609] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+[2023-06-12 08:02:05,089] INFO [__main__.test_html:79] Running test tests/test__basic:
+[2023-06-12 08:02:05,090] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py html
+	 subprocess:[2023-06-12 08:02:06,039] INFO [__main__.<module>:25] Starting build.py
+	 subprocess:[2023-06-12 08:02:06,042] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+	 subprocess:[2023-06-12 08:02:06,045] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+	 subprocess:[2023-06-12 08:02:06,050] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/html_templates/default/standalone.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_html/result.html --listings
+	 subprocess:[2023-06-12 08:02:06,386] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 08:02:06,390] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+[2023-06-12 08:02:06,392] DEBUG [pandown.common.show_line:103] success
+[2023-06-12 08:02:07,050] INFO [__main__.test_pdf:64] Running test tests/test__basic:
+[2023-06-12 08:02:07,051] INFO [pandown.common.do_print_cmd:46] About to execute: $ python3 doc/build.py pdf
+	 subprocess:[2023-06-12 08:02:07,936] INFO [__main__.<module>:25] Starting build.py
+	 subprocess:[2023-06-12 08:02:07,941] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+	 subprocess:[2023-06-12 08:02:07,944] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output
+	 subprocess:[2023-06-12 08:02:07,951] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/pdf_templates/test2.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__basic/doc/output_pdf/generated_intermediate_files/result.latex --listings
+	 subprocess:[2023-06-12 08:02:08,298] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+	 subprocess:[2023-06-12 08:02:08,300] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 08:02:09,244] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+	 subprocess:[2023-06-12 08:02:10,151] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 08:02:10,162] DEBUG [pandown.common.show_line:103] success

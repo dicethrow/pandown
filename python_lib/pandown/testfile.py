@@ -1,55 +1,19 @@
-import argparse, os, textwrap
-from glob import glob
-import subprocess
-import shutil
-import panflute as pf
-import shlex
-from threading import Timer
-import copy
-import platform
-import sys
-import time
+from pandown import run_local_cmd, loggerClass
+import colorama
+import logging, sys
 
-import subprocess as sp
-from concurrent.futures import ThreadPoolExecutor
-
-from colorama import Fore, Style
-
-
-def do_proc(s, **kwargs):
-
-	cmds = shlex.split(s)	
-
-	with sp.Popen(cmds, stdout=sp.PIPE, stderr=sp.PIPE, encoding="utf-8", shell=True) as p:
-
-		with ThreadPoolExecutor(2) as pool:
-			# technique from https://stackoverflow.com/questions/18421757/live-output-from-subprocess-command
-			def log_popen_pipe(p, stdfile, print_func):
-				result = []
-				while p.poll() is None:
-					line = stdfile.readline()
-					if line == "":
-						continue
-					line = line.strip()
-					print_func(line)
-					result.append(line)
-				return result
-
-			r1 = pool.submit(log_popen_pipe, p, p.stdout, print_func = lambda s : print(f"{Fore.GREEN}{s}{Fore.RESET}"))
-			r2 = pool.submit(log_popen_pipe, p, p.stderr, print_func = lambda s : print(f"{Fore.RED}{s}{Fore.RESET}"))
-			stdout = r1.result()
-			stderr = r2.result()
-
-	return stdout, stderr
-
+logging.setLoggerClass(loggerClass)
+log = logging.getLogger(__name__)
 
 if __name__ == "__main__":
-	print("Starting...")
+	log.info("Starting...")
+	
+	log.info("Hello logging! from testfile.py")
 
-	# do_proc("wget https://www.analog.com/media/en/training-seminars/design-handbooks/basic-linear-design/chapter1.pdf")
+	run_local_cmd("./xxxx.sh", 
+		print_cmd = True)
+		
+	run_local_cmd("echo 'jdsfklj klj lkfjdslkjdsflkjlk jlkj lkfjlkdsj lkjsdflk jdslf kjsldkf jlks fjlksd jflksfd jlksd jflkds jflkf jslks jflks jlkfsdj lfdsji jsdlif jslidf jslid fjlis fjlsif jlsidjf lijflisdjf lisjdf lijsfdli jslij lifdsj ldsj slj fsli jfdsli jfs'", 
+		print_cmd = True)
 
-	# do_proc("echo foo >> /dev/stdout")
-	# do_proc("echo goo >> /dev/stderr")
-	print(do_proc("./xxxx.sh"))
-
-	print("Done")
+	log.info("Done")

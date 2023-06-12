@@ -1,0 +1,1035 @@
+[2023-06-12 07:52:29,202] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+[2023-06-12 07:52:29,210] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/templates/web.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_html/result.html --listings 
+[2023-06-12 07:52:29,213] DEBUG [pandown.common.run_local_cmd:142] Disabling logging, about to run run_cmds()
+[2023-06-12 07:52:29,439] DEBUG [pandown.common.run_local_cmd:149] Completed run_cmds() with logging disabled
+[2023-06-12 07:52:29,440] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+[2023-06-12 07:52:29,446] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output
+[2023-06-12 07:53:04,660] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+[2023-06-12 07:53:04,665] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output
+[2023-06-12 07:53:04,671] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/templates/pdf.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_pdf/generated_intermediate_files/result.latex --listings
+[2023-06-12 07:53:04,675] DEBUG [pandown.common.run_local_cmd:142] Disabling logging, about to run run_cmds()
+[2023-06-12 07:53:04,865] DEBUG [pandown.common.run_local_cmd:149] Completed run_cmds() with logging disabled
+[2023-06-12 07:53:04,866] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+[2023-06-12 07:53:04,869] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+[2023-06-12 07:53:04,936] DEBUG [pandown.common.show_line:103] This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
+[2023-06-12 07:53:04,937] DEBUG [pandown.common.show_line:103] \write18 enabled.
+[2023-06-12 07:53:04,958] DEBUG [pandown.common.show_line:103] entering extended mode
+[2023-06-12 07:53:04,959] DEBUG [pandown.common.show_line:103] (./doc/output_pdf/generated_intermediate_files/result.latex
+[2023-06-12 07:53:04,959] DEBUG [pandown.common.show_line:103] LaTeX2e <2020-02-02> patch level 2
+[2023-06-12 07:53:04,960] DEBUG [pandown.common.show_line:103] L3 programming layer <2020-02-14>
+[2023-06-12 07:53:04,963] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/paper/paper.cls
+[2023-06-12 07:53:04,964] DEBUG [pandown.common.show_line:103] Document Class: paper 2008/05/30 1.0l LaTeX document class (wm).
+[2023-06-12 07:53:04,970] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+[2023-06-12 07:53:04,970] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+[2023-06-12 07:53:04,972] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+[2023-06-12 07:53:04,973] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+[2023-06-12 07:53:04,981] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+[2023-06-12 07:53:04,985] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty)
+[2023-06-12 07:53:04,986] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+[2023-06-12 07:53:04,988] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+[2023-06-12 07:53:04,990] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+[2023-06-12 07:53:04,994] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+[2023-06-12 07:53:04,995] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
+[2023-06-12 07:53:04,996] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+[2023-06-12 07:53:05,005] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+[2023-06-12 07:53:05,010] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+[2023-06-12 07:53:05,011] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty)
+[2023-06-12 07:53:05,019] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty))
+[2023-06-12 07:53:05,020] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty)
+[2023-06-12 07:53:05,021] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty)
+[2023-06-12 07:53:05,021] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+[2023-06-12 07:53:05,022] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+[2023-06-12 07:53:05,024] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+[2023-06-12 07:53:05,025] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
+[2023-06-12 07:53:05,026] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty))
+[2023-06-12 07:53:05,034] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty) (./result.w18))
+[2023-06-12 07:53:05,035] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+[2023-06-12 07:53:05,038] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex))
+[2023-06-12 07:53:05,043] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty)
+[2023-06-12 07:53:05,068] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty))
+[2023-06-12 07:53:05,070] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+[2023-06-12 07:53:05,071] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+[2023-06-12 07:53:05,071] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+[2023-06-12 07:53:05,073] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+[2023-06-12 07:53:05,074] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+[2023-06-12 07:53:05,075] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+[2023-06-12 07:53:05,083] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+[2023-06-12 07:53:05,085] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/lmodern.sty)
+[2023-06-12 07:53:05,091] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+[2023-06-12 07:53:05,092] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+[2023-06-12 07:53:05,093] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+[2023-06-12 07:53:05,093] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+[2023-06-12 07:53:05,094] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+[2023-06-12 07:53:05,095] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+[2023-06-12 07:53:05,096] DEBUG [pandown.common.show_line:103] ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+[2023-06-12 07:53:05,098] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty))
+[2023-06-12 07:53:05,098] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+[2023-06-12 07:53:05,099] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+[2023-06-12 07:53:05,099] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+[2023-06-12 07:53:05,100] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+[2023-06-12 07:53:05,101] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+[2023-06-12 07:53:05,102] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+[2023-06-12 07:53:05,103] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+[2023-06-12 07:53:05,104] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+[2023-06-12 07:53:05,104] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+[2023-06-12 07:53:05,108] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+[2023-06-12 07:53:05,109] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+[2023-06-12 07:53:05,113] DEBUG [pandown.common.show_line:103] ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+[2023-06-12 07:53:05,113] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+[2023-06-12 07:53:05,113] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+[2023-06-12 07:53:05,114] DEBUG [pandown.common.show_line:103] f)))
+[2023-06-12 07:53:05,115] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+[2023-06-12 07:53:05,115] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:53:05,116] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+[2023-06-12 07:53:05,117] DEBUG [pandown.common.show_line:103] tex))
+[2023-06-12 07:53:05,117] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+[2023-06-12 07:53:05,118] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+[2023-06-12 07:53:05,118] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+[2023-06-12 07:53:05,119] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+[2023-06-12 07:53:05,121] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+[2023-06-12 07:53:05,123] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+[2023-06-12 07:53:05,123] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+[2023-06-12 07:53:05,125] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:53:05,126] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+[2023-06-12 07:53:05,133] DEBUG [pandown.common.show_line:103] ric.code.tex)
+[2023-06-12 07:53:05,134] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+[2023-06-12 07:53:05,135] DEBUG [pandown.common.show_line:103] e.tex)
+[2023-06-12 07:53:05,135] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+[2023-06-12 07:53:05,136] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:53:05,136] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+[2023-06-12 07:53:05,137] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:53:05,138] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+[2023-06-12 07:53:05,138] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:53:05,138] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+[2023-06-12 07:53:05,139] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:53:05,139] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+[2023-06-12 07:53:05,140] DEBUG [pandown.common.show_line:103] thmetics.code.tex)))
+[2023-06-12 07:53:05,148] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+[2023-06-12 07:53:05,148] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+[2023-06-12 07:53:05,149] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+[2023-06-12 07:53:05,150] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:53:05,150] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+[2023-06-12 07:53:05,152] DEBUG [pandown.common.show_line:103] code.tex)
+[2023-06-12 07:53:05,152] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+[2023-06-12 07:53:05,154] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:53:05,154] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+[2023-06-12 07:53:05,155] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:53:05,156] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+[2023-06-12 07:53:05,156] DEBUG [pandown.common.show_line:103] ode.tex)
+[2023-06-12 07:53:05,156] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+[2023-06-12 07:53:05,157] DEBUG [pandown.common.show_line:103] s.code.tex)
+[2023-06-12 07:53:05,157] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+[2023-06-12 07:53:05,158] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:05,158] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+[2023-06-12 07:53:05,159] DEBUG [pandown.common.show_line:103] ex)
+[2023-06-12 07:53:05,159] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+[2023-06-12 07:53:05,159] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:53:05,160] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+[2023-06-12 07:53:05,167] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:53:05,167] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+[2023-06-12 07:53:05,168] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:05,168] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+[2023-06-12 07:53:05,169] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,169] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+[2023-06-12 07:53:05,171] DEBUG [pandown.common.show_line:103] tex))
+[2023-06-12 07:53:05,171] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+[2023-06-12 07:53:05,171] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:53:05,171] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+[2023-06-12 07:53:05,172] DEBUG [pandown.common.show_line:103] ode.tex)
+[2023-06-12 07:53:05,172] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+[2023-06-12 07:53:05,173] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:53:05,173] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))
+[2023-06-12 07:53:05,173] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:05,173] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+[2023-06-12 07:53:05,175] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+[2023-06-12 07:53:05,177] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:05,177] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+[2023-06-12 07:53:05,180] DEBUG [pandown.common.show_line:103] .sty)
+[2023-06-12 07:53:05,180] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+[2023-06-12 07:53:05,181] DEBUG [pandown.common.show_line:103] .sty)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+[2023-06-12 07:53:05,182] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+[2023-06-12 07:53:05,182] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+[2023-06-12 07:53:05,183] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+[2023-06-12 07:53:05,183] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+[2023-06-12 07:53:05,184] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+[2023-06-12 07:53:05,186] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+[2023-06-12 07:53:05,186] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+[2023-06-12 07:53:05,186] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,186] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+[2023-06-12 07:53:05,199] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:53:05,199] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+[2023-06-12 07:53:05,208] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:05,208] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:53:05,210] DEBUG [pandown.common.show_line:103] zlibrarytopaths.code.tex)))
+[2023-06-12 07:53:05,210] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+[2023-06-12 07:53:05,221] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)
+[2023-06-12 07:53:05,221] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,222] DEBUG [pandown.common.show_line:103] Package caption Warning: Unknown document class (or package),
+[2023-06-12 07:53:05,222] DEBUG [pandown.common.show_line:103] (caption)                standard defaults will be used.
+[2023-06-12 07:53:05,222] DEBUG [pandown.common.show_line:103] See the caption package documentation for explanation.
+[2023-06-12 07:53:05,222] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,223] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty))
+[2023-06-12 07:53:05,224] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty)
+[2023-06-12 07:53:05,225] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime.sty
+[2023-06-12 07:53:05,225] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fmtcount.sty
+[2023-06-12 07:53:05,225] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+[2023-06-12 07:53:05,226] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+[2023-06-12 07:53:05,227] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+[2023-06-12 07:53:05,227] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcprefix.sty
+[2023-06-12 07:53:05,228] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcnumparser.sty))
+[2023-06-12 07:53:05,233] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+[2023-06-12 07:53:05,238] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime-defaults.sty))
+[2023-06-12 07:53:05,238] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+[2023-06-12 07:53:05,239] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+[2023-06-12 07:53:05,240] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def))
+[2023-06-12 07:53:05,257] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+[2023-06-12 07:53:05,538] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def)
+[2023-06-12 07:53:05,541] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def)
+[2023-06-12 07:53:05,569] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def)
+[2023-06-12 07:53:05,570] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+[2023-06-12 07:53:05,575] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx))
+[2023-06-12 07:53:05,578] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx)
+[2023-06-12 07:53:05,579] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg))
+[2023-06-12 07:53:05,580] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+[2023-06-12 07:53:05,581] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,581] DEBUG [pandown.common.show_line:103] Package tocbibind Note: Using section or other style headings.
+[2023-06-12 07:53:05,581] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,585] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty)
+[2023-06-12 07:53:05,590] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+[2023-06-12 07:53:05,590] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+[2023-06-12 07:53:05,591] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty)
+[2023-06-12 07:53:05,599] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty))
+[2023-06-12 07:53:05,600] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+[2023-06-12 07:53:05,601] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+[2023-06-12 07:53:05,602] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+[2023-06-12 07:53:05,603] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+[2023-06-12 07:53:05,604] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+[2023-06-12 07:53:05,605] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+[2023-06-12 07:53:05,609] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+[2023-06-12 07:53:05,617] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+[2023-06-12 07:53:05,618] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+[2023-06-12 07:53:05,623] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+[2023-06-12 07:53:05,627] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty))
+[2023-06-12 07:53:05,627] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+[2023-06-12 07:53:05,630] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty)
+[2023-06-12 07:53:05,633] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+[2023-06-12 07:53:05,635] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+[2023-06-12 07:53:05,636] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
+[2023-06-12 07:53:05,636] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:53:05,637] DEBUG [pandown.common.show_line:103] zlibrarypositioning.code.tex)
+[2023-06-12 07:53:05,637] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:53:05,637] DEBUG [pandown.common.show_line:103] zlibraryshadows.code.tex
+[2023-06-12 07:53:05,638] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:53:05,638] DEBUG [pandown.common.show_line:103] zlibraryfadings.code.tex
+[2023-06-12 07:53:05,638] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code
+[2023-06-12 07:53:05,662] DEBUG [pandown.common.show_line:103] .tex)))) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)/home/ubuntu/.local/bin/pygmentize
+[2023-06-12 07:53:05,671] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,673] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
+[2023-06-12 07:53:05,673] DEBUG [pandown.common.show_line:103] No file result.aux.
+[2023-06-12 07:53:05,677] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+[2023-06-12 07:53:05,677] DEBUG [pandown.common.show_line:103] *geometry* driver: auto-detecting
+[2023-06-12 07:53:05,677] DEBUG [pandown.common.show_line:103] *geometry* detected driver: pdftex
+[2023-06-12 07:53:05,678] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[2023-06-12 07:53:05,678] DEBUG [pandown.common.show_line:103] [Loading MPS to PDF converter (version 2006.09.02).]
+[2023-06-12 07:53:05,681] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+[2023-06-12 07:53:05,682] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+[2023-06-12 07:53:05,683] DEBUG [pandown.common.show_line:103] ABD: EveryShipout initializing macros
+[2023-06-12 07:53:05,684] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fc-english.def)
+[2023-06-12 07:53:05,770] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx)
+[2023-06-12 07:53:05,771] DEBUG [pandown.common.show_line:103] No file result.bbl.
+[2023-06-12 07:53:05,771] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+[2023-06-12 07:53:05,772] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+[2023-06-12 07:53:05,778] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+[2023-06-12 07:53:05,779] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/ot1lmss.fd)
+[2023-06-12 07:53:05,782] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omllmm.fd)
+[2023-06-12 07:53:05,782] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+[2023-06-12 07:53:05,783] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+[2023-06-12 07:53:05,783] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,783] DEBUG [pandown.common.show_line:103] LaTeX Warning: No \author given.
+[2023-06-12 07:53:05,784] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,789] DEBUG [pandown.common.show_line:103] [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+[2023-06-12 07:53:05,800] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/ts1lmr.fd) [2] (doc/output_pdf/result.aux)
+[2023-06-12 07:53:05,800] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,800] DEBUG [pandown.common.show_line:103] LaTeX Warning: There were undefined references.
+[2023-06-12 07:53:05,801] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,801] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,801] DEBUG [pandown.common.show_line:103] LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+[2023-06-12 07:53:05,801] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,802] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,802] DEBUG [pandown.common.show_line:103] Package biblatex Warning: Please (re)run Biber on the file:
+[2023-06-12 07:53:05,802] DEBUG [pandown.common.show_line:103] (biblatex)                result
+[2023-06-12 07:53:05,802] DEBUG [pandown.common.show_line:103] (biblatex)                and rerun LaTeX afterwards.
+[2023-06-12 07:53:05,803] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:05,803] DEBUG [pandown.common.show_line:103] ){/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
+[2023-06-12 07:53:05,803] DEBUG [pandown.common.show_line:103] vips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/shar
+[2023-06-12 07:53:05,806] DEBUG [pandown.common.show_line:103] e/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm
+[2023-06-12 07:53:05,811] DEBUG [pandown.common.show_line:103] /lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/
+[2023-06-12 07:53:05,815] DEBUG [pandown.common.show_line:103] fonts/type1/public/lm/lmssbx10.pfb>
+[2023-06-12 07:53:05,816] DEBUG [pandown.common.show_line:103] Output written on doc/output_pdf/result.pdf (2 pages, 104728 bytes).
+[2023-06-12 07:53:05,816] DEBUG [pandown.common.show_line:103] Transcript written on doc/output_pdf/result.log.
+[2023-06-12 07:53:05,874] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+[2023-06-12 07:53:05,923] DEBUG [pandown.common.show_line:103] This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
+[2023-06-12 07:53:05,924] DEBUG [pandown.common.show_line:103] \write18 enabled.
+[2023-06-12 07:53:05,936] DEBUG [pandown.common.show_line:103] entering extended mode
+[2023-06-12 07:53:05,937] DEBUG [pandown.common.show_line:103] (./doc/output_pdf/generated_intermediate_files/result.latex
+[2023-06-12 07:53:05,937] DEBUG [pandown.common.show_line:103] LaTeX2e <2020-02-02> patch level 2
+[2023-06-12 07:53:05,937] DEBUG [pandown.common.show_line:103] L3 programming layer <2020-02-14>
+[2023-06-12 07:53:05,938] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/paper/paper.cls
+[2023-06-12 07:53:05,938] DEBUG [pandown.common.show_line:103] Document Class: paper 2008/05/30 1.0l LaTeX document class (wm).
+[2023-06-12 07:53:05,941] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+[2023-06-12 07:53:05,941] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+[2023-06-12 07:53:05,941] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+[2023-06-12 07:53:05,942] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+[2023-06-12 07:53:05,946] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+[2023-06-12 07:53:05,947] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty)
+[2023-06-12 07:53:05,947] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+[2023-06-12 07:53:05,948] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+[2023-06-12 07:53:05,949] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+[2023-06-12 07:53:05,950] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+[2023-06-12 07:53:05,951] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
+[2023-06-12 07:53:05,951] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+[2023-06-12 07:53:05,956] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+[2023-06-12 07:53:05,958] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+[2023-06-12 07:53:05,958] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty)
+[2023-06-12 07:53:05,964] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty))
+[2023-06-12 07:53:05,965] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty)
+[2023-06-12 07:53:05,965] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty)
+[2023-06-12 07:53:05,965] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+[2023-06-12 07:53:05,966] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+[2023-06-12 07:53:05,967] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+[2023-06-12 07:53:05,968] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
+[2023-06-12 07:53:05,968] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty))
+[2023-06-12 07:53:05,975] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty) (./result.w18))
+[2023-06-12 07:53:05,976] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+[2023-06-12 07:53:05,979] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex))
+[2023-06-12 07:53:05,982] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty)
+[2023-06-12 07:53:05,993] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty))
+[2023-06-12 07:53:05,994] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+[2023-06-12 07:53:05,995] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+[2023-06-12 07:53:05,995] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+[2023-06-12 07:53:05,996] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+[2023-06-12 07:53:05,997] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+[2023-06-12 07:53:05,998] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+[2023-06-12 07:53:06,003] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+[2023-06-12 07:53:06,004] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/lmodern.sty)
+[2023-06-12 07:53:06,007] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+[2023-06-12 07:53:06,008] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+[2023-06-12 07:53:06,008] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+[2023-06-12 07:53:06,008] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+[2023-06-12 07:53:06,009] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+[2023-06-12 07:53:06,009] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+[2023-06-12 07:53:06,010] DEBUG [pandown.common.show_line:103] ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+[2023-06-12 07:53:06,011] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty))
+[2023-06-12 07:53:06,011] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+[2023-06-12 07:53:06,012] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+[2023-06-12 07:53:06,012] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+[2023-06-12 07:53:06,012] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+[2023-06-12 07:53:06,013] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+[2023-06-12 07:53:06,013] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+[2023-06-12 07:53:06,015] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+[2023-06-12 07:53:06,015] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+[2023-06-12 07:53:06,016] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+[2023-06-12 07:53:06,019] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+[2023-06-12 07:53:06,020] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+[2023-06-12 07:53:06,023] DEBUG [pandown.common.show_line:103] ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+[2023-06-12 07:53:06,023] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+[2023-06-12 07:53:06,023] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+[2023-06-12 07:53:06,024] DEBUG [pandown.common.show_line:103] f)))
+[2023-06-12 07:53:06,025] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+[2023-06-12 07:53:06,025] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:53:06,025] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+[2023-06-12 07:53:06,026] DEBUG [pandown.common.show_line:103] tex))
+[2023-06-12 07:53:06,026] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+[2023-06-12 07:53:06,027] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+[2023-06-12 07:53:06,027] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+[2023-06-12 07:53:06,027] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+[2023-06-12 07:53:06,029] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+[2023-06-12 07:53:06,029] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+[2023-06-12 07:53:06,030] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+[2023-06-12 07:53:06,031] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:53:06,031] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+[2023-06-12 07:53:06,036] DEBUG [pandown.common.show_line:103] ric.code.tex)
+[2023-06-12 07:53:06,037] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+[2023-06-12 07:53:06,037] DEBUG [pandown.common.show_line:103] e.tex)
+[2023-06-12 07:53:06,037] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+[2023-06-12 07:53:06,038] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:53:06,038] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+[2023-06-12 07:53:06,039] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:53:06,039] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+[2023-06-12 07:53:06,039] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:53:06,040] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+[2023-06-12 07:53:06,040] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:53:06,040] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+[2023-06-12 07:53:06,041] DEBUG [pandown.common.show_line:103] thmetics.code.tex)))
+[2023-06-12 07:53:06,048] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+[2023-06-12 07:53:06,049] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+[2023-06-12 07:53:06,049] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+[2023-06-12 07:53:06,051] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:53:06,051] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+[2023-06-12 07:53:06,052] DEBUG [pandown.common.show_line:103] code.tex)
+[2023-06-12 07:53:06,052] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+[2023-06-12 07:53:06,054] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:53:06,055] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+[2023-06-12 07:53:06,055] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:53:06,055] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+[2023-06-12 07:53:06,056] DEBUG [pandown.common.show_line:103] ode.tex)
+[2023-06-12 07:53:06,056] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+[2023-06-12 07:53:06,056] DEBUG [pandown.common.show_line:103] s.code.tex)
+[2023-06-12 07:53:06,057] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+[2023-06-12 07:53:06,057] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:06,057] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+[2023-06-12 07:53:06,057] DEBUG [pandown.common.show_line:103] ex)
+[2023-06-12 07:53:06,058] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+[2023-06-12 07:53:06,058] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:53:06,058] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+[2023-06-12 07:53:06,065] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:53:06,065] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+[2023-06-12 07:53:06,066] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:06,066] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+[2023-06-12 07:53:06,067] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:06,067] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+[2023-06-12 07:53:06,068] DEBUG [pandown.common.show_line:103] tex))
+[2023-06-12 07:53:06,068] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+[2023-06-12 07:53:06,068] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:53:06,069] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+[2023-06-12 07:53:06,069] DEBUG [pandown.common.show_line:103] ode.tex)
+[2023-06-12 07:53:06,069] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+[2023-06-12 07:53:06,069] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:53:06,070] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))
+[2023-06-12 07:53:06,070] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:06,070] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+[2023-06-12 07:53:06,072] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+[2023-06-12 07:53:06,073] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:06,073] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+[2023-06-12 07:53:06,075] DEBUG [pandown.common.show_line:103] .sty)
+[2023-06-12 07:53:06,076] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+[2023-06-12 07:53:06,076] DEBUG [pandown.common.show_line:103] .sty)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+[2023-06-12 07:53:06,076] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+[2023-06-12 07:53:06,077] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+[2023-06-12 07:53:06,077] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+[2023-06-12 07:53:06,077] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+[2023-06-12 07:53:06,078] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+[2023-06-12 07:53:06,079] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+[2023-06-12 07:53:06,079] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+[2023-06-12 07:53:06,079] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:06,080] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+[2023-06-12 07:53:06,089] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:53:06,089] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+[2023-06-12 07:53:06,097] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:53:06,098] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:53:06,099] DEBUG [pandown.common.show_line:103] zlibrarytopaths.code.tex)))
+[2023-06-12 07:53:06,099] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+[2023-06-12 07:53:06,109] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)
+[2023-06-12 07:53:06,109] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:06,110] DEBUG [pandown.common.show_line:103] Package caption Warning: Unknown document class (or package),
+[2023-06-12 07:53:06,110] DEBUG [pandown.common.show_line:103] (caption)                standard defaults will be used.
+[2023-06-12 07:53:06,110] DEBUG [pandown.common.show_line:103] See the caption package documentation for explanation.
+[2023-06-12 07:53:06,111] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:06,111] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty))
+[2023-06-12 07:53:06,113] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty)
+[2023-06-12 07:53:06,113] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime.sty
+[2023-06-12 07:53:06,113] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fmtcount.sty
+[2023-06-12 07:53:06,114] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+[2023-06-12 07:53:06,114] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+[2023-06-12 07:53:06,115] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+[2023-06-12 07:53:06,116] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcprefix.sty
+[2023-06-12 07:53:06,117] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcnumparser.sty))
+[2023-06-12 07:53:06,121] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+[2023-06-12 07:53:06,125] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime-defaults.sty))
+[2023-06-12 07:53:06,125] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+[2023-06-12 07:53:06,126] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+[2023-06-12 07:53:06,127] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def))
+[2023-06-12 07:53:06,143] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+[2023-06-12 07:53:06,412] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def)
+[2023-06-12 07:53:06,414] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def)
+[2023-06-12 07:53:06,441] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def)
+[2023-06-12 07:53:06,442] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+[2023-06-12 07:53:06,446] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx))
+[2023-06-12 07:53:06,449] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx)
+[2023-06-12 07:53:06,450] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg))
+[2023-06-12 07:53:06,451] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+[2023-06-12 07:53:06,452] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:06,452] DEBUG [pandown.common.show_line:103] Package tocbibind Note: Using section or other style headings.
+[2023-06-12 07:53:06,452] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:06,456] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty)
+[2023-06-12 07:53:06,460] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+[2023-06-12 07:53:06,460] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+[2023-06-12 07:53:06,461] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty)
+[2023-06-12 07:53:06,469] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty))
+[2023-06-12 07:53:06,470] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+[2023-06-12 07:53:06,470] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+[2023-06-12 07:53:06,471] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+[2023-06-12 07:53:06,472] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+[2023-06-12 07:53:06,472] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+[2023-06-12 07:53:06,474] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+[2023-06-12 07:53:06,477] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+[2023-06-12 07:53:06,486] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+[2023-06-12 07:53:06,487] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+[2023-06-12 07:53:06,491] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+[2023-06-12 07:53:06,495] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty))
+[2023-06-12 07:53:06,496] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+[2023-06-12 07:53:06,499] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty)
+[2023-06-12 07:53:06,501] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+[2023-06-12 07:53:06,503] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+[2023-06-12 07:53:06,503] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
+[2023-06-12 07:53:06,504] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:53:06,504] DEBUG [pandown.common.show_line:103] zlibrarypositioning.code.tex)
+[2023-06-12 07:53:06,505] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:53:06,505] DEBUG [pandown.common.show_line:103] zlibraryshadows.code.tex
+[2023-06-12 07:53:06,506] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:53:06,506] DEBUG [pandown.common.show_line:103] zlibraryfadings.code.tex
+[2023-06-12 07:53:06,506] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code
+[2023-06-12 07:53:06,528] DEBUG [pandown.common.show_line:103] .tex)))) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)/home/ubuntu/.local/bin/pygmentize
+[2023-06-12 07:53:06,537] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:06,539] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
+[2023-06-12 07:53:06,543] DEBUG [pandown.common.show_line:103] (doc/output_pdf/result.aux) (/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+[2023-06-12 07:53:06,544] DEBUG [pandown.common.show_line:103] *geometry* driver: auto-detecting
+[2023-06-12 07:53:06,544] DEBUG [pandown.common.show_line:103] *geometry* detected driver: pdftex
+[2023-06-12 07:53:06,545] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[2023-06-12 07:53:06,545] DEBUG [pandown.common.show_line:103] [Loading MPS to PDF converter (version 2006.09.02).]
+[2023-06-12 07:53:06,547] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+[2023-06-12 07:53:06,549] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+[2023-06-12 07:53:06,550] DEBUG [pandown.common.show_line:103] ABD: EveryShipout initializing macros
+[2023-06-12 07:53:06,551] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fc-english.def)
+[2023-06-12 07:53:06,636] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx)
+[2023-06-12 07:53:06,636] DEBUG [pandown.common.show_line:103] No file result.bbl.
+[2023-06-12 07:53:06,637] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+[2023-06-12 07:53:06,637] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+[2023-06-12 07:53:06,639] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+[2023-06-12 07:53:06,642] DEBUG [pandown.common.show_line:103] (doc/output_pdf/result.out) (doc/output_pdf/result.out)
+[2023-06-12 07:53:06,644] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/ot1lmss.fd)
+[2023-06-12 07:53:06,645] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omllmm.fd)
+[2023-06-12 07:53:06,645] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+[2023-06-12 07:53:06,646] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+[2023-06-12 07:53:06,646] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:06,647] DEBUG [pandown.common.show_line:103] LaTeX Warning: No \author given.
+[2023-06-12 07:53:06,647] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:53:06,649] DEBUG [pandown.common.show_line:103] (doc/output_pdf/result.toc) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.ma
+[2023-06-12 07:53:06,664] DEBUG [pandown.common.show_line:103] p}] (/usr/share/texmf/tex/latex/lm/ts1lmr.fd) [2] (doc/output_pdf/result.aux) )
+[2023-06-12 07:53:06,665] DEBUG [pandown.common.show_line:103] {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvi
+[2023-06-12 07:53:06,667] DEBUG [pandown.common.show_line:103] ps/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/
+[2023-06-12 07:53:06,670] DEBUG [pandown.common.show_line:103] texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/
+[2023-06-12 07:53:06,676] DEBUG [pandown.common.show_line:103] lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fo
+[2023-06-12 07:53:06,678] DEBUG [pandown.common.show_line:103] nts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10
+[2023-06-12 07:53:06,682] DEBUG [pandown.common.show_line:103] .pfb>
+[2023-06-12 07:53:06,682] DEBUG [pandown.common.show_line:103] Output written on doc/output_pdf/result.pdf (2 pages, 127684 bytes).
+[2023-06-12 07:53:06,683] DEBUG [pandown.common.show_line:103] Transcript written on doc/output_pdf/result.log.
+[2023-06-12 07:53:06,698] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected
+[2023-06-12 07:56:24,202] INFO [pandown.build_default_html.build_default_html:20] Starting build_default_html()
+[2023-06-12 07:56:24,210] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output
+[2023-06-12 07:56:24,215] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_html/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/templates/web.html --standalone --table-of-contents --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_html/result.html --listings 
+[2023-06-12 07:56:24,220] DEBUG [pandown.common.run_local_cmd:142] Disabling logging, about to run run_cmds()
+[2023-06-12 07:56:24,425] DEBUG [pandown.common.run_local_cmd:149] Completed run_cmds() with logging disabled
+[2023-06-12 07:56:24,425] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+[2023-06-12 07:56:24,427] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output
+[2023-06-12 07:56:54,643] INFO [pandown.build_default_pdf.build_default_pdf:20] Starting build_default_pdf()
+[2023-06-12 07:56:54,649] WARNING [pandown.common.remove_generated_files:180] file not found, hence not deleted: 	/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output
+[2023-06-12 07:56:54,656] INFO [pandown.common.do_print_cmd:46] About to execute: $ pandoc -F panflute /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_pdf/generated_intermediate_files/main.md --template /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/templates/pdf.latex --standalone --output /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__use_custom_template/doc/output_pdf/generated_intermediate_files/result.latex --listings
+[2023-06-12 07:56:54,660] DEBUG [pandown.common.run_local_cmd:142] Disabling logging, about to run run_cmds()
+[2023-06-12 07:56:54,871] DEBUG [pandown.common.run_local_cmd:149] Completed run_cmds() with logging disabled
+[2023-06-12 07:56:54,872] INFO [pandown.errorRecogniser.pandocErrorRecogniser:41] No pandoc errors detected
+[2023-06-12 07:56:54,874] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+[2023-06-12 07:56:54,911] DEBUG [pandown.common.show_line:103] This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
+[2023-06-12 07:56:54,912] DEBUG [pandown.common.show_line:103] \write18 enabled.
+[2023-06-12 07:56:54,940] DEBUG [pandown.common.show_line:103] entering extended mode
+[2023-06-12 07:56:54,940] DEBUG [pandown.common.show_line:103] (./doc/output_pdf/generated_intermediate_files/result.latex
+[2023-06-12 07:56:54,941] DEBUG [pandown.common.show_line:103] LaTeX2e <2020-02-02> patch level 2
+[2023-06-12 07:56:54,941] DEBUG [pandown.common.show_line:103] L3 programming layer <2020-02-14>
+[2023-06-12 07:56:54,941] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/paper/paper.cls
+[2023-06-12 07:56:54,942] DEBUG [pandown.common.show_line:103] Document Class: paper 2008/05/30 1.0l LaTeX document class (wm).
+[2023-06-12 07:56:54,946] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+[2023-06-12 07:56:54,947] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+[2023-06-12 07:56:54,951] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+[2023-06-12 07:56:54,952] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+[2023-06-12 07:56:54,962] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+[2023-06-12 07:56:54,966] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty)
+[2023-06-12 07:56:54,966] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+[2023-06-12 07:56:54,967] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+[2023-06-12 07:56:54,969] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+[2023-06-12 07:56:54,976] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+[2023-06-12 07:56:54,979] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
+[2023-06-12 07:56:54,979] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+[2023-06-12 07:56:54,979] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+[2023-06-12 07:56:54,980] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+[2023-06-12 07:56:54,981] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty)
+[2023-06-12 07:56:54,988] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty))
+[2023-06-12 07:56:54,989] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty)
+[2023-06-12 07:56:54,989] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty)
+[2023-06-12 07:56:54,989] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+[2023-06-12 07:56:54,990] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+[2023-06-12 07:56:54,991] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+[2023-06-12 07:56:54,992] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
+[2023-06-12 07:56:54,993] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty))
+[2023-06-12 07:56:55,004] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty) (./result.w18))
+[2023-06-12 07:56:55,004] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+[2023-06-12 07:56:55,008] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex))
+[2023-06-12 07:56:55,012] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty)
+[2023-06-12 07:56:55,023] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty))
+[2023-06-12 07:56:55,024] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+[2023-06-12 07:56:55,024] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+[2023-06-12 07:56:55,025] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+[2023-06-12 07:56:55,027] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+[2023-06-12 07:56:55,028] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+[2023-06-12 07:56:55,030] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+[2023-06-12 07:56:55,034] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+[2023-06-12 07:56:55,035] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/lmodern.sty)
+[2023-06-12 07:56:55,039] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+[2023-06-12 07:56:55,039] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+[2023-06-12 07:56:55,040] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+[2023-06-12 07:56:55,040] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+[2023-06-12 07:56:55,041] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+[2023-06-12 07:56:55,041] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+[2023-06-12 07:56:55,042] DEBUG [pandown.common.show_line:103] ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+[2023-06-12 07:56:55,042] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty))
+[2023-06-12 07:56:55,042] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+[2023-06-12 07:56:55,043] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+[2023-06-12 07:56:55,043] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+[2023-06-12 07:56:55,044] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+[2023-06-12 07:56:55,044] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+[2023-06-12 07:56:55,045] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+[2023-06-12 07:56:55,046] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+[2023-06-12 07:56:55,047] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+[2023-06-12 07:56:55,047] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+[2023-06-12 07:56:55,050] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+[2023-06-12 07:56:55,050] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+[2023-06-12 07:56:55,053] DEBUG [pandown.common.show_line:103] ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+[2023-06-12 07:56:55,053] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+[2023-06-12 07:56:55,053] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+[2023-06-12 07:56:55,054] DEBUG [pandown.common.show_line:103] f)))
+[2023-06-12 07:56:55,054] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+[2023-06-12 07:56:55,054] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:56:55,054] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+[2023-06-12 07:56:55,055] DEBUG [pandown.common.show_line:103] tex))
+[2023-06-12 07:56:55,055] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+[2023-06-12 07:56:55,055] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+[2023-06-12 07:56:55,056] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+[2023-06-12 07:56:55,056] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+[2023-06-12 07:56:55,058] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+[2023-06-12 07:56:55,058] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+[2023-06-12 07:56:55,058] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+[2023-06-12 07:56:55,060] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:56:55,060] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+[2023-06-12 07:56:55,064] DEBUG [pandown.common.show_line:103] ric.code.tex)
+[2023-06-12 07:56:55,065] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+[2023-06-12 07:56:55,065] DEBUG [pandown.common.show_line:103] e.tex)
+[2023-06-12 07:56:55,065] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+[2023-06-12 07:56:55,066] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:56:55,066] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+[2023-06-12 07:56:55,066] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:56:55,066] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+[2023-06-12 07:56:55,067] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:56:55,067] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+[2023-06-12 07:56:55,068] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:56:55,068] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+[2023-06-12 07:56:55,068] DEBUG [pandown.common.show_line:103] thmetics.code.tex)))
+[2023-06-12 07:56:55,075] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+[2023-06-12 07:56:55,075] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+[2023-06-12 07:56:55,075] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+[2023-06-12 07:56:55,077] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:56:55,078] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+[2023-06-12 07:56:55,078] DEBUG [pandown.common.show_line:103] code.tex)
+[2023-06-12 07:56:55,079] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+[2023-06-12 07:56:55,080] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:56:55,080] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+[2023-06-12 07:56:55,081] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:56:55,082] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+[2023-06-12 07:56:55,082] DEBUG [pandown.common.show_line:103] ode.tex)
+[2023-06-12 07:56:55,082] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+[2023-06-12 07:56:55,082] DEBUG [pandown.common.show_line:103] s.code.tex)
+[2023-06-12 07:56:55,083] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+[2023-06-12 07:56:55,083] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:56:55,083] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+[2023-06-12 07:56:55,083] DEBUG [pandown.common.show_line:103] ex)
+[2023-06-12 07:56:55,083] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+[2023-06-12 07:56:55,084] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:56:55,084] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+[2023-06-12 07:56:55,090] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:56:55,090] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+[2023-06-12 07:56:55,091] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:56:55,091] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+[2023-06-12 07:56:55,092] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,092] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+[2023-06-12 07:56:55,093] DEBUG [pandown.common.show_line:103] tex))
+[2023-06-12 07:56:55,093] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+[2023-06-12 07:56:55,093] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:56:55,094] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+[2023-06-12 07:56:55,094] DEBUG [pandown.common.show_line:103] ode.tex)
+[2023-06-12 07:56:55,094] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+[2023-06-12 07:56:55,094] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:56:55,095] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))
+[2023-06-12 07:56:55,095] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:56:55,095] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+[2023-06-12 07:56:55,096] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+[2023-06-12 07:56:55,098] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:56:55,098] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+[2023-06-12 07:56:55,100] DEBUG [pandown.common.show_line:103] .sty)
+[2023-06-12 07:56:55,101] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+[2023-06-12 07:56:55,101] DEBUG [pandown.common.show_line:103] .sty)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+[2023-06-12 07:56:55,102] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+[2023-06-12 07:56:55,102] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+[2023-06-12 07:56:55,103] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+[2023-06-12 07:56:55,103] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+[2023-06-12 07:56:55,103] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+[2023-06-12 07:56:55,104] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+[2023-06-12 07:56:55,105] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+[2023-06-12 07:56:55,105] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,105] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+[2023-06-12 07:56:55,114] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:56:55,115] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+[2023-06-12 07:56:55,123] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:56:55,123] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:56:55,125] DEBUG [pandown.common.show_line:103] zlibrarytopaths.code.tex)))
+[2023-06-12 07:56:55,125] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+[2023-06-12 07:56:55,135] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)
+[2023-06-12 07:56:55,135] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,135] DEBUG [pandown.common.show_line:103] Package caption Warning: Unknown document class (or package),
+[2023-06-12 07:56:55,136] DEBUG [pandown.common.show_line:103] (caption)                standard defaults will be used.
+[2023-06-12 07:56:55,136] DEBUG [pandown.common.show_line:103] See the caption package documentation for explanation.
+[2023-06-12 07:56:55,136] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,137] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty))
+[2023-06-12 07:56:55,138] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty)
+[2023-06-12 07:56:55,139] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime.sty
+[2023-06-12 07:56:55,139] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fmtcount.sty
+[2023-06-12 07:56:55,140] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+[2023-06-12 07:56:55,140] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+[2023-06-12 07:56:55,141] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+[2023-06-12 07:56:55,142] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcprefix.sty
+[2023-06-12 07:56:55,143] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcnumparser.sty))
+[2023-06-12 07:56:55,147] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+[2023-06-12 07:56:55,151] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime-defaults.sty))
+[2023-06-12 07:56:55,151] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+[2023-06-12 07:56:55,152] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+[2023-06-12 07:56:55,153] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def))
+[2023-06-12 07:56:55,168] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+[2023-06-12 07:56:55,426] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def)
+[2023-06-12 07:56:55,429] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def)
+[2023-06-12 07:56:55,459] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def)
+[2023-06-12 07:56:55,459] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+[2023-06-12 07:56:55,464] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx))
+[2023-06-12 07:56:55,467] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx)
+[2023-06-12 07:56:55,468] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg))
+[2023-06-12 07:56:55,469] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+[2023-06-12 07:56:55,470] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,470] DEBUG [pandown.common.show_line:103] Package tocbibind Note: Using section or other style headings.
+[2023-06-12 07:56:55,470] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,474] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty)
+[2023-06-12 07:56:55,480] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+[2023-06-12 07:56:55,480] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+[2023-06-12 07:56:55,481] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty)
+[2023-06-12 07:56:55,490] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty))
+[2023-06-12 07:56:55,491] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+[2023-06-12 07:56:55,492] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+[2023-06-12 07:56:55,493] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+[2023-06-12 07:56:55,494] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+[2023-06-12 07:56:55,494] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+[2023-06-12 07:56:55,496] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+[2023-06-12 07:56:55,499] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+[2023-06-12 07:56:55,507] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+[2023-06-12 07:56:55,508] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+[2023-06-12 07:56:55,513] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+[2023-06-12 07:56:55,518] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty))
+[2023-06-12 07:56:55,518] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+[2023-06-12 07:56:55,521] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty)
+[2023-06-12 07:56:55,524] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+[2023-06-12 07:56:55,526] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+[2023-06-12 07:56:55,527] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
+[2023-06-12 07:56:55,527] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:56:55,528] DEBUG [pandown.common.show_line:103] zlibrarypositioning.code.tex)
+[2023-06-12 07:56:55,528] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:56:55,529] DEBUG [pandown.common.show_line:103] zlibraryshadows.code.tex
+[2023-06-12 07:56:55,529] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:56:55,529] DEBUG [pandown.common.show_line:103] zlibraryfadings.code.tex
+[2023-06-12 07:56:55,530] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code
+[2023-06-12 07:56:55,553] DEBUG [pandown.common.show_line:103] .tex)))) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)/home/ubuntu/.local/bin/pygmentize
+[2023-06-12 07:56:55,561] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,563] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
+[2023-06-12 07:56:55,564] DEBUG [pandown.common.show_line:103] No file result.aux.
+[2023-06-12 07:56:55,568] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+[2023-06-12 07:56:55,568] DEBUG [pandown.common.show_line:103] *geometry* driver: auto-detecting
+[2023-06-12 07:56:55,568] DEBUG [pandown.common.show_line:103] *geometry* detected driver: pdftex
+[2023-06-12 07:56:55,569] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[2023-06-12 07:56:55,569] DEBUG [pandown.common.show_line:103] [Loading MPS to PDF converter (version 2006.09.02).]
+[2023-06-12 07:56:55,572] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+[2023-06-12 07:56:55,573] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+[2023-06-12 07:56:55,574] DEBUG [pandown.common.show_line:103] ABD: EveryShipout initializing macros
+[2023-06-12 07:56:55,575] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fc-english.def)
+[2023-06-12 07:56:55,668] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx)
+[2023-06-12 07:56:55,669] DEBUG [pandown.common.show_line:103] No file result.bbl.
+[2023-06-12 07:56:55,669] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+[2023-06-12 07:56:55,670] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+[2023-06-12 07:56:55,675] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+[2023-06-12 07:56:55,677] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/ot1lmss.fd)
+[2023-06-12 07:56:55,678] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omllmm.fd)
+[2023-06-12 07:56:55,679] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+[2023-06-12 07:56:55,681] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+[2023-06-12 07:56:55,681] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,681] DEBUG [pandown.common.show_line:103] LaTeX Warning: No \author given.
+[2023-06-12 07:56:55,682] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,687] DEBUG [pandown.common.show_line:103] [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+[2023-06-12 07:56:55,697] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/ts1lmr.fd) [2] (doc/output_pdf/result.aux)
+[2023-06-12 07:56:55,698] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,698] DEBUG [pandown.common.show_line:103] LaTeX Warning: There were undefined references.
+[2023-06-12 07:56:55,698] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,699] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,699] DEBUG [pandown.common.show_line:103] LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+[2023-06-12 07:56:55,699] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,699] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,700] DEBUG [pandown.common.show_line:103] Package biblatex Warning: Please (re)run Biber on the file:
+[2023-06-12 07:56:55,700] DEBUG [pandown.common.show_line:103] (biblatex)                result
+[2023-06-12 07:56:55,700] DEBUG [pandown.common.show_line:103] (biblatex)                and rerun LaTeX afterwards.
+[2023-06-12 07:56:55,701] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,701] DEBUG [pandown.common.show_line:103] ){/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
+[2023-06-12 07:56:55,702] DEBUG [pandown.common.show_line:103] vips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/shar
+[2023-06-12 07:56:55,704] DEBUG [pandown.common.show_line:103] e/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm
+[2023-06-12 07:56:55,709] DEBUG [pandown.common.show_line:103] /lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/
+[2023-06-12 07:56:55,713] DEBUG [pandown.common.show_line:103] fonts/type1/public/lm/lmssbx10.pfb>
+[2023-06-12 07:56:55,713] DEBUG [pandown.common.show_line:103] Output written on doc/output_pdf/result.pdf (2 pages, 104728 bytes).
+[2023-06-12 07:56:55,714] DEBUG [pandown.common.show_line:103] Transcript written on doc/output_pdf/result.log.
+[2023-06-12 07:56:55,716] INFO [pandown.common.do_print_cmd:46] About to execute: $ pdflatex --shell-escape -halt-on-error --output-directory doc/output_pdf doc/output_pdf/generated_intermediate_files/result.latex
+[2023-06-12 07:56:55,739] DEBUG [pandown.common.show_line:103] This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
+[2023-06-12 07:56:55,739] DEBUG [pandown.common.show_line:103] \write18 enabled.
+[2023-06-12 07:56:55,753] DEBUG [pandown.common.show_line:103] entering extended mode
+[2023-06-12 07:56:55,753] DEBUG [pandown.common.show_line:103] (./doc/output_pdf/generated_intermediate_files/result.latex
+[2023-06-12 07:56:55,754] DEBUG [pandown.common.show_line:103] LaTeX2e <2020-02-02> patch level 2
+[2023-06-12 07:56:55,754] DEBUG [pandown.common.show_line:103] L3 programming layer <2020-02-14>
+[2023-06-12 07:56:55,755] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/paper/paper.cls
+[2023-06-12 07:56:55,755] DEBUG [pandown.common.show_line:103] Document Class: paper 2008/05/30 1.0l LaTeX document class (wm).
+[2023-06-12 07:56:55,758] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+[2023-06-12 07:56:55,758] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+[2023-06-12 07:56:55,759] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+[2023-06-12 07:56:55,759] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+[2023-06-12 07:56:55,763] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+[2023-06-12 07:56:55,764] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty)
+[2023-06-12 07:56:55,764] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+[2023-06-12 07:56:55,765] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+[2023-06-12 07:56:55,766] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+[2023-06-12 07:56:55,767] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+[2023-06-12 07:56:55,768] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
+[2023-06-12 07:56:55,768] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+[2023-06-12 07:56:55,771] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+[2023-06-12 07:56:55,773] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+[2023-06-12 07:56:55,774] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty)
+[2023-06-12 07:56:55,781] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty))
+[2023-06-12 07:56:55,783] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty)
+[2023-06-12 07:56:55,784] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty)
+[2023-06-12 07:56:55,784] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+[2023-06-12 07:56:55,785] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+[2023-06-12 07:56:55,787] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+[2023-06-12 07:56:55,788] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
+[2023-06-12 07:56:55,789] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty))
+[2023-06-12 07:56:55,796] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty) (./result.w18))
+[2023-06-12 07:56:55,796] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+[2023-06-12 07:56:55,800] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex))
+[2023-06-12 07:56:55,804] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty)
+[2023-06-12 07:56:55,815] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty))
+[2023-06-12 07:56:55,815] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+[2023-06-12 07:56:55,816] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+[2023-06-12 07:56:55,816] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+[2023-06-12 07:56:55,818] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+[2023-06-12 07:56:55,819] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+[2023-06-12 07:56:55,820] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+[2023-06-12 07:56:55,824] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+[2023-06-12 07:56:55,825] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/lmodern.sty)
+[2023-06-12 07:56:55,828] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+[2023-06-12 07:56:55,829] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+[2023-06-12 07:56:55,829] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+[2023-06-12 07:56:55,830] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+[2023-06-12 07:56:55,830] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+[2023-06-12 07:56:55,830] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+[2023-06-12 07:56:55,831] DEBUG [pandown.common.show_line:103] ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+[2023-06-12 07:56:55,832] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty))
+[2023-06-12 07:56:55,832] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+[2023-06-12 07:56:55,833] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+[2023-06-12 07:56:55,834] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+[2023-06-12 07:56:55,834] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+[2023-06-12 07:56:55,834] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+[2023-06-12 07:56:55,835] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+[2023-06-12 07:56:55,836] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+[2023-06-12 07:56:55,837] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+[2023-06-12 07:56:55,837] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+[2023-06-12 07:56:55,842] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+[2023-06-12 07:56:55,842] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+[2023-06-12 07:56:55,846] DEBUG [pandown.common.show_line:103] ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+[2023-06-12 07:56:55,846] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+[2023-06-12 07:56:55,846] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+[2023-06-12 07:56:55,847] DEBUG [pandown.common.show_line:103] f)))
+[2023-06-12 07:56:55,847] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+[2023-06-12 07:56:55,847] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:56:55,848] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+[2023-06-12 07:56:55,848] DEBUG [pandown.common.show_line:103] tex))
+[2023-06-12 07:56:55,849] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+[2023-06-12 07:56:55,849] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+[2023-06-12 07:56:55,849] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+[2023-06-12 07:56:55,850] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+[2023-06-12 07:56:55,851] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+[2023-06-12 07:56:55,851] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+[2023-06-12 07:56:55,852] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+[2023-06-12 07:56:55,853] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:56:55,853] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+[2023-06-12 07:56:55,858] DEBUG [pandown.common.show_line:103] ric.code.tex)
+[2023-06-12 07:56:55,858] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+[2023-06-12 07:56:55,859] DEBUG [pandown.common.show_line:103] e.tex)
+[2023-06-12 07:56:55,859] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+[2023-06-12 07:56:55,859] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:56:55,859] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+[2023-06-12 07:56:55,860] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:56:55,860] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+[2023-06-12 07:56:55,860] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:56:55,861] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+[2023-06-12 07:56:55,861] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:56:55,861] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+[2023-06-12 07:56:55,861] DEBUG [pandown.common.show_line:103] thmetics.code.tex)))
+[2023-06-12 07:56:55,867] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+[2023-06-12 07:56:55,868] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+[2023-06-12 07:56:55,868] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+[2023-06-12 07:56:55,869] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:56:55,869] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+[2023-06-12 07:56:55,870] DEBUG [pandown.common.show_line:103] code.tex)
+[2023-06-12 07:56:55,870] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+[2023-06-12 07:56:55,871] DEBUG [pandown.common.show_line:103] .tex)
+[2023-06-12 07:56:55,872] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+[2023-06-12 07:56:55,872] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:56:55,873] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+[2023-06-12 07:56:55,873] DEBUG [pandown.common.show_line:103] ode.tex)
+[2023-06-12 07:56:55,873] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+[2023-06-12 07:56:55,874] DEBUG [pandown.common.show_line:103] s.code.tex)
+[2023-06-12 07:56:55,874] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+[2023-06-12 07:56:55,874] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:56:55,874] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+[2023-06-12 07:56:55,874] DEBUG [pandown.common.show_line:103] ex)
+[2023-06-12 07:56:55,875] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+[2023-06-12 07:56:55,875] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:56:55,875] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+[2023-06-12 07:56:55,880] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:56:55,880] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+[2023-06-12 07:56:55,880] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:56:55,881] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+[2023-06-12 07:56:55,881] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,881] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+[2023-06-12 07:56:55,882] DEBUG [pandown.common.show_line:103] tex))
+[2023-06-12 07:56:55,882] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+[2023-06-12 07:56:55,883] DEBUG [pandown.common.show_line:103] x)
+[2023-06-12 07:56:55,883] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+[2023-06-12 07:56:55,883] DEBUG [pandown.common.show_line:103] ode.tex)
+[2023-06-12 07:56:55,883] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+[2023-06-12 07:56:55,884] DEBUG [pandown.common.show_line:103] tex)
+[2023-06-12 07:56:55,884] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))
+[2023-06-12 07:56:55,884] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:56:55,884] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+[2023-06-12 07:56:55,885] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+[2023-06-12 07:56:55,887] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:56:55,887] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+[2023-06-12 07:56:55,889] DEBUG [pandown.common.show_line:103] .sty)
+[2023-06-12 07:56:55,889] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+[2023-06-12 07:56:55,890] DEBUG [pandown.common.show_line:103] .sty)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+[2023-06-12 07:56:55,890] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+[2023-06-12 07:56:55,891] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+[2023-06-12 07:56:55,891] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+[2023-06-12 07:56:55,892] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+[2023-06-12 07:56:55,892] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+[2023-06-12 07:56:55,893] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+[2023-06-12 07:56:55,893] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+[2023-06-12 07:56:55,894] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,894] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+[2023-06-12 07:56:55,903] DEBUG [pandown.common.show_line:103] .code.tex)
+[2023-06-12 07:56:55,903] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+[2023-06-12 07:56:55,910] DEBUG [pandown.common.show_line:103] )
+[2023-06-12 07:56:55,911] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:56:55,912] DEBUG [pandown.common.show_line:103] zlibrarytopaths.code.tex)))
+[2023-06-12 07:56:55,912] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+[2023-06-12 07:56:55,921] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)
+[2023-06-12 07:56:55,922] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,922] DEBUG [pandown.common.show_line:103] Package caption Warning: Unknown document class (or package),
+[2023-06-12 07:56:55,922] DEBUG [pandown.common.show_line:103] (caption)                standard defaults will be used.
+[2023-06-12 07:56:55,923] DEBUG [pandown.common.show_line:103] See the caption package documentation for explanation.
+[2023-06-12 07:56:55,923] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:55,923] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty))
+[2023-06-12 07:56:55,925] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty)
+[2023-06-12 07:56:55,925] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime.sty
+[2023-06-12 07:56:55,926] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fmtcount.sty
+[2023-06-12 07:56:55,926] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+[2023-06-12 07:56:55,926] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+[2023-06-12 07:56:55,927] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+[2023-06-12 07:56:55,928] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcprefix.sty
+[2023-06-12 07:56:55,929] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcnumparser.sty))
+[2023-06-12 07:56:55,933] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+[2023-06-12 07:56:55,936] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime-defaults.sty))
+[2023-06-12 07:56:55,937] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+[2023-06-12 07:56:55,938] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+[2023-06-12 07:56:55,939] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def))
+[2023-06-12 07:56:55,956] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+[2023-06-12 07:56:56,226] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def)
+[2023-06-12 07:56:56,228] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def)
+[2023-06-12 07:56:56,255] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def)
+[2023-06-12 07:56:56,255] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+[2023-06-12 07:56:56,259] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx))
+[2023-06-12 07:56:56,267] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx)
+[2023-06-12 07:56:56,269] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg))
+[2023-06-12 07:56:56,270] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+[2023-06-12 07:56:56,270] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:56,271] DEBUG [pandown.common.show_line:103] Package tocbibind Note: Using section or other style headings.
+[2023-06-12 07:56:56,271] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:56,274] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty)
+[2023-06-12 07:56:56,278] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+[2023-06-12 07:56:56,278] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+[2023-06-12 07:56:56,279] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty)
+[2023-06-12 07:56:56,287] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty))
+[2023-06-12 07:56:56,288] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+[2023-06-12 07:56:56,288] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+[2023-06-12 07:56:56,289] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+[2023-06-12 07:56:56,290] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+[2023-06-12 07:56:56,291] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+[2023-06-12 07:56:56,293] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+[2023-06-12 07:56:56,296] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+[2023-06-12 07:56:56,305] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+[2023-06-12 07:56:56,305] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+[2023-06-12 07:56:56,310] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+[2023-06-12 07:56:56,314] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty))
+[2023-06-12 07:56:56,314] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+[2023-06-12 07:56:56,317] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty)
+[2023-06-12 07:56:56,319] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+[2023-06-12 07:56:56,321] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+[2023-06-12 07:56:56,322] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
+[2023-06-12 07:56:56,322] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:56:56,323] DEBUG [pandown.common.show_line:103] zlibrarypositioning.code.tex)
+[2023-06-12 07:56:56,324] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:56:56,324] DEBUG [pandown.common.show_line:103] zlibraryshadows.code.tex
+[2023-06-12 07:56:56,324] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+[2023-06-12 07:56:56,325] DEBUG [pandown.common.show_line:103] zlibraryfadings.code.tex
+[2023-06-12 07:56:56,325] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code
+[2023-06-12 07:56:56,347] DEBUG [pandown.common.show_line:103] .tex)))) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)/home/ubuntu/.local/bin/pygmentize
+[2023-06-12 07:56:56,358] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:56,360] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
+[2023-06-12 07:56:56,367] DEBUG [pandown.common.show_line:103] (doc/output_pdf/result.aux) (/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+[2023-06-12 07:56:56,368] DEBUG [pandown.common.show_line:103] *geometry* driver: auto-detecting
+[2023-06-12 07:56:56,368] DEBUG [pandown.common.show_line:103] *geometry* detected driver: pdftex
+[2023-06-12 07:56:56,369] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[2023-06-12 07:56:56,369] DEBUG [pandown.common.show_line:103] [Loading MPS to PDF converter (version 2006.09.02).]
+[2023-06-12 07:56:56,370] DEBUG [pandown.common.show_line:103] ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+[2023-06-12 07:56:56,371] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+[2023-06-12 07:56:56,372] DEBUG [pandown.common.show_line:103] ABD: EveryShipout initializing macros
+[2023-06-12 07:56:56,372] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fc-english.def)
+[2023-06-12 07:56:56,456] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx)
+[2023-06-12 07:56:56,457] DEBUG [pandown.common.show_line:103] No file result.bbl.
+[2023-06-12 07:56:56,457] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+[2023-06-12 07:56:56,458] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+[2023-06-12 07:56:56,460] DEBUG [pandown.common.show_line:103] (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+[2023-06-12 07:56:56,463] DEBUG [pandown.common.show_line:103] (doc/output_pdf/result.out) (doc/output_pdf/result.out)
+[2023-06-12 07:56:56,465] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/ot1lmss.fd)
+[2023-06-12 07:56:56,465] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omllmm.fd)
+[2023-06-12 07:56:56,466] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+[2023-06-12 07:56:56,467] DEBUG [pandown.common.show_line:103] (/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+[2023-06-12 07:56:56,467] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:56,467] DEBUG [pandown.common.show_line:103] LaTeX Warning: No \author given.
+[2023-06-12 07:56:56,468] DEBUG [pandown.common.show_line:103] 
+[2023-06-12 07:56:56,470] DEBUG [pandown.common.show_line:103] (doc/output_pdf/result.toc) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.ma
+[2023-06-12 07:56:56,486] DEBUG [pandown.common.show_line:103] p}] (/usr/share/texmf/tex/latex/lm/ts1lmr.fd) [2] (doc/output_pdf/result.aux) )
+[2023-06-12 07:56:56,486] DEBUG [pandown.common.show_line:103] {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvi
+[2023-06-12 07:56:56,490] DEBUG [pandown.common.show_line:103] ps/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/
+[2023-06-12 07:56:56,494] DEBUG [pandown.common.show_line:103] texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/
+[2023-06-12 07:56:56,500] DEBUG [pandown.common.show_line:103] lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fo
+[2023-06-12 07:56:56,503] DEBUG [pandown.common.show_line:103] nts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10
+[2023-06-12 07:56:56,508] DEBUG [pandown.common.show_line:103] .pfb>
+[2023-06-12 07:56:56,509] DEBUG [pandown.common.show_line:103] Output written on doc/output_pdf/result.pdf (2 pages, 127684 bytes).
+[2023-06-12 07:56:56,509] DEBUG [pandown.common.show_line:103] Transcript written on doc/output_pdf/result.log.
+[2023-06-12 07:56:56,513] INFO [pandown.errorRecogniser.latexErrorRecogniser:72] No latex errors detected

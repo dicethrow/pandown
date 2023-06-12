@@ -4,3 +4,4 @@ from .common import run_local_cmd, clear_terminal, remove_generated_files, add_y
 from .build_default_pdf import build_default_pdf
 from .build_default_html import build_default_html
 from .build_default_odt import build_default_odt
+from .my_logging import loggerClass
