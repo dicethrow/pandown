@@ -86,8 +86,7 @@ def handle_mermaid_charts(options, data, element, doc):
 		else:
 			doc.mermaid_chart_index = 0
 		destFilename = f'mermaid_chart_{doc.mermaid_chart_index}.{dest_format}'
-		destFilePath = os.path.join(doc.get_metadata("generated_intermediate_files_dir"), destFilename)
-
+		destFilePath = pathlib.Path(doc.get_metadata("generated_intermediate_files_dir")) / destFilename
 		# mmdc_cmd = "mmdc"
 		mmdc_cmd_location = pathlib.Path().home() / "node_modules" / ".bin" / "mmdc"
 		assert mmdc_cmd_location.exists(),  "mermaid-cli has not been installed. Follow the installation guide or remove this filter from your main.md"
@@ -109,7 +108,7 @@ def handle_mermaid_charts(options, data, element, doc):
 			assert 0, "this doesn't work yet, some latex issue"
 			# this assumes that a latex document will be produced
 			# or, hardcode the use of includesvg as in here https://tex.stackexchange.com/questions/122871/include-svg-images-with-the-svg-package
-			new_elem = pf.RawBlock(f'\\includesvg{{{destFilePath}}}', format="tex")
+			new_elem = pf.RawBlock(f'\\includesvg{{{str(destFilePath)}}}', format="tex")
 		
 		else:
 			# relative path is important for html mainly, but useful for other output formats too
@@ -117,7 +116,7 @@ def handle_mermaid_charts(options, data, element, doc):
 			new_elem = pf.Para(pf.Image(url=relative_path, title=options.get("title", "")))
 
 	else:
-		new_elem = pf.Para(pf.Image(url=destFilePath, title=options.get("title", "")))
+		new_elem = pf.Para(pf.Image(url=str(destFilePath), title=options.get("title", "")))
 
 	
 	return new_elem
