@@ -91,10 +91,9 @@ def build_default_html():
 	# remove everything except for desired filetypes
 	# remove_generated_files(keep_filetypes=[".html", ".pdf", ".latex", ".csv", ".svg", ".bmp"])
 	remove_generated_files(
-		delete = glob(f"{output_folder}/*") + [f"{doc_dir}/output"],
-		except_for = glob(f"{output_folder}/generated_intermediate_files") + \
-			glob(f"{output_folder}/generated_output_files") + \
-			[f"{output_folder}/result{suffix}" for suffix in ('.html',)]
+		delete = list(output_folder.glob("*")) + [doc_dir / 'output'],
+		except_for= list(output_folder.glob('generated_*_files')) + \
+			[output_folder / f'result{suffix}' for suffix in ('.html',)]
 	)
 
 	# log.info("success")
