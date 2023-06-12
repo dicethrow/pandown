@@ -50,6 +50,8 @@
 
 	1. Once installed, open vscode, then navigate to the extensions window. Type in `python`, and for the first result, click `install`. This will enable the vscode text editor to interact with python files better. This may take up to a minute or so. Do the same for 'vscode-pdf'
 
+	- and `live preview` plugin
+
 	![install python in vscode](./img/install_python_in_vscode.gif)
 
 6. Install panflute with pip
