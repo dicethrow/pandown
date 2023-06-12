@@ -9,8 +9,15 @@ from contextlib import redirect_stdout, redirect_stderr
 
 from .common import run_local_cmd, clear_terminal, remove_generated_files, add_yaml_entries_to_file, get_yaml_entries_from_file
 from .errorRecogniser import pandocErrorRecogniser
+
+import logging
+from .my_logging import loggerClass
+
+logging.setLoggerClass(loggerClass)
+log = logging.getLogger(__name__)
 		
 def build_default_html():
+	log.info("Starting build_default_html()")
 	# clear_terminal()
 
 	# display the current directory and its contents
@@ -70,11 +77,12 @@ def build_default_html():
 	pandoc_cmd += f"--standalone --table-of-contents --output {output_folder / 'result.html'} "
 	pandoc_cmd += f"{extras} "
 
-	pandoc_logfile = generated_intermediate_files_dir / "pandoc_log.txt"
-	with open(pandoc_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
-		result, error = run_local_cmd(pandoc_cmd, print_cmd = True, print_result = True, print_error=True)
+	# pandoc_logfile = generated_intermediate_files_dir / "pandoc_log.txt"
+	# with open(pandoc_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
+	# logging disabled for this line as otherwise pandoc pollutes stdout
+	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, disable_logging = True)
 	
-		success = pandocErrorRecogniser(result, error)
+	success = pandocErrorRecogniser(result, error)
 	assert success, "Pandoc failure, see log"
 
 	# remove everything except for desired filetypes
@@ -86,4 +94,5 @@ def build_default_html():
 			[f"{output_folder}/result{suffix}" for suffix in ('.html',)]
 	)
 
+	# log.info("success")
 	print("success")

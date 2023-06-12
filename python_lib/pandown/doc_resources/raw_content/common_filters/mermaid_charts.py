@@ -18,32 +18,8 @@ import subprocess
 # copied from lxdev.run_local_cmd, and build_default_report.py
 # this should be imported from somewhere, not copied like this
 from pandown import run_local_cmd
-# def run_local_cmd(cmd, **kwargs):
-# 	def as_array(result_or_error):
-# 		return result_or_error.decode("utf-8").split("\n")[:-1] if result_or_error != None else []
 
-# 	# print(cmd, flush=True)
-# 	print_result = kwargs.pop("print_result", False)
-# 	print_error = kwargs.pop("print_error", False)
-# 	print_cmd = kwargs.pop("print_cmd", False)
 
-# 	if print_cmd:
-# 		print("\n$ " + cmd)
-
-# 	p = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, **kwargs)
-# 	output, error = p.communicate()
-# 	output = as_array(output)
-# 	error = as_array(error)
-
-# 	if print_result:
-# 		for line in output:
-# 			print(line)
-	
-# 	if print_error:
-# 		for line in error:
-# 			print(line)
-
-# 	return output, error
 
 def debug_elem(elem):
 	def preview_func(obj):

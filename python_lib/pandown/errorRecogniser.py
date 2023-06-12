@@ -1,4 +1,10 @@
 
+import logging
+from .my_logging import loggerClass
+
+logging.setLoggerClass(loggerClass)
+log = logging.getLogger(__name__)
+
 # This prints out useful info to help interpret errors
 def pandocErrorRecogniser(resultLines, errorLines):
 	# # unfortunately the whole filter's code is in the 'error' list. let's remove it
@@ -32,20 +38,20 @@ def pandocErrorRecogniser(resultLines, errorLines):
 			success = False
 	
 	if success:
-		print("No pandoc errors detected")
+		log.info("No pandoc errors detected")
 
 	if not success:
 		recognisedError = False
 		
 		for eline in errorLines:
 			if "[WARNING] Could not fetch resource" in eline:
-				print("There is an issue with the URL, or the working directory, as pandoc cant follow the path")
+				log.warning("There is an issue with the URL, or the working directory, as pandoc cant follow the path")
 				recognisedError = True
 
 		if not recognisedError:
-			print("Warning! Undiagnosed pandoc issue. Displaying pandoc output:")
+			log.warning("Undiagnosed pandoc issue. Displaying pandoc output:")
 			newline = "\n"
-			print(f"{newline.join(resultLines)},\n error: {newline.join(errorLines)}")
+			log.warning(f"{newline.join(resultLines)},\n error: {newline.join(errorLines)}")
 
 
 	return success
@@ -63,19 +69,19 @@ def latexErrorRecogniser(resultLines, errorLines):
 
 
 	if success:
-		print("No latex errors detected")
+		log.info("No latex errors detected")
 		
 	if not success:
 		recognisedError = False
 
 		for rline in lines:
 			if "! LaTeX Error: Environment lstlisting undefined." in rline:
-				print("Latex error regarding lstlisting / code stuff. Ensure minted_code filter is used, to bypass this for now")
+				log.warning("Latex error regarding lstlisting / code stuff. Ensure minted_code filter is used, to bypass this for now")
 				recognisedError = True
 		...
 		if not recognisedError:
-			print("Warning! Undiagnosed latex issue. Displaying latex output:")
+			log.warning("Warning! Undiagnosed latex issue. Displaying latex output:")
 			newline = "\n"
-			print(f"{newline.join(lines)}")
+			log.warning(f"{newline.join(lines)}")
 	
 	return success

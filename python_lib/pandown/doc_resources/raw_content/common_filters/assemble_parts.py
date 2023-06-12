@@ -9,6 +9,9 @@ already_added_parts = {}
 
 from copy_linked_items import file_formats_that_link_content, file_formats_that_embed_content
 
+# from pandown import loggerClass
+# logging.setLoggerClass(loggerClass)
+# log = logging.getLogger(__name__)
 
 def get_depth(path):
 	path = pathlib.Path(path)
@@ -106,6 +109,7 @@ def handle_parts_block(options, data, element, doc):
 
 	for next_file_or_foldername in get_list_of_next_content_files(parts_base_path, data):
 		# next_file_or_foldername
+		# log.info("Hello from assemble_parts!")
 
 		full_dir_path = os.path.join(parts_base_path, next_file_or_foldername)
 		next_foldername = ""
