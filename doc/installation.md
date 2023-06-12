@@ -99,6 +99,8 @@ so ran 'pip install pygments'
 			- test that yarn installed, by running `yarn -v`, and expect to see a version number
 			- run `yarn add @mermaid-js/mermaid-cli` 
 			- to see if mermaid-cli installed, which has a program name of mmdc, run `~\node_modules\.bin\mmdc`. A popup window should appear, if it does, great. close it.
+			- then restart your computer, so that changes to PATH are propagated
+			- run `node -v` and ensure that a version number is printed
 			
 ## Procedure to link to git remotes, for common workflows
 
