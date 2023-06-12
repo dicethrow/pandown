@@ -2,7 +2,7 @@
 
 import panflute as pf
 import subprocess, os, yaml, re, pprint, copy, shutil, pathlib
-
+from hashlib import sha256
 from pandown import run_local_cmd, debug_elem 
 
 
@@ -61,7 +61,8 @@ def copy_linked_items(elem, doc):
 			# elif "generated_intermediate_files" in location_from_doc_dir:
 				# desired_path = pathlib.Path(os.path.relpath(location_from_doc_dir, os.path.join(doc.get_metadata("output_dir"), "generated_intermediate_files"))).resolve()
 			if "../" in location_from_doc_dir:
-				desired_path = os.path.join("external", os.path.basename(location_from_doc_dir))
+				hash_str = sha256(str(location_from_doc_dir).encode()).hexdigest()[:12]
+				desired_path = os.path.join("external", hash_str, os.path.basename(location_from_doc_dir))
 
 			# pf.debug(f"location_from_doc_dir: {location_from_doc_dir} to {desired_path}")
 			
