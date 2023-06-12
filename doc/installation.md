@@ -25,6 +25,8 @@
 
 1. If not already installed, install python using this [download link](https://www.python.org/downloads/). When in the installer, ensure the `Add Python 3.xx to PATH` checkbox is ticked. When installation finishes, an option to `Disable path length limit` will appear, click this button to disable path length limit. Not doing this may otherwise cause issues later on.
 
+	- needs to be at least 3.10
+
 2. If not already installed, install git using this [download link](https://gitforwindows.org/), changing the default text editor to notepad, and setting the default new branch name to 'main', keeping all other default settings.
 
 3. Using git, clone this repository to a folder on your computer.
@@ -75,6 +77,29 @@ had to run this on windows for the first time, as it's slow and the 'run_cmd' do
 Then it printed `you must have pygmentize installed to use this package'.
 so ran 'pip install pygments'
 
+---
+
+- for mermaid charts
+
+	- install npm
+		- linux 
+			- sudo apt install npm
+			- npm update -g npm
+			- note that on ubuntu 20.04, the default version of npm is too low; follow this guide to get a newer version: https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
+		- windows
+			- follow this https://github.com/coreybutler/nvm-windows to download and run `nvm-setup.exe`, accepting all default options
+			- open powershell, type `nvm install latest`. This will download and install node.js
+			- it will then prompt you to type something like `nvm use 20.3.0`. Type the command as prompted.
+			- type `node -v`, you should get a response of `v20.3.0` or otherwise that matches the earlier prompt
+			- type `npm install --loglevel verbose --global mermaid-filter`
+				- is this wrong? obsolete? instead...
+			- open PowerShell as admin and run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`, otherwise yarn can't run
+			- change directory to your user folder, `cd ~`, as npm installs things locally
+			- `npm install --loglevel verbose --global yarn`
+			- test that yarn installed, by running `yarn -v`, and expect to see a version number
+			- run `yarn add @mermaid-js/mermaid-cli` 
+			- to see if mermaid-cli installed, which has a program name of mmdc, run `~\node_modules\.bin\mmdc`. A popup window should appear, if it does, great. close it.
+			
 ## Procedure to link to git remotes, for common workflows
 
 1. Set up a SSH key on your computer, and copy the public key to your clipboard.

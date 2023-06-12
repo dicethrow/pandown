@@ -14,6 +14,7 @@ import tempfile
 import argparse, os, subprocess, textwrap
 from glob import glob
 import subprocess
+import pathlib
 
 # copied from lxdev.run_local_cmd, and build_default_report.py
 # this should be imported from somewhere, not copied like this
@@ -61,36 +62,47 @@ def handle_mermaid_charts(options, data, element, doc):
 	theme = options.get("theme", "default")
 	background = options.get("background", "transparent")
 
-	tempSrcFile = tempfile.NamedTemporaryFile()
+	# needed windows-compatible tempfile structure
+	# from https://docs.python.org/3/library/tempfile.html#tempfile.NamedTemporaryFile
+	# tempSrcFile = tempfile.NamedTemporaryFile()
+	# tempSrcFile.write(data.encode())
+	# tempSrcFile.close()
 
-	with open(tempSrcFile.name, 'w') as f:
-		f.write(data)
+	with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmpdir:
+			
+		temp_src_file = pathlib.Path(tmpdir) / "temp_src_file.xxx"
+		with open(temp_src_file, "w") as f:
+			f.write(data)
 
-	# pf.debug("file ----------------")
-	# with open(tempSrcFile.name, 'r') as f:
-	# 	pf.debug(f.readlines())
-	# pf.debug("End file ---------------")
+		# pf.debug("file ----------------")
+		# with open(tempSrcFile.name, 'r') as f:
+		# 	pf.debug(f.readlines())
+		# pf.debug("End file ---------------")
 
 
-	# for the dest name, store an attribute in the doc object, so we can use incrementing identifiers
-	if hasattr(doc, "mermaid_chart_index"):
-		doc.mermaid_chart_index += 1
-	else:
-		doc.mermaid_chart_index = 0
-	destFilename = f'mermaid_chart_{doc.mermaid_chart_index}.{dest_format}'
-	destFilePath = os.path.join(doc.get_metadata("generated_intermediate_files_dir"), destFilename)
+		# for the dest name, store an attribute in the doc object, so we can use incrementing identifiers
+		if hasattr(doc, "mermaid_chart_index"):
+			doc.mermaid_chart_index += 1
+		else:
+			doc.mermaid_chart_index = 0
+		destFilename = f'mermaid_chart_{doc.mermaid_chart_index}.{dest_format}'
+		destFilePath = os.path.join(doc.get_metadata("generated_intermediate_files_dir"), destFilename)
 
-	# mmdc_cmd = "mmdc"
-	mmdc_cmd = os.path.expanduser("~/node_modules/.bin/mmdc") # assuming that mermaid-cli has been installed to the ~ directory
-	mmdc_cmd += f' -w {width}'
-	mmdc_cmd += f' -s {scale}'
-	mmdc_cmd += " -f" # necessary?
-	mmdc_cmd += f' -i {tempSrcFile.name}'
-	mmdc_cmd += f' -t {theme}'
-	mmdc_cmd += f' -b {background}'
-	mmdc_cmd += f' -o {destFilePath}'
+		# mmdc_cmd = "mmdc"
+		mmdc_cmd_location = pathlib.Path().home() / "node_modules" / ".bin" / "mmdc"
+		assert mmdc_cmd_location.exists(),  "mermaid-cli has not been installed. Follow the installation guide or remove this filter from your main.md"
 
-	result, error = run_local_cmd(mmdc_cmd)
+		# mmdc_cmd = os.path.expanduser("~/node_modules/.bin/mmdc") to the ~ directory
+		mmdc_cmd = str(mmdc_cmd_location)
+		mmdc_cmd += f' -w {width}'
+		mmdc_cmd += f' -s {scale}'
+		mmdc_cmd += " -f" # necessary?
+		mmdc_cmd += f' -i {temp_src_file}'#{tempSrcFile.name}'
+		mmdc_cmd += f' -t {theme}'
+		mmdc_cmd += f' -b {background}'
+		mmdc_cmd += f' -o {destFilePath}'
+
+		result, error = run_local_cmd(mmdc_cmd)
 	
 	if dest_format == "svg":
 		if doc.format == "latex":
