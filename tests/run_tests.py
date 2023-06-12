@@ -58,36 +58,34 @@ class test_runner(unittest.TestCase):
 	# 	log.error("error message")
 	# 	log.critical("critical message")
 
-	def test_pdf(self):
-		for test_dir in glob.glob("tests/test__*"):
-			if run_this_test(test_dir):
-				with cwd(test_dir):
-					log.info(f"Running test {test_dir}:")
-					if platform.system() == "Windows":
-						cmd = "python doc/build.py pdf"
-					else:
-						cmd = "python3 doc/build.py pdf"
-
-					result, error = run_local_cmd(cmd, print_cmd = True)
-					# newline = "\n"
-					self.assertTrue(result[0] == "success")
-						# f"result: {newline.join(result)},\n error: {newline.join(error)}")
-
-	# def test_html(self):
+	# def test_pdf(self):
 	# 	for test_dir in glob.glob("tests/test__*"):
 	# 		if run_this_test(test_dir):
 	# 			with cwd(test_dir):
 	# 				log.info(f"Running test {test_dir}:")
 	# 				if platform.system() == "Windows":
-	# 					cmd = "python doc/build.py html"
+	# 					cmd = "python doc/build.py pdf"
 	# 				else:
-	# 					cmd = "python3 doc/build.py html"
+	# 					cmd = "python3 doc/build.py pdf"
 
 	# 				result, error = run_local_cmd(cmd, print_cmd = True)
-
 	# 				# newline = "\n"
 	# 				self.assertTrue(result[0] == "success")
 	# 					# f"result: {newline.join(result)},\n error: {newline.join(error)}")
+
+	def test_html(self):
+		for test_dir in glob.glob("tests/test__*"):
+			if run_this_test(test_dir):
+				with cwd(test_dir):
+					log.info(f"Running test {test_dir}:")
+					if platform.system() == "Windows":
+						cmd = "python doc/build.py html"
+					else:
+						cmd = "python3 doc/build.py html"
+
+					result, error = run_local_cmd(cmd, print_cmd = True)
+
+					self.assertTrue(result[0] == "success")
 	
 	# def test_odt(self):
 	# 	for test_dir in glob.glob("tests/test__*"):
