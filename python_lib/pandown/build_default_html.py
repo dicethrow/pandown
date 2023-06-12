@@ -80,7 +80,7 @@ def build_default_html():
 	# pandoc_logfile = generated_intermediate_files_dir / "pandoc_log.txt"
 	# with open(pandoc_logfile, "w", buffering=1) as stdoutfile, redirect_stdout(stdoutfile):
 	# logging disabled for this line as otherwise pandoc pollutes stdout
-	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, disable_logging = True)
+	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, disable_logging = False)
 	
 	success = pandocErrorRecogniser(result, error)
 	if not success:

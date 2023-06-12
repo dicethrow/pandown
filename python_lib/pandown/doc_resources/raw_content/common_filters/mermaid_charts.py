@@ -102,22 +102,28 @@ def handle_mermaid_charts(options, data, element, doc):
 		mmdc_cmd += f' -o {destFilePath}'
 
 		result, error = run_local_cmd(mmdc_cmd)
+
+	
+	# relative_path = os.path.relpath(destFilePath, doc.get_metadata("output_dir"))
+	# absolute path is fine for now
+	# relative_path = destFilePath # for now
 	
 	if dest_format == "svg":
-		if doc.format == "latex":
-			assert 0, "this doesn't work yet, some latex issue"
-			# this assumes that a latex document will be produced
-			# or, hardcode the use of includesvg as in here https://tex.stackexchange.com/questions/122871/include-svg-images-with-the-svg-package
-			new_elem = pf.RawBlock(f'\\includesvg{{{str(destFilePath)}}}', format="tex")
+		# if doc.format == "latex":
+		# 	assert 0, "this doesn't work yet, some latex issue"
+		# 	# this assumes that a latex document will be produced
+		# 	# or, hardcode the use of includesvg as in here https://tex.stackexchange.com/questions/122871/include-svg-images-with-the-svg-package
+		# 	new_elem = pf.RawBlock(f'\\includesvg{{{str(destFilePath)}}}', format="tex")
 		
-		else:
+		# else:
 			# relative path is important for html mainly, but useful for other output formats too
-			relative_path = os.path.relpath(destFilePath, doc.get_metadata("output_dir"))
-			new_elem = pf.Para(pf.Image(url=relative_path, title=options.get("title", "")))
+			
+		new_elem = pf.Para(pf.Image(url=str(destFilePath), title=options.get("title", "")))
 
 	else:
 		new_elem = pf.Para(pf.Image(url=str(destFilePath), title=options.get("title", "")))
 
+	pf.debug("Mermaid, made ", destFilePath)
 	
 	return new_elem
 

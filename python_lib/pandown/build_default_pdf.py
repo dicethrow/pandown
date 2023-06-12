@@ -80,7 +80,7 @@ def build_default_pdf():
 	pandoc_logfile = generated_intermediate_files_dir / "pandoc_log.txt"
 
 	# logging disabled for this line as otherwise pandoc pollutes stdout
-	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, disable_logging = True)
+	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, disable_logging = False)
 			
 	success = pandocErrorRecogniser(result, error)
 	if not success:
