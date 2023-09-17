@@ -66,6 +66,9 @@
 
 8. Install latex
 
+	- linux
+		- sudo apt-get install texlive-full
+
 	- Windows:
 		- install as miktex from this [download link](https://miktex.org/download)
 		- When it asks 'install missing packages on the fly' click 'yes'.

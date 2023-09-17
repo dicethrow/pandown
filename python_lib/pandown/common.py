@@ -168,9 +168,9 @@ def remove_generated_files(delete, except_for = []):
 	# log.debug(delete, except_for)
 	for filename in delete:
 		if filename in except_for:
-			# log.debug(f"Not removing {filename}")
+			log.debug(f"Not removing {filename}")
 			continue
-		# log.debug(f"Removing {filename}")
+		log.debug(f"Removing {filename}")
 		
 		if os.path.isdir(filename): 
 			shutil.rmtree(filename)
