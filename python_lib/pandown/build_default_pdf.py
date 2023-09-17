@@ -1,6 +1,7 @@
 # default pdf build
 from .doc_resources import get_path_to_common_content
 
+from contextlib import contextmanager
 import argparse, os, subprocess, textwrap, pathlib, shutil
 from glob import glob
 import subprocess
@@ -28,7 +29,7 @@ def build_default_pdf():
 
 	# clean residue from last build process
 	remove_generated_files(delete = [output_folder, doc_dir / "output"])
- 	# note that latex's minted code generates `output`, although we dont use it at the moment - messy
+	# note that latex's minted code generates `output`, although we dont use it at the moment - messy
 
 	# prepare files and directories for use with pandoc
 	generated_intermediate_files_dir = output_folder / "generated_intermediate_files"
@@ -108,8 +109,92 @@ def build_default_pdf():
 			[output_folder / f'result{suffix}' for suffix in ('.pdf',)]
 	)
 
-	print("success") # for stdout
+	# now name it
+	if "result-name" in yaml_entries:
+		current_full_path = pdf_output_dir / "result.pdf"
+		new_full_path = pdf_output_dir / (yaml_entries["result-name"] + ".pdf")
+		# new_path = path.parent / f"{path.name}.pdf"
+		shutil.move(current_full_path, new_full_path)
+
+	# print("success") # for stdout
 	# print("")
 	# log.inf
 
+
+# from https://stackoverflow.com/questions/299446/how-do-i-change-directory-back-to-my-original-working-directory-with-python
+@contextmanager
+def my_cwd(path):
+    oldpwd = os.getcwd()
+    os.chdir(path)
+    try:
+        yield
+    finally:
+        os.chdir(oldpwd)
+
+def test_rmii_sync():
+	log.info("In test_rmii_sync")
+	# display the current directory and its contents
+	cwd = pathlib.Path().absolute()
+	doc_dir = cwd / "doc"
+	top_source_file = doc_dir / "content" / "main.md"
+	output_folder = doc_dir / "output_pdf"
+
+	yaml_entries = get_yaml_entries_from_file(top_source_file)
+	assert "result-name" in yaml_entries
+
+	output_file = output_folder / (yaml_entries["result-name"] + ".pdf")
+
+
+	# find in rmapi tree
+	result, error = run_local_cmd(f"rmapi find / {yaml_entries['result-name']}*", print_cmd = True, disable_logging = False)
+	if result == []:
+	# if True:
+		log.info("Not found")
+
+		# copy to rmii cloud, to the root location
+		# add version count to filename?
+		result, error = run_local_cmd(f"rmapi put {output_file} / ", print_cmd = True, disable_logging = False)
+		for line in result:
+			log.info(line)
+	else:
+		log.info("Found:")
+		for line in result:
+			log.info(line)
+		assert len(result) == 1, "Multiple find hits found! not handled"
+		found_location = result[0].split(" ")[1]
+		log.info(found_location)
+
+		# # now dowload it
+		cmd = f"rmapi get {found_location}"
+		rmii_output_dir = doc_dir / "output_pdf_from_rmii"
+		with my_cwd(doc_dir / "output_pdf_from_rmii"):
+			result, error = run_local_cmd(cmd, print_cmd = True, disable_logging = False)
+			for line in result:
+				log.info(line)
+
+			# extract the resulting .zip
+			result, error = run_local_cmd(f"unar {yaml_entries['result-name']}.zip", print_cmd = True, disable_logging = False)
+			for line in result:
+				log.info(line)
+
+			# turn it into a pdf (as the annotation files need to be put together manually)
+			unzipped_dir = rmii_output_dir / yaml_entries['result-name']
+			result, error = run_local_cmd(f"/home/ubuntu/Documents/py311env/bin/python3.11 -m remarks {unzipped_dir} {unzipped_dir}", print_cmd = True, disable_logging = False)
+			for line in result + error:
+				log.info(line)
+
+
+			# move the result .pdf 
+			current_location = rmii_output_dir / yaml_entries['result-name'] / (yaml_entries['result-name'] + " _remarks.pdf")
+			target_location = rmii_output_dir / (yaml_entries['result-name'] + ".pdf")
+			shutil.move(current_location, target_location)
+			# result, error = run_local_cmd(f"shutil", print_cmd = True, disable_logging = False)
+			# for line in result + error:
+				# log.info(line)
+
+			# remove the zip and the extracted files
+			shutil.rmtree(rmii_output_dir / yaml_entries['result-name'])
+			os.remove(rmii_output_dir / (yaml_entries['result-name'] + ".zip"))
+
+	log.info("End of test_rmii_sync")
 
