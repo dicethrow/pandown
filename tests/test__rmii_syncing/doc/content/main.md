@@ -43,7 +43,3 @@ This document is for testing rmii syncing
 
 
 - rmapi find / mbp*
-
-
->TITLE<
-hello my lov bean won't o won't u kiss i>

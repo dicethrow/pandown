@@ -1,9 +1,12 @@
 # default pdf build
 from .doc_resources import get_path_to_common_content
 
+import sys
+import json
+import hashlib
 from contextlib import contextmanager
 import argparse, os, subprocess, textwrap, pathlib, shutil
-from glob import glob
+# from glob import glob
 import subprocess
 import platform
 
@@ -124,12 +127,45 @@ def build_default_pdf():
 # from https://stackoverflow.com/questions/299446/how-do-i-change-directory-back-to-my-original-working-directory-with-python
 @contextmanager
 def my_cwd(path):
-    oldpwd = os.getcwd()
-    os.chdir(path)
-    try:
-        yield
-    finally:
-        os.chdir(oldpwd)
+	oldpwd = os.getcwd()
+	os.chdir(path)
+	try:
+		yield
+	finally:
+		os.chdir(oldpwd)
+
+# adapted from https://stackoverflow.com/questions/2267362/how-to-convert-an-integer-to-a-string-in-any-base/74324587#74324587
+def to_base36(number):
+	base_string = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	base = len(base_string) # 36
+	result = ""
+	while number:
+		result += base_string[number % base]
+		number //= base
+	return result[::-1] or "0"
+
+# from https://stackoverflow.com/questions/22058048/hashing-a-file-in-python
+def get_file_hash(filename):
+	# import sys
+	# import hashlib
+
+	# BUF_SIZE is totally arbitrary, change for your app!
+	BUF_SIZE = 65536  # lets read stuff in 64kb chunks!
+
+	# md5 = hashlib.md5()
+	sha1 = hashlib.sha1()
+
+	with open(filename, 'rb') as f:
+		while True:
+			data = f.read(BUF_SIZE)
+			if not data:
+				break
+			# md5.update(data)
+			sha1.update(data)
+
+	# print("MD5: {0}".format(md5.hexdigest()))
+	# print("SHA1: {0}".format(sha1.hexdigest())
+	return sha1.hexdigest()
 
 def test_rmii_sync():
 	log.info("In test_rmii_sync")
@@ -138,25 +174,26 @@ def test_rmii_sync():
 	doc_dir = cwd / "doc"
 	top_source_file = doc_dir / "content" / "main.md"
 	output_folder = doc_dir / "output_pdf"
+	rmii_output_dir = doc_dir / "output_pdf_from_rmii"
+
+	version_id_records_file = rmii_output_dir / "version_ID_records.json"
+	if version_id_records_file.exists():
+		with open(version_id_records_file, "r") as f:
+			version_ids = json.load(f)
+		last_version_id_int = max([int(ver_str, 36) for ver_str in version_ids.keys()]) # largest is the most recent version counter
+		version_id = to_base36(last_version_id_int + 1)	
+	else:
+		version_id = "A"
+		version_ids = {}
 
 	yaml_entries = get_yaml_entries_from_file(top_source_file)
 	assert "result-name" in yaml_entries
 
 	output_file = output_folder / (yaml_entries["result-name"] + ".pdf")
 
-
 	# find in rmapi tree
 	result, error = run_local_cmd(f"rmapi find / {yaml_entries['result-name']}*", print_cmd = True, disable_logging = False)
-	if result == []:
-	# if True:
-		log.info("Not found")
-
-		# copy to rmii cloud, to the root location
-		# add version count to filename?
-		result, error = run_local_cmd(f"rmapi put {output_file} / ", print_cmd = True, disable_logging = False)
-		for line in result:
-			log.info(line)
-	else:
+	if result != []:
 		log.info("Found:")
 		for line in result:
 			log.info(line)
@@ -165,36 +202,76 @@ def test_rmii_sync():
 		log.info(found_location)
 
 		# # now dowload it
-		cmd = f"rmapi get {found_location}"
-		rmii_output_dir = doc_dir / "output_pdf_from_rmii"
 		with my_cwd(doc_dir / "output_pdf_from_rmii"):
+			cmd = f"rmapi get {found_location}"
 			result, error = run_local_cmd(cmd, print_cmd = True, disable_logging = False)
 			for line in result:
 				log.info(line)
 
 			# extract the resulting .zip
-			result, error = run_local_cmd(f"unar {yaml_entries['result-name']}.zip", print_cmd = True, disable_logging = False)
+			found_versioned_zip = list(rmii_output_dir.glob(f"{yaml_entries['result-name']}*.zip"))[0] # should be only one
+			result, error = run_local_cmd(f"unar {found_versioned_zip}", print_cmd = True, disable_logging = False)
 			for line in result:
 				log.info(line)
+				assert "failed" not in line
 
 			# turn it into a pdf (as the annotation files need to be put together manually)
-			unzipped_dir = rmii_output_dir / yaml_entries['result-name']
+			unzipped_dir = rmii_output_dir / found_versioned_zip.stem
 			result, error = run_local_cmd(f"/home/ubuntu/Documents/py311env/bin/python3.11 -m remarks {unzipped_dir} {unzipped_dir}", print_cmd = True, disable_logging = False)
 			for line in result + error:
 				log.info(line)
 
 
 			# move the result .pdf 
-			current_location = rmii_output_dir / yaml_entries['result-name'] / (yaml_entries['result-name'] + " _remarks.pdf")
-			target_location = rmii_output_dir / (yaml_entries['result-name'] + ".pdf")
+			current_location = rmii_output_dir / found_versioned_zip.stem / (found_versioned_zip.stem + " _remarks.pdf")
+			target_location = rmii_output_dir / (found_versioned_zip.stem + ".pdf")
 			shutil.move(current_location, target_location)
 			# result, error = run_local_cmd(f"shutil", print_cmd = True, disable_logging = False)
 			# for line in result + error:
 				# log.info(line)
 
+			# remove the now-downloaded file from rmcloud
+			cmd = f"rmapi rm {found_location}"
+			result, error = run_local_cmd(cmd, print_cmd = True, disable_logging = False)
+			for line in result:
+				log.info(line)
+
+			# only keep a local copy of this version if it is annotated, which we can determine by checking
+			# if the unzipped folder contains a .rm file
+			has_annotations = any(unzipped_dir.rglob("*.rm"))
+			if has_annotations:
+				log.info("has annotations")
+			else:
+				log.info("no annotations, todo: delete, as it doesn't contain anything we don't already have")
+				os.remove(target_location)
+
 			# remove the zip and the extracted files
-			shutil.rmtree(rmii_output_dir / yaml_entries['result-name'])
-			os.remove(rmii_output_dir / (yaml_entries['result-name'] + ".zip"))
+			shutil.rmtree(unzipped_dir)
+			os.remove(rmii_output_dir / (found_versioned_zip.stem + ".zip"))
+		
+	else:
+		log.info("Not found")
+
+
+	# add version ID to the filename
+	
+		
+
+	log.info(f"Now using version: {version_id}")
+
+	version_ids[version_id] = get_file_hash(output_file) # note we don't use hash anymore, as it doesn't work, and the find-the-.rm-file works
+	with open(version_id_records_file, "w") as f:
+		json.dump(version_ids, f)
+
+	versioned_filename = output_file.with_name(output_file.name.replace(".pdf", f"_{version_id}.pdf"))
+	shutil.move(output_file, versioned_filename)
+
+	# copy to rmii cloud, to the root location
+	# add version count to filename?
+	result, error = run_local_cmd(f"rmapi put {versioned_filename} / ", print_cmd = True, disable_logging = False)
+	for line in result:
+		log.info(line)
+		
 
 	log.info("End of test_rmii_sync")
 
