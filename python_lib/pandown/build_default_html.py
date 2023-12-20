@@ -83,10 +83,10 @@ def build_default_html():
 	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, disable_logging = False)
 	
 	success = pandocErrorRecogniser(result, error)
-	if not success:
-		for line in error:
-			log.critical(line)
-		assert False, "Pandoc failure, see log; "
+	# if not success:
+		# for line in error:
+			# log.critical(line)
+		# assert False, "Pandoc failure, see log; "
 
 	# remove everything except for desired filetypes
 	# remove_generated_files(keep_filetypes=[".html", ".pdf", ".latex", ".csv", ".svg", ".bmp"])

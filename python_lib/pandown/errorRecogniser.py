@@ -33,26 +33,31 @@ def pandocErrorRecogniser(resultLines, errorLines):
 	# 		print("You might have a redundant --- in a parts block somewhere, find and remove it")
 	
 	success = True
-	for eline in errorLines: 
+	for eline in errorLines:
 		if "Exception" in eline:
 			success = False
-	
+		
 	if success:
 		log.info("No pandoc errors detected")
 
 	if not success:
 		recognisedError = False
 		
-		for eline in errorLines:
+		for i, eline in enumerate(errorLines):
 			if "[WARNING] Could not fetch resource" in eline:
-				log.warning("There is an issue with the URL, or the working directory, as pandoc cant follow the path")
+				log.error("There is an issue with the URL, or the working directory, as pandoc cant follow the path")
+				recognisedError = True
+			
+			if ("YAML parse exception at" in eline) and ( errorLines[i+1] == "mapping values are not allowed in this context"):
+				log.error("You may have some --- strings in your text that is being misinterpreted as an invalid YAML block")
 				recognisedError = True
 
 		if not recognisedError:
-			log.warning("Undiagnosed pandoc issue. Displaying pandoc output:")
+			log.error("Undiagnosed pandoc issue. Displaying pandoc output:")
 			newline = "\n"
-			log.warning(f"{newline.join(resultLines)},\n error: {newline.join(errorLines)}")
+			log.error(f"{newline.join(resultLines)},\n error: {newline.join(errorLines)}")
 
+			assert False, "Pandoc failure, see log; "
 
 	return success
 
