@@ -124,7 +124,9 @@ def handle_parts_block(options, data, element, doc):
 		assert os.path.isdir(next_filename_full.parent), f"Could not find folder {next_filename_full.parent}"
 
 		with open(next_filename_full) as f:
-			new_elems = pf.convert_text(f.read())
+			s = f.read()
+			pf.debug(s)
+			new_elems = pf.convert_text(s)
 
 			# pf.debug(f"************ {next_filename_full.parent} ************")
 

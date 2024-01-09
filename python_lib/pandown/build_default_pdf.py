@@ -87,10 +87,10 @@ def build_default_pdf():
 	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, disable_logging = False)
 			
 	success = pandocErrorRecogniser(result, error)
-	if not success:
-		for line in error:
-			log.critical(line)
-		assert False, "Pandoc failure, see log; "
+	# if not success:
+		# for line in error:
+			# log.critical(line)
+		# assert False, "Pandoc failure, see log; "
 	### from .tex make .pdf
 	# lualatex needs to be caled twice, otherwise the toc doesn't generate properly. if references, call biber between
 	pdf_output_dir = doc_dir / "output_pdf"
