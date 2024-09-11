@@ -10,7 +10,7 @@ if __name__ == "__main__":
 	assert args.task in ["pdf", "html"], "invalid task given"
 
 	if args.task == "html":
-		pandown.build_default_html(debug_mode=True)
+		pandown.build_default_html()
 	
 	elif args.task == "pdf":
-		pandown.build_default_pdf(debug_mode=True)
+		pandown.build_default_pdf()

@@ -7,10 +7,13 @@ if __name__ == "__main__":
 	# parser.add_argument("proj_location", type=str, help="project dir to build")
 	args = parser.parse_args()
 
-	assert args.task in ["pdf", "html"], "invalid task given"
+	assert args.task in ["pdf", "html", "odt"], "invalid task given"
 
 	if args.task == "html":
-		pandown.build_default_html(debug_mode=True)
+		pandown.build_default_html()
 	
 	elif args.task == "pdf":
-		pandown.build_default_pdf(debug_mode=True)#debug_mode=True)
+		pandown.build_default_pdf()
+
+	elif args.task == "odt":
+		pandown.build_default_odt()

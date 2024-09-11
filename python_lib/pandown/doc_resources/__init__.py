@@ -3,7 +3,7 @@
 
 # if a doc project wants more custom stuff, then it can copy/paste the files
 # desired and not use these functions
-import os, shutil
+import os, shutil, pathlib
 
 # def get_absolute_content_dir(relative_path_to_containing_folder=""):
 # 	#  relative_path_to_containing_folder is a string like "for_report/filters" or "for_report"
@@ -16,14 +16,18 @@ import os, shutil
 
 # 	return dir_path
 
-def get_path_to_common_content(file_or_folder_below_raw_content=""):
-	raw_content_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "raw_content")
-	desired_content_path = os.path.join(raw_content_path, *file_or_folder_below_raw_content.split("/"))
-	return desired_content_path
+def get_path_to_common_content():
+	raw_content_path = pathlib.Path(os.path.dirname(os.path.realpath(__file__))) / "raw_content"
+	# desired_content_path = raw_content_path.joinpath(*)
+
+	# raw_content_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "raw_content")
+	# desired_content_path = os.path.join(raw_content_path, *file_or_folder_below_raw_content.split("/"))
+	# return pathlib.Path(desired_content_path)
+	return raw_content_path
 
 if __name__ == "__main__":
 	p = get_path_to_common_content()
 	print(p)
 
-	p = get_path_to_common_content("pdf_templates")
+	p = get_path_to_common_content() / "pdf_templates"
 	print(p)

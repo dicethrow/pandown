@@ -3,7 +3,7 @@
 title: Some title
 subtitle: And a small subtitle
 documentclass: paper
-panflute-filters: [ignore_comments, assemble_parts, mermaid_charts, minted_code]
+panflute-filters: [ignore_comments, assemble_parts,mermaid_charts, copy_linked_items, minted_code]
 ...
 
 
