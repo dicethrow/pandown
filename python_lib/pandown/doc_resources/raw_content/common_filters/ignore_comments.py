@@ -27,5 +27,6 @@ def main(doc=None):
 
 
 if __name__ == '__main__':
+	pf.debug("In ignore_comments")
 	main()
 

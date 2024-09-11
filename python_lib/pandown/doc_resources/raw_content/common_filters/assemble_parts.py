@@ -5,6 +5,7 @@ import subprocess, os, yaml, re, pprint, copy, shutil, pathlib
 
 import urllib 
 from pandown import run_local_cmd, debug_elem 
+from pandown.common import get_ordered_list_of_markdown_files_recursively_from
 
 already_added_parts = {}
 
@@ -67,7 +68,7 @@ def fix_referred_file_path_dir_from_container_element(container_elem, base_path)
 			# else:
 				# pf.debug(f"This is not a file: {elem.url} as {item_path}")
 
-def join_then_make_relative_file_paths_and_copy(doc, _next_foldername, _new_elem):
+def join_then_make_relative_file_paths_and_copy(doc, _new_elem):
 	for newnew_elem in _new_elem.content:
 
 		# images and links
@@ -154,7 +155,7 @@ def handle_parts_block(options, data, element, doc):
 
 				if hasattr(subelem, "content"):
 					fix_referred_file_path_dir_from_container_element(container_elem=subelem, base_path=next_filename_full.parent)
-					join_then_make_relative_file_paths_and_copy(doc, next_filename_full.parent, subelem)
+					join_then_make_relative_file_paths_and_copy(doc, subelem)
 
 			for new_elem in new_elems:
 				# debug_elem(new_elem)
@@ -183,7 +184,7 @@ def handle_root_file_images(elem, doc):
 		if hasattr(elem, "content"):
 			fix_referred_file_path_dir_from_container_element(container_elem=elem, base_path=os.path.join(doc.next_file_links_starting_dir))
 
-			join_then_make_relative_file_paths_and_copy(doc, os.path.join(doc.next_file_links_starting_dir), elem)
+			join_then_make_relative_file_paths_and_copy(doc, elem)
 
 def check_for_more_file_links(elem, doc):
 	if isinstance(elem, pf.CodeBlock):
@@ -222,24 +223,94 @@ def inspect_doc(elem, doc):
 	debug_elem(elem)
 
 
+
+
 def main(doc=None):
-	doc.file_links_present = False
-	doc = doc.walk(check_for_more_file_links)
-	doc.initial_run = True
-	doc.next_file_links_starting_dir = pathlib.Path(doc.get_metadata("starting_dir")).expanduser()
-	doc.initial_folder_depth = get_depth(doc.next_file_links_starting_dir)
-	while doc.file_links_present:
-		pf.debug("Loop!")
-		# doc = doc.walk(add_referred_content)
-		doc = pf.run_filter(pf.yaml_filter, tag="parts", function=handle_parts_block, doc=doc, strict_yaml=True)
-		doc = pf.run_filter(handle_root_file_images, doc=doc)
-		# doc.walk(inspect_doc)
-		doc.file_links_present = False
-		doc = doc.walk(check_for_more_file_links)
-		doc.initial_run = False
-	doc = doc.walk(make_top_level_headings_into_parts)
-	doc = doc.walk(handle_forbidden_characters)
-	return doc
+	
+	pf.debug("In assemble_parts")
+	starting_dir = pathlib.Path(doc.get_metadata("starting_dir")).expanduser()
+	src_files = get_ordered_list_of_markdown_files_recursively_from(starting_dir)
+	
+	for d in dir(doc.content):
+		pf.debug(d)
+
+	# doc = pf.Doc()
+	content = []
+
+
+	for i, (src_file, depth) in enumerate(src_files):
+		if i == 0:
+			continue
+
+		assert src_file.is_file(), f"This file not found: {src_file}"
+
+		with open(src_file) as f:
+			s = f.read()
+			pf.debug(f"Reading {src_file}")
+			new_elems = pf.convert_text(s)
+
+		def handle_sub_elem(subelem):
+			if hasattr(subelem, "content"):
+				for subsubelem in subelem.content:
+					handle_sub_elem(subsubelem)
+			
+			if isinstance(subelem, pf.Header):
+				subelem.level += depth # ??
+			
+			if hasattr(subelem, "content"): # but content section above?
+				fix_referred_file_path_dir_from_container_element(container_elem=subelem, base_path=src_file.parent)
+				join_then_make_relative_file_paths_and_copy(doc, subelem)
+
+		for subelem in new_elems:
+			handle_sub_elem(subelem)
+		
+		pf.debug("New elems:")
+		pf.debug(new_elems)
+
+		content.append(pf.Div(*new_elems, attributes={'source': str(src_file)}))
+		# doc.content.extend(*pf.Div(*new_elems, attributes={'source': str(src_file)}))
+		# doc.content.append(*new_elems)
+
+		# pf.debug(dir(content))
+		# pf.debug(content)
+
+	# pf.debug("*X*X*")
+	# pf.debug(x for x in content)
+	# pf.debug(len(content))
+	doc.content.append(pf.Div(*content))
+
+	# doc = content
+	# doc = pf.Doc(*content, metadata=doc.metadata, format=doc.format, api_version=doc.api_version)
+	
+	# return pf.Doc()
+
+	# doc = pf.run_filter(pf.yaml_filter, tag="parts", function=handle_parts_block, doc=doc, strict_yaml=True)
+	# doc = pf.run_filter(handle_root_file_images, doc=doc)
+
+	# doc = doc.walk(make_top_level_headings_into_parts)
+	# doc = doc.walk(handle_forbidden_characters)
+	
+
+	#####
+
+	# doc.file_links_present = False
+	# doc = doc.walk(check_for_more_file_links)
+	# doc.initial_run = True
+	# doc.next_file_links_starting_dir = pathlib.Path(doc.get_metadata("starting_dir")).expanduser()
+	# doc.initial_folder_depth = get_depth(doc.next_file_links_starting_dir)
+	# while doc.file_links_present:
+	# 	pf.debug("Loop!")
+	# 	# doc = doc.walk(add_referred_content)
+	# 	doc = pf.run_filter(pf.yaml_filter, tag="parts", function=handle_parts_block, doc=doc, strict_yaml=True)
+	# 	doc = pf.run_filter(handle_root_file_images, doc=doc)
+	# 	# doc.walk(inspect_doc)
+	# 	doc.file_links_present = False
+	# 	doc = doc.walk(check_for_more_file_links)
+	# 	doc.initial_run = False
+	# doc = doc.walk(make_top_level_headings_into_parts)
+	# doc = doc.walk(handle_forbidden_characters)
+
+	# return doc
 
 if __name__ == '__main__':
 	main()
