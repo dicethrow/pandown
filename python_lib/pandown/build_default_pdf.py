@@ -12,7 +12,7 @@ import platform
 
 from contextlib import redirect_stdout, redirect_stderr
 
-from .common import run_local_cmd, clear_terminal, remove_generated_files, add_yaml_entries_to_file, get_yaml_entries_from_file
+from .common import get_ordered_list_of_markdown_files_recursively_from, run_local_cmd, clear_terminal, remove_generated_files, add_yaml_entries_to_file, get_yaml_entries_from_file
 from .errorRecogniser import pandocErrorRecogniser, latexErrorRecogniser
 
 import logging
@@ -27,7 +27,8 @@ def build_default_pdf():
 	# display the current directory and its contents
 	cwd = pathlib.Path().absolute()
 	doc_dir = cwd / "doc"
-	top_source_file = doc_dir / "content" / "main.md"
+	top_source_file = get_ordered_list_of_markdown_files_recursively_from(doc_dir)[0][0]
+	options_file = doc_dir / "options.yaml"
 	output_folder = doc_dir / "output_pdf"
 
 	# clean residue from last build process
@@ -36,7 +37,8 @@ def build_default_pdf():
 
 	# prepare files and directories for use with pandoc
 	generated_intermediate_files_dir = output_folder / "generated_intermediate_files"
-	top_source_file_ammended = generated_intermediate_files_dir / "main.md"
+	options_file_ammended = generated_intermediate_files_dir / "options.yaml"
+	top_source_file_ammended = generated_intermediate_files_dir / top_source_file.name
 	
 	desired_dirs = ["generated_intermediate_files", "generated_output_files"]
 	for desired_dir in desired_dirs:
@@ -44,31 +46,41 @@ def build_default_pdf():
 		target_path.mkdir(parents=True, exist_ok=True)
 
 	# load the specified pandown template file
-	yaml_entries = get_yaml_entries_from_file(top_source_file)
-	if 'pandown-template-pdf' not in yaml_entries:
-		yaml_entries['pandown-template-pdf'] = "test2.latex"
+	yaml_entries = get_yaml_entries_from_file(options_file)
+	if 'pandown-template-pdf' not in yaml_entries.get("variables", {}):
+		template = "test2.latex"
+	else:
+		assert 0, "custom template not fixed yet"
 	
 	# check that the given template exists within the local project. 
-	template = yaml_entries['pandown-template-pdf']
+	# template = 
 	custom_template_folder = doc_dir / "templates"
 	if (custom_template_folder / template).exists():
 		template_folder = custom_template_folder
 	else:
 		template_folder = get_path_to_common_content() / 'pdf_templates'
-	template_file = f"--template {template_folder / template}"
 
 	panflute_filters_path = get_path_to_common_content() / 'common_filters'
 	extras = "--listings" # extras = ""
 
 	add_yaml_entries_to_file(
-		src_filename = top_source_file, 
-		dst_filename = top_source_file_ammended,
-		new_header_lines = [
-			f"panflute-path: '{panflute_filters_path}'",
-			f"starting_dir: '{os.path.dirname(top_source_file)}'",
-			f"output_dir: '{output_folder}'",
-		] + [f"{d}_dir: '{pathlib.Path(os.path.join(output_folder, d))}'" for d in desired_dirs]
+		src_filename = options_file, 
+		dst_filename = options_file_ammended,
+		new_content = {
+			"panflute-path" : str(panflute_filters_path),
+			"starting_dir" : str(os.path.dirname(top_source_file)),
+			"output_dir" : str(output_folder),
+		} | {f"{d}_dir" : str(pathlib.Path(os.path.join(output_folder, d))) for d in desired_dirs}
 	)
+	# "variables" : {
+
+	# now concatenate the yaml file and the first source file
+	with open(options_file_ammended, "r") as src, open(top_source_file, "r") as dst:
+		lines = src.readlines() + dst.readlines()
+
+	with open(top_source_file_ammended, "w") as dst:
+		dst.writelines(lines)
+
 
 	### from the .md use pandoc to make .tex
 	script_runner = "-F panflute"
@@ -77,7 +89,8 @@ def build_default_pdf():
 	pandoc_cmd = f"pandoc "
 	pandoc_cmd += f"{script_runner} "
 	pandoc_cmd += f"{top_source_file_ammended} "
-	pandoc_cmd += f"{template_file} "
+	# pandoc_cmd += f"--defaults={options_file_ammended} " # todo: append this to source file later
+	pandoc_cmd += f"--template={template_folder / template} "
 	pandoc_cmd += f"--standalone --output {latex_intermediate_file} "
 	pandoc_cmd += f"{extras}"
 	
@@ -91,6 +104,12 @@ def build_default_pdf():
 		# for line in error:
 			# log.critical(line)
 		# assert False, "Pandoc failure, see log; "
+	
+	# print("------xx------")
+	# print(result)
+	# print(error)
+	# assert 0, "focus on pandoc for now"
+
 	### from .tex make .pdf
 	# lualatex needs to be caled twice, otherwise the toc doesn't generate properly. if references, call biber between
 	pdf_output_dir = doc_dir / "output_pdf"
@@ -119,7 +138,7 @@ def build_default_pdf():
 		# new_path = path.parent / f"{path.name}.pdf"
 		shutil.move(current_full_path, new_full_path)
 
-	# print("success") # for stdout
+	print("success") # for stdout
 	# print("")
 	# log.inf
 
