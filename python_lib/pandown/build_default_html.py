@@ -7,7 +7,7 @@ import subprocess
 
 from contextlib import redirect_stdout, redirect_stderr
 
-from .common import run_local_cmd, clear_terminal, remove_generated_files, add_yaml_entries_to_file, get_yaml_entries_from_file
+from .common import run_local_cmd, clear_terminal, remove_generated_files, write_yaml_entries_to_file, get_yaml_entries_from_file
 from .errorRecogniser import pandocErrorRecogniser
 
 import logging

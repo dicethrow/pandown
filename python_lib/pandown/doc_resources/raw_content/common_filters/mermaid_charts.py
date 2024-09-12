@@ -8,6 +8,8 @@
 # db: elem:<light-blue> b"CodeBlock(int mainko(int bozo){\n    return ERROR_UNDEF;\n}; classes=['c'])" </light-blue>, parent:<light-green>b'Doc'</light-green>, children:<light-yellow>[]</light-yellow> 
 # db: elem:<light-blue> b"CodeBlock(sequenceDiagram\n    Alice->>John: Hello John, how are you?\n    John-->>Alice: Great!; classes=['mermaid'])" </light-blue>, parent:<light-green>b"Div(Header(Str(Heading) Space Str(level) Space Str(1) Space Str((should) Space Str(become) Space Str(2)) Space Str(in) Space Str(content/a_outerfolder/main.md); level=1, identifier='heading-level-1-should-become-2-in-contenta_outerfoldermain.md') Para(Str(Content) Space Str(below) Space Str(that) Space Str(heading) Space Str(in) Space Str(the) Space Str(markdown) Space Str(file)) Para(Str(xxx) Space Str(change)) Para(Str(let\xe2\x80\x99s) Space Str(see) Space Str(if) Space Str(this) Space Emph(Str(mermaid)) Space Str(filter) Space Str(works.) Space Str(Should) Space Str(look) Space Str(like) Space Str(the) Space Str(example) Space Str(from) Space Str(https://github.com/raghur/mermaid-filter)) CodeBlock(sequenceDiagram\n    Alice->>John: Hello John, how are you?\n    John-->>Alice: Great!; classes=['mermaid']); attributes={'source': '/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/demos/demo_report/doc/content/a_outerfolder/main.md'})"</light-green>, children:<light-yellow>[]</light-yellow> 
 
+# note! I had some issued with 'couldn't ifnd node' but if I put `source ~/.nvm/nvm.sh` in bashrc, it works
+
 import panflute as pf
 import tempfile
 
@@ -35,7 +37,13 @@ def debug_elem(elem):
 		pf.debug(debug_line, end="")
 
 def prepare(doc):
-	pass
+	...
+	# # let's first make sure that node exists / can be found
+	# # this seemed to be needed when I installed node with nvm
+	# result, error = run_local_cmd("/bin/bash -i -c source ~/.nvm/nvm.sh && nvm use --lts &&")
+	# result, error = run_local_cmd("nvm use --lts")
+	# # that should make this command not fail:
+	# assert run_local_cmd("which node")[0] != [], f"Can't find nodejs: {run_local_cmd('which node')}"
 
 def handle_mermaid_charts(options, data, element, doc):
 	""" 

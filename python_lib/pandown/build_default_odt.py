@@ -7,7 +7,7 @@ import subprocess
 
 from contextlib import redirect_stdout, redirect_stderr
 
-from .common import run_local_cmd, clear_terminal, remove_generated_files, add_yaml_entries_to_file
+from .common import run_local_cmd, clear_terminal, remove_generated_files
 from .errorRecogniser import pandocErrorRecogniser
 
 def build_default_odt(template="default/standalone.html"):
@@ -52,15 +52,15 @@ def build_default_odt(template="default/standalone.html"):
 	panflute_filters_path = f"{get_path_to_common_content() / 'common_filters'}"
 	extras = "--listings" # extras = ""
 
-	add_yaml_entries_to_file(
-		src_filename = top_source_file, 
-		dst_filename = top_source_file_ammended,
-		new_header_lines = [
-			f"panflute-path: '{panflute_filters_path}'",
-			f"starting_dir: '{os.path.dirname(top_source_file)}'",
-			f"output_dir: '{output_folder}'",			
-		] + [f"{d}_dir: '{pathlib.Path(os.path.join(output_folder, d))}'" for d in desired_dirs]
-	)
+	# add_yaml_entries_to_file(
+	# 	src_filename = top_source_file, 
+	# 	dst_filename = top_source_file_ammended,
+	# 	new_header_lines = [
+	# 		f"panflute-path: '{panflute_filters_path}'",
+	# 		f"starting_dir: '{os.path.dirname(top_source_file)}'",
+	# 		f"output_dir: '{output_folder}'",			
+	# 	] + [f"{d}_dir: '{pathlib.Path(os.path.join(output_folder, d))}'" for d in desired_dirs]
+	# )
 
 
 	### from the .md use pandoc to make .tex

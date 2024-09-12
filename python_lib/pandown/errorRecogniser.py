@@ -36,13 +36,10 @@ def pandocErrorRecogniser(resultLines, errorLines):
 	for eline in errorLines:
 		if "Exception" in eline:
 			success = False
-		
-	if success:
-		log.info("No pandoc errors detected")
 
-	if not success:
-		recognisedError = False
-		
+	recognisedError = False
+
+	if not success:	
 		for i, eline in enumerate(errorLines):
 			if "[WARNING] Could not fetch resource" in eline:
 				log.error("There is an issue with the URL, or the working directory, as pandoc cant follow the path")
@@ -51,14 +48,39 @@ def pandocErrorRecogniser(resultLines, errorLines):
 			if ("YAML parse exception at" in eline) and ( errorLines[i+1] == "mapping values are not allowed in this context"):
 				log.error("You may have some --- strings in your text that is being misinterpreted as an invalid YAML block")
 				recognisedError = True
+			
+	# now check resultLines for info
+	# note! 12sep24, these don't work, I get this in the log but can't detect it like this - why?
+	# [2024-09-12 11:56:29,905] DEBUG [pandown.common.show_line:105] /usr/bin/env: ‘node’: No such file or directory
 
-		if not recognisedError:
-			log.error("Undiagnosed pandoc issue. Displaying pandoc output:")
-			newline = "\n"
-			log.error(f"{newline.join(resultLines)},\n error: {newline.join(errorLines)}")
+	for i, rline in enumerate(resultLines):
+		if "No such file or directory" in rline:
+			log.error("Some file or executable cannot be found")
+			recognisedError = True
 
-			assert False, "Pandoc failure, see log; "
+		if "/usr/bin/env: ‘node’: No such file or directory" in rline:
+			log.error("Node cannot be found. This is used to generate mermaid diagrams. If it worked before last login, it may be instaled but not on path.")
+			recognisedError = True
 
+
+	if not success:
+		log.error("Undiagnosed pandoc issue. Displaying pandoc output:")
+		newline = "\n"
+		log.error(f"{newline.join(resultLines)},\n error: {newline.join(errorLines)}")
+		assert False, "Pandoc failure, see log; "
+
+	elif recognisedError:
+		log.error("Recognised pandoc issue, see above")
+		assert False, "Pandoc failure, see log; "
+
+	else:
+		log.info("No pandoc errors detected")
+
+
+	# newline = "\n"
+	# log.error(f"{newline.join(resultLines)},\n error: {newline.join(errorLines)}")
+
+	
 	return success
 
 def latexErrorRecogniser(resultLines, errorLines):

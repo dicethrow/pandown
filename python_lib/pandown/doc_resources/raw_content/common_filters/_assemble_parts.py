@@ -52,7 +52,7 @@ def fix_referred_file_path_dir_from_container_element(container_elem, base_path)
 			url_as_local_path = urllib.parse.unquote(elem.url) # to get rid of things like %20, if present #elem.url.replace('%20', ' ')
 			img_path = os.path.join(base_path, pathlib.Path(url_as_local_path))
 			pf.debug(f"new img path: {img_path} from {base_path} and {elem.url}")
-			assert os.path.isfile(img_path)
+			assert os.path.isfile(img_path), f"image not found: {img_path}"
 			elem.url = str(img_path)
 
 		elif isinstance(elem, pf.Link):
@@ -231,6 +231,8 @@ def main(doc=None):
 
 	content = []
 
+	pf.debug(f"{len(src_files)} source files found from {starting_dir}")
+
 	for src_file, depth in src_files:
 
 		assert src_file.is_file(), f"This file not found: {src_file}"
@@ -239,10 +241,10 @@ def main(doc=None):
 			s = f.read() 
 		
 			if len(s) == 0:
-				pf.debug(f"Opening file {src_file}: Empty file, skipping")
-				continue
+				pf.debug(f"Opening file {src_file.relative_to(starting_dir)}: Empty file, skipping")
+				new_elems = []
 			else:
-				pf.debug(f"Opening file: {src_file}: Parsing")
+				pf.debug(f"Opening file: {src_file.relative_to(starting_dir)}: Parsing")
 				new_elems = pf.convert_text(s)
 
 		def handle_sub_elem(subelem):
@@ -251,7 +253,7 @@ def main(doc=None):
 					handle_sub_elem(subsubelem)
 			
 			if isinstance(subelem, pf.Header):
-				subelem.level += depth + 1 # ??
+				subelem.level += depth # ??
 			
 			if hasattr(subelem, "content"): # but content section above?
 				fix_referred_file_path_dir_from_container_element(container_elem=subelem, base_path=src_file.parent)
