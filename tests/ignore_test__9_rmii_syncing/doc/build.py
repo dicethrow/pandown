@@ -24,4 +24,9 @@ if __name__ == "__main__":
 
 	log.info("Starting build.py")
 
-	pandown.build_default_doc(args.task)
+	if args.task == "html":
+		pandown.build_default_html()
+	
+	elif args.task == "pdf":
+		pandown.build_default_pdf()
+		pandown.test_rmii_sync()

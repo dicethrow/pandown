@@ -18,7 +18,7 @@ def run_this_test(test_path):
 	# if want to skip the test, return false.
 
 	# if True:
-	if "rmii" in test_path:
+	if "rmii" not in test_path:
 	# if "level_neg_1" 
 	# if test_path.endswith("test__basic"):
 	# if "forbidden" in test_path:
@@ -61,7 +61,7 @@ class test_runner(unittest.TestCase):
 
 
 	def test_all(self):
-		for test_dir in glob.glob("tests/test__*"):
+		for test_dir in sorted(glob.glob("tests/test__*")):
 			if run_this_test(test_dir):
 				for target in ["pdf", "html"]:
 					with cwd(test_dir):
