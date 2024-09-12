@@ -72,15 +72,12 @@ def build_default_pdf():
 			"output_dir" : str(output_folder),
 		} | {f"{d}_dir" : str(pathlib.Path(os.path.join(output_folder, d))) for d in desired_dirs}
 	)
-	# "variables" : {
 
-	# now concatenate the yaml file and the first source file
-	with open(options_file_ammended, "r") as src, open(top_source_file, "r") as dst:
-		lines = src.readlines() + dst.readlines()
-
-	with open(top_source_file_ammended, "w") as dst:
-		dst.writelines(lines)
-
+	# Note: The source file given to pandoc_cmd, before assembling all the separate source
+	# documents together, is now just the yaml block. This is so all the source can be added
+	# afterward in the same way, without having to treat the content from the first file
+	# differently. This is a bit roundabout, but makes sense if we always assemble files
+	# as part of document generation, which is what the latest approach is to do.
 
 	### from the .md use pandoc to make .tex
 	script_runner = "-F panflute"
@@ -88,8 +85,7 @@ def build_default_pdf():
 
 	pandoc_cmd = f"pandoc "
 	pandoc_cmd += f"{script_runner} "
-	pandoc_cmd += f"{top_source_file_ammended} "
-	# pandoc_cmd += f"--defaults={options_file_ammended} " # todo: append this to source file later
+	pandoc_cmd += f"--from=markdown {options_file_ammended} " #
 	pandoc_cmd += f"--template={template_folder / template} "
 	pandoc_cmd += f"--standalone --output {latex_intermediate_file} "
 	pandoc_cmd += f"{extras}"
