@@ -190,8 +190,10 @@ def get_ordered_list_of_markdown_files_recursively_from(start_dir, exclude_prefi
 	for (dirpath, dirnames, filenames) in os.walk(start_dir, topdown=True):
 		# pf.debug(f"{dirpath}, {dirnames}, {filenames}")
 
-		if str(start_dir) + exclude_prefix in dirpath: # exclude these
+		if str(start_dir) + os.sep + exclude_prefix in dirpath: # exclude these
 			continue 
+
+		# pf.debug(f"{dirpath}, {dirnames}, {filenames}")
 
 		rel_file_depth = len(pathlib.Path(dirpath).parents) - start_depth - 1
 		for f in filenames:
@@ -211,59 +213,6 @@ def get_yaml_entries_from_file(src_filename):
 	# pf.debug(json.dumps(data, indent=2))
 	return data
 
-	# 	lines = f.readlines()
-	# yaml_entries = {}
-	
-	# state = "Not yet started"
-	# for line in lines:
-
-	# 	if state == "Not yet started":
-	# 		if line.strip() == "variables:":
-	# 			state = "In yaml variables block"
-	# 			continue
-
-	# 	if state == "In yaml block":
-	# 		if line.strip() == "...": # can this also be --- ?
-	# 			state = "Finished yaml block"
-	# 			continue
-	# 		key, value = line.split(": ")	
-	# 		value = value.strip() # as it often has a trailing \n
-	# 		assert key != []
-	# 		assert value != []
-	# 		yaml_entries[key] = value
-
-		
-	# return copy.deepcopy(yaml_entries) # is deepcopy necessary?
-
-
-
-def add_yaml_entries_to_file(src_filename, dst_filename, new_content):
-	# do some manual changes to the top-level main.md document, before using panflute filters
-	# previously, this had to be in the yaml header:
-	#panflute-path: '~/from_host/x/Documents/git_repos/documentation/projects/workflow_with_lxd_zfs/doc/for_report/filters'
-	#tarting_dir: "~/from_host/x/Documents/git_repos/documentation/projects/workflow_with_lxd_zfs/doc/content"
-	
-	# with open(src_filename, "r") as f:
-	# 	lines = f.readlines()
-	# new_lines = []
-	# added_paths_yet = False
-	# for line in lines:
-	# 	if (line.strip() == "---") and not added_paths_yet:
-	# 		new_lines.append(line)
-	# 		# new_lines.append(f"panflute-path: '{doc_dir}/for_report/filters'\n")
-	# 		for new_line in new_header_lines:
-	# 			new_lines.append("  " + new_line + "\n") # indent to maintain indentation in variables block
-	# 		added_paths_yet = True
-	# 	else:
-	# 		new_lines.append(line)
-	# with open(dst_filename, "w") as f:
-	# 	f.writelines(new_lines)
-
-	with open(src_filename, "r") as f:
-		data = yaml.safe_load(f)
-
-	combined_data = data | new_content
-	pf.debug(json.dumps(combined_data, indent=2))
-
+def write_yaml_entries_to_file(dst_filename, content):
 	with open(dst_filename, "w") as f:
-		yaml.safe_dump(combined_data, f, explicit_start=True, explicit_end=True)
+		yaml.safe_dump(content, f, explicit_start=True, explicit_end=True)

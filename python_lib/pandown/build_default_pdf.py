@@ -12,7 +12,7 @@ import platform
 
 from contextlib import redirect_stdout, redirect_stderr
 
-from .common import get_ordered_list_of_markdown_files_recursively_from, run_local_cmd, clear_terminal, remove_generated_files, add_yaml_entries_to_file, get_yaml_entries_from_file
+from .common import get_ordered_list_of_markdown_files_recursively_from, run_local_cmd, clear_terminal, remove_generated_files, write_yaml_entries_to_file, get_yaml_entries_from_file
 from .errorRecogniser import pandocErrorRecogniser, latexErrorRecogniser
 
 import logging
@@ -27,7 +27,8 @@ def build_default_pdf():
 	# display the current directory and its contents
 	cwd = pathlib.Path().absolute()
 	doc_dir = cwd / "doc"
-	top_source_file = get_ordered_list_of_markdown_files_recursively_from(doc_dir)[0][0]
+	src_dir = doc_dir / "content"
+	top_source_file = get_ordered_list_of_markdown_files_recursively_from(src_dir)[0][0]
 	options_file = doc_dir / "options.yaml"
 	output_folder = doc_dir / "output_pdf"
 
@@ -45,48 +46,59 @@ def build_default_pdf():
 		target_path = output_folder / desired_dir
 		target_path.mkdir(parents=True, exist_ok=True)
 
-	# load the specified pandown template file
-	yaml_entries = get_yaml_entries_from_file(options_file)
-	if 'pandown-template-pdf' not in yaml_entries.get("variables", {}):
-		template = "test2.latex"
-	else:
-		assert 0, "custom template not fixed yet"
 	
-	# check that the given template exists within the local project. 
-	# template = 
-	custom_template_folder = doc_dir / "templates"
-	if (custom_template_folder / template).exists():
-		template_folder = custom_template_folder
-	else:
-		template_folder = get_path_to_common_content() / 'pdf_templates'
+	yaml_entries = get_yaml_entries_from_file(options_file)
 
-	panflute_filters_path = get_path_to_common_content() / 'common_filters'
-	extras = "--listings" # extras = ""
+	# load the specified pandown template file
+	# the template will either be in the local project - if not, a default pandown template.
+	# resolve one then save to yaml entries.
 
-	add_yaml_entries_to_file(
-		src_filename = options_file, 
-		dst_filename = options_file_ammended,
-		new_content = {
-			"panflute-path" : str(panflute_filters_path),
-			"starting_dir" : str(os.path.dirname(top_source_file)),
-			"output_dir" : str(output_folder),
-		} | {f"{d}_dir" : str(pathlib.Path(os.path.join(output_folder, d))) for d in desired_dirs}
-	)
+	template_filename = yaml_entries.get("pandown-template-pdf", "test2.latex")
+
+	if (doc_dir / "templates" / template_filename).exists():
+		full_path_to_template = doc_dir / "templates" / template_filename
+	else: # then it's referring to a default pandown template
+		full_path_to_template = get_path_to_common_content() / 'pdf_templates' / template_filename
+	assert full_path_to_template.exists(), f"Unable to find template: {full_path_to_template}"
+	# yaml_entries["template"] = str(full_path_to_template) # this line doesn't work for some reason
+
 
 	# Note: The source file given to pandoc_cmd, before assembling all the separate source
 	# documents together, is now just the yaml block. This is so all the source can be added
 	# afterward in the same way, without having to treat the content from the first file
 	# differently. This is a bit roundabout, but makes sense if we always assemble files
 	# as part of document generation, which is what the latest approach is to do.
+	# The filter '_assemble_parts' is named with an underscore to indicate that it is
+	# internal to this generation, and not optional, and so it is added above.
+
+	# Now add two compulsory filters that are done first:
+	# 1. _ignore_comments, to remove things not desired to be in the final doc
+	# 2. _assemble_parts, to put together all the source files properly and to correct links/files
+	filters = yaml_entries.get("panflute-filters", [])
+	filters.insert(0, "_assemble_parts")
+	filters.insert(0, "_ignore_comments")
+	yaml_entries["panflute-filters"] = filters
+
+	panflute_filters_path = get_path_to_common_content() / 'common_filters'
+	yaml_entries["panflute-path"] = str(panflute_filters_path)
+	
+	yaml_entries["starting_dir"] = str(os.path.dirname(src_dir))
+	yaml_entries["output_dir"] = str(output_folder)
+	for d in desired_dirs:
+		yaml_entries[f"{d}_dir"] = str(pathlib.Path(os.path.join(output_folder, d)))
+
+	write_yaml_entries_to_file(options_file_ammended, yaml_entries)
 
 	### from the .md use pandoc to make .tex
 	script_runner = "-F panflute"
 	latex_intermediate_file = generated_intermediate_files_dir / "result.latex"
 
+	extras = "--listings" # extras = ""
+
 	pandoc_cmd = f"pandoc "
 	pandoc_cmd += f"{script_runner} "
 	pandoc_cmd += f"--from=markdown {options_file_ammended} " #
-	pandoc_cmd += f"--template={template_folder / template} "
+	pandoc_cmd += f"--template={full_path_to_template} "
 	pandoc_cmd += f"--standalone --output {latex_intermediate_file} "
 	pandoc_cmd += f"{extras}"
 	
