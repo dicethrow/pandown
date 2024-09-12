@@ -226,28 +226,24 @@ def inspect_doc(elem, doc):
 
 
 def main(doc=None):
-	
-	pf.debug("In assemble_parts")
 	starting_dir = pathlib.Path(doc.get_metadata("starting_dir")).expanduser()
 	src_files = get_ordered_list_of_markdown_files_recursively_from(starting_dir)
-	
-	for d in dir(doc.content):
-		pf.debug(d)
 
-	# doc = pf.Doc()
 	content = []
 
-
-	for i, (src_file, depth) in enumerate(src_files):
-		if i == 0:
-			continue
+	for src_file, depth in src_files:
 
 		assert src_file.is_file(), f"This file not found: {src_file}"
 
 		with open(src_file) as f:
-			s = f.read()
-			pf.debug(f"Reading {src_file}")
-			new_elems = pf.convert_text(s)
+			s = f.read() 
+		
+			if len(s) == 0:
+				pf.debug(f"Opening file {src_file}: Empty file, skipping")
+				continue
+			else:
+				pf.debug(f"Opening file: {src_file}: Parsing")
+				new_elems = pf.convert_text(s)
 
 		def handle_sub_elem(subelem):
 			if hasattr(subelem, "content"):
@@ -255,7 +251,7 @@ def main(doc=None):
 					handle_sub_elem(subsubelem)
 			
 			if isinstance(subelem, pf.Header):
-				subelem.level += depth # ??
+				subelem.level += depth + 1 # ??
 			
 			if hasattr(subelem, "content"): # but content section above?
 				fix_referred_file_path_dir_from_container_element(container_elem=subelem, base_path=src_file.parent)
@@ -263,9 +259,6 @@ def main(doc=None):
 
 		for subelem in new_elems:
 			handle_sub_elem(subelem)
-		
-		pf.debug("New elems:")
-		pf.debug(new_elems)
 
 		content.append(pf.Div(*new_elems, attributes={'source': str(src_file)}))
 		# doc.content.extend(*pf.Div(*new_elems, attributes={'source': str(src_file)}))
