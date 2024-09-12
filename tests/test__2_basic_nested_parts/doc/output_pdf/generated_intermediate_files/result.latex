@@ -1,0 +1,173 @@
+
+\documentclass{paper}
+
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{multicol}
+
+%%%%%%%%%%%%%%%%%%%%%%%% to make pandoc work
+
+\def\tightlist{} % make \tightlist do nothing https://tex.stackexchange.com/questions/257418/error-tightlist-converting-md-file-into-pdf-using-pandoc/408474
+\newcommand{\passthrough}[1]{\lstset{mathescape=false}#1\lstset{mathescape=true}} % from  https://github.com/laboon/ebook/issues/139
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+% code handling
+%\usepackage{listings}
+\usepackage[outputdir=doc/output]{minted} % 18jan2022, not working yet
+%\usepackage{cprotect}
+%\setminted{escapeinside=||}
+%\setmintedinline{escapeinside=||}
+
+% 15march2022 trying to see if tables in markdown go to latex
+\usepackage{longtable, booktabs, tabularx} 
+
+\usepackage{xcolor}
+\usepackage[lighttt]{lmodern}
+% \usepackage{pretty_verilog}
+
+% 10sep2022
+% fixing 'too deeply nested' issue, I want to be able to nest arbitarily deep. Here I think it nests to 20?
+% following https://stackoverflow.com/questions/57945414/too-deeply-nested-at-just-fourth-nesting-level-using-pandoc-with-markdown
+\usepackage{enumitem}
+\setlistdepth{20}
+\renewlist{itemize}{itemize}{20}
+\setlist[itemize]{label=\textbullet} % no specified level means all levels
+\setlist[itemize,2]{label=--}
+\setlist[itemize,3]{label=*}
+\renewlist{enumerate}{enumerate}{20}
+\setlist[enumerate]{labelsep=*, leftmargin=1.5pc}
+\setlist[enumerate]{label = \arabic*.,ref= \arabic*}  % no specified level means all levels
+\setlist[enumerate,2]{label = \emph{\alph*}),ref= \theenumi.\emph{\alph*}}
+\setlist[enumerate,3]{label = \roman*),ref= \theenumii.\roman*}
+
+% so algorithms can work within multicol
+\usepackage{float}
+
+% for flowcharts
+\usepackage{tikz}
+
+% For figures
+\usepackage{graphicx}% more modern
+% \usepackage{subfigure}
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage[subrefformat=parens]{subcaption} % from https://tex.stackexchange.com/questions/238636/add-caption-to-image-included-with-includegraphics-within-center-environment
+
+% For dates
+\usepackage{datetime}
+
+% For citations
+% \usepackage{biblatex}
+% \addbibresource{main.bib}
+\usepackage[
+  backend=biber,
+  bibencoding=utf8
+]{biblatex}
+% \addbibresource{content/part_b:_projects/references.bib}
+
+\usepackage[nottoc]{tocbibind} % So the citations appears in the TOC (table of contents)
+% for controlling toc indents, from https://tex.stackexchange.com/questions/111478/how-to-add-more-indentation-for-section-in-table-of-contents
+\usepackage{tocloft}%,tocloft} titletoc
+\setlength{\cftsubsecindent}{0.5cm}
+% \setlength{\cftsubsubsecindent}{1cm}
+% \dottedcontents{section}[1.5em]{}{1.3em}{.6em}
+
+% For algorithms 
+% \usepackage{algorithm}
+% \usepackage{algorithmic}
+\usepackage[ruled,vlined]{algorithm2e}
+
+% to render URLs with underscores correctly
+\usepackage{url}
+
+% to produce hyperlinks in the resulting PDF.
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,	% make the links colored
+    % hidelinks=true
+}
+
+% to add progress comments feedback 
+\usepackage[colorinlistoftodos,prependcaption]{todonotes} %,textsize=tiny
+\presetkeys{todonotes}{inline}{}
+
+% for using separate files
+% \usepackage{subfiles}% Best loaded last in the preamble
+
+% so paragraphs don't have the starting indent
+\setlength{\parindent}{0in}
+
+\title{Some title}
+\subtitle{And a small subtitle}
+% \author{General Documentation}
+
+\begin{document}
+\begin{multicols*}{2}
+
+\maketitle
+% \subfile{content/abstract}
+% \subfile{content/terminology}
+% \subfile{content/progress}
+\vfill\null
+\columnbreak
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\end{multicols*}
+% \hrulefill
+
+% \subfile{content/section_a:_plan_overview/plan_overview}
+
+% \subfile{content/section_b:_hardware_overview/hardware_overview}
+
+% verilog language
+
+
+todo: check that this demo makes sense. I've just revised the sorting
+approach ot make it simpler (alphabetical order of all source file
+paths), but it might be a breaking change for some docs, which should
+have their structure revised.
+
+The headings and depth etc of \verb|1_subfolderA|, \verb|2_subfolderB|
+and \verb|3_subfolderC| should be identical. (how to refer to headings,
+with internal links?)
+
+\begin{verbatim}
+1_subfolderA
+2_subfolderB
+3_subfolderC
+e_file1.md
+f_file2.md
+\end{verbatim}
+
+\section{Is this a suitable parent heading for the folder of the same
+name?}\label{is-this-a-suitable-parent-heading-for-the-folder-of-the-same-name}
+
+xx
+
+\subsection{should be heading 1 from 1\_subfolderA
+(/main.md)}\label{should-be-heading-1-from-1_subfoldera-main.md}
+
+Note here that there is not a higher level heading, this jumps
+immediately into a lower heading level. This looks messy! I could add a
+complicated way to indicate to make this heading a different level, but
+instead of that I recommend to use another file to put some introductory
+content with a higher heading level in.
+
+\subsubsection{should be 1st heading 2 from 1\_subfolderA
+(/main.md)}\label{should-be-1st-heading-2-from-1_subfoldera-main.md}
+
+hello
+
+\subsubsection{should be 2nd heading 2 from 1\_subfolderA
+(/main.md)}\label{should-be-2nd-heading-2-from-1_subfoldera-main.md}
+
+hello
+
+\subsubsection{should should be 3rd heading 2 from 1\_subfolderA
+(/main.md)}\label{should-should-be-3rd-heading-2-from-1_subfoldera-main.md}
+
+hello
+
+\end{document}

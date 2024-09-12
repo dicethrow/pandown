@@ -1,0 +1,16 @@
+---
+documentclass: paper
+generated_intermediate_files_dir: /home/ubuntu/Documents/git_repos/pandown/tests/test__7_linked_files/doc/output_pdf/generated_intermediate_files
+generated_output_files_dir: /home/ubuntu/Documents/git_repos/pandown/tests/test__7_linked_files/doc/output_pdf/generated_output_files
+output_dir: /home/ubuntu/Documents/git_repos/pandown/tests/test__7_linked_files/doc/output_pdf
+panflute-filters:
+- _ignore_comments
+- _assemble_parts
+- mermaid_charts
+- copy_linked_items
+- minted_code
+panflute-path: /home/ubuntu/Documents/git_repos/pandown/python_lib/pandown/doc_resources/raw_content/common_filters
+starting_dir: /home/ubuntu/Documents/git_repos/pandown/tests/test__7_linked_files/doc
+subtitle: And a small subtitle
+title: Some title
+...
