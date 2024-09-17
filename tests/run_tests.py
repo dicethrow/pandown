@@ -74,7 +74,11 @@ class test_runner(unittest.TestCase):
 
 						result, error = run_local_cmd(cmd, print_cmd = True)
 
-						self.assertTrue(result[0] == "success")
+						def arrayAsString(a):
+							# from https://stackoverflow.com/questions/42756537/f-string-syntax-for-unpacking-a-list-with-brace-suppression
+							return "\n".join(str(i) for i in a)
+
+						self.assertTrue(result[0] == "success", msg=f"Result: {arrayAsString(result)}\n\n Error: {arrayAsString(error)}") 
 		
 
 if __name__ == "__main__":
