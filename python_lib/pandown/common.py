@@ -11,6 +11,7 @@ import logging
 import io
 import pathlib
 import yaml, json
+import natsort
 
 import subprocess
 from concurrent.futures import ThreadPoolExecutor
@@ -201,7 +202,11 @@ def get_ordered_list_of_markdown_files_recursively_from(start_dir, exclude_prefi
 				file_list.append([pathlib.Path(dirpath, f), rel_file_depth])
 		# break
 		
-		file_list = sorted(file_list, key = lambda row : row[0])
+		# note: row[0] are of type PosixPath
+		# using natsort.os_sorted so the sorted paths are close to the
+		# user's operating system file browser, see 
+		# https://natsort.readthedocs.io/en/stable/api.html#natsort.os_sorted
+		file_list = natsort.os_sorted(file_list, key = lambda row : str(row[0]))
 
 	return file_list # 
 
