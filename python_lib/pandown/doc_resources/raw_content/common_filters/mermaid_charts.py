@@ -131,6 +131,8 @@ def handle_mermaid_charts(options, data, element, doc):
 	else:
 		new_elem = pf.Para(pf.Image(url=str(destFilePath), title=options.get("title", "")))
 
+	assert destFilePath.exists(), f"Mermaid failed to make {destFilePath}, you can run tests to determine if issue is syntax or mermaid installation"
+
 	pf.debug("Mermaid, made ", destFilePath)
 	
 	return new_elem
