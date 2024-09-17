@@ -19,6 +19,7 @@ def run_this_test(test_path):
 
 	# if True:
 	if "rmii" not in test_path:
+	# if "mermaid" in test_path:
 	# if "level_neg_1" 
 	# if test_path.endswith("test__basic"):
 	# if "forbidden" in test_path:
