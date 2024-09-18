@@ -3,5 +3,5 @@ title: Some title
 subtitle: And a small subtitle
 result-name: test_doc_name
 documentclass: paper
-panflute-filters: [copy_linked_items, minted_code]
+panflute-filters: [copy_linked_items]
 ...

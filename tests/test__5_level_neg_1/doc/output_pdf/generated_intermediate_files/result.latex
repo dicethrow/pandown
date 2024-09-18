@@ -12,8 +12,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 
+% 18sep2024
+% disable overfull hbox warnings for now... ideally, these should be prevented from occuring
+% this should make error debugging easier by reducing clutter
+% from https://tex.stackexchange.com/questions/13715/how-to-suppress-overfull-hbox-warnings-up-to-some-maximum
+\hfuzz=10000pt 
+
+
 % code handling
-%\usepackage{listings}
+% \usepackage{listings}
 \usepackage[outputdir=doc/output]{minted} % 18jan2022, not working yet
 %\usepackage{cprotect}
 %\setminted{escapeinside=||}
@@ -25,6 +32,7 @@
 \usepackage{xcolor}
 \usepackage[lighttt]{lmodern}
 % \usepackage{pretty_verilog}
+
 
 % 10sep2022
 % fixing 'too deeply nested' issue, I want to be able to nest arbitarily deep. Here I think it nests to 20?
@@ -133,25 +141,25 @@ xxx change
 let's see if this \emph{mermaid} filter works. Should look like the
 example from https://github.com/raghur/mermaid-filter
 
-\includegraphics{/home/ubuntu/Documents/git_repos/pandown/tests/test__5_level_neg_1/doc/output_pdf/generated_intermediate_files/mermaid_chart_0.pdf}
+\includegraphics{/home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__5_level_neg_1/doc/output_pdf/generated_intermediate_files/mermaid_chart_0.pdf}
 
 Now let's try another, this one from here:
 https://stackoverflow.com/questions/68561397/mermaid-syntax-error-on-trying-render-a-diagram-on-github-md-file
 
-\includegraphics{/home/ubuntu/Documents/git_repos/pandown/tests/test__5_level_neg_1/doc/output_pdf/generated_intermediate_files/mermaid_chart_1.pdf}
+\includegraphics{/home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__5_level_neg_1/doc/output_pdf/generated_intermediate_files/mermaid_chart_1.pdf}
 
 now let's add an image
 
 \begin{figure}
 \centering
-\includegraphics{/home/ubuntu/Documents/git_repos/pandown/tests/test__5_level_neg_1/doc/content/a_outerfolder/images/image_subfolder/image_subfolder2/sample_image.png}
+\includegraphics{/home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__5_level_neg_1/doc/content/a_outerfolder/images/image_subfolder/image_subfolder2/sample_image.png}
 \caption{Here's me doing some PCB stuff}
 \end{figure}
 
 \begin{itemize}
 \tightlist
 \item
-  First, some dot points a\_outerfolder
+  First, some dot points a\textbackslash\_outerfolder
 
   \begin{enumerate}
   \def\labelenumi{\arabic{enumi}.}
@@ -168,16 +176,17 @@ now let's add an image
 
     \begin{figure}
     \centering
-    \includegraphics{/home/ubuntu/Documents/git_repos/pandown/tests/test__5_level_neg_1/doc/content/a_outerfolder/images/image_subfolder/image_subfolder2/sample_image.png}
+    \includegraphics{/home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__5_level_neg_1/doc/content/a_outerfolder/images/image_subfolder/image_subfolder2/sample_image.png}
     \caption{Does this image work?}
     \end{figure}
   \end{enumerate}
 \end{itemize}
 
 \subsection{Heading level 1 (should become 2) in
-content/b\_outerfolder/main.md}\label{heading-level-1-should-become-2-in-contentb_outerfoldermain.md}
+content/b\textbackslash\_outerfolder/main.md}\label{heading-level-1-should-become-2-in-contentb_outerfoldermain.md}
 
-Heading level 1 (should become 2) in content/b\_outerfolder/main.md
+Heading level 1 (should become 2) in
+content/b\textbackslash\_outerfolder/main.md
 
 Content below that heading in the markdown file. A nested list test
 follows.
@@ -222,13 +231,14 @@ hohoe
 
 bo how bew stant
 
-\subsubsection{hullow from b\_boho}\label{hullow-from-b_boho}
+\subsubsection{hullow from
+b\textbackslash\_boho}\label{hullow-from-b_boho}
 
 as a paragraph
 
 \begin{figure}
 \centering
-\includegraphics{/home/ubuntu/Documents/git_repos/pandown/tests/test__5_level_neg_1/doc/content/c_outerfolder/b_boho/spaceship2.png}
+\includegraphics{/home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__5_level_neg_1/doc/content/c_outerfolder/b_boho/spaceship2.png}
 \caption{alt text}
 \end{figure}
 
@@ -249,7 +259,7 @@ b_boho
 \end{verbatim}
 
 another end line\ldots{} helps?
-\includegraphics{/home/ubuntu/Documents/git_repos/pandown/tests/test__5_level_neg_1/doc/content/c_outerfolder/b_boho/spaceship2.png}
+\includegraphics{/home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__5_level_neg_1/doc/content/c_outerfolder/b_boho/spaceship2.png}
 
 \subsection{hellobd}\label{hellobd}
 
@@ -269,7 +279,7 @@ section for including further files, etc.
 
 \begin{figure}
 \centering
-\includegraphics{/home/ubuntu/Documents/git_repos/pandown/tests/test__5_level_neg_1/doc/content/spaceship.png}
+\includegraphics{/home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__5_level_neg_1/doc/content/spaceship.png}
 \caption{alt text}
 \end{figure}
 
@@ -337,7 +347,7 @@ d_outerfolder
 here's a copy-pasted thing of the parts - does it work?
 
 Can we do an image from here?
-\includegraphics{/home/ubuntu/Documents/git_repos/pandown/tests/test__5_level_neg_1/doc/content/a_outerfolder/images/image_subfolder/image_subfolder2/sample_image.png}
+\includegraphics{/home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__5_level_neg_1/doc/content/a_outerfolder/images/image_subfolder/image_subfolder2/sample_image.png}
 
 Can we do images in lists?
 
@@ -361,7 +371,7 @@ Can we do images in lists?
 
     \begin{figure}
     \centering
-    \includegraphics{/home/ubuntu/Documents/git_repos/pandown/tests/test__5_level_neg_1/doc/content/a_outerfolder/images/image_subfolder/image_subfolder2/sample_image.png}
+    \includegraphics{/home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__5_level_neg_1/doc/content/a_outerfolder/images/image_subfolder/image_subfolder2/sample_image.png}
     \caption{Does this image work?}
     \end{figure}
   \end{enumerate}

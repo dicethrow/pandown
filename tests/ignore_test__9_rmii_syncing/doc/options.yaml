@@ -2,6 +2,6 @@
 title: Some title
 subtitle: And a small subtitle
 documentclass: paper
-panflute-filters: [copy_linked_items, minted_code]
+panflute-filters: [copy_linked_items]
 result-name: pandown_test__rmii_syncing
 ...

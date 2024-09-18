@@ -12,8 +12,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 
+% 18sep2024
+% disable overfull hbox warnings for now... ideally, these should be prevented from occuring
+% this should make error debugging easier by reducing clutter
+% from https://tex.stackexchange.com/questions/13715/how-to-suppress-overfull-hbox-warnings-up-to-some-maximum
+\hfuzz=10000pt 
+
+
 % code handling
-%\usepackage{listings}
+% \usepackage{listings}
 \usepackage[outputdir=doc/output]{minted} % 18jan2022, not working yet
 %\usepackage{cprotect}
 %\setminted{escapeinside=||}
@@ -25,6 +32,7 @@
 \usepackage{xcolor}
 \usepackage[lighttt]{lmodern}
 % \usepackage{pretty_verilog}
+
 
 % 10sep2022
 % fixing 'too deeply nested' issue, I want to be able to nest arbitarily deep. Here I think it nests to 20?
@@ -146,7 +154,7 @@ name?}\label{is-this-a-suitable-parent-heading-for-the-folder-of-the-same-name}
 
 xx
 
-\subsection{should be heading 1 from 1\_subfolderA
+\subsection{should be heading 1 from 1\textbackslash\_subfolderA
 (/main.md)}\label{should-be-heading-1-from-1_subfoldera-main.md}
 
 Note here that there is not a higher level heading, this jumps
@@ -155,17 +163,18 @@ complicated way to indicate to make this heading a different level, but
 instead of that I recommend to use another file to put some introductory
 content with a higher heading level in.
 
-\subsubsection{should be 1st heading 2 from 1\_subfolderA
+\subsubsection{should be 1st heading 2 from 1\textbackslash\_subfolderA
 (/main.md)}\label{should-be-1st-heading-2-from-1_subfoldera-main.md}
 
 hello
 
-\subsubsection{should be 2nd heading 2 from 1\_subfolderA
+\subsubsection{should be 2nd heading 2 from 1\textbackslash\_subfolderA
 (/main.md)}\label{should-be-2nd-heading-2-from-1_subfoldera-main.md}
 
 hello
 
-\subsubsection{should should be 3rd heading 2 from 1\_subfolderA
+\subsubsection{should should be 3rd heading 2 from
+1\textbackslash\_subfolderA
 (/main.md)}\label{should-should-be-3rd-heading-2-from-1_subfoldera-main.md}
 
 hello

@@ -1,16 +1,15 @@
 ---
 documentclass: paper
-generated_intermediate_files_dir: /home/ubuntu/Documents/git_repos/pandown/tests/test__3_basic_nested_parts__level_neg_1/doc/output_pdf/generated_intermediate_files
-generated_output_files_dir: /home/ubuntu/Documents/git_repos/pandown/tests/test__3_basic_nested_parts__level_neg_1/doc/output_pdf/generated_output_files
-output_dir: /home/ubuntu/Documents/git_repos/pandown/tests/test__3_basic_nested_parts__level_neg_1/doc/output_pdf
+generated_intermediate_files_dir: /home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__3_basic_nested_parts__level_neg_1/doc/output_pdf/generated_intermediate_files
+generated_output_files_dir: /home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__3_basic_nested_parts__level_neg_1/doc/output_pdf/generated_output_files
+output_dir: /home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__3_basic_nested_parts__level_neg_1/doc/output_pdf
 panflute-filters:
-- _ignore_comments
 - _assemble_parts
 - copy_linked_items
-- minted_code
-panflute-path: /home/ubuntu/Documents/git_repos/pandown/python_lib/pandown/doc_resources/raw_content/common_filters
+- _code_escaping
+panflute-path: /home/ubuntu/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/common_filters
 result-name: test_doc_name
-starting_dir: /home/ubuntu/Documents/git_repos/pandown/tests/test__3_basic_nested_parts__level_neg_1/doc
+starting_dir: /home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__3_basic_nested_parts__level_neg_1/doc
 subtitle: And a small subtitle
 title: Some title
 ...

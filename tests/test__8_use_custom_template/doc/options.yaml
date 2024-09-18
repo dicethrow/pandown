@@ -4,5 +4,5 @@ subtitle: Subtile
 documentclass: paper
 pandown-template-html: web.html
 pandown-template-pdf: pdf.latex
-panflute-filters: [mermaid_charts, copy_linked_items, minted_code]
+panflute-filters: [mermaid_charts, copy_linked_items]
 ...
