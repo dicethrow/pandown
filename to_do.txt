@@ -25,3 +25,5 @@
 				- /home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown
 					/home/ubuntu/from_host/x/Documents/git_repos/documentation/tools/pandown/tests/test__linked_files/doc/content/demo_doc1.pdf
 					- but the second bit is; there is a path-to-pandown redundant at the start
+Add tests incl. links to websites, paths to local files, paths to local files to copy, etc.
+Make links between markdown files, that work in vscode, work in the final document

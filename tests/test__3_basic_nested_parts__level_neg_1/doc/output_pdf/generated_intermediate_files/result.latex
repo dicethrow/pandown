@@ -12,8 +12,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 
+% 18sep2024
+% disable overfull hbox warnings for now... ideally, these should be prevented from occuring
+% this should make error debugging easier by reducing clutter
+% from https://tex.stackexchange.com/questions/13715/how-to-suppress-overfull-hbox-warnings-up-to-some-maximum
+\hfuzz=10000pt 
+
+
 % code handling
-%\usepackage{listings}
+% \usepackage{listings}
 \usepackage[outputdir=doc/output]{minted} % 18jan2022, not working yet
 %\usepackage{cprotect}
 %\setminted{escapeinside=||}
@@ -25,6 +32,7 @@
 \usepackage{xcolor}
 \usepackage[lighttt]{lmodern}
 % \usepackage{pretty_verilog}
+
 
 % 10sep2022
 % fixing 'too deeply nested' issue, I want to be able to nest arbitarily deep. Here I think it nests to 20?
@@ -124,7 +132,7 @@
 % verilog language
 
 
-\subsubsection{1\_a}\label{a}
+\subsubsection{1\textbackslash\_a}\label{a}
 
 hello
 
@@ -132,15 +140,15 @@ now let's add an image
 
 \begin{figure}
 \centering
-\includegraphics{/home/ubuntu/Documents/git_repos/pandown/tests/test__3_basic_nested_parts__level_neg_1/doc/content/1_subfolderA/1_a_in_A/images/sample_image.png}
+\includegraphics{/home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__3_basic_nested_parts__level_neg_1/doc/content/1_subfolderA/1_a_in_A/images/sample_image.png}
 \caption{Here's me doing some PCB stuff}
 \end{figure}
 
-\subsubsection{2\_b}\label{b}
+\subsubsection{2\textbackslash\_b}\label{b}
 
 hello
 
-\subsubsection{3\_c}\label{c}
+\subsubsection{3\textbackslash\_c}\label{c}
 
 hello
 
@@ -155,15 +163,15 @@ level_offset: -1
 3_c_in_A
 \end{verbatim}
 
-\subsubsection{1\_a}\label{a}
+\subsubsection{1\textbackslash\_a}\label{a}
 
 hello BB
 
-\subsubsection{2\_b}\label{b}
+\subsubsection{2\textbackslash\_b}\label{b}
 
 hello BB
 
-\subsubsection{3\_c}\label{c}
+\subsubsection{3\textbackslash\_c}\label{c}
 
 hello BB
 

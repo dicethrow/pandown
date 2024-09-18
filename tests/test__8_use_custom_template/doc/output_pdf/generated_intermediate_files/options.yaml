@@ -1,18 +1,17 @@
 ---
 documentclass: paper
-generated_intermediate_files_dir: /home/ubuntu/Documents/git_repos/pandown/tests/test__8_use_custom_template/doc/output_pdf/generated_intermediate_files
-generated_output_files_dir: /home/ubuntu/Documents/git_repos/pandown/tests/test__8_use_custom_template/doc/output_pdf/generated_output_files
-output_dir: /home/ubuntu/Documents/git_repos/pandown/tests/test__8_use_custom_template/doc/output_pdf
+generated_intermediate_files_dir: /home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__8_use_custom_template/doc/output_pdf/generated_intermediate_files
+generated_output_files_dir: /home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__8_use_custom_template/doc/output_pdf/generated_output_files
+output_dir: /home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__8_use_custom_template/doc/output_pdf
 pandown-template-html: web.html
 pandown-template-pdf: pdf.latex
 panflute-filters:
-- _ignore_comments
 - _assemble_parts
 - mermaid_charts
 - copy_linked_items
-- minted_code
-panflute-path: /home/ubuntu/Documents/git_repos/pandown/python_lib/pandown/doc_resources/raw_content/common_filters
-starting_dir: /home/ubuntu/Documents/git_repos/pandown/tests/test__8_use_custom_template/doc
+- _code_escaping
+panflute-path: /home/ubuntu/Documents/git_repos/documentation/tools/pandown/python_lib/pandown/doc_resources/raw_content/common_filters
+starting_dir: /home/ubuntu/Documents/git_repos/documentation/tools/pandown/tests/test__8_use_custom_template/doc
 subtitle: Subtile
 title: Test document
 ...

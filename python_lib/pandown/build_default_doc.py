@@ -74,8 +74,8 @@ def build_default_doc(target):
 	# 1. _ignore_comments, to remove things not desired to be in the final doc
 	# 2. _assemble_parts, to put together all the source files properly and to correct links/files
 	filters = yaml_entries.get("panflute-filters", [])
-	filters.insert(0, "_assemble_parts")
-	filters.insert(0, "_ignore_comments")
+	filters.insert(0, "_assemble_parts") # do beforehand
+	filters.append("_code_escaping") # do after
 	yaml_entries["panflute-filters"] = filters
 
 	panflute_filters_path = get_path_to_common_content() / 'common_filters'
@@ -88,13 +88,13 @@ def build_default_doc(target):
 
 	write_yaml_entries_to_file(options_file_ammended, yaml_entries)
 
-	script_runner = "-F panflute"
-	extras = "--listings" # extras = ""
-
 	pandoc_cmd = "pandoc "
-	pandoc_cmd += f"{script_runner} "
+	pandoc_cmd += "-F panflute "
 	pandoc_cmd += f"--from=markdown {options_file_ammended} " #
 	pandoc_cmd += f"--template={full_path_to_template} "
+	pandoc_cmd += "--listings "
+	pandoc_cmd += "--strip-comments " # from https://github.com/jgm/pandoc/issues/2552
+	# pandoc_cmd += "-f markdown-tex_math_dollars " # https://stackoverflow.com/questions/54890232/disable-tex-math-when-using-pandoc
 
 	if target == "pdf":
 		### from the .md use pandoc to make .tex
@@ -107,7 +107,7 @@ def build_default_doc(target):
 		### go straight from .md to .html
 		pandoc_cmd += f"--standalone --table-of-contents --output {output_folder / 'result.html'} "
 
-	pandoc_cmd += f"{extras} "
+	
 
 	result, error = run_local_cmd(pandoc_cmd, print_cmd = True, disable_logging = False)
 

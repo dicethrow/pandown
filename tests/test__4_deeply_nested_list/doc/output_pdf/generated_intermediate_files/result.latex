@@ -12,8 +12,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 
+% 18sep2024
+% disable overfull hbox warnings for now... ideally, these should be prevented from occuring
+% this should make error debugging easier by reducing clutter
+% from https://tex.stackexchange.com/questions/13715/how-to-suppress-overfull-hbox-warnings-up-to-some-maximum
+\hfuzz=10000pt 
+
+
 % code handling
-%\usepackage{listings}
+% \usepackage{listings}
 \usepackage[outputdir=doc/output]{minted} % 18jan2022, not working yet
 %\usepackage{cprotect}
 %\setminted{escapeinside=||}
@@ -25,6 +32,7 @@
 \usepackage{xcolor}
 \usepackage[lighttt]{lmodern}
 % \usepackage{pretty_verilog}
+
 
 % 10sep2022
 % fixing 'too deeply nested' issue, I want to be able to nest arbitarily deep. Here I think it nests to 20?

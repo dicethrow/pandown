@@ -50,6 +50,10 @@ def copy_linked_items(elem, doc):
 	if toCopyElement:
 
 		url = url.resolve()
+		
+		if os.path.isdir(url):
+			pf.debug(f"A directory was given when a file was expected, unable to copy: url was {url}, skipping")
+			return
 
 		content_dir = pathlib.Path(doc.get_metadata("starting_dir"))
 		generated_intermediate_files_dir = pathlib.Path(doc.get_metadata("generated_intermediate_files_dir"))
