@@ -27,3 +27,4 @@
 					- but the second bit is; there is a path-to-pandown redundant at the start
 Add tests incl. links to websites, paths to local files, paths to local files to copy, etc.
 Make links between markdown files, that work in vscode, work in the final document
+print version flags of software/etc to the log file on start?

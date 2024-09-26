@@ -2,3 +2,4 @@
 **/pandown.log
 **/*.egg-info/
 *.egg-info/
+tests/*test*/doc/output*/
