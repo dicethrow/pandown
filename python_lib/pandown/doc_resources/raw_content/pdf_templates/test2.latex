@@ -12,6 +12,21 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 
+% 26sep24
+% (didn't I do this before? I misused git a bit...)
+% make a new thing used in normal pandoc-generated latex work
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+
 % 18sep2024
 % disable overfull hbox warnings for now... ideally, these should be prevented from occuring
 % this should make error debugging easier by reducing clutter
